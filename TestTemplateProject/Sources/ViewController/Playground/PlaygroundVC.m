@@ -1,0 +1,36 @@
+//
+//  PlaygroundVC.m
+//  TestTemplateProject
+//
+//  Created by Ben on 2017/6/12.
+//  Copyright © 2017年 iOSStudio. All rights reserved.
+//
+
+#import "PlaygroundVC.h"
+
+@interface PlaygroundVC ()
+
+@property (weak, nonatomic) IBOutlet UILabel *testAttributedTextLabel;
+
+@end
+
+@implementation PlaygroundVC
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    if ([self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
+    self.testAttributedTextLabel.attributedText = [[NSMutableAttributedString alloc] initWithString:@"测试[[NSMutableAttributedString alloc] initWithString:]字体大小"];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end
+
+
