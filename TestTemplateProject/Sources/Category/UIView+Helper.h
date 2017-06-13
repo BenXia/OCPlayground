@@ -1,9 +1,9 @@
 //
 //  UIView+Helper.h
-//  SportCircles
+//  TestTemplateProject
 //
 //  Created by Ben on 5/15/14.
-//  Copyright (c) 2014 PPTV. All rights reserved.
+//  Copyright © 2017年 iOSStudio. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -24,7 +24,7 @@
 
 @end
 
-@interface UIView (SPORTSFrame)
+@interface UIView (BNFrame)
 
 - (CGFloat)originX;
 - (CGFloat)originY;

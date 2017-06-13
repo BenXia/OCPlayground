@@ -9,14 +9,11 @@
 /* Begin PBXBuildFile section */
 		2B1041A2256952E4587B17F5 /* libPods-TestTemplateProject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B6364692DBB1E35BBAC518E /* libPods-TestTemplateProject.a */; };
 		330F7BF61ED333F00009280A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F7BDA1ED333F00009280A /* AppDelegate.m */; };
-		330F7BF81ED333F00009280A /* UIView+frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F7BDF1ED333F00009280A /* UIView+frame.m */; };
-		330F7BF91ED333F00009280A /* Ben_BallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F7BE61ED333F00009280A /* Ben_BallView.m */; };
-		330F7BFA1ED333F00009280A /* Ben_CradleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F7BE81ED333F00009280A /* Ben_CradleView.m */; };
-		330F7BFB1ED333F00009280A /* Ben_CustomiseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F7BEA1ED333F00009280A /* Ben_CustomiseView.m */; };
-		330F7BFC1ED333F00009280A /* Ben_TriangleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F7BEC1ED333F00009280A /* Ben_TriangleView.m */; };
 		330F7C001ED333F00009280A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F7BF51ED333F00009280A /* main.m */; };
 		330F7C021ED334380009280A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330F7C011ED334380009280A /* Assets.xcassets */; };
 		330F7C0D1ED349AB0009280A /* UIView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F7C0B1ED349AB0009280A /* UIView+Helper.m */; };
+		33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144EFE1EF05418006D27AC /* NSString+Size.m */; };
+		33144F041EF0546C006D27AC /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144F021EF0546C006D27AC /* UIUtils.m */; };
 		337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */; };
 		B50394C31EEE5FC30016FA97 /* HomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50394C11EEE5FC30016FA97 /* HomePageVC.m */; };
 		B50394C41EEE5FC30016FA97 /* HomePageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50394C21EEE5FC30016FA97 /* HomePageVC.xib */; };
@@ -31,22 +28,20 @@
 		330F7BBD1ED3321F0009280A /* TestTemplateProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTemplateProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		330F7BD91ED333F00009280A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		330F7BDA1ED333F00009280A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		330F7BDE1ED333F00009280A /* UIView+frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+frame.h"; sourceTree = "<group>"; };
-		330F7BDF1ED333F00009280A /* UIView+frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+frame.m"; sourceTree = "<group>"; };
-		330F7BE51ED333F00009280A /* Ben_BallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ben_BallView.h; sourceTree = "<group>"; };
-		330F7BE61ED333F00009280A /* Ben_BallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ben_BallView.m; sourceTree = "<group>"; };
-		330F7BE71ED333F00009280A /* Ben_CradleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ben_CradleView.h; sourceTree = "<group>"; };
-		330F7BE81ED333F00009280A /* Ben_CradleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ben_CradleView.m; sourceTree = "<group>"; };
-		330F7BE91ED333F00009280A /* Ben_CustomiseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ben_CustomiseView.h; sourceTree = "<group>"; };
-		330F7BEA1ED333F00009280A /* Ben_CustomiseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ben_CustomiseView.m; sourceTree = "<group>"; };
-		330F7BEB1ED333F00009280A /* Ben_TriangleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ben_TriangleView.h; sourceTree = "<group>"; };
-		330F7BEC1ED333F00009280A /* Ben_TriangleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ben_TriangleView.m; sourceTree = "<group>"; };
 		330F7BF41ED333F00009280A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		330F7BF51ED333F00009280A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		330F7C011ED334380009280A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		330F7C0A1ED349AB0009280A /* UIView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Helper.h"; sourceTree = "<group>"; };
 		330F7C0B1ED349AB0009280A /* UIView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Helper.m"; sourceTree = "<group>"; };
 		330F7ECC1ED352250009280A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		33144EFA1EF05403006D27AC /* commonConstDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commonConstDef.h; sourceTree = "<group>"; };
+		33144EFB1EF05403006D27AC /* macrodef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macrodef.h; sourceTree = "<group>"; };
+		33144EFC1EF05403006D27AC /* typedef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = typedef.h; sourceTree = "<group>"; };
+		33144EFD1EF05418006D27AC /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
+		33144EFE1EF05418006D27AC /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
+		33144F011EF0546C006D27AC /* UIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtils.h; sourceTree = "<group>"; };
+		33144F021EF0546C006D27AC /* UIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtils.m; sourceTree = "<group>"; };
+		33144F031EF0546C006D27AC /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		337EEC271EDC3F2C00EDC166 /* NSObject+DLIntrospection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DLIntrospection.h"; sourceTree = "<group>"; };
 		337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DLIntrospection.m"; sourceTree = "<group>"; };
 		5C6D28EEC1B5E3424CF2308B /* Pods-TestTemplateProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTemplateProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestTemplateProject/Pods-TestTemplateProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,6 +110,7 @@
 			children = (
 				330F7BE21ED333F00009280A /* Vendor */,
 				330F7BE01ED333F00009280A /* Global */,
+				33144F001EF0546C006D27AC /* Utilities */,
 				330F7BDB1ED333F00009280A /* Category */,
 				330F7BE11ED333F00009280A /* Network */,
 				330F7BE31ED333F00009280A /* View */,
@@ -128,10 +124,10 @@
 		330F7BDB1ED333F00009280A /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				33144EFD1EF05418006D27AC /* NSString+Size.h */,
+				33144EFE1EF05418006D27AC /* NSString+Size.m */,
 				330F7C0A1ED349AB0009280A /* UIView+Helper.h */,
 				330F7C0B1ED349AB0009280A /* UIView+Helper.m */,
-				330F7BDE1ED333F00009280A /* UIView+frame.h */,
-				330F7BDF1ED333F00009280A /* UIView+frame.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -140,6 +136,9 @@
 			isa = PBXGroup;
 			children = (
 				330F7ECC1ED352250009280A /* PrefixHeader.pch */,
+				33144EFA1EF05403006D27AC /* commonConstDef.h */,
+				33144EFB1EF05403006D27AC /* macrodef.h */,
+				33144EFC1EF05403006D27AC /* typedef.h */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -162,32 +161,8 @@
 		330F7BE31ED333F00009280A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				330F7BE41ED333F00009280A /* CustomiseViews */,
-				330F7BED1ED333F00009280A /* TableViewCells */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		330F7BE41ED333F00009280A /* CustomiseViews */ = {
-			isa = PBXGroup;
-			children = (
-				330F7BE51ED333F00009280A /* Ben_BallView.h */,
-				330F7BE61ED333F00009280A /* Ben_BallView.m */,
-				330F7BE71ED333F00009280A /* Ben_CradleView.h */,
-				330F7BE81ED333F00009280A /* Ben_CradleView.m */,
-				330F7BE91ED333F00009280A /* Ben_CustomiseView.h */,
-				330F7BEA1ED333F00009280A /* Ben_CustomiseView.m */,
-				330F7BEB1ED333F00009280A /* Ben_TriangleView.h */,
-				330F7BEC1ED333F00009280A /* Ben_TriangleView.m */,
-			);
-			path = CustomiseViews;
-			sourceTree = "<group>";
-		};
-		330F7BED1ED333F00009280A /* TableViewCells */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 		330F7BEE1ED333F00009280A /* ViewController */ = {
@@ -209,6 +184,16 @@
 				330F7BF51ED333F00009280A /* main.m */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		33144F001EF0546C006D27AC /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				33144F011EF0546C006D27AC /* UIUtils.h */,
+				33144F021EF0546C006D27AC /* UIUtils.m */,
+				33144F031EF0546C006D27AC /* Utility.h */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		337EEC261EDC3F2C00EDC166 /* DLIntrospection */ = {
@@ -380,16 +365,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				330F7BFC1ED333F00009280A /* Ben_TriangleView.m in Sources */,
-				330F7BF81ED333F00009280A /* UIView+frame.m in Sources */,
 				B50394C31EEE5FC30016FA97 /* HomePageVC.m in Sources */,
 				B50394C81EEE5FF70016FA97 /* TimeSequenceVC.m in Sources */,
-				330F7BF91ED333F00009280A /* Ben_BallView.m in Sources */,
+				33144F041EF0546C006D27AC /* UIUtils.m in Sources */,
+				33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */,
 				330F7BF61ED333F00009280A /* AppDelegate.m in Sources */,
 				330F7C0D1ED349AB0009280A /* UIView+Helper.m in Sources */,
-				330F7BFB1ED333F00009280A /* Ben_CustomiseView.m in Sources */,
 				B50394D31EEE61F80016FA97 /* PlaygroundVC.m in Sources */,
-				330F7BFA1ED333F00009280A /* Ben_CradleView.m in Sources */,
 				330F7C001ED333F00009280A /* main.m in Sources */,
 				337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */,
 			);

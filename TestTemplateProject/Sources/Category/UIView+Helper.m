@@ -1,9 +1,9 @@
 //
 //  UIView+Helper.m
-//  SportCircles
+//  TestTemplateProject
 //
 //  Created by Ben on 5/15/14.
-//  Copyright (c) 2014 PPTV. All rights reserved.
+//  Copyright © 2017年 iOSStudio. All rights reserved.
 //
 
 #import "UIView+Helper.h"
@@ -112,7 +112,7 @@ static NSMutableString *prefixStr;
 @end
 
 
-@implementation UIView (SPORTSFrame)
+@implementation UIView (BNFrame)
 
 - (CGFloat)originX
 {
