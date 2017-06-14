@@ -21,5 +21,7 @@
 #import "Utility.h"
 #import "UIView+Helper.h"
 #import "NSString+Size.h"
+#import "BNNavigationController.h"
+#import "BNTabBarController.h"
 
 #endif /* PrefixHeader_pch */

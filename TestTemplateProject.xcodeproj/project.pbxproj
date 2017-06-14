@@ -21,6 +21,8 @@
 		B50394C91EEE5FF70016FA97 /* TimeSequenceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50394C71EEE5FF70016FA97 /* TimeSequenceVC.xib */; };
 		B50394D31EEE61F80016FA97 /* PlaygroundVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50394D11EEE61F80016FA97 /* PlaygroundVC.m */; };
 		B50394D41EEE61F80016FA97 /* PlaygroundVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50394D21EEE61F80016FA97 /* PlaygroundVC.xib */; };
+		B51B05AA1EF0F4330033222B /* BNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51B05A61EF0F4330033222B /* BNNavigationController.m */; };
+		B51B05AB1EF0F4330033222B /* BNTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51B05A91EF0F4330033222B /* BNTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,10 @@
 		B50394D01EEE61F80016FA97 /* PlaygroundVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaygroundVC.h; sourceTree = "<group>"; };
 		B50394D11EEE61F80016FA97 /* PlaygroundVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaygroundVC.m; sourceTree = "<group>"; };
 		B50394D21EEE61F80016FA97 /* PlaygroundVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaygroundVC.xib; sourceTree = "<group>"; };
+		B51B05A51EF0F4330033222B /* BNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNNavigationController.h; sourceTree = "<group>"; };
+		B51B05A61EF0F4330033222B /* BNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNNavigationController.m; sourceTree = "<group>"; };
+		B51B05A81EF0F4330033222B /* BNTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNTabBarController.h; sourceTree = "<group>"; };
+		B51B05A91EF0F4330033222B /* BNTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,8 @@
 				B50394C01EEE5FC30016FA97 /* HomePageVC.h */,
 				B50394C11EEE5FC30016FA97 /* HomePageVC.m */,
 				B50394C21EEE5FC30016FA97 /* HomePageVC.xib */,
+				B51B05A41EF0F4330033222B /* BNNavigationController */,
+				B51B05A71EF0F4330033222B /* BNTabBarController */,
 				B50394CF1EEE61E60016FA97 /* Playground */,
 				B50394BE1EEE5F9D0016FA97 /* KVONotificationTimeSequence */,
 			);
@@ -232,6 +240,24 @@
 				B50394D21EEE61F80016FA97 /* PlaygroundVC.xib */,
 			);
 			path = Playground;
+			sourceTree = "<group>";
+		};
+		B51B05A41EF0F4330033222B /* BNNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				B51B05A51EF0F4330033222B /* BNNavigationController.h */,
+				B51B05A61EF0F4330033222B /* BNNavigationController.m */,
+			);
+			path = BNNavigationController;
+			sourceTree = "<group>";
+		};
+		B51B05A71EF0F4330033222B /* BNTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				B51B05A81EF0F4330033222B /* BNTabBarController.h */,
+				B51B05A91EF0F4330033222B /* BNTabBarController.m */,
+			);
+			path = BNTabBarController;
 			sourceTree = "<group>";
 		};
 		BDE61C448897B6B2235B7026 /* Frameworks */ = {
@@ -372,8 +398,10 @@
 				330F7BF61ED333F00009280A /* AppDelegate.m in Sources */,
 				330F7C0D1ED349AB0009280A /* UIView+Helper.m in Sources */,
 				B50394D31EEE61F80016FA97 /* PlaygroundVC.m in Sources */,
+				B51B05AB1EF0F4330033222B /* BNTabBarController.m in Sources */,
 				330F7C001ED333F00009280A /* main.m in Sources */,
 				337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */,
+				B51B05AA1EF0F4330033222B /* BNNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
