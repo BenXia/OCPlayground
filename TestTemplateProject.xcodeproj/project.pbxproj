@@ -21,8 +21,9 @@
 		B50394C91EEE5FF70016FA97 /* TimeSequenceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50394C71EEE5FF70016FA97 /* TimeSequenceVC.xib */; };
 		B50394D31EEE61F80016FA97 /* PlaygroundVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50394D11EEE61F80016FA97 /* PlaygroundVC.m */; };
 		B50394D41EEE61F80016FA97 /* PlaygroundVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50394D21EEE61F80016FA97 /* PlaygroundVC.xib */; };
-		B51B05AA1EF0F4330033222B /* BNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51B05A61EF0F4330033222B /* BNNavigationController.m */; };
-		B51B05AB1EF0F4330033222B /* BNTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B51B05A91EF0F4330033222B /* BNTabBarController.m */; };
+		B5FA68C71EF270290077349C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FA68C01EF270290077349C /* BaseViewController.m */; };
+		B5FA68C81EF270290077349C /* BNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FA68C31EF270290077349C /* BNNavigationController.m */; };
+		B5FA68C91EF270290077349C /* BNTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FA68C61EF270290077349C /* BNTabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,10 +58,12 @@
 		B50394D01EEE61F80016FA97 /* PlaygroundVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaygroundVC.h; sourceTree = "<group>"; };
 		B50394D11EEE61F80016FA97 /* PlaygroundVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaygroundVC.m; sourceTree = "<group>"; };
 		B50394D21EEE61F80016FA97 /* PlaygroundVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaygroundVC.xib; sourceTree = "<group>"; };
-		B51B05A51EF0F4330033222B /* BNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNNavigationController.h; sourceTree = "<group>"; };
-		B51B05A61EF0F4330033222B /* BNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNNavigationController.m; sourceTree = "<group>"; };
-		B51B05A81EF0F4330033222B /* BNTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNTabBarController.h; sourceTree = "<group>"; };
-		B51B05A91EF0F4330033222B /* BNTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNTabBarController.m; sourceTree = "<group>"; };
+		B5FA68BF1EF270290077349C /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		B5FA68C01EF270290077349C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		B5FA68C21EF270290077349C /* BNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNNavigationController.h; sourceTree = "<group>"; };
+		B5FA68C31EF270290077349C /* BNNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNNavigationController.m; sourceTree = "<group>"; };
+		B5FA68C51EF270290077349C /* BNTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNTabBarController.h; sourceTree = "<group>"; };
+		B5FA68C61EF270290077349C /* BNTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNTabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +121,7 @@
 				330F7BE01ED333F00009280A /* Global */,
 				33144F001EF0546C006D27AC /* Utilities */,
 				330F7BDB1ED333F00009280A /* Category */,
+				B5FA68BD1EF270290077349C /* Base */,
 				330F7BE11ED333F00009280A /* Network */,
 				330F7BE31ED333F00009280A /* View */,
 				330F7BEE1ED333F00009280A /* ViewController */,
@@ -177,8 +181,6 @@
 				B50394C01EEE5FC30016FA97 /* HomePageVC.h */,
 				B50394C11EEE5FC30016FA97 /* HomePageVC.m */,
 				B50394C21EEE5FC30016FA97 /* HomePageVC.xib */,
-				B51B05A41EF0F4330033222B /* BNNavigationController */,
-				B51B05A71EF0F4330033222B /* BNTabBarController */,
 				B50394CF1EEE61E60016FA97 /* Playground */,
 				B50394BE1EEE5F9D0016FA97 /* KVONotificationTimeSequence */,
 			);
@@ -242,20 +244,39 @@
 			path = Playground;
 			sourceTree = "<group>";
 		};
-		B51B05A41EF0F4330033222B /* BNNavigationController */ = {
+		B5FA68BD1EF270290077349C /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				B51B05A51EF0F4330033222B /* BNNavigationController.h */,
-				B51B05A61EF0F4330033222B /* BNNavigationController.m */,
+				B5FA68BE1EF270290077349C /* BaseViewController */,
+				B5FA68C11EF270290077349C /* BNNavigationController */,
+				B5FA68C41EF270290077349C /* BNTabBarController */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B5FA68BE1EF270290077349C /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B5FA68BF1EF270290077349C /* BaseViewController.h */,
+				B5FA68C01EF270290077349C /* BaseViewController.m */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		B5FA68C11EF270290077349C /* BNNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				B5FA68C21EF270290077349C /* BNNavigationController.h */,
+				B5FA68C31EF270290077349C /* BNNavigationController.m */,
 			);
 			path = BNNavigationController;
 			sourceTree = "<group>";
 		};
-		B51B05A71EF0F4330033222B /* BNTabBarController */ = {
+		B5FA68C41EF270290077349C /* BNTabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				B51B05A81EF0F4330033222B /* BNTabBarController.h */,
-				B51B05A91EF0F4330033222B /* BNTabBarController.m */,
+				B5FA68C51EF270290077349C /* BNTabBarController.h */,
+				B5FA68C61EF270290077349C /* BNTabBarController.m */,
 			);
 			path = BNTabBarController;
 			sourceTree = "<group>";
@@ -392,16 +413,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50394C31EEE5FC30016FA97 /* HomePageVC.m in Sources */,
+				B5FA68C71EF270290077349C /* BaseViewController.m in Sources */,
 				B50394C81EEE5FF70016FA97 /* TimeSequenceVC.m in Sources */,
 				33144F041EF0546C006D27AC /* UIUtils.m in Sources */,
+				B5FA68C81EF270290077349C /* BNNavigationController.m in Sources */,
 				33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */,
 				330F7BF61ED333F00009280A /* AppDelegate.m in Sources */,
 				330F7C0D1ED349AB0009280A /* UIView+Helper.m in Sources */,
 				B50394D31EEE61F80016FA97 /* PlaygroundVC.m in Sources */,
-				B51B05AB1EF0F4330033222B /* BNTabBarController.m in Sources */,
 				330F7C001ED333F00009280A /* main.m in Sources */,
 				337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */,
-				B51B05AA1EF0F4330033222B /* BNNavigationController.m in Sources */,
+				B5FA68C91EF270290077349C /* BNTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

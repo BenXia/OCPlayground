@@ -21,6 +21,7 @@
 #import "Utility.h"
 #import "UIView+Helper.h"
 #import "NSString+Size.h"
+#import "BaseViewController.h"
 #import "BNNavigationController.h"
 #import "BNTabBarController.h"
 

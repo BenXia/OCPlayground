@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimeSequenceVC : UIViewController
+@interface TimeSequenceVC : BaseViewController
 
 @end

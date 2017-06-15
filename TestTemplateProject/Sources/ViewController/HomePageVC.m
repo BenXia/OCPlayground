@@ -10,8 +10,6 @@
 #import "PlaygroundVC.h"
 #import "TimeSequenceVC.h"
 
-typedef void(^Block)(void);
-
 static const CGFloat kTableViewCellHeight = 60.0f;
 
 @interface HomePageCellModel : NSObject

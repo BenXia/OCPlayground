@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlaygroundVC : UIViewController
+@interface PlaygroundVC : BaseViewController
 
 @end
