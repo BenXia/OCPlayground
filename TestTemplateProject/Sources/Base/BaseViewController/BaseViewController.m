@@ -25,6 +25,10 @@
     self.view.backgroundColor = RGB(240, 240, 240);
 }
 
+- (void)dealloc {
+    NSLog (@"====DEALLOC==== %@ ", NSStringFromClass([self class]));
+}
+
 @end
 
 
