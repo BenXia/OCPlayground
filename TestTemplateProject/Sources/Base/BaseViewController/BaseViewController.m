@@ -25,6 +25,27 @@
     self.view.backgroundColor = RGB(240, 240, 240);
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    //解决手势返回失效的问题
+    if (self.navigationController.viewControllers.count > 1) {
+        if ([self preferPopGestureRecognizerForbidden]) {
+            self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+            self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+        } else {
+            self.navigationController.interactivePopGestureRecognizer.delegate = (id)self;
+            self.navigationController.interactivePopGestureRecognizer.enabled = YES;
+        }
+    } else {
+        self.navigationController.interactivePopGestureRecognizer.delegate = nil;
+        self.navigationController.interactivePopGestureRecognizer.enabled = NO;
+    }
+}
+
+- (BOOL)preferPopGestureRecognizerForbidden {
+    return NO;
+}
+
 - (void)dealloc {
     NSLog (@"====DEALLOC==== %@ ", NSStringFromClass([self class]));
 }
