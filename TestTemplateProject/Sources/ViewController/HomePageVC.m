@@ -9,6 +9,7 @@
 #import "HomePageVC.h"
 #import "PlaygroundVC.h"
 #import "TimeSequenceVC.h"
+#import "ClassPropertyVC.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
 
@@ -83,7 +84,12 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[TimeSequenceVC class]
                                                      navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, nil];
+    HomePageCellModel *model3 = [HomePageCellModel modelWithTitle:@"类属性"
+                                                         subTitle:@"类属性的详细实现"
+                                                          vcClass:[ClassPropertyVC class]
+                                                     navigationVC:self.navigationController];
+    
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

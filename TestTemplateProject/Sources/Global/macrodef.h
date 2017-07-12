@@ -35,11 +35,7 @@ return shared##classname;\
 \
 + (instancetype)shared##classname {\
 \
-static dispatch_once_t onceToken;\
-dispatch_once(&onceToken, ^{\
-shared##classname = [[self alloc] init];\
-});\
-return shared##classname;\
+return [self sharedInstance];\
 }\
 \
 + (instancetype)allocWithZone:(struct _NSZone *)zone {\
@@ -76,11 +72,7 @@ return shared##classname;\
 \
 + (instancetype)shared##classname {\
 \
-static dispatch_once_t onceToken;\
-dispatch_once(&onceToken, ^{\
-shared##classname = [[self alloc] init];\
-});\
-return shared##classname;\
+return [self sharedInstance];\
 }\
 \
 + (instancetype)allocWithZone:(struct _NSZone *)zone {\
