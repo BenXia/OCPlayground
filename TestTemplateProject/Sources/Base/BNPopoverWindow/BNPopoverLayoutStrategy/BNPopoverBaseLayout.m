@@ -8,7 +8,7 @@
 
 #import "BNPopoverBaseLayout.h"
 #import "BNPopoverBottomLayout.h"
-#import "BNPopoverMiddleLayout.h"
+#import "BNPopoverCenterLayout.h"
 #import "BNPopoverCustomLayout.h"
 
 @implementation BNPopoverBaseLayout
@@ -23,9 +23,9 @@
 //            layoutToUse = [[BNPopoverBottomLayout alloc] initWithPopoverDelegate:delegate];
         }
             break;
-        case kPopoverLayoutType_Middle: {
-            classToUse = [BNPopoverMiddleLayout class];
-//            layoutToUse = [[BNPopoverMiddleLayout alloc] initWithPopoverDelegate:delegate];
+        case kPopoverLayoutType_Center: {
+            classToUse = [BNPopoverCenterLayout class];
+//            layoutToUse = [[BNPopoverCenterLayout alloc] initWithPopoverDelegate:delegate];
         }
             break;
         case kPopoverLayoutType_Custom: {

@@ -1,5 +1,5 @@
 //
-//  BNPopoverMiddleLayout.h
+//  BNPopoverCenterLayout.h
 //  QQingCommon
 //
 //  Created by Ben on 2017/7/6.
@@ -8,7 +8,7 @@
 
 #import "BNPopoverBaseLayout.h"
 
-@interface BNPopoverMiddleLayout : BNPopoverBaseLayout
+@interface BNPopoverCenterLayout : BNPopoverBaseLayout
 
 @end
 

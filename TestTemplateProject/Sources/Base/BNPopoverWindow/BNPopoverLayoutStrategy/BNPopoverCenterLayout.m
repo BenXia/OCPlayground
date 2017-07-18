@@ -1,14 +1,14 @@
 //
-//  BNPopoverMiddleLayout.m
+//  BNPopoverCenterLayout.m
 //  QQingCommon
 //
 //  Created by Ben on 2017/7/6.
 //  Copyright © 2017年 QQingiOSTeam. All rights reserved.
 //
 
-#import "BNPopoverMiddleLayout.h"
+#import "BNPopoverCenterLayout.h"
 
-@implementation BNPopoverMiddleLayout
+@implementation BNPopoverCenterLayout
 
 - (void)preShowLayoutForContentView:(UIView *)contentView rootVCView:(UIView *)rootVCView {
     CGSize contentSize = [self.popoverDelegate preferredContentSize];

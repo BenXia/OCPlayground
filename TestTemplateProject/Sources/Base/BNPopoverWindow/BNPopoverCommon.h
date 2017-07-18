@@ -12,7 +12,7 @@
 
 typedef NS_ENUM(NSUInteger, PopoverLayoutType){
     kPopoverLayoutType_Bottom = 0,   // 底部居中，默认
-    kPopoverLayoutType_Middle = 1,   // 中心居中
+    kPopoverLayoutType_Center = 1,   // 中心居中
     kPopoverLayoutType_Custom = 2,   // 自定义，需要重写布局、打开/关闭动画相关方法
 };
 
