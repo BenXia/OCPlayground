@@ -29,11 +29,15 @@
         NSLog (@"Know");
     }];
     
-    //    [[[RACObserve(self, text) skip:1] deliverOn:RACScheduler.mainThreadScheduler] subscribeNext:^(id x) {
-    //    NSLog (@"Know");
-    //    }];
+//    [[[RACObserve(self, text) skip:1] deliverOn:RACScheduler.mainThreadScheduler] subscribeNext:^(id x) {
+//        NSLog (@"Know");
+//    }];
     
     self.text = @"Hello world";
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+//        self.text = @"Hello world";
+//    });
+    
     NSLog (@"Why");
 }
 
