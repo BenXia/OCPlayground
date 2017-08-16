@@ -20,6 +20,37 @@
     [super viewDidLoad];
     
     self.testAttributedTextLabel.attributedText = [[NSMutableAttributedString alloc] initWithString:@"测试[[NSMutableAttributedString alloc] initWithString:]字体大小"];
+    self.view = nil;
+    
+    // UIView *view = (UIView *)self.view; // 打开这个代码会触发无穷递归（栈溢出）
+}
+
+- (void)loadView {
+    [super loadView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSLog (@"PlaygroundVC viewWillAppear");
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSLog (@"PlaygroundVC viewDidAppear");
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    NSLog (@"PlaygroundVC viewWillDisappear");
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    NSLog (@"PlaygroundVC viewDidDisappear");
 }
 
 - (void)didReceiveMemoryWarning {
