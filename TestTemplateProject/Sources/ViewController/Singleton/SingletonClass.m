@@ -45,7 +45,7 @@ static SingletonClass *g_singleton = nil;
         if (!self) {
             if (self = [super init]) {
                 _number = 10;//一个属性
-                _someClass = [[SomeClass alloc] init];//初始化SomeClass
+                //_someClass = [[SomeClass alloc] init];//初始化SomeClass
             }
         }
     }

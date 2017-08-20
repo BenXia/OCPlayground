@@ -75,6 +75,8 @@
 		33102E471F4969F5008CCD64 /* SingletonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonClass.m; sourceTree = "<group>"; };
 		33102E491F496A07008CCD64 /* SomeClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeClass.h; sourceTree = "<group>"; };
 		33102E4A1F496A07008CCD64 /* SomeClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeClass.m; sourceTree = "<group>"; };
+		33102E4D1F49D322008CCD64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		33102E4E1F49D3F6008CCD64 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		33144EFA1EF05403006D27AC /* commonConstDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commonConstDef.h; sourceTree = "<group>"; };
 		33144EFB1EF05403006D27AC /* macrodef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macrodef.h; sourceTree = "<group>"; };
 		33144EFC1EF05403006D27AC /* typedef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = typedef.h; sourceTree = "<group>"; };
@@ -292,6 +294,8 @@
 				33102E3A1F496083008CCD64 /* RuntimeVC.xib */,
 				33102E3D1F4965E8008CCD64 /* Person.h */,
 				33102E3E1F4965E8008CCD64 /* Person.m */,
+				33102E4D1F49D322008CCD64 /* main.m */,
+				33102E4E1F49D3F6008CCD64 /* main.cpp */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
