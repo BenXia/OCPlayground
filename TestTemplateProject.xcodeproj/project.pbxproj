@@ -19,6 +19,7 @@
 		33102E451F4969BB008CCD64 /* SingletonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33102E431F4969BB008CCD64 /* SingletonVC.xib */; };
 		33102E481F4969F5008CCD64 /* SingletonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 33102E471F4969F5008CCD64 /* SingletonClass.m */; };
 		33102E4B1F496A07008CCD64 /* SomeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 33102E4A1F496A07008CCD64 /* SomeClass.m */; };
+		33102E6B1F49FF7F008CCD64 /* NoXibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33102E691F49FF7F008CCD64 /* NoXibVC.m */; };
 		33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144EFE1EF05418006D27AC /* NSString+Size.m */; };
 		33144F041EF0546C006D27AC /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144F021EF0546C006D27AC /* UIUtils.m */; };
 		337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */; };
@@ -77,6 +78,8 @@
 		33102E4A1F496A07008CCD64 /* SomeClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeClass.m; sourceTree = "<group>"; };
 		33102E4D1F49D322008CCD64 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33102E4E1F49D3F6008CCD64 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		33102E681F49FF7F008CCD64 /* NoXibVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoXibVC.h; sourceTree = "<group>"; };
+		33102E691F49FF7F008CCD64 /* NoXibVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoXibVC.m; sourceTree = "<group>"; };
 		33144EFA1EF05403006D27AC /* commonConstDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commonConstDef.h; sourceTree = "<group>"; };
 		33144EFB1EF05403006D27AC /* macrodef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macrodef.h; sourceTree = "<group>"; };
 		33144EFC1EF05403006D27AC /* typedef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = typedef.h; sourceTree = "<group>"; };
@@ -273,6 +276,7 @@
 				B50711CD1F163187008EC4AE /* ClassProperty */,
 				33102E401F496997008CCD64 /* Singleton */,
 				33102E371F49605D008CCD64 /* Runtime */,
+				33102E671F49FF66008CCD64 /* NoXibVC */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -312,6 +316,15 @@
 				33102E4A1F496A07008CCD64 /* SomeClass.m */,
 			);
 			path = Singleton;
+			sourceTree = "<group>";
+		};
+		33102E671F49FF66008CCD64 /* NoXibVC */ = {
+			isa = PBXGroup;
+			children = (
+				33102E681F49FF7F008CCD64 /* NoXibVC.h */,
+				33102E691F49FF7F008CCD64 /* NoXibVC.m */,
+			);
+			path = NoXibVC;
 			sourceTree = "<group>";
 		};
 		33144F001EF0546C006D27AC /* Utilities */ = {
@@ -662,6 +675,7 @@
 				33102E441F4969BB008CCD64 /* SingletonVC.m in Sources */,
 				B56480111EF91FF9009CF536 /* MBProgressHUD+Add.m in Sources */,
 				33102E3B1F496083008CCD64 /* RuntimeVC.m in Sources */,
+				33102E6B1F49FF7F008CCD64 /* NoXibVC.m in Sources */,
 				330F7C001ED333F00009280A /* main.m in Sources */,
 				337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */,
 				B56480101EF91FF9009CF536 /* GCDSemaphore.m in Sources */,

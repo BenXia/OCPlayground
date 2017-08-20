@@ -12,6 +12,7 @@
 #import "ClassPropertyVC.h"
 #import "SingletonVC.h"
 #import "RuntimeVC.h"
+#import "NoXibVC.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
 
@@ -101,7 +102,12 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[RuntimeVC class]
                                                      navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, nil];
+    HomePageCellModel *model6 = [HomePageCellModel modelWithTitle:@"纯代码ViewController"
+                                                         subTitle:@"生命周期研究"
+                                                          vcClass:[NoXibVC class]
+                                                     navigationVC:self.navigationController];
+    
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, nil];
     
     NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
