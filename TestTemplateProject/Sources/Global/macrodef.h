@@ -28,7 +28,7 @@ static classname *shared##classname = nil;\
 \
 static dispatch_once_t onceToken;\
 dispatch_once(&onceToken, ^{\
-shared##classname = [[self alloc] init];\
+shared##classname = [[super allocWithZone:NULL] init];\
 });\
 return shared##classname;\
 } \
@@ -40,11 +40,7 @@ return [self sharedInstance];\
 \
 + (instancetype)allocWithZone:(struct _NSZone *)zone {\
 \
-static dispatch_once_t onceToken;\
-dispatch_once(&onceToken, ^{\
-shared##classname = [super allocWithZone:zone];\
-});\
-return shared##classname;\
+return [self sharedInstance];\
 }\
 \
 - (id)copyWithZone:(NSZone *)zone {\
@@ -65,7 +61,7 @@ static classname *shared##classname = nil;\
 \
 static dispatch_once_t onceToken;\
 dispatch_once(&onceToken, ^{\
-shared##classname = [[self alloc] init];\
+shared##classname = [[super allocWithZone:NULL] init];\
 });\
 return shared##classname;\
 } \
@@ -77,11 +73,7 @@ return [self sharedInstance];\
 \
 + (instancetype)allocWithZone:(struct _NSZone *)zone {\
 \
-static dispatch_once_t onceToken;\
-dispatch_once(&onceToken, ^{\
-shared##classname = [super allocWithZone:zone];\
-});\
-return shared##classname;\
+return [self sharedInstance];\
 }\
 \
 - (id)copyWithZone:(NSZone *)zone {\
@@ -95,12 +87,16 @@ return self;\
 - (oneway void)release {\
 }\
 \
+- (instancetype)autorelease {\
+    return self; \
+}\
+\
 - (instancetype)retain {\
 return self;\
 }\
 \
 - (NSUInteger)retainCount {\
-return MAXFLOAT;\
+return NSUIntegerMax;\
 }
 
 #endif

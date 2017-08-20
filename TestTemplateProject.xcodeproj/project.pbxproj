@@ -12,6 +12,13 @@
 		330F7C001ED333F00009280A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F7BF51ED333F00009280A /* main.m */; };
 		330F7C021ED334380009280A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330F7C011ED334380009280A /* Assets.xcassets */; };
 		330F7C0D1ED349AB0009280A /* UIView+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F7C0B1ED349AB0009280A /* UIView+Helper.m */; };
+		33102E3B1F496083008CCD64 /* RuntimeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33102E391F496083008CCD64 /* RuntimeVC.m */; };
+		33102E3C1F496083008CCD64 /* RuntimeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33102E3A1F496083008CCD64 /* RuntimeVC.xib */; };
+		33102E3F1F4965E8008CCD64 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 33102E3E1F4965E8008CCD64 /* Person.m */; };
+		33102E441F4969BB008CCD64 /* SingletonVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33102E421F4969BB008CCD64 /* SingletonVC.m */; };
+		33102E451F4969BB008CCD64 /* SingletonVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33102E431F4969BB008CCD64 /* SingletonVC.xib */; };
+		33102E481F4969F5008CCD64 /* SingletonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 33102E471F4969F5008CCD64 /* SingletonClass.m */; };
+		33102E4B1F496A07008CCD64 /* SomeClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 33102E4A1F496A07008CCD64 /* SomeClass.m */; };
 		33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144EFE1EF05418006D27AC /* NSString+Size.m */; };
 		33144F041EF0546C006D27AC /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144F021EF0546C006D27AC /* UIUtils.m */; };
 		337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */; };
@@ -56,6 +63,18 @@
 		330F7C0A1ED349AB0009280A /* UIView+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Helper.h"; sourceTree = "<group>"; };
 		330F7C0B1ED349AB0009280A /* UIView+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Helper.m"; sourceTree = "<group>"; };
 		330F7ECC1ED352250009280A /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		33102E381F496083008CCD64 /* RuntimeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RuntimeVC.h; sourceTree = "<group>"; };
+		33102E391F496083008CCD64 /* RuntimeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeVC.m; sourceTree = "<group>"; };
+		33102E3A1F496083008CCD64 /* RuntimeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RuntimeVC.xib; sourceTree = "<group>"; };
+		33102E3D1F4965E8008CCD64 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		33102E3E1F4965E8008CCD64 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		33102E411F4969BB008CCD64 /* SingletonVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonVC.h; sourceTree = "<group>"; };
+		33102E421F4969BB008CCD64 /* SingletonVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonVC.m; sourceTree = "<group>"; };
+		33102E431F4969BB008CCD64 /* SingletonVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingletonVC.xib; sourceTree = "<group>"; };
+		33102E461F4969F5008CCD64 /* SingletonClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingletonClass.h; sourceTree = "<group>"; };
+		33102E471F4969F5008CCD64 /* SingletonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingletonClass.m; sourceTree = "<group>"; };
+		33102E491F496A07008CCD64 /* SomeClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SomeClass.h; sourceTree = "<group>"; };
+		33102E4A1F496A07008CCD64 /* SomeClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SomeClass.m; sourceTree = "<group>"; };
 		33144EFA1EF05403006D27AC /* commonConstDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = commonConstDef.h; sourceTree = "<group>"; };
 		33144EFB1EF05403006D27AC /* macrodef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = macrodef.h; sourceTree = "<group>"; };
 		33144EFC1EF05403006D27AC /* typedef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = typedef.h; sourceTree = "<group>"; };
@@ -250,6 +269,8 @@
 				B50394CF1EEE61E60016FA97 /* Playground */,
 				B50394BE1EEE5F9D0016FA97 /* KVONotificationTimeSequence */,
 				B50711CD1F163187008EC4AE /* ClassProperty */,
+				33102E401F496997008CCD64 /* Singleton */,
+				33102E371F49605D008CCD64 /* Runtime */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -261,6 +282,32 @@
 				330F7BF51ED333F00009280A /* main.m */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		33102E371F49605D008CCD64 /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				33102E381F496083008CCD64 /* RuntimeVC.h */,
+				33102E391F496083008CCD64 /* RuntimeVC.m */,
+				33102E3A1F496083008CCD64 /* RuntimeVC.xib */,
+				33102E3D1F4965E8008CCD64 /* Person.h */,
+				33102E3E1F4965E8008CCD64 /* Person.m */,
+			);
+			path = Runtime;
+			sourceTree = "<group>";
+		};
+		33102E401F496997008CCD64 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				33102E411F4969BB008CCD64 /* SingletonVC.h */,
+				33102E421F4969BB008CCD64 /* SingletonVC.m */,
+				33102E431F4969BB008CCD64 /* SingletonVC.xib */,
+				33102E461F4969F5008CCD64 /* SingletonClass.h */,
+				33102E471F4969F5008CCD64 /* SingletonClass.m */,
+				33102E491F496A07008CCD64 /* SomeClass.h */,
+				33102E4A1F496A07008CCD64 /* SomeClass.m */,
+			);
+			path = Singleton;
 			sourceTree = "<group>";
 		};
 		33144F001EF0546C006D27AC /* Utilities */ = {
@@ -522,6 +569,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50394C91EEE5FF70016FA97 /* TimeSequenceVC.xib in Resources */,
+				33102E451F4969BB008CCD64 /* SingletonVC.xib in Resources */,
+				33102E3C1F496083008CCD64 /* RuntimeVC.xib in Resources */,
 				B50394C41EEE5FC30016FA97 /* HomePageVC.xib in Resources */,
 				330F7C021ED334380009280A /* Assets.xcassets in Resources */,
 				B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */,
@@ -602,15 +651,20 @@
 				B564800F1EF91FF9009CF536 /* GCDQueue.m in Sources */,
 				330F7BF61ED333F00009280A /* AppDelegate.m in Sources */,
 				B50711711F0E4C8D008EC4AE /* BNPopoverCustomLayout.m in Sources */,
+				33102E481F4969F5008CCD64 /* SingletonClass.m in Sources */,
 				330F7C0D1ED349AB0009280A /* UIView+Helper.m in Sources */,
 				B5647FFF1EF91FAE009CF536 /* BaseWindowRootVC.m in Sources */,
 				B50394D31EEE61F80016FA97 /* PlaygroundVC.m in Sources */,
+				33102E441F4969BB008CCD64 /* SingletonVC.m in Sources */,
 				B56480111EF91FF9009CF536 /* MBProgressHUD+Add.m in Sources */,
+				33102E3B1F496083008CCD64 /* RuntimeVC.m in Sources */,
 				330F7C001ED333F00009280A /* main.m in Sources */,
 				337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */,
 				B56480101EF91FF9009CF536 /* GCDSemaphore.m in Sources */,
+				33102E3F1F4965E8008CCD64 /* Person.m in Sources */,
 				B507116F1F0E4C8D008EC4AE /* BNPopoverBaseLayout.m in Sources */,
 				B564801A1EF92040009CF536 /* BNPopupWindow.m in Sources */,
+				33102E4B1F496A07008CCD64 /* SomeClass.m in Sources */,
 				B56480201EF92071009CF536 /* UIView+Hierarchy.m in Sources */,
 				B50711D11F163187008EC4AE /* ClassPropertyVC.m in Sources */,
 				B5FA68C91EF270290077349C /* BNTabBarController.m in Sources */,

@@ -25,21 +25,25 @@
     //self.view = nil;
     // UIView *view = (UIView *)self.view;
     
-    // 多线程安全测试
-    NSLog (@"线程UI的优先级为: %g", [NSThread threadPriority]);
-    NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
-    thread1.name = @"线程A";
-    NSLog (@"线程的优先级A为：%g", thread1.threadPriority);
-    thread1.threadPriority = 0.0;
-    NSThread *thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(run2) object:nil];
-    thread2.name = @"线程B";
-    NSLog (@"线程的优先级B为：%g", thread2.threadPriority);
-    thread2.threadPriority = 0.5;
-    [thread1 start];
-    [thread2 start];
-    for (int i = 0; i < 10000; i++) {
-        NSLog (@"-----%@------%d", [NSThread currentThread], i);
-    }
+    // 多线程测试
+//    NSLog (@"线程UI的优先级为: %g", [NSThread threadPriority]);
+//    NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
+//    thread1.name = @"线程A";
+//    NSLog (@"线程的优先级A为：%g", thread1.threadPriority);
+//    thread1.threadPriority = 0.0;
+//    NSThread *thread2 = [[NSThread alloc] initWithTarget:self selector:@selector(run2) object:nil];
+//    thread2.name = @"线程B";
+//    NSLog (@"线程的优先级B为：%g", thread2.threadPriority);
+//    thread2.threadPriority = 0.5;
+//    [thread1 start];
+//    [thread2 start];
+//    for (int i = 0; i < 10000; i++) {
+//        NSLog (@"-----%@------%d", [NSThread currentThread], i);
+//    }
+}
+
+- (void)loadView {
+    [super loadView];
 }
 
 - (void)run {
@@ -55,10 +59,6 @@
     for (int i = 0; i < 10000; i++) {
         NSLog (@"-----%@------%d", [NSThread currentThread].name, i);
     }
-}
-
-- (void)loadView {
-    [super loadView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

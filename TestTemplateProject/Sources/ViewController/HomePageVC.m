@@ -10,6 +10,8 @@
 #import "PlaygroundVC.h"
 #import "TimeSequenceVC.h"
 #import "ClassPropertyVC.h"
+#import "SingletonVC.h"
+#import "RuntimeVC.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
 
@@ -89,7 +91,17 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[ClassPropertyVC class]
                                                      navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, nil];
+    HomePageCellModel *model4 = [HomePageCellModel modelWithTitle:@"单例注意点"
+                                                         subTitle:@"在单例初始化时一定不能出现对单例的引用"
+                                                          vcClass:[SingletonVC class]
+                                                     navigationVC:self.navigationController];
+    
+    HomePageCellModel *model5 = [HomePageCellModel modelWithTitle:@"tuntime"
+                                                         subTitle:@"运行时浅析"
+                                                          vcClass:[RuntimeVC class]
+                                                     navigationVC:self.navigationController];
+    
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, nil];
     
     NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
