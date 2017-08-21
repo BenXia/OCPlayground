@@ -97,7 +97,7 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[SingletonVC class]
                                                      navigationVC:self.navigationController];
     
-    HomePageCellModel *model5 = [HomePageCellModel modelWithTitle:@"tuntime"
+    HomePageCellModel *model5 = [HomePageCellModel modelWithTitle:@"runtime"
                                                          subTitle:@"运行时浅析"
                                                           vcClass:[RuntimeVC class]
                                                      navigationVC:self.navigationController];

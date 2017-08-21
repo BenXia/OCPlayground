@@ -8,7 +8,23 @@
 
 #import "RuntimeVC.h"
 #import "Person.h"
+#import "NSObject+DLIntrospection.h"
 #import <objc/runtime.h>
+
+@interface Sark : NSObject
+
+@property (nonatomic, copy) NSString *name;
+
+@end
+
+@implementation Sark
+
+- (void)speak {
+    NSLog(@"my name's %@", self.name);
+}
+
+@end
+
 
 @interface RuntimeVC ()
 
@@ -22,34 +38,48 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    Person* p = [[Person alloc] init];
-    p.cjmAge = 20;
-    p.cjmName = @"Jiaming Chen";
+//    编译运行正常，输出ViewController中的self对象。 编译运行正常，调用了-speak方法，由于
+//    id cls = [Sark class];
+//    void *obj = &cls;
+//    obj已经满足了构成一个objc对象的全部要求（首地址指向ClassObject），遂能够正常走消息机制；
+//    由于这个人造的对象在栈上，而取self.name的操作本质上是self指针在内存向高位地址偏移（32位下一个指针是4字节），按viewDidLoad执行时各个变量入栈顺序从高到底为（self, _cmd, self.class, self, obj）（前两个是方法隐含入参，随后两个为super调用的两个压栈参数），遂栈低地址的obj+4取到了self。
     
-    unsigned int propertyCount = 0;
-    objc_property_t *propertyList = class_copyPropertyList([p class], &propertyCount);
-    for (int i = 0; i < propertyCount; i++) {
-        const char* name = property_getName(propertyList[i]);
-        const char* attributes = property_getAttributes(propertyList[i]);
-        NSLog(@"%s %s", name, attributes);
-    }
-    objc_property_attribute_t attributes = {
-        "T@\"NSString\",C,N,V_studentIdentifier",
-        "",
-    };
-    class_addProperty([p class], "studentIdentifier", &attributes, 1);
-    objc_property_t property = class_getProperty([p class], "studentIdentifier");
-    NSLog(@"%s %s", property_getName(property), property_getAttributes(property));
+    id cls = [Sark class];
+    void *obj = &cls;
+    [(__bridge id)obj speak];
     
-    propertyList = class_copyPropertyList([p class], &propertyCount);
-    for (int i = 0; i < propertyCount; i++) {
-        const char* name = property_getName(propertyList[i]);
-        const char* attributes = property_getAttributes(propertyList[i]);
-        NSLog(@"%s %s", name, attributes);
-    }
+    NSArray *iVars = [Sark instanceVariables];
+    NSLog (@"iVars : %@", iVars);
     
-    NSLog (@"p.age: %ld", p.cjmAge);
-    //NSLog (@"p.studentIdentifier: %@", p.studentIdentifier);  
+    // 添加 property 配合关联属性（）
+//    Person* p = [[Person alloc] init];
+//    p.cjmAge = 20;
+//    p.cjmName = @"Jiaming Chen";
+//    
+//    unsigned int propertyCount = 0;
+//    objc_property_t *propertyList = class_copyPropertyList([p class], &propertyCount);
+//    for (int i = 0; i < propertyCount; i++) {
+//        const char* name = property_getName(propertyList[i]);
+//        const char* attributes = property_getAttributes(propertyList[i]);
+//        NSLog(@"%s %s", name, attributes);
+//    }
+//    objc_property_attribute_t attributes = {
+//        "T@\"NSString\",C,N,V_studentIdentifier",
+//        "",
+//    };
+//    class_addProperty([p class], "studentIdentifier", &attributes, 1);
+//    objc_property_t property = class_getProperty([p class], "studentIdentifier");
+//    NSLog(@"%s %s", property_getName(property), property_getAttributes(property));
+//    
+//    propertyList = class_copyPropertyList([p class], &propertyCount);
+//    for (int i = 0; i < propertyCount; i++) {
+//        const char* name = property_getName(propertyList[i]);
+//        const char* attributes = property_getAttributes(propertyList[i]);
+//        NSLog(@"%s %s", name, attributes);
+//    }
+//    
+//    NSLog (@"p.age: %ld", p.cjmAge);
+    //NSLog (@"p.studentIdentifier: %@", p.studentIdentifier);
     
 }
 
