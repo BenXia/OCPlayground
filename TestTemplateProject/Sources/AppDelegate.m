@@ -21,6 +21,11 @@
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
     [[IQKeyboardManager sharedManager] setShouldShowTextFieldPlaceholder:NO];
     
+    NSLog (@"isMainThread: %d stackSize: %tu",  [NSThread currentThread].isMainThread, [NSThread currentThread].stackSize);
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        NSLog (@"isMainThread: %d stackSize: %tu",  [NSThread currentThread].isMainThread, [NSThread currentThread].stackSize);
+    });
+    
     // 界面初始化
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.backgroundColor = [UIColor whiteColor];
