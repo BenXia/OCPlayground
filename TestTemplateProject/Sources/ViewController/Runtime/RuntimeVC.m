@@ -52,7 +52,7 @@
 //    id cls = [Sark class];
 //    void *obj = &cls;
 //    obj已经满足了构成一个objc对象的全部要求（首地址指向ClassObject），遂能够正常走消息机制；
-//    由于这个人造的对象在栈上，而取self.name的操作本质上是self指针在内存向高位地址偏移（32位下一个指针是4字节，64位下一个指针是8字节），按viewDidLoad执行时各个变量入栈顺序从高到底为（self, _cmd, self.class, self, obj）（前两个是方法隐含入参，随后两个为super调用的两个压栈参数），遂栈低地址的obj+4（64位上obj+8)取到了self。
+//    由于这个人造的对象在栈上，而取self.name的操作本质上是self指针在内存向高位地址偏移（32位下一个指针是4字节，64位下一个指针是8字节），按viewDidLoad执行时各个变量入栈顺序从高到底为（self, _cmd, self.class, self, obj）（前两个是方法隐含入参，随后两个为super调用的两个压栈参数(注意压栈的顺序)），遂栈低地址的obj+4（64位上obj+8)取到了self。
     
     // 打开下面一段代码，输出会变成 my name's <Father: 0xXXXXXXXXXXX>
 //    id fatherCls = [Father class];
