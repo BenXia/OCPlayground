@@ -13,6 +13,7 @@
 #import "SingletonVC.h"
 #import "RuntimeVC.h"
 #import "NoXibVC.h"
+#import "JSONToModelVC.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
 
@@ -107,7 +108,12 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[NoXibVC class]
                                                      navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, nil];
+    HomePageCellModel *model7 = [HomePageCellModel modelWithTitle:@"字典转模型"
+                                                         subTitle:@"JSONModel、Mantle、YYModel、MJExtension使用对比"
+                                                          vcClass:[JSONToModelVC class]
+                                                     navigationVC:self.navigationController];
+    
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, nil];
     
     NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
@@ -118,10 +124,21 @@ static const CGFloat kTableViewCellHeight = 60.0f;
     self.title = @"首页";
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
+//    [NSThread detachNewThreadSelector:@selector(doSomeThing:) toTarget:self withObject:nil];
+    
 //    NSLog (@"HomePageVC viewWillAppear");
 //    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
-//
+
+- (void)doSomeThing:(NSObject *)userInfo {
+    int max_loop_times = 999999;
+    for (int i = 0; i < max_loop_times; i++) {
+        int randNum = rand();
+        NSString *tmpString = [NSString stringWithFormat:@"%d", randNum];
+        NSLog(@"%@", tmpString);
+    }
+}
+
 //- (void)viewWillLayoutSubviews {
 //    [super viewWillLayoutSubviews];
 //    

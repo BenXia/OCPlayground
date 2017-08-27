@@ -5,4 +5,8 @@ target "TestTemplateProject" do
     pod 'ReactiveCocoa'
     pod 'Masonry'
     pod 'IQKeyboardManager'
+	pod 'Mantle'
+	pod 'JSONModel'
+	pod 'YYModel'
+	pod 'MJExtension'
 end

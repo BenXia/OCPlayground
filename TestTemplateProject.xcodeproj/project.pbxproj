@@ -23,6 +23,13 @@
 		33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144EFE1EF05418006D27AC /* NSString+Size.m */; };
 		33144F041EF0546C006D27AC /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144F021EF0546C006D27AC /* UIUtils.m */; };
 		337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */; };
+		338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0641F530A8400E8DD3E /* JSONToModelVC.m */; };
+		338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */; };
+		338BC06A1F5318BD00E8DD3E /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 338BC0691F5318BD00E8DD3E /* test.json */; };
+		338BC06E1F531DBD00E8DD3E /* ModelForMantle.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC06D1F531DBD00E8DD3E /* ModelForMantle.m */; };
+		338BC0711F531DCB00E8DD3E /* ModelForJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0701F531DCB00E8DD3E /* ModelForJSONModel.m */; };
+		338BC0741F531DE500E8DD3E /* ModelForYYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0731F531DE500E8DD3E /* ModelForYYModel.m */; };
+		338BC0771F531DFA00E8DD3E /* ModelForMJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0761F531DFA00E8DD3E /* ModelForMJExtension.m */; };
 		B50394C31EEE5FC30016FA97 /* HomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50394C11EEE5FC30016FA97 /* HomePageVC.m */; };
 		B50394C41EEE5FC30016FA97 /* HomePageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50394C21EEE5FC30016FA97 /* HomePageVC.xib */; };
 		B50394C81EEE5FF70016FA97 /* TimeSequenceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50394C61EEE5FF70016FA97 /* TimeSequenceVC.m */; };
@@ -90,6 +97,18 @@
 		33144F031EF0546C006D27AC /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		337EEC271EDC3F2C00EDC166 /* NSObject+DLIntrospection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DLIntrospection.h"; sourceTree = "<group>"; };
 		337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DLIntrospection.m"; sourceTree = "<group>"; };
+		338BC0631F530A8400E8DD3E /* JSONToModelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONToModelVC.h; sourceTree = "<group>"; };
+		338BC0641F530A8400E8DD3E /* JSONToModelVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONToModelVC.m; sourceTree = "<group>"; };
+		338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSONToModelVC.xib; sourceTree = "<group>"; };
+		338BC0691F5318BD00E8DD3E /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
+		338BC06C1F531DBD00E8DD3E /* ModelForMantle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForMantle.h; sourceTree = "<group>"; };
+		338BC06D1F531DBD00E8DD3E /* ModelForMantle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForMantle.m; sourceTree = "<group>"; };
+		338BC06F1F531DCB00E8DD3E /* ModelForJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForJSONModel.h; sourceTree = "<group>"; };
+		338BC0701F531DCB00E8DD3E /* ModelForJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForJSONModel.m; sourceTree = "<group>"; };
+		338BC0721F531DE500E8DD3E /* ModelForYYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForYYModel.h; sourceTree = "<group>"; };
+		338BC0731F531DE500E8DD3E /* ModelForYYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForYYModel.m; sourceTree = "<group>"; };
+		338BC0751F531DFA00E8DD3E /* ModelForMJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForMJExtension.h; sourceTree = "<group>"; };
+		338BC0761F531DFA00E8DD3E /* ModelForMJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForMJExtension.m; sourceTree = "<group>"; };
 		5C6D28EEC1B5E3424CF2308B /* Pods-TestTemplateProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTemplateProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestTemplateProject/Pods-TestTemplateProject.debug.xcconfig"; sourceTree = "<group>"; };
 		8667C82644C5D48169DF56D2 /* Pods-TestTemplateProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTemplateProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestTemplateProject/Pods-TestTemplateProject.release.xcconfig"; sourceTree = "<group>"; };
 		B50394C01EEE5FC30016FA97 /* HomePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageVC.h; sourceTree = "<group>"; };
@@ -192,6 +211,7 @@
 		330F7BD71ED333F00009280A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				338BC0691F5318BD00E8DD3E /* test.json */,
 				330F7C011ED334380009280A /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -277,6 +297,7 @@
 				33102E401F496997008CCD64 /* Singleton */,
 				33102E371F49605D008CCD64 /* Runtime */,
 				33102E671F49FF66008CCD64 /* NoXibVC */,
+				338BC0621F5307EF00E8DD3E /* JSONToModel */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -346,6 +367,24 @@
 				337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */,
 			);
 			path = DLIntrospection;
+			sourceTree = "<group>";
+		};
+		338BC0621F5307EF00E8DD3E /* JSONToModel */ = {
+			isa = PBXGroup;
+			children = (
+				338BC0631F530A8400E8DD3E /* JSONToModelVC.h */,
+				338BC0641F530A8400E8DD3E /* JSONToModelVC.m */,
+				338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */,
+				338BC06F1F531DCB00E8DD3E /* ModelForJSONModel.h */,
+				338BC0701F531DCB00E8DD3E /* ModelForJSONModel.m */,
+				338BC06C1F531DBD00E8DD3E /* ModelForMantle.h */,
+				338BC06D1F531DBD00E8DD3E /* ModelForMantle.m */,
+				338BC0721F531DE500E8DD3E /* ModelForYYModel.h */,
+				338BC0731F531DE500E8DD3E /* ModelForYYModel.m */,
+				338BC0751F531DFA00E8DD3E /* ModelForMJExtension.h */,
+				338BC0761F531DFA00E8DD3E /* ModelForMJExtension.m */,
+			);
+			path = JSONToModel;
 			sourceTree = "<group>";
 		};
 		7B8C9382664DA89AC4C34223 /* Pods */ = {
@@ -586,12 +625,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50394C91EEE5FF70016FA97 /* TimeSequenceVC.xib in Resources */,
+				338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */,
 				33102E451F4969BB008CCD64 /* SingletonVC.xib in Resources */,
 				33102E3C1F496083008CCD64 /* RuntimeVC.xib in Resources */,
 				B50394C41EEE5FC30016FA97 /* HomePageVC.xib in Resources */,
 				330F7C021ED334380009280A /* Assets.xcassets in Resources */,
 				B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */,
 				B50394D41EEE61F80016FA97 /* PlaygroundVC.xib in Resources */,
+				338BC06A1F5318BD00E8DD3E /* test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,12 +699,14 @@
 				B50394C81EEE5FF70016FA97 /* TimeSequenceVC.m in Sources */,
 				B564800E1EF91FF9009CF536 /* GCDGroup.m in Sources */,
 				33144F041EF0546C006D27AC /* UIUtils.m in Sources */,
+				338BC06E1F531DBD00E8DD3E /* ModelForMantle.m in Sources */,
 				B56480151EF9201D009CF536 /* CommonUtils.m in Sources */,
 				B5FA68C81EF270290077349C /* BNNavigationController.m in Sources */,
 				B56480121EF91FF9009CF536 /* MBProgressHUD.m in Sources */,
 				33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */,
 				B564801F1EF92071009CF536 /* UIImage+Blur.m in Sources */,
 				B50711721F0E4C8D008EC4AE /* BNPopoverCenterLayout.m in Sources */,
+				338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */,
 				B50711701F0E4C8D008EC4AE /* BNPopoverBottomLayout.m in Sources */,
 				B564800F1EF91FF9009CF536 /* GCDQueue.m in Sources */,
 				330F7BF61ED333F00009280A /* AppDelegate.m in Sources */,
@@ -679,9 +722,12 @@
 				330F7C001ED333F00009280A /* main.m in Sources */,
 				337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */,
 				B56480101EF91FF9009CF536 /* GCDSemaphore.m in Sources */,
+				338BC0741F531DE500E8DD3E /* ModelForYYModel.m in Sources */,
 				33102E3F1F4965E8008CCD64 /* Person.m in Sources */,
 				B507116F1F0E4C8D008EC4AE /* BNPopoverBaseLayout.m in Sources */,
 				B564801A1EF92040009CF536 /* BNPopupWindow.m in Sources */,
+				338BC0711F531DCB00E8DD3E /* ModelForJSONModel.m in Sources */,
+				338BC0771F531DFA00E8DD3E /* ModelForMJExtension.m in Sources */,
 				33102E4B1F496A07008CCD64 /* SomeClass.m in Sources */,
 				B56480201EF92071009CF536 /* UIView+Hierarchy.m in Sources */,
 				B50711D11F163187008EC4AE /* ClassPropertyVC.m in Sources */,
