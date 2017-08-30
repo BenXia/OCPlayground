@@ -38,12 +38,12 @@
 }
 
 // 模型里面的模型
-+ (NSValueTransformer *)phoneTransformer {
++ (NSValueTransformer *)phoneJSONTransformer {
     return [MTLJSONAdapter dictionaryTransformerWithModelClass:[PhoneForMantle class]];
 }
 
 // 模型里面的数组
-+ (NSValueTransformer *)booksTransformer {
++ (NSValueTransformer *)booksJSONTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:[BookForMantle class]];
 }
 

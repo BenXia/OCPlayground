@@ -7,9 +7,10 @@
 //
 
 #import "RuntimeVC.h"
-#import "Person.h"
 #import "NSObject+DLIntrospection.h"
 #import <objc/runtime.h>
+#import "Person.h"
+#import "President.h"
 
 @interface Sark : NSObject
 
@@ -59,19 +60,19 @@
 //    void *father;
 //    father = (void *)&fatherCls;
     
-    id cls = [Sark class];
-    void *obj = &cls;
-    NSLog(@"obj pointer = %p", obj);
-    [(__bridge id)obj speak];
+//    id cls = [Sark class];
+//    void *obj = &cls;
+//    NSLog(@"obj pointer = %p", obj);
+//    [(__bridge id)obj speak];
 
 //    NSArray *iVars = [Sark instanceVariables];
 //    NSLog (@"iVars : %@", iVars);
     
     // 添加 property 配合关联属性（）
-//    Person* p = [[Person alloc] init];
-//    p.cjmAge = 20;
-//    p.cjmName = @"Jiaming Chen";
-//    
+    Person* p = [[Person alloc] init];   // 换成子类 President 再看看（子类只打印自己的属性，不打印父类的）
+    p.cjmAge = 20;
+    p.cjmName = @"Jiaming Chen";
+
 //    unsigned int propertyCount = 0;
 //    objc_property_t *propertyList = class_copyPropertyList([p class], &propertyCount);
 //    for (int i = 0; i < propertyCount; i++) {

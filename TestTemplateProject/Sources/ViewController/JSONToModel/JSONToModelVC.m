@@ -12,12 +12,19 @@
 #import "ModelForYYModel.h"
 #import "ModelForMJExtension.h"
 
+
+/**
+ *
+ * 注意其中对[NSNull null]、嵌套Model、NSArray中为Model、字段需要换转处理、可选字段支持、未知字段(向后兼容）、编解码等支持情况
+ *
+ */
+
+
 @interface JSONToModelVC ()
 
 @property (nonatomic, copy) id JSONDict;
 
 @property (nonatomic, strong) UserForMantle *userForMantle;
-
 
 @end
 
@@ -58,6 +65,8 @@
     // Model -> JSON
     // 一旦有属性为nil, Mantle会转换成NSNull对象放到JSON字典中，这里有一个坑，使用NSUserDefault存储这样的JSON字典时，程序crash，原因是不可以包含NSNull对象。
     NSDictionary *jsonDict = [MTLJSONAdapter JSONDictionaryFromModel:self.userForMantle error:nil];
+    
+    NSLog (@"jsonDict:\n%@", jsonDict);
 }
 
 - (IBAction)testYYModelUsage:(id)sender {

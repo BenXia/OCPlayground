@@ -10,5 +10,6 @@
     "books" : [
        {"name" : "西游记"},
        {"name" : "三国演义"}
-    ]
+    ],
+    "addition" : "Addition info for test"
 }
