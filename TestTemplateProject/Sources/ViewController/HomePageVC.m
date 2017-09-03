@@ -14,6 +14,7 @@
 #import "RuntimeVC.h"
 #import "NoXibVC.h"
 #import "JSONToModelVC.h"
+#import "BOOLTestVC.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
 
@@ -112,8 +113,13 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                          subTitle:@"JSONModel、Mantle、YYModel、MJExtension使用对比"
                                                           vcClass:[JSONToModelVC class]
                                                      navigationVC:self.navigationController];
+
+    HomePageCellModel *model8 = [HomePageCellModel modelWithTitle:@"BOOL's sharp corners"
+                                                         subTitle:@"32位真机上 BOOL 与 bool 的区别"
+                                                          vcClass:[BOOLTestVC class]
+                                                     navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, nil];
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, nil];
     
     NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }

@@ -30,6 +30,8 @@
 		338BC0711F531DCB00E8DD3E /* ModelForJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0701F531DCB00E8DD3E /* ModelForJSONModel.m */; };
 		338BC0741F531DE500E8DD3E /* ModelForYYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0731F531DE500E8DD3E /* ModelForYYModel.m */; };
 		338BC0771F531DFA00E8DD3E /* ModelForMJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0761F531DFA00E8DD3E /* ModelForMJExtension.m */; };
+		33F756231F5C498900C7321F /* BOOLTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F756211F5C498900C7321F /* BOOLTestVC.m */; };
+		33F756241F5C498900C7321F /* BOOLTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F756221F5C498900C7321F /* BOOLTestVC.xib */; };
 		B50394C31EEE5FC30016FA97 /* HomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50394C11EEE5FC30016FA97 /* HomePageVC.m */; };
 		B50394C41EEE5FC30016FA97 /* HomePageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50394C21EEE5FC30016FA97 /* HomePageVC.xib */; };
 		B50394C81EEE5FF70016FA97 /* TimeSequenceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50394C61EEE5FF70016FA97 /* TimeSequenceVC.m */; };
@@ -109,6 +111,9 @@
 		338BC0731F531DE500E8DD3E /* ModelForYYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForYYModel.m; sourceTree = "<group>"; };
 		338BC0751F531DFA00E8DD3E /* ModelForMJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForMJExtension.h; sourceTree = "<group>"; };
 		338BC0761F531DFA00E8DD3E /* ModelForMJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForMJExtension.m; sourceTree = "<group>"; };
+		33F756201F5C498900C7321F /* BOOLTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOOLTestVC.h; sourceTree = "<group>"; };
+		33F756211F5C498900C7321F /* BOOLTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOOLTestVC.m; sourceTree = "<group>"; };
+		33F756221F5C498900C7321F /* BOOLTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BOOLTestVC.xib; sourceTree = "<group>"; };
 		5C6D28EEC1B5E3424CF2308B /* Pods-TestTemplateProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTemplateProject.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestTemplateProject/Pods-TestTemplateProject.debug.xcconfig"; sourceTree = "<group>"; };
 		8667C82644C5D48169DF56D2 /* Pods-TestTemplateProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTemplateProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestTemplateProject/Pods-TestTemplateProject.release.xcconfig"; sourceTree = "<group>"; };
 		B50394C01EEE5FC30016FA97 /* HomePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageVC.h; sourceTree = "<group>"; };
@@ -298,6 +303,7 @@
 				33102E371F49605D008CCD64 /* Runtime */,
 				33102E671F49FF66008CCD64 /* NoXibVC */,
 				338BC0621F5307EF00E8DD3E /* JSONToModel */,
+				33F7561F1F5C496F00C7321F /* BOOL */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -385,6 +391,16 @@
 				338BC0761F531DFA00E8DD3E /* ModelForMJExtension.m */,
 			);
 			path = JSONToModel;
+			sourceTree = "<group>";
+		};
+		33F7561F1F5C496F00C7321F /* BOOL */ = {
+			isa = PBXGroup;
+			children = (
+				33F756201F5C498900C7321F /* BOOLTestVC.h */,
+				33F756211F5C498900C7321F /* BOOLTestVC.m */,
+				33F756221F5C498900C7321F /* BOOLTestVC.xib */,
+			);
+			path = BOOL;
 			sourceTree = "<group>";
 		};
 		7B8C9382664DA89AC4C34223 /* Pods */ = {
@@ -628,6 +644,7 @@
 				338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */,
 				33102E451F4969BB008CCD64 /* SingletonVC.xib in Resources */,
 				33102E3C1F496083008CCD64 /* RuntimeVC.xib in Resources */,
+				33F756241F5C498900C7321F /* BOOLTestVC.xib in Resources */,
 				B50394C41EEE5FC30016FA97 /* HomePageVC.xib in Resources */,
 				330F7C021ED334380009280A /* Assets.xcassets in Resources */,
 				B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */,
@@ -695,6 +712,7 @@
 				B5647FFE1EF91FAE009CF536 /* BasePopoverVC.m in Sources */,
 				B5FA68C71EF270290077349C /* BaseViewController.m in Sources */,
 				B50711741F0E4C8D008EC4AE /* BNPopoverWindowRootVC.m in Sources */,
+				33F756231F5C498900C7321F /* BOOLTestVC.m in Sources */,
 				B50711731F0E4C8D008EC4AE /* BNPopoverWindow.m in Sources */,
 				B50394C81EEE5FF70016FA97 /* TimeSequenceVC.m in Sources */,
 				B564800E1EF91FF9009CF536 /* GCDGroup.m in Sources */,
