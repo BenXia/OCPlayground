@@ -46,6 +46,7 @@
 		B50711741F0E4C8D008EC4AE /* BNPopoverWindowRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B507116E1F0E4C8D008EC4AE /* BNPopoverWindowRootVC.m */; };
 		B50711D11F163187008EC4AE /* ClassPropertyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50711CF1F163187008EC4AE /* ClassPropertyVC.m */; };
 		B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50711D01F163187008EC4AE /* ClassPropertyVC.xib */; };
+		B543377F1F56BC5C0055AECE /* President.m in Sources */ = {isa = PBXBuildFile; fileRef = B543377E1F56BC5C0055AECE /* President.m */; };
 		B5647FFE1EF91FAE009CF536 /* BasePopoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5647FFA1EF91FAE009CF536 /* BasePopoverVC.m */; };
 		B5647FFF1EF91FAE009CF536 /* BaseWindowRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5647FFD1EF91FAE009CF536 /* BaseWindowRootVC.m */; };
 		B564800E1EF91FF9009CF536 /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B56480021EF91FF9009CF536 /* GCDGroup.m */; };
@@ -141,6 +142,8 @@
 		B50711CE1F163187008EC4AE /* ClassPropertyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassPropertyVC.h; sourceTree = "<group>"; };
 		B50711CF1F163187008EC4AE /* ClassPropertyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassPropertyVC.m; sourceTree = "<group>"; };
 		B50711D01F163187008EC4AE /* ClassPropertyVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassPropertyVC.xib; sourceTree = "<group>"; };
+		B543377D1F56BC5C0055AECE /* President.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = President.h; sourceTree = "<group>"; };
+		B543377E1F56BC5C0055AECE /* President.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = President.m; sourceTree = "<group>"; };
 		B5647FF91EF91FAE009CF536 /* BasePopoverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePopoverVC.h; sourceTree = "<group>"; };
 		B5647FFA1EF91FAE009CF536 /* BasePopoverVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePopoverVC.m; sourceTree = "<group>"; };
 		B5647FFC1EF91FAE009CF536 /* BaseWindowRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWindowRootVC.h; sourceTree = "<group>"; };
@@ -323,6 +326,8 @@
 				33102E381F496083008CCD64 /* RuntimeVC.h */,
 				33102E391F496083008CCD64 /* RuntimeVC.m */,
 				33102E3A1F496083008CCD64 /* RuntimeVC.xib */,
+				B543377D1F56BC5C0055AECE /* President.h */,
+				B543377E1F56BC5C0055AECE /* President.m */,
 				33102E3D1F4965E8008CCD64 /* Person.h */,
 				33102E3E1F4965E8008CCD64 /* Person.m */,
 				33102E4D1F49D322008CCD64 /* main.m_ */,
@@ -735,6 +740,7 @@
 				B50394D31EEE61F80016FA97 /* PlaygroundVC.m in Sources */,
 				33102E441F4969BB008CCD64 /* SingletonVC.m in Sources */,
 				B56480111EF91FF9009CF536 /* MBProgressHUD+Add.m in Sources */,
+				B543377F1F56BC5C0055AECE /* President.m in Sources */,
 				33102E3B1F496083008CCD64 /* RuntimeVC.m in Sources */,
 				33102E6B1F49FF7F008CCD64 /* NoXibVC.m in Sources */,
 				330F7C001ED333F00009280A /* main.m in Sources */,

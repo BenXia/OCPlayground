@@ -10,7 +10,7 @@
 
 @interface Person : NSObject
 
-@property (nonatomic, copy) NSString*cjmName;
+@property (nonatomic, copy) NSString *cjmName;
 @property (nonatomic, assign) NSUInteger cjmAge;
 
 @end
