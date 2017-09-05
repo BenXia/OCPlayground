@@ -39,9 +39,6 @@
     // Do any additional setup after loading the view from its nib.
     
     self.title = @"YYModel 用法测试";
-    
-    // 对应模型的特点: 1、有NSNull对象, 2、模型里面嵌套模型, 3、模型里面有数组，数组里面有模型.
-    self.JSONDict = [self getJSONObject];
 }
 
 - (void)didReceiveMemoryWarning {
