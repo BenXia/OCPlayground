@@ -15,7 +15,7 @@
 
 /**
  *
- *        特点                                  JSONMOdel          Mantle
+ *        特点                                  JSONModel          Mantle
  *  1.[NSNull null]                              　✔︎                 ✔︎
  *  2.嵌套Model                                  　 ✔︎                 ✔︎
  *  3.NSArray中为Model                             ✔︎                 ✔︎
@@ -115,7 +115,7 @@
 //{
 //    value = nil;
 //}
-//可以看到如果类型不匹配那么对应的属性将被赋值为nil.而这些不需要我们写任何代码,可以的.最为厉害的就是当服务器传字符,客户端为NSUInteger类型时,Mantle,JSONModel都会崩溃,而MJ不会崩溃,且正确转换.
+//可以看到如果类型不匹配那么对应的属性将被赋值为nil.而这些不需要我们写任何代码,可以的.最为厉害的就是当服务器传字符串,客户端为NSUInteger类型时,Mantle会失败,JSONModel会崩溃,而MJ不会崩溃,且正确转换.
 //综上防崩溃最强的当属MJExtension,如果服务器端开发人员很菜的话强烈推荐使用MJExtension.
 
 
