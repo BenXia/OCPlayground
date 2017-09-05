@@ -15,15 +15,18 @@
 
 /**
  *
- *  注意各种工具中对下面情况的支持
- *  1.[NSNull null]
- *  2.嵌套Model
- *  3.NSArray中为Model
- *  4.字段需要换转处理
- *  5.字段 JSON 中没有
- *  6.未知字段(向后兼容）
- *  7.继承情况下多态的支持
- *  8.NSCoding 协议(持久化)的支持
+ *        特点                                  JSONMOdel          Mantle
+ *  1.[NSNull null]                              　✔︎                 ✔︎
+ *  2.嵌套Model                                  　 ✔︎                 ✔︎
+ *  3.NSArray中为Model                             ✔︎                 ✔︎
+ *  4.字段需要换转处理                               ✔︎                 ✔︎
+ *  5.字段 JSON 中没有                              ✔︎                 ✔︎
+ *  6.未知字段(向后兼容）                             ✔︎                 ✔︎
+ *  7.继承情况下多态的支持                            ✘(不支持)           ✔︎
+ *  8.NSCoding 协议(持久化)的支持                     ✔︎                 ✔︎
+ *  9.异常情况: NSString <-> NSNumber               ✔︎                 ✘(error)
+ *  10.异常情况: NSString <-> NSUInteger            ✘(crash)          ✘(error)
+ *  11.异常情况: NSArray <-> NSString               ✘(error)          ✘(error)
  *
  */
 
@@ -42,7 +45,7 @@
 //客户端属性声明为:
 //@property (nonatomic, copy) NSString *age;
 //
-//Mantle的模型赋值:
+// 直接使用[Model modelWithDictionary:dict error:&error];情况下Mantle的模型赋值:
 //
 //if (![obj validateValue:&validatedValue forKey:key error:error]) return NO;
 //if (forceUpdate || value != validatedValue)
@@ -62,7 +65,7 @@
 //    }
 //    return NO;
 //}
-//如果没写默认返回YES.Mantle貌似并没有帮我们做这么一步,所以如果你自己没写的话,那么上述验证的方法会返回YES.好的程序不应该总是期望服务器端永远都返回正确的东西,然而我们又无法知道服务器哪些字段会返回和我们不一致的类型.难道每一个属性都要写一个-validate<Key>:error:来判断?个人认为在这一点上Mantle做的很鸡肋.如果你没写-validate<Key>:error:而碰巧服务器端返回一个数字类型,那么你的程序很有可能会崩溃.
+//如果没写默认返回YES.Mantle貌似并没有帮我们做这么一步,所以如果你自己没写的话,那么上述验证的方法会返回YES.好的程序不应该总是期望服务器端永远都返回正确的东西,然而我们又无法知道服务器哪些字段会返回和我们不一致的类型.难道每一个属性都要写一个-validate<Key>:error:来判断?个人认为在这一点上Mantle做的很鸡肋.如果你没写-validate<Key>:error:而碰巧服务器端返回一个数字类型,那么你的程序很有可能会崩溃.（注意只是影响[Model modelWithDictionary:dict error:&error]这种使用的转换）
 
 //对于JSONModel的模型赋值:
 //

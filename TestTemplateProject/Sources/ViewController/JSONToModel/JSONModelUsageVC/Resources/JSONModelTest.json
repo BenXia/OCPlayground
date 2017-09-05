@@ -8,8 +8,8 @@
         "price" : 5000
     },
     "books" : [
-       {"name" : "西游记"},
-       {"name" : "三国演义"}
-    ],
+               {"name" : "西游记"},
+               {"name" : "三国演义"}
+               ],
     "addition" : "Addition info for test"
 }

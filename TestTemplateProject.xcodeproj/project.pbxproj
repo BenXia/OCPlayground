@@ -22,6 +22,11 @@
 		33102E6B1F49FF7F008CCD64 /* NoXibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33102E691F49FF7F008CCD64 /* NoXibVC.m */; };
 		33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144EFE1EF05418006D27AC /* NSString+Size.m */; };
 		33144F041EF0546C006D27AC /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144F021EF0546C006D27AC /* UIUtils.m */; };
+		331A8C561F5EF09A00198ED9 /* JSONModelExceptionOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C511F5EF09A00198ED9 /* JSONModelExceptionOneTest.json */; };
+		331A8C571F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C521F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json */; };
+		331A8C581F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C531F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json */; };
+		331A8C591F5EF09A00198ED9 /* JSONModelSubClassOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C541F5EF09A00198ED9 /* JSONModelSubClassOneTest.json */; };
+		331A8C5A1F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C551F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json */; };
 		337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */; };
 		338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0641F530A8400E8DD3E /* JSONToModelVC.m */; };
 		338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */; };
@@ -115,6 +120,11 @@
 		33144F011EF0546C006D27AC /* UIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtils.h; sourceTree = "<group>"; };
 		33144F021EF0546C006D27AC /* UIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtils.m; sourceTree = "<group>"; };
 		33144F031EF0546C006D27AC /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		331A8C511F5EF09A00198ED9 /* JSONModelExceptionOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelExceptionOneTest.json; sourceTree = "<group>"; };
+		331A8C521F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelExceptionThreeTest.json; sourceTree = "<group>"; };
+		331A8C531F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelExceptionTwoTest.json; sourceTree = "<group>"; };
+		331A8C541F5EF09A00198ED9 /* JSONModelSubClassOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelSubClassOneTest.json; sourceTree = "<group>"; };
+		331A8C551F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelSubClassTwoTest.json; sourceTree = "<group>"; };
 		337EEC271EDC3F2C00EDC166 /* NSObject+DLIntrospection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DLIntrospection.h"; sourceTree = "<group>"; };
 		337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DLIntrospection.m"; sourceTree = "<group>"; };
 		338BC0631F530A8400E8DD3E /* JSONToModelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONToModelVC.h; sourceTree = "<group>"; };
@@ -599,6 +609,11 @@
 			isa = PBXGroup;
 			children = (
 				B54337DC1F5E4CBA0055AECE /* JSONModelTest.json */,
+				331A8C541F5EF09A00198ED9 /* JSONModelSubClassOneTest.json */,
+				331A8C551F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json */,
+				331A8C511F5EF09A00198ED9 /* JSONModelExceptionOneTest.json */,
+				331A8C531F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json */,
+				331A8C521F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -805,6 +820,8 @@
 				B54337F41F5E4CC70055AECE /* MJExtensionTest.json in Resources */,
 				B50394C91EEE5FF70016FA97 /* TimeSequenceVC.xib in Resources */,
 				338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */,
+				331A8C581F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json in Resources */,
+				331A8C591F5EF09A00198ED9 /* JSONModelSubClassOneTest.json in Resources */,
 				B595329D1F5E6D40007B2F30 /* MantleSubClassTwoTest.json in Resources */,
 				B59532A21F5E7F13007B2F30 /* MantleExceptionThreeTest.json in Resources */,
 				B54337EA1F5E4CC10055AECE /* MantleTest.json in Resources */,
@@ -819,8 +836,11 @@
 				B50394C41EEE5FC30016FA97 /* HomePageVC.xib in Resources */,
 				B59532A11F5E7F13007B2F30 /* MantleExceptionOneTest.json in Resources */,
 				B54337C21F5E46E70055AECE /* YYModelUsageVC.xib in Resources */,
+				331A8C561F5EF09A00198ED9 /* JSONModelExceptionOneTest.json in Resources */,
+				331A8C5A1F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json in Resources */,
 				330F7C021ED334380009280A /* Assets.xcassets in Resources */,
 				B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */,
+				331A8C571F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json in Resources */,
 				B54337BD1F5E46D70055AECE /* MJExtensionUsageVC.xib in Resources */,
 				B50394D41EEE61F80016FA97 /* PlaygroundVC.xib in Resources */,
 				B54337FE1F5E4CCE0055AECE /* YYModelTest.json in Resources */,

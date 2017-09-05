@@ -19,8 +19,8 @@
  *  6.未知字段(向后兼容）                                  ✔︎
  *  7.继承情况下多态的支持                                 ✔︎
  *  8.NSCoding 协议(持久化)的支持                         ✔︎
- *  9.异常情况: NSString <-> NSNumber                    ✔︎
- *  10.异常情况: NSString <-> NSUInteger                 ✔︎
+ *  9.异常情况: NSString <-> NSNumber                    ✘
+ *  10.异常情况: NSString <-> NSUInteger                 ✘
  *  11.异常情况: NSArray <-> NSString                    ✘
  *
  */
@@ -95,20 +95,26 @@
 }
 
 - (IBAction)didClickForthButton:(id)sender {
-//    *  9.异常情况: NSString <-> NSNumber                    ✔︎
-//    *  10.异常情况: NSString <-> NSUInteger                 ✔︎
+//    *  9.异常情况: NSString <-> NSNumber                    ✘
+//    *  10.异常情况: NSString <-> NSUInteger                 ✘
 //    *  11.异常情况: NSArray <-> NSString                    ✘
     
     id JSONDictOne = [JSONUtils getJSONObjectWithJSONFileName:@"MantleExceptionOneTest"];
-    MantlePerson *personOne = [MTLJSONAdapter modelOfClass:[MantlePerson class] fromJSONDictionary:JSONDictOne error:nil];
+    NSError *error;
+    MantlePerson *personOne = [MTLJSONAdapter modelOfClass:[MantlePerson class] fromJSONDictionary:JSONDictOne error:&error];
+    NSLog (@"error: %@", error);
     NSLog (@"personOne: %@", personOne);
     
     id JSONDictTwo = [JSONUtils getJSONObjectWithJSONFileName:@"MantleExceptionTwoTest"];
-    MantlePerson *personTwo = [MTLJSONAdapter modelOfClass:[MantlePerson class] fromJSONDictionary:JSONDictTwo error:nil];
+    error = nil;
+    MantlePerson *personTwo = [MTLJSONAdapter modelOfClass:[MantlePerson class] fromJSONDictionary:JSONDictTwo error:&error];
+    NSLog (@"error: %@", error);
     NSLog (@"personTwo: %@", personTwo);
     
     id JSONDictThree = [JSONUtils getJSONObjectWithJSONFileName:@"MantleExceptionThreeTest"];
-    MantlePerson *personThree = [MTLJSONAdapter modelOfClass:[MantlePerson class] fromJSONDictionary:JSONDictThree error:nil];
+    error = nil;
+    MantlePerson *personThree = [MTLJSONAdapter modelOfClass:[MantlePerson class] fromJSONDictionary:JSONDictThree error:&error];
+    NSLog (@"error: %@", error);
     NSLog (@"personThree: %@", personThree);
 }
 

@@ -125,8 +125,8 @@
 #pragma mark -
 
 /**
- *  9.异常情况: NSString <-> NSNumber                     ✔︎
- *  10.异常情况: NSString <-> NSUInteger                  ✔︎
+ *  9.异常情况: NSString <-> NSNumber                     ✘
+ *  10.异常情况: NSString <-> NSUInteger                  ✘
  *  11.异常情况: NSArray <-> NSString                     ✘
  */
 
