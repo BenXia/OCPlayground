@@ -10,6 +10,7 @@
 #define BN_Utility_h
 
 #import "UIUtils.h"
+#import "JSONUtils.h"
 #import "CommonUtils.h"
 
 #endif

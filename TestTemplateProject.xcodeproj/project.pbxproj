@@ -25,11 +25,6 @@
 		337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */; };
 		338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0641F530A8400E8DD3E /* JSONToModelVC.m */; };
 		338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */; };
-		338BC06A1F5318BD00E8DD3E /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = 338BC0691F5318BD00E8DD3E /* test.json */; };
-		338BC06E1F531DBD00E8DD3E /* ModelForMantle.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC06D1F531DBD00E8DD3E /* ModelForMantle.m */; };
-		338BC0711F531DCB00E8DD3E /* ModelForJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0701F531DCB00E8DD3E /* ModelForJSONModel.m */; };
-		338BC0741F531DE500E8DD3E /* ModelForYYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0731F531DE500E8DD3E /* ModelForYYModel.m */; };
-		338BC0771F531DFA00E8DD3E /* ModelForMJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0761F531DFA00E8DD3E /* ModelForMJExtension.m */; };
 		33F756231F5C498900C7321F /* BOOLTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F756211F5C498900C7321F /* BOOLTestVC.m */; };
 		33F756241F5C498900C7321F /* BOOLTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F756221F5C498900C7321F /* BOOLTestVC.xib */; };
 		B50394C31EEE5FC30016FA97 /* HomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50394C11EEE5FC30016FA97 /* HomePageVC.m */; };
@@ -47,6 +42,24 @@
 		B50711D11F163187008EC4AE /* ClassPropertyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50711CF1F163187008EC4AE /* ClassPropertyVC.m */; };
 		B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50711D01F163187008EC4AE /* ClassPropertyVC.xib */; };
 		B543377F1F56BC5C0055AECE /* President.m in Sources */ = {isa = PBXBuildFile; fileRef = B543377E1F56BC5C0055AECE /* President.m */; };
+		B54337B21F5E46A50055AECE /* MantleUsageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B54337B01F5E46A50055AECE /* MantleUsageVC.m */; };
+		B54337B31F5E46A50055AECE /* MantleUsageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54337B11F5E46A50055AECE /* MantleUsageVC.xib */; };
+		B54337B71F5E46BB0055AECE /* JSONModelUsageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B54337B51F5E46BB0055AECE /* JSONModelUsageVC.m */; };
+		B54337B81F5E46BB0055AECE /* JSONModelUsageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54337B61F5E46BB0055AECE /* JSONModelUsageVC.xib */; };
+		B54337BC1F5E46D70055AECE /* MJExtensionUsageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B54337BA1F5E46D70055AECE /* MJExtensionUsageVC.m */; };
+		B54337BD1F5E46D70055AECE /* MJExtensionUsageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54337BB1F5E46D70055AECE /* MJExtensionUsageVC.xib */; };
+		B54337C11F5E46E70055AECE /* YYModelUsageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B54337BF1F5E46E70055AECE /* YYModelUsageVC.m */; };
+		B54337C21F5E46E70055AECE /* YYModelUsageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54337C01F5E46E70055AECE /* YYModelUsageVC.xib */; };
+		B54337C61F5E47480055AECE /* ModelForJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B54337C51F5E47480055AECE /* ModelForJSONModel.m */; };
+		B54337CA1F5E474E0055AECE /* ModelForMantle.m in Sources */ = {isa = PBXBuildFile; fileRef = B54337C91F5E474E0055AECE /* ModelForMantle.m */; };
+		B54337CE1F5E47560055AECE /* ModelForMJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = B54337CD1F5E47560055AECE /* ModelForMJExtension.m */; };
+		B54337D21F5E475C0055AECE /* ModelForYYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B54337D11F5E475C0055AECE /* ModelForYYModel.m */; };
+		B54337E01F5E4CBA0055AECE /* JSONModelTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B54337DC1F5E4CBA0055AECE /* JSONModelTest.json */; };
+		B54337EA1F5E4CC10055AECE /* MantleTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B54337E61F5E4CC10055AECE /* MantleTest.json */; };
+		B54337F41F5E4CC70055AECE /* MJExtensionTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B54337F01F5E4CC70055AECE /* MJExtensionTest.json */; };
+		B54337FE1F5E4CCE0055AECE /* YYModelTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B54337FA1F5E4CCE0055AECE /* YYModelTest.json */; };
+		B54338001F5E55E10055AECE /* MantleSubClassOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B54337FF1F5E55E10055AECE /* MantleSubClassOneTest.json */; };
+		B54338031F5E58C90055AECE /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B54338021F5E58C90055AECE /* JSONUtils.m */; };
 		B5647FFE1EF91FAE009CF536 /* BasePopoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5647FFA1EF91FAE009CF536 /* BasePopoverVC.m */; };
 		B5647FFF1EF91FAE009CF536 /* BaseWindowRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5647FFD1EF91FAE009CF536 /* BaseWindowRootVC.m */; };
 		B564800E1EF91FF9009CF536 /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B56480021EF91FF9009CF536 /* GCDGroup.m */; };
@@ -58,6 +71,10 @@
 		B564801A1EF92040009CF536 /* BNPopupWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B56480191EF92040009CF536 /* BNPopupWindow.m */; };
 		B564801F1EF92071009CF536 /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = B564801C1EF92071009CF536 /* UIImage+Blur.m */; };
 		B56480201EF92071009CF536 /* UIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = B564801E1EF92071009CF536 /* UIView+Hierarchy.m */; };
+		B595329D1F5E6D40007B2F30 /* MantleSubClassTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B595329C1F5E6D40007B2F30 /* MantleSubClassTwoTest.json */; };
+		B59532A11F5E7F13007B2F30 /* MantleExceptionOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B595329E1F5E7F13007B2F30 /* MantleExceptionOneTest.json */; };
+		B59532A21F5E7F13007B2F30 /* MantleExceptionThreeTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B595329F1F5E7F13007B2F30 /* MantleExceptionThreeTest.json */; };
+		B59532A31F5E7F13007B2F30 /* MantleExceptionTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B59532A01F5E7F13007B2F30 /* MantleExceptionTwoTest.json */; };
 		B5FA68C71EF270290077349C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FA68C01EF270290077349C /* BaseViewController.m */; };
 		B5FA68C81EF270290077349C /* BNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FA68C31EF270290077349C /* BNNavigationController.m */; };
 		B5FA68C91EF270290077349C /* BNTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FA68C61EF270290077349C /* BNTabBarController.m */; };
@@ -103,15 +120,6 @@
 		338BC0631F530A8400E8DD3E /* JSONToModelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONToModelVC.h; sourceTree = "<group>"; };
 		338BC0641F530A8400E8DD3E /* JSONToModelVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONToModelVC.m; sourceTree = "<group>"; };
 		338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSONToModelVC.xib; sourceTree = "<group>"; };
-		338BC0691F5318BD00E8DD3E /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
-		338BC06C1F531DBD00E8DD3E /* ModelForMantle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForMantle.h; sourceTree = "<group>"; };
-		338BC06D1F531DBD00E8DD3E /* ModelForMantle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForMantle.m; sourceTree = "<group>"; };
-		338BC06F1F531DCB00E8DD3E /* ModelForJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForJSONModel.h; sourceTree = "<group>"; };
-		338BC0701F531DCB00E8DD3E /* ModelForJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForJSONModel.m; sourceTree = "<group>"; };
-		338BC0721F531DE500E8DD3E /* ModelForYYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForYYModel.h; sourceTree = "<group>"; };
-		338BC0731F531DE500E8DD3E /* ModelForYYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForYYModel.m; sourceTree = "<group>"; };
-		338BC0751F531DFA00E8DD3E /* ModelForMJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForMJExtension.h; sourceTree = "<group>"; };
-		338BC0761F531DFA00E8DD3E /* ModelForMJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForMJExtension.m; sourceTree = "<group>"; };
 		33F756201F5C498900C7321F /* BOOLTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOOLTestVC.h; sourceTree = "<group>"; };
 		33F756211F5C498900C7321F /* BOOLTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOOLTestVC.m; sourceTree = "<group>"; };
 		33F756221F5C498900C7321F /* BOOLTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BOOLTestVC.xib; sourceTree = "<group>"; };
@@ -144,6 +152,33 @@
 		B50711D01F163187008EC4AE /* ClassPropertyVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassPropertyVC.xib; sourceTree = "<group>"; };
 		B543377D1F56BC5C0055AECE /* President.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = President.h; sourceTree = "<group>"; };
 		B543377E1F56BC5C0055AECE /* President.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = President.m; sourceTree = "<group>"; };
+		B54337AF1F5E46A50055AECE /* MantleUsageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MantleUsageVC.h; sourceTree = "<group>"; };
+		B54337B01F5E46A50055AECE /* MantleUsageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MantleUsageVC.m; sourceTree = "<group>"; };
+		B54337B11F5E46A50055AECE /* MantleUsageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MantleUsageVC.xib; sourceTree = "<group>"; };
+		B54337B41F5E46BB0055AECE /* JSONModelUsageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelUsageVC.h; sourceTree = "<group>"; };
+		B54337B51F5E46BB0055AECE /* JSONModelUsageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelUsageVC.m; sourceTree = "<group>"; };
+		B54337B61F5E46BB0055AECE /* JSONModelUsageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSONModelUsageVC.xib; sourceTree = "<group>"; };
+		B54337B91F5E46D70055AECE /* MJExtensionUsageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionUsageVC.h; sourceTree = "<group>"; };
+		B54337BA1F5E46D70055AECE /* MJExtensionUsageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJExtensionUsageVC.m; sourceTree = "<group>"; };
+		B54337BB1F5E46D70055AECE /* MJExtensionUsageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJExtensionUsageVC.xib; sourceTree = "<group>"; };
+		B54337BE1F5E46E70055AECE /* YYModelUsageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModelUsageVC.h; sourceTree = "<group>"; };
+		B54337BF1F5E46E70055AECE /* YYModelUsageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYModelUsageVC.m; sourceTree = "<group>"; };
+		B54337C01F5E46E70055AECE /* YYModelUsageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YYModelUsageVC.xib; sourceTree = "<group>"; };
+		B54337C41F5E47480055AECE /* ModelForJSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForJSONModel.h; sourceTree = "<group>"; };
+		B54337C51F5E47480055AECE /* ModelForJSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForJSONModel.m; sourceTree = "<group>"; };
+		B54337C81F5E474E0055AECE /* ModelForMantle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForMantle.h; sourceTree = "<group>"; };
+		B54337C91F5E474E0055AECE /* ModelForMantle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForMantle.m; sourceTree = "<group>"; };
+		B54337CC1F5E47560055AECE /* ModelForMJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForMJExtension.h; sourceTree = "<group>"; };
+		B54337CD1F5E47560055AECE /* ModelForMJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForMJExtension.m; sourceTree = "<group>"; };
+		B54337D01F5E475C0055AECE /* ModelForYYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelForYYModel.h; sourceTree = "<group>"; };
+		B54337D11F5E475C0055AECE /* ModelForYYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelForYYModel.m; sourceTree = "<group>"; };
+		B54337DC1F5E4CBA0055AECE /* JSONModelTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelTest.json; sourceTree = "<group>"; };
+		B54337E61F5E4CC10055AECE /* MantleTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleTest.json; sourceTree = "<group>"; };
+		B54337F01F5E4CC70055AECE /* MJExtensionTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MJExtensionTest.json; sourceTree = "<group>"; };
+		B54337FA1F5E4CCE0055AECE /* YYModelTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = YYModelTest.json; sourceTree = "<group>"; };
+		B54337FF1F5E55E10055AECE /* MantleSubClassOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleSubClassOneTest.json; sourceTree = "<group>"; };
+		B54338011F5E58C90055AECE /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
+		B54338021F5E58C90055AECE /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
 		B5647FF91EF91FAE009CF536 /* BasePopoverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePopoverVC.h; sourceTree = "<group>"; };
 		B5647FFA1EF91FAE009CF536 /* BasePopoverVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePopoverVC.m; sourceTree = "<group>"; };
 		B5647FFC1EF91FAE009CF536 /* BaseWindowRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWindowRootVC.h; sourceTree = "<group>"; };
@@ -168,6 +203,10 @@
 		B564801C1EF92071009CF536 /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blur.m"; sourceTree = "<group>"; };
 		B564801D1EF92071009CF536 /* UIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Hierarchy.h"; sourceTree = "<group>"; };
 		B564801E1EF92071009CF536 /* UIView+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Hierarchy.m"; sourceTree = "<group>"; };
+		B595329C1F5E6D40007B2F30 /* MantleSubClassTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleSubClassTwoTest.json; sourceTree = "<group>"; };
+		B595329E1F5E7F13007B2F30 /* MantleExceptionOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleExceptionOneTest.json; sourceTree = "<group>"; };
+		B595329F1F5E7F13007B2F30 /* MantleExceptionThreeTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleExceptionThreeTest.json; sourceTree = "<group>"; };
+		B59532A01F5E7F13007B2F30 /* MantleExceptionTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleExceptionTwoTest.json; sourceTree = "<group>"; };
 		B5FA68BF1EF270290077349C /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		B5FA68C01EF270290077349C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		B5FA68C21EF270290077349C /* BNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNNavigationController.h; sourceTree = "<group>"; };
@@ -219,7 +258,6 @@
 		330F7BD71ED333F00009280A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				338BC0691F5318BD00E8DD3E /* test.json */,
 				330F7C011ED334380009280A /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -365,6 +403,8 @@
 				33144F031EF0546C006D27AC /* Utility.h */,
 				33144F011EF0546C006D27AC /* UIUtils.h */,
 				33144F021EF0546C006D27AC /* UIUtils.m */,
+				B54338011F5E58C90055AECE /* JSONUtils.h */,
+				B54338021F5E58C90055AECE /* JSONUtils.m */,
 				B56480131EF9201D009CF536 /* CommonUtils.h */,
 				B56480141EF9201D009CF536 /* CommonUtils.m */,
 			);
@@ -386,14 +426,10 @@
 				338BC0631F530A8400E8DD3E /* JSONToModelVC.h */,
 				338BC0641F530A8400E8DD3E /* JSONToModelVC.m */,
 				338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */,
-				338BC06F1F531DCB00E8DD3E /* ModelForJSONModel.h */,
-				338BC0701F531DCB00E8DD3E /* ModelForJSONModel.m */,
-				338BC06C1F531DBD00E8DD3E /* ModelForMantle.h */,
-				338BC06D1F531DBD00E8DD3E /* ModelForMantle.m */,
-				338BC0721F531DE500E8DD3E /* ModelForYYModel.h */,
-				338BC0731F531DE500E8DD3E /* ModelForYYModel.m */,
-				338BC0751F531DFA00E8DD3E /* ModelForMJExtension.h */,
-				338BC0761F531DFA00E8DD3E /* ModelForMJExtension.m */,
+				B54337AB1F5E465E0055AECE /* JSONModelUsageVC */,
+				B54337AC1F5E465E0055AECE /* MantleUsageVC */,
+				B54337AD1F5E465E0055AECE /* MJExtensionUsageVC */,
+				B54337AE1F5E465E0055AECE /* YYModelUsageVC */,
 			);
 			path = JSONToModel;
 			sourceTree = "<group>";
@@ -473,6 +509,127 @@
 				B50711D01F163187008EC4AE /* ClassPropertyVC.xib */,
 			);
 			path = ClassProperty;
+			sourceTree = "<group>";
+		};
+		B54337AB1F5E465E0055AECE /* JSONModelUsageVC */ = {
+			isa = PBXGroup;
+			children = (
+				B54337DB1F5E4CBA0055AECE /* Resources */,
+				B54337C31F5E47480055AECE /* Models */,
+				B54337B41F5E46BB0055AECE /* JSONModelUsageVC.h */,
+				B54337B51F5E46BB0055AECE /* JSONModelUsageVC.m */,
+				B54337B61F5E46BB0055AECE /* JSONModelUsageVC.xib */,
+			);
+			path = JSONModelUsageVC;
+			sourceTree = "<group>";
+		};
+		B54337AC1F5E465E0055AECE /* MantleUsageVC */ = {
+			isa = PBXGroup;
+			children = (
+				B54337E41F5E4CC10055AECE /* Resources */,
+				B54337C71F5E474E0055AECE /* Models */,
+				B54337AF1F5E46A50055AECE /* MantleUsageVC.h */,
+				B54337B01F5E46A50055AECE /* MantleUsageVC.m */,
+				B54337B11F5E46A50055AECE /* MantleUsageVC.xib */,
+			);
+			path = MantleUsageVC;
+			sourceTree = "<group>";
+		};
+		B54337AD1F5E465E0055AECE /* MJExtensionUsageVC */ = {
+			isa = PBXGroup;
+			children = (
+				B54337ED1F5E4CC70055AECE /* Resources */,
+				B54337CB1F5E47560055AECE /* Models */,
+				B54337B91F5E46D70055AECE /* MJExtensionUsageVC.h */,
+				B54337BA1F5E46D70055AECE /* MJExtensionUsageVC.m */,
+				B54337BB1F5E46D70055AECE /* MJExtensionUsageVC.xib */,
+			);
+			path = MJExtensionUsageVC;
+			sourceTree = "<group>";
+		};
+		B54337AE1F5E465E0055AECE /* YYModelUsageVC */ = {
+			isa = PBXGroup;
+			children = (
+				B54337F61F5E4CCE0055AECE /* Resources */,
+				B54337CF1F5E475C0055AECE /* Models */,
+				B54337BE1F5E46E70055AECE /* YYModelUsageVC.h */,
+				B54337BF1F5E46E70055AECE /* YYModelUsageVC.m */,
+				B54337C01F5E46E70055AECE /* YYModelUsageVC.xib */,
+			);
+			path = YYModelUsageVC;
+			sourceTree = "<group>";
+		};
+		B54337C31F5E47480055AECE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B54337C41F5E47480055AECE /* ModelForJSONModel.h */,
+				B54337C51F5E47480055AECE /* ModelForJSONModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B54337C71F5E474E0055AECE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B54337C81F5E474E0055AECE /* ModelForMantle.h */,
+				B54337C91F5E474E0055AECE /* ModelForMantle.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B54337CB1F5E47560055AECE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B54337CC1F5E47560055AECE /* ModelForMJExtension.h */,
+				B54337CD1F5E47560055AECE /* ModelForMJExtension.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B54337CF1F5E475C0055AECE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B54337D01F5E475C0055AECE /* ModelForYYModel.h */,
+				B54337D11F5E475C0055AECE /* ModelForYYModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B54337DB1F5E4CBA0055AECE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B54337DC1F5E4CBA0055AECE /* JSONModelTest.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B54337E41F5E4CC10055AECE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B54337E61F5E4CC10055AECE /* MantleTest.json */,
+				B54337FF1F5E55E10055AECE /* MantleSubClassOneTest.json */,
+				B595329C1F5E6D40007B2F30 /* MantleSubClassTwoTest.json */,
+				B595329E1F5E7F13007B2F30 /* MantleExceptionOneTest.json */,
+				B59532A01F5E7F13007B2F30 /* MantleExceptionTwoTest.json */,
+				B595329F1F5E7F13007B2F30 /* MantleExceptionThreeTest.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B54337ED1F5E4CC70055AECE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B54337F01F5E4CC70055AECE /* MJExtensionTest.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B54337F61F5E4CCE0055AECE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B54337FA1F5E4CCE0055AECE /* YYModelTest.json */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		B5647FF81EF91FAE009CF536 /* BasePopoverVC */ = {
@@ -645,16 +802,28 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B54337F41F5E4CC70055AECE /* MJExtensionTest.json in Resources */,
 				B50394C91EEE5FF70016FA97 /* TimeSequenceVC.xib in Resources */,
 				338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */,
+				B595329D1F5E6D40007B2F30 /* MantleSubClassTwoTest.json in Resources */,
+				B59532A21F5E7F13007B2F30 /* MantleExceptionThreeTest.json in Resources */,
+				B54337EA1F5E4CC10055AECE /* MantleTest.json in Resources */,
+				B54338001F5E55E10055AECE /* MantleSubClassOneTest.json in Resources */,
+				B59532A31F5E7F13007B2F30 /* MantleExceptionTwoTest.json in Resources */,
+				B54337B31F5E46A50055AECE /* MantleUsageVC.xib in Resources */,
 				33102E451F4969BB008CCD64 /* SingletonVC.xib in Resources */,
 				33102E3C1F496083008CCD64 /* RuntimeVC.xib in Resources */,
 				33F756241F5C498900C7321F /* BOOLTestVC.xib in Resources */,
+				B54337B81F5E46BB0055AECE /* JSONModelUsageVC.xib in Resources */,
+				B54337E01F5E4CBA0055AECE /* JSONModelTest.json in Resources */,
 				B50394C41EEE5FC30016FA97 /* HomePageVC.xib in Resources */,
+				B59532A11F5E7F13007B2F30 /* MantleExceptionOneTest.json in Resources */,
+				B54337C21F5E46E70055AECE /* YYModelUsageVC.xib in Resources */,
 				330F7C021ED334380009280A /* Assets.xcassets in Resources */,
 				B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */,
+				B54337BD1F5E46D70055AECE /* MJExtensionUsageVC.xib in Resources */,
 				B50394D41EEE61F80016FA97 /* PlaygroundVC.xib in Resources */,
-				338BC06A1F5318BD00E8DD3E /* test.json in Resources */,
+				B54337FE1F5E4CCE0055AECE /* YYModelTest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -721,10 +890,12 @@
 				B50711731F0E4C8D008EC4AE /* BNPopoverWindow.m in Sources */,
 				B50394C81EEE5FF70016FA97 /* TimeSequenceVC.m in Sources */,
 				B564800E1EF91FF9009CF536 /* GCDGroup.m in Sources */,
+				B54337C11F5E46E70055AECE /* YYModelUsageVC.m in Sources */,
 				33144F041EF0546C006D27AC /* UIUtils.m in Sources */,
-				338BC06E1F531DBD00E8DD3E /* ModelForMantle.m in Sources */,
 				B56480151EF9201D009CF536 /* CommonUtils.m in Sources */,
+				B54337B71F5E46BB0055AECE /* JSONModelUsageVC.m in Sources */,
 				B5FA68C81EF270290077349C /* BNNavigationController.m in Sources */,
+				B54337C61F5E47480055AECE /* ModelForJSONModel.m in Sources */,
 				B56480121EF91FF9009CF536 /* MBProgressHUD.m in Sources */,
 				33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */,
 				B564801F1EF92071009CF536 /* UIImage+Blur.m in Sources */,
@@ -735,25 +906,28 @@
 				330F7BF61ED333F00009280A /* AppDelegate.m in Sources */,
 				B50711711F0E4C8D008EC4AE /* BNPopoverCustomLayout.m in Sources */,
 				33102E481F4969F5008CCD64 /* SingletonClass.m in Sources */,
+				B54337CE1F5E47560055AECE /* ModelForMJExtension.m in Sources */,
 				330F7C0D1ED349AB0009280A /* UIView+Helper.m in Sources */,
+				B54337D21F5E475C0055AECE /* ModelForYYModel.m in Sources */,
 				B5647FFF1EF91FAE009CF536 /* BaseWindowRootVC.m in Sources */,
 				B50394D31EEE61F80016FA97 /* PlaygroundVC.m in Sources */,
 				33102E441F4969BB008CCD64 /* SingletonVC.m in Sources */,
 				B56480111EF91FF9009CF536 /* MBProgressHUD+Add.m in Sources */,
 				B543377F1F56BC5C0055AECE /* President.m in Sources */,
 				33102E3B1F496083008CCD64 /* RuntimeVC.m in Sources */,
+				B54338031F5E58C90055AECE /* JSONUtils.m in Sources */,
 				33102E6B1F49FF7F008CCD64 /* NoXibVC.m in Sources */,
+				B54337BC1F5E46D70055AECE /* MJExtensionUsageVC.m in Sources */,
+				B54337CA1F5E474E0055AECE /* ModelForMantle.m in Sources */,
 				330F7C001ED333F00009280A /* main.m in Sources */,
 				337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */,
 				B56480101EF91FF9009CF536 /* GCDSemaphore.m in Sources */,
-				338BC0741F531DE500E8DD3E /* ModelForYYModel.m in Sources */,
 				33102E3F1F4965E8008CCD64 /* Person.m in Sources */,
 				B507116F1F0E4C8D008EC4AE /* BNPopoverBaseLayout.m in Sources */,
 				B564801A1EF92040009CF536 /* BNPopupWindow.m in Sources */,
-				338BC0711F531DCB00E8DD3E /* ModelForJSONModel.m in Sources */,
-				338BC0771F531DFA00E8DD3E /* ModelForMJExtension.m in Sources */,
 				33102E4B1F496A07008CCD64 /* SomeClass.m in Sources */,
 				B56480201EF92071009CF536 /* UIView+Hierarchy.m in Sources */,
+				B54337B21F5E46A50055AECE /* MantleUsageVC.m in Sources */,
 				B50711D11F163187008EC4AE /* ClassPropertyVC.m in Sources */,
 				B5FA68C91EF270290077349C /* BNTabBarController.m in Sources */,
 			);
