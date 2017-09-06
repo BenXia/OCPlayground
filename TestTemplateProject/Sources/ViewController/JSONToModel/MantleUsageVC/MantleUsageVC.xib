@@ -80,7 +80,7 @@
                                     <font key="NSFont" size="14" name="PingFangSC-Regular"/>
                                 </attributes>
                             </fragment>
-                            <fragment content="json">
+                            <fragment content="JSON">
                                 <attributes>
                                     <color key="NSColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <font key="NSFont" size="14" name=".SFNSText"/>

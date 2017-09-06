@@ -66,7 +66,6 @@
 //    return valid;
 //}
 
-//处理本地化标识后给locale赋值
 - (void)setLoginDateWithNSString:(NSString *)string {
     self.loginDate = [NSDate dateWithTimeIntervalSince1970:string.doubleValue];
 }

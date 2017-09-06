@@ -65,6 +65,18 @@
 		B54337FE1F5E4CCE0055AECE /* YYModelTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B54337FA1F5E4CCE0055AECE /* YYModelTest.json */; };
 		B54338001F5E55E10055AECE /* MantleSubClassOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B54337FF1F5E55E10055AECE /* MantleSubClassOneTest.json */; };
 		B54338031F5E58C90055AECE /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B54338021F5E58C90055AECE /* JSONUtils.m */; };
+		B5633FC31F5FB14700A72567 /* MJExtensionExceptionOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FBE1F5FB14700A72567 /* MJExtensionExceptionOneTest.json */; };
+		B5633FC41F5FB14700A72567 /* MJExtensionExceptionThreeTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FBF1F5FB14700A72567 /* MJExtensionExceptionThreeTest.json */; };
+		B5633FC51F5FB14700A72567 /* MJExtensionExceptionTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FC01F5FB14700A72567 /* MJExtensionExceptionTwoTest.json */; };
+		B5633FC61F5FB14700A72567 /* MJExtensionSubClassOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FC11F5FB14700A72567 /* MJExtensionSubClassOneTest.json */; };
+		B5633FC71F5FB14700A72567 /* MJExtensionSubClassTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FC21F5FB14700A72567 /* MJExtensionSubClassTwoTest.json */; };
+		B5633FCF1F5FD02700A72567 /* YYModelExceptionOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FCA1F5FD02700A72567 /* YYModelExceptionOneTest.json */; };
+		B5633FD01F5FD02700A72567 /* YYModelExceptionThreeTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FCB1F5FD02700A72567 /* YYModelExceptionThreeTest.json */; };
+		B5633FD11F5FD02700A72567 /* YYModelExceptionTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FCC1F5FD02700A72567 /* YYModelExceptionTwoTest.json */; };
+		B5633FD21F5FD02700A72567 /* YYModelSubClassOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FCD1F5FD02700A72567 /* YYModelSubClassOneTest.json */; };
+		B5633FD31F5FD02700A72567 /* YYModelSubClassTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FCE1F5FD02700A72567 /* YYModelSubClassTwoTest.json */; };
+		B5633FD51F5FD1F500A72567 /* MJExtensionModelArrayTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FD41F5FD1F500A72567 /* MJExtensionModelArrayTest.json */; };
+		B5633FD71F5FEF4A00A72567 /* YYModelModelArrayTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FD61F5FEF4A00A72567 /* YYModelModelArrayTest.json */; };
 		B5647FFE1EF91FAE009CF536 /* BasePopoverVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5647FFA1EF91FAE009CF536 /* BasePopoverVC.m */; };
 		B5647FFF1EF91FAE009CF536 /* BaseWindowRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5647FFD1EF91FAE009CF536 /* BaseWindowRootVC.m */; };
 		B564800E1EF91FF9009CF536 /* GCDGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = B56480021EF91FF9009CF536 /* GCDGroup.m */; };
@@ -189,6 +201,18 @@
 		B54337FF1F5E55E10055AECE /* MantleSubClassOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleSubClassOneTest.json; sourceTree = "<group>"; };
 		B54338011F5E58C90055AECE /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
 		B54338021F5E58C90055AECE /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
+		B5633FBE1F5FB14700A72567 /* MJExtensionExceptionOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MJExtensionExceptionOneTest.json; sourceTree = "<group>"; };
+		B5633FBF1F5FB14700A72567 /* MJExtensionExceptionThreeTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MJExtensionExceptionThreeTest.json; sourceTree = "<group>"; };
+		B5633FC01F5FB14700A72567 /* MJExtensionExceptionTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MJExtensionExceptionTwoTest.json; sourceTree = "<group>"; };
+		B5633FC11F5FB14700A72567 /* MJExtensionSubClassOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MJExtensionSubClassOneTest.json; sourceTree = "<group>"; };
+		B5633FC21F5FB14700A72567 /* MJExtensionSubClassTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MJExtensionSubClassTwoTest.json; sourceTree = "<group>"; };
+		B5633FCA1F5FD02700A72567 /* YYModelExceptionOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = YYModelExceptionOneTest.json; sourceTree = "<group>"; };
+		B5633FCB1F5FD02700A72567 /* YYModelExceptionThreeTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = YYModelExceptionThreeTest.json; sourceTree = "<group>"; };
+		B5633FCC1F5FD02700A72567 /* YYModelExceptionTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = YYModelExceptionTwoTest.json; sourceTree = "<group>"; };
+		B5633FCD1F5FD02700A72567 /* YYModelSubClassOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = YYModelSubClassOneTest.json; sourceTree = "<group>"; };
+		B5633FCE1F5FD02700A72567 /* YYModelSubClassTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = YYModelSubClassTwoTest.json; sourceTree = "<group>"; };
+		B5633FD41F5FD1F500A72567 /* MJExtensionModelArrayTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MJExtensionModelArrayTest.json; sourceTree = "<group>"; };
+		B5633FD61F5FEF4A00A72567 /* YYModelModelArrayTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = YYModelModelArrayTest.json; sourceTree = "<group>"; };
 		B5647FF91EF91FAE009CF536 /* BasePopoverVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasePopoverVC.h; sourceTree = "<group>"; };
 		B5647FFA1EF91FAE009CF536 /* BasePopoverVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasePopoverVC.m; sourceTree = "<group>"; };
 		B5647FFC1EF91FAE009CF536 /* BaseWindowRootVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWindowRootVC.h; sourceTree = "<group>"; };
@@ -635,6 +659,12 @@
 			isa = PBXGroup;
 			children = (
 				B54337F01F5E4CC70055AECE /* MJExtensionTest.json */,
+				B5633FD41F5FD1F500A72567 /* MJExtensionModelArrayTest.json */,
+				B5633FC11F5FB14700A72567 /* MJExtensionSubClassOneTest.json */,
+				B5633FC21F5FB14700A72567 /* MJExtensionSubClassTwoTest.json */,
+				B5633FBE1F5FB14700A72567 /* MJExtensionExceptionOneTest.json */,
+				B5633FC01F5FB14700A72567 /* MJExtensionExceptionTwoTest.json */,
+				B5633FBF1F5FB14700A72567 /* MJExtensionExceptionThreeTest.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -643,6 +673,12 @@
 			isa = PBXGroup;
 			children = (
 				B54337FA1F5E4CCE0055AECE /* YYModelTest.json */,
+				B5633FD61F5FEF4A00A72567 /* YYModelModelArrayTest.json */,
+				B5633FCD1F5FD02700A72567 /* YYModelSubClassOneTest.json */,
+				B5633FCE1F5FD02700A72567 /* YYModelSubClassTwoTest.json */,
+				B5633FCA1F5FD02700A72567 /* YYModelExceptionOneTest.json */,
+				B5633FCC1F5FD02700A72567 /* YYModelExceptionTwoTest.json */,
+				B5633FCB1F5FD02700A72567 /* YYModelExceptionThreeTest.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -821,8 +857,10 @@
 				B50394C91EEE5FF70016FA97 /* TimeSequenceVC.xib in Resources */,
 				338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */,
 				331A8C581F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json in Resources */,
+				B5633FD21F5FD02700A72567 /* YYModelSubClassOneTest.json in Resources */,
 				331A8C591F5EF09A00198ED9 /* JSONModelSubClassOneTest.json in Resources */,
 				B595329D1F5E6D40007B2F30 /* MantleSubClassTwoTest.json in Resources */,
+				B5633FC31F5FB14700A72567 /* MJExtensionExceptionOneTest.json in Resources */,
 				B59532A21F5E7F13007B2F30 /* MantleExceptionThreeTest.json in Resources */,
 				B54337EA1F5E4CC10055AECE /* MantleTest.json in Resources */,
 				B54338001F5E55E10055AECE /* MantleSubClassOneTest.json in Resources */,
@@ -830,19 +868,29 @@
 				B54337B31F5E46A50055AECE /* MantleUsageVC.xib in Resources */,
 				33102E451F4969BB008CCD64 /* SingletonVC.xib in Resources */,
 				33102E3C1F496083008CCD64 /* RuntimeVC.xib in Resources */,
+				B5633FCF1F5FD02700A72567 /* YYModelExceptionOneTest.json in Resources */,
 				33F756241F5C498900C7321F /* BOOLTestVC.xib in Resources */,
+				B5633FC61F5FB14700A72567 /* MJExtensionSubClassOneTest.json in Resources */,
+				B5633FC41F5FB14700A72567 /* MJExtensionExceptionThreeTest.json in Resources */,
 				B54337B81F5E46BB0055AECE /* JSONModelUsageVC.xib in Resources */,
 				B54337E01F5E4CBA0055AECE /* JSONModelTest.json in Resources */,
+				B5633FD71F5FEF4A00A72567 /* YYModelModelArrayTest.json in Resources */,
 				B50394C41EEE5FC30016FA97 /* HomePageVC.xib in Resources */,
 				B59532A11F5E7F13007B2F30 /* MantleExceptionOneTest.json in Resources */,
+				B5633FC71F5FB14700A72567 /* MJExtensionSubClassTwoTest.json in Resources */,
 				B54337C21F5E46E70055AECE /* YYModelUsageVC.xib in Resources */,
+				B5633FD01F5FD02700A72567 /* YYModelExceptionThreeTest.json in Resources */,
 				331A8C561F5EF09A00198ED9 /* JSONModelExceptionOneTest.json in Resources */,
+				B5633FD31F5FD02700A72567 /* YYModelSubClassTwoTest.json in Resources */,
+				B5633FD11F5FD02700A72567 /* YYModelExceptionTwoTest.json in Resources */,
 				331A8C5A1F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json in Resources */,
 				330F7C021ED334380009280A /* Assets.xcassets in Resources */,
 				B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */,
 				331A8C571F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json in Resources */,
 				B54337BD1F5E46D70055AECE /* MJExtensionUsageVC.xib in Resources */,
+				B5633FD51F5FD1F500A72567 /* MJExtensionModelArrayTest.json in Resources */,
 				B50394D41EEE61F80016FA97 /* PlaygroundVC.xib in Resources */,
+				B5633FC51F5FB14700A72567 /* MJExtensionExceptionTwoTest.json in Resources */,
 				B54337FE1F5E4CCE0055AECE /* YYModelTest.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

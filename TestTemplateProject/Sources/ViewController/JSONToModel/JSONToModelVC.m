@@ -15,18 +15,18 @@
 
 /**
  *
- *        特点                                  JSONModel          Mantle
- *  1.[NSNull null]                              　✔︎                 ✔︎
- *  2.嵌套Model                                  　 ✔︎                 ✔︎
- *  3.NSArray中为Model                             ✔︎                 ✔︎
- *  4.字段需要换转处理                               ✔︎                 ✔︎
- *  5.字段 JSON 中没有                              ✔︎                 ✔︎
- *  6.未知字段(向后兼容）                             ✔︎                 ✔︎
- *  7.继承情况下多态的支持                            ✘(不支持)           ✔︎
- *  8.NSCoding 协议(持久化)的支持                     ✔︎                 ✔︎
- *  9.异常情况: NSString <-> NSNumber               ✔︎                 ✘(error)
- *  10.异常情况: NSString <-> NSUInteger            ✘(crash)          ✘(error)
- *  11.异常情况: NSArray <-> NSString               ✘(error)          ✘(error)
+ *        特点                                  JSONModel          Mantle          MJExtension         YYModel
+ *  1.[NSNull null]                              　✔︎                 ✔︎                 ✔︎                 ✔︎
+ *  2.嵌套Model                                  　 ✔︎                 ✔︎                 ✔︎                 ✔︎
+ *  3.NSArray中为Model                             ✔︎                 ✔︎                 ✔︎                 ✔︎
+ *  4.字段需要换转处理                               ✔︎                 ✔︎                 ✔︎                 ✔︎
+ *  5.字段 JSON 中没有                              ✔︎                 ✔︎                 ✔︎                 ✔︎
+ *  6.未知字段(向后兼容）                             ✔︎                 ✔︎                 ✔︎                 ✔︎
+ *  7.继承情况下多态的支持                            ✘(不支持)           ✔︎                 ✘(不支持)          ✔︎
+ *  8.NSCoding 协议(持久化)的支持                     ✔︎                 ✔︎                 ✔︎                 ✔︎
+ *  9.异常情况: NSString <-> NSNumber               ✔︎                 ✘(error)           ✔︎                 ✔︎
+ *  10.异常情况: NSString <-> NSUInteger            ✘(crash)          ✘(error)           ✔︎                 ✔︎
+ *  11.异常情况: NSArray <-> NSString               ✘(error)          ✘(error)           ✘(error)          ✘(error)
  *
  */
 
@@ -151,13 +151,13 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (IBAction)testYYModelUsage:(id)sender {
+- (IBAction)testMJExtensionUsage:(id)sender {
     MJExtensionUsageVC *vc = [[MJExtensionUsageVC alloc] init];
     
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (IBAction)testMJExtensionUsage:(id)sender {
+- (IBAction)testYYModelUsage:(id)sender {
     YYModelUsageVC *vc = [[YYModelUsageVC alloc] init];
     
     [self.navigationController pushViewController:vc animated:YES];

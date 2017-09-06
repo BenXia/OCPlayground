@@ -11,6 +11,7 @@
 @interface JSONUtils : NSObject
 
 + (id)getJSONObjectWithJSONFileName:(NSString *)JSONFileName;
++ (id)getJSONStringWithJSONFileName:(NSString *)JSONFileName;
 
 @end
 
