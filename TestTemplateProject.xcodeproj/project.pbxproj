@@ -548,11 +548,11 @@
 		B54337AB1F5E465E0055AECE /* JSONModelUsageVC */ = {
 			isa = PBXGroup;
 			children = (
-				B54337DB1F5E4CBA0055AECE /* Resources */,
-				B54337C31F5E47480055AECE /* Models */,
 				B54337B41F5E46BB0055AECE /* JSONModelUsageVC.h */,
 				B54337B51F5E46BB0055AECE /* JSONModelUsageVC.m */,
 				B54337B61F5E46BB0055AECE /* JSONModelUsageVC.xib */,
+				B54337C31F5E47480055AECE /* Models */,
+				B54337DB1F5E4CBA0055AECE /* Resources */,
 			);
 			path = JSONModelUsageVC;
 			sourceTree = "<group>";
@@ -560,11 +560,11 @@
 		B54337AC1F5E465E0055AECE /* MantleUsageVC */ = {
 			isa = PBXGroup;
 			children = (
-				B54337E41F5E4CC10055AECE /* Resources */,
-				B54337C71F5E474E0055AECE /* Models */,
 				B54337AF1F5E46A50055AECE /* MantleUsageVC.h */,
 				B54337B01F5E46A50055AECE /* MantleUsageVC.m */,
 				B54337B11F5E46A50055AECE /* MantleUsageVC.xib */,
+				B54337C71F5E474E0055AECE /* Models */,
+				B54337E41F5E4CC10055AECE /* Resources */,
 			);
 			path = MantleUsageVC;
 			sourceTree = "<group>";
@@ -572,11 +572,11 @@
 		B54337AD1F5E465E0055AECE /* MJExtensionUsageVC */ = {
 			isa = PBXGroup;
 			children = (
-				B54337ED1F5E4CC70055AECE /* Resources */,
-				B54337CB1F5E47560055AECE /* Models */,
 				B54337B91F5E46D70055AECE /* MJExtensionUsageVC.h */,
 				B54337BA1F5E46D70055AECE /* MJExtensionUsageVC.m */,
 				B54337BB1F5E46D70055AECE /* MJExtensionUsageVC.xib */,
+				B54337CB1F5E47560055AECE /* Models */,
+				B54337ED1F5E4CC70055AECE /* Resources */,
 			);
 			path = MJExtensionUsageVC;
 			sourceTree = "<group>";
@@ -584,11 +584,11 @@
 		B54337AE1F5E465E0055AECE /* YYModelUsageVC */ = {
 			isa = PBXGroup;
 			children = (
-				B54337F61F5E4CCE0055AECE /* Resources */,
-				B54337CF1F5E475C0055AECE /* Models */,
 				B54337BE1F5E46E70055AECE /* YYModelUsageVC.h */,
 				B54337BF1F5E46E70055AECE /* YYModelUsageVC.m */,
 				B54337C01F5E46E70055AECE /* YYModelUsageVC.xib */,
+				B54337CF1F5E475C0055AECE /* Models */,
+				B54337F61F5E4CCE0055AECE /* Resources */,
 			);
 			path = YYModelUsageVC;
 			sourceTree = "<group>";
