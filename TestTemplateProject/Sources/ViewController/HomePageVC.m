@@ -136,55 +136,57 @@ static const CGFloat kTableViewCellHeight = 60.0f;
     self.title = @"首页";
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
-//    [NSThread detachNewThreadSelector:@selector(doSomeThing:) toTarget:self withObject:nil];
+    [NSThread detachNewThreadSelector:@selector(doSomeThing:) toTarget:self withObject:nil];
     
-//    NSLog (@"HomePageVC viewWillAppear");
-//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+    NSLog (@"HomePageVC viewWillAppear");
+    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
 
 - (void)doSomeThing:(NSObject *)userInfo {
     int max_loop_times = 999999;
     for (int i = 0; i < max_loop_times; i++) {
-        int randNum = rand();
-        NSString *tmpString = [NSString stringWithFormat:@"%d", randNum];
-        NSLog(@"%@", tmpString);
+        @autoreleasepool {
+            int randNum = rand();
+            NSString *tmpString = [NSString stringWithFormat:@"%d", randNum];
+            NSLog(@"%@", tmpString);
+        }
     }
 }
 
-//- (void)viewWillLayoutSubviews {
-//    [super viewWillLayoutSubviews];
-//    
-//    NSLog (@"HomePageVC viewWillLayoutSubviews");
-//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
-//}
-//
-//- (void)viewDidLayoutSubviews {
-//    [super viewDidLayoutSubviews];
-//    
-//    NSLog (@"HomePageVC viewDidLayoutSubviews");
-//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
-//}
-//
-//- (void)viewDidAppear:(BOOL)animated {
-//    [super viewDidAppear:animated];
-//    
-//    NSLog (@"HomePageVC viewDidAppear");
-//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated {
-//    [super viewWillDisappear:animated];
-//
-//    NSLog (@"HomePageVC viewWillDisappear");
-//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
-//}
-//
-//- (void)viewDidDisappear:(BOOL)animated {
-//    [super viewDidDisappear:animated];
-//    
-//    NSLog (@"HomePageVC viewDidDisappear");
-//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
-//}
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    NSLog (@"HomePageVC viewWillLayoutSubviews");
+    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    NSLog (@"HomePageVC viewDidLayoutSubviews");
+    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    NSLog (@"HomePageVC viewDidAppear");
+    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+
+    NSLog (@"HomePageVC viewWillDisappear");
+    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    NSLog (@"HomePageVC viewDidDisappear");
+    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
