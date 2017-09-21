@@ -102,6 +102,19 @@ static const NSCalendarUnit kDateComponentFlags = NSCalendarUnitYear | NSCalenda
     [super viewDidAppear:animated];
     
     NSLog (@"PlaygroundVC viewDidAppear");
+    
+    
+    UIView *viewA = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
+    viewA.backgroundColor = [UIColor redColor];
+    [self.view addSubview:viewA];
+    
+    UIView *viewB = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 80, 80)];
+    viewB.backgroundColor = [UIColor yellowColor];
+    [viewA addSubview:viewB];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        viewA.bounds = CGRectMake(30, 30, 90, 90);
+    });
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
