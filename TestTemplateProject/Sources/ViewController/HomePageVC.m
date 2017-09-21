@@ -136,21 +136,8 @@ static const CGFloat kTableViewCellHeight = 60.0f;
     self.title = @"首页";
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
-    [NSThread detachNewThreadSelector:@selector(doSomeThing:) toTarget:self withObject:nil];
-    
     NSLog (@"HomePageVC viewWillAppear");
     NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
-}
-
-- (void)doSomeThing:(NSObject *)userInfo {
-    int max_loop_times = 999999;
-    for (int i = 0; i < max_loop_times; i++) {
-        @autoreleasepool {
-            int randNum = rand();
-            NSString *tmpString = [NSString stringWithFormat:@"%d", randNum];
-            NSLog(@"%@", tmpString);
-        }
-    }
 }
 
 - (void)viewWillLayoutSubviews {

@@ -8,6 +8,8 @@
 
 #import "PlaygroundVC.h"
 
+static const NSCalendarUnit kDateComponentFlags = NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday | NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond;
+
 @interface PlaygroundVC ()
 
 @property (weak, nonatomic) IBOutlet UILabel *testAttributedTextLabel;
@@ -25,6 +27,9 @@
     //self.view = nil;
     // UIView *view = (UIView *)self.view;
     
+    // 自定义线程中注意 for 循环最好加局部的 NSAutoReleasePool
+    //[NSThread detachNewThreadSelector:@selector(doSomeThing:) toTarget:self withObject:nil];
+    
     // 多线程测试
 //    NSLog (@"线程UI的优先级为: %g", [NSThread threadPriority]);
 //    NSThread *thread1 = [[NSThread alloc] initWithTarget:self selector:@selector(run) object:nil];
@@ -40,10 +45,36 @@
 //    for (int i = 0; i < 10000; i++) {
 //        NSLog (@"-----%@------%d", [NSThread currentThread], i);
 //    }
+    
+    // NSDateComponents 测试
+    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
+    calendar.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:6*60*60];
+    NSDate *nowDate = [NSDate date];
+    NSDateComponents *comps = [[NSDateComponents alloc] init];
+    comps = [calendar components:kDateComponentFlags fromDate:nowDate];
+    NSLog (@"comps: %@ \ntimeZone: %@\n\n", comps, comps.timeZone);
+    
+    comps.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:11*60*60];
+    
+    // comps 中设置的 timeZone 在下面这个接口中将会有用
+    NSDate *showDate = [calendar dateFromComponents:comps];
+    
+    NSLog (@"comps: %@ \n\nshowDate: %@\n\n", comps, showDate);
 }
 
 - (void)loadView {
     [super loadView];
+}
+
+- (void)doSomeThing:(NSObject *)userInfo {
+    int max_loop_times = 999999;
+    for (int i = 0; i < max_loop_times; i++) {
+        @autoreleasepool {
+            int randNum = rand();
+            NSString *tmpString = [NSString stringWithFormat:@"%d", randNum];
+            NSLog(@"%@", tmpString);
+        }
+    }
 }
 
 - (void)run {
