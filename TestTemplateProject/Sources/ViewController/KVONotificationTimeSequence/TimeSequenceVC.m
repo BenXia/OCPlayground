@@ -7,6 +7,7 @@
 //
 
 #import "TimeSequenceVC.h"
+#import "ReactiveCocoa.h"
 
 @interface TimeSequenceVC ()
 

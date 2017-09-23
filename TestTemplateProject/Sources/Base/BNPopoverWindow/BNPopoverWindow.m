@@ -8,6 +8,7 @@
 
 #import "BNPopoverWindow.h"
 #import "BNPopoverBaseLayout.h"
+#import "ReactiveCocoa.h"
 
 NSMutableArray <BNPopoverWindow *> *g_popoverWindowArray;
 

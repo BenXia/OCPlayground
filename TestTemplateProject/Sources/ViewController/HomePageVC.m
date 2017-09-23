@@ -16,6 +16,7 @@
 #import "JSONToModelVC.h"
 #import "BOOLTestVC.h"
 #import "RunLoopVC.h"
+#import "CategoryVC.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
 
@@ -125,7 +126,12 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[RunLoopVC class]
                                                      navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, nil];
+    HomePageCellModel *model10 = [HomePageCellModel modelWithTitle:@"Category"
+                                                         subTitle:@"测试一下 Category 中重写 dealloc 方法"
+                                                          vcClass:[CategoryVC class]
+                                                     navigationVC:self.navigationController];
+    
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, nil];
     
     NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
