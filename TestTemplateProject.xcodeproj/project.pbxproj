@@ -39,6 +39,8 @@
 		337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */; };
 		338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0641F530A8400E8DD3E /* JSONToModelVC.m */; };
 		338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */; };
+		33E14FC71F7972010042F729 /* MultiThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E14FC51F7972010042F729 /* MultiThreadVC.m */; };
+		33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E14FC61F7972010042F729 /* MultiThreadVC.xib */; };
 		33F756231F5C498900C7321F /* BOOLTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F756211F5C498900C7321F /* BOOLTestVC.m */; };
 		33F756241F5C498900C7321F /* BOOLTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F756221F5C498900C7321F /* BOOLTestVC.xib */; };
 		B50394C31EEE5FC30016FA97 /* HomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50394C11EEE5FC30016FA97 /* HomePageVC.m */; };
@@ -167,6 +169,9 @@
 		338BC0631F530A8400E8DD3E /* JSONToModelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONToModelVC.h; sourceTree = "<group>"; };
 		338BC0641F530A8400E8DD3E /* JSONToModelVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONToModelVC.m; sourceTree = "<group>"; };
 		338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSONToModelVC.xib; sourceTree = "<group>"; };
+		33E14FC41F7972010042F729 /* MultiThreadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiThreadVC.h; sourceTree = "<group>"; };
+		33E14FC51F7972010042F729 /* MultiThreadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadVC.m; sourceTree = "<group>"; };
+		33E14FC61F7972010042F729 /* MultiThreadVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiThreadVC.xib; sourceTree = "<group>"; };
 		33F756201F5C498900C7321F /* BOOLTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOOLTestVC.h; sourceTree = "<group>"; };
 		33F756211F5C498900C7321F /* BOOLTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOOLTestVC.m; sourceTree = "<group>"; };
 		33F756221F5C498900C7321F /* BOOLTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BOOLTestVC.xib; sourceTree = "<group>"; };
@@ -331,7 +336,6 @@
 				330F7BDB1ED333F00009280A /* Category */,
 				B5FA68BD1EF270290077349C /* Base */,
 				B56480161EF92040009CF536 /* Common */,
-				330F7BE11ED333F00009280A /* Network */,
 				330F7BE31ED333F00009280A /* View */,
 				330F7BEE1ED333F00009280A /* ViewController */,
 				330F7BD91ED333F00009280A /* AppDelegate.h */,
@@ -364,13 +368,6 @@
 				33144EFB1EF05403006D27AC /* macrodef.h */,
 			);
 			path = Global;
-			sourceTree = "<group>";
-		};
-		330F7BE11ED333F00009280A /* Network */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		330F7BE21ED333F00009280A /* Vendor */ = {
@@ -406,6 +403,7 @@
 				33F7561F1F5C496F00C7321F /* BOOL */,
 				333D511F1F6E3F5F00FA084F /* RunLoop */,
 				33454B151F76149800DC3F14 /* Category */,
+				33E14FC31F7971E40042F729 /* MultiThread */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -523,6 +521,16 @@
 				B54337AE1F5E465E0055AECE /* YYModelUsageVC */,
 			);
 			path = JSONToModel;
+			sourceTree = "<group>";
+		};
+		33E14FC31F7971E40042F729 /* MultiThread */ = {
+			isa = PBXGroup;
+			children = (
+				33E14FC41F7972010042F729 /* MultiThreadVC.h */,
+				33E14FC51F7972010042F729 /* MultiThreadVC.m */,
+				33E14FC61F7972010042F729 /* MultiThreadVC.xib */,
+			);
+			path = MultiThread;
 			sourceTree = "<group>";
 		};
 		33F7561F1F5C496F00C7321F /* BOOL */ = {
@@ -944,6 +952,7 @@
 				B5633FD11F5FD02700A72567 /* YYModelExceptionTwoTest.json in Resources */,
 				331A8C5A1F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json in Resources */,
 				330F7C021ED334380009280A /* Assets.xcassets in Resources */,
+				33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */,
 				B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */,
 				331A8C571F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json in Resources */,
 				B54337BD1F5E46D70055AECE /* MJExtensionUsageVC.xib in Resources */,
@@ -1063,6 +1072,7 @@
 				33454B2D1F76199E00DC3F14 /* BaseObject.m in Sources */,
 				B54337B21F5E46A50055AECE /* MantleUsageVC.m in Sources */,
 				B50711D11F163187008EC4AE /* ClassPropertyVC.m in Sources */,
+				33E14FC71F7972010042F729 /* MultiThreadVC.m in Sources */,
 				B5FA68C91EF270290077349C /* BNTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
