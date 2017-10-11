@@ -29,6 +29,8 @@
 //    [self testMaxGCDSerialThreadCount];   // 我的天，还有上限吗
     
 //    [self testGCDConfigMaxConcurrentTreadCount];
+    
+//    [self testRecursiveSynchronized];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -170,6 +172,15 @@
         });
     }
     dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+}
+
+- (void)testRecursiveSynchronized {
+    @synchronized(self) {
+        NSLog (@"outter synchronized(self)");
+        @synchronized(self) {
+            NSLog (@"inner synchronized(self)");
+        }
+    }
 }
 
 @end
