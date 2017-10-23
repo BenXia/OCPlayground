@@ -16,12 +16,16 @@
 
 @implementation CategoryVC
 
+#pragma mark - View life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     MRCObject *mrcObject = [MRCObject new];
     ARCObject *arcObject = [ARCObject new];
+    (void)mrcObject;
+    (void)arcObject;
 }
 
 - (void)didReceiveMemoryWarning {

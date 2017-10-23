@@ -18,6 +18,8 @@ static const NSCalendarUnit kDateComponentFlags = NSCalendarUnitYear | NSCalenda
 
 @implementation PlaygroundVC
 
+#pragma mark - View life cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     

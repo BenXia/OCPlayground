@@ -17,6 +17,7 @@
 #import "BOOLTestVC.h"
 #import "RunLoopVC.h"
 #import "CategoryVC.h"
+#import "MemoryManageVC.h"
 #import "MultiThreadVC.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
@@ -132,12 +133,17 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[CategoryVC class]
                                                      navigationVC:self.navigationController];
     
-    HomePageCellModel *model11 = [HomePageCellModel modelWithTitle:@"多线程"
+    HomePageCellModel *model11 = [HomePageCellModel modelWithTitle:@"内存管理"
+                                                          subTitle:@"内存管理相关测试"
+                                                           vcClass:[MemoryManageVC class]
+                                                      navigationVC:self.navigationController];
+    
+    HomePageCellModel *model12 = [HomePageCellModel modelWithTitle:@"多线程"
                                                           subTitle:@"多线程一些有趣的测试"
                                                            vcClass:[MultiThreadVC class]
                                                       navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, nil];
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, nil];
     
     NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }

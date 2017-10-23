@@ -36,6 +36,8 @@
 		33454B261F76151E00DC3F14 /* MRCObject+TestDealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 33454B251F76151E00DC3F14 /* MRCObject+TestDealloc.m */; };
 		33454B291F76153200DC3F14 /* ARCObject+TestDealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 33454B281F76153200DC3F14 /* ARCObject+TestDealloc.m */; };
 		33454B2D1F76199E00DC3F14 /* BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 33454B2C1F76199E00DC3F14 /* BaseObject.m */; };
+		334B7A5D1F9E492400F40D7F /* MemoryManageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 334B7A5B1F9E492400F40D7F /* MemoryManageVC.m */; };
+		334B7A5E1F9E492400F40D7F /* MemoryManageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 334B7A5C1F9E492400F40D7F /* MemoryManageVC.xib */; };
 		337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */; };
 		338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0641F530A8400E8DD3E /* JSONToModelVC.m */; };
 		338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */; };
@@ -164,6 +166,9 @@
 		33454B281F76153200DC3F14 /* ARCObject+TestDealloc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ARCObject+TestDealloc.m"; sourceTree = "<group>"; };
 		33454B2B1F76199E00DC3F14 /* BaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseObject.h; sourceTree = "<group>"; };
 		33454B2C1F76199E00DC3F14 /* BaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseObject.m; sourceTree = "<group>"; };
+		334B7A5A1F9E492400F40D7F /* MemoryManageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryManageVC.h; sourceTree = "<group>"; };
+		334B7A5B1F9E492400F40D7F /* MemoryManageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryManageVC.m; sourceTree = "<group>"; };
+		334B7A5C1F9E492400F40D7F /* MemoryManageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoryManageVC.xib; sourceTree = "<group>"; };
 		337EEC271EDC3F2C00EDC166 /* NSObject+DLIntrospection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DLIntrospection.h"; sourceTree = "<group>"; };
 		337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DLIntrospection.m"; sourceTree = "<group>"; };
 		338BC0631F530A8400E8DD3E /* JSONToModelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONToModelVC.h; sourceTree = "<group>"; };
@@ -403,6 +408,7 @@
 				33F7561F1F5C496F00C7321F /* BOOL */,
 				333D511F1F6E3F5F00FA084F /* RunLoop */,
 				33454B151F76149800DC3F14 /* Category */,
+				334B7A561F9E48DD00F40D7F /* Memory */,
 				33E14FC31F7971E40042F729 /* MultiThread */,
 			);
 			path = ViewController;
@@ -498,6 +504,16 @@
 				33454B281F76153200DC3F14 /* ARCObject+TestDealloc.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		334B7A561F9E48DD00F40D7F /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				334B7A5A1F9E492400F40D7F /* MemoryManageVC.h */,
+				334B7A5B1F9E492400F40D7F /* MemoryManageVC.m */,
+				334B7A5C1F9E492400F40D7F /* MemoryManageVC.xib */,
+			);
+			path = Memory;
 			sourceTree = "<group>";
 		};
 		337EEC261EDC3F2C00EDC166 /* DLIntrospection */ = {
@@ -886,7 +902,7 @@
 		330F7BB51ED3321F0009280A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = iOSStudio;
 				TargetAttributes = {
 					330F7BBC1ED3321F0009280A = {
@@ -936,6 +952,7 @@
 				33102E3C1F496083008CCD64 /* RuntimeVC.xib in Resources */,
 				B5633FCF1F5FD02700A72567 /* YYModelExceptionOneTest.json in Resources */,
 				33F756241F5C498900C7321F /* BOOLTestVC.xib in Resources */,
+				334B7A5E1F9E492400F40D7F /* MemoryManageVC.xib in Resources */,
 				B5633FC61F5FB14700A72567 /* MJExtensionSubClassOneTest.json in Resources */,
 				B5633FC41F5FB14700A72567 /* MJExtensionExceptionThreeTest.json in Resources */,
 				33454B1A1F7614B200DC3F14 /* CategoryVC.xib in Resources */,
@@ -1063,6 +1080,7 @@
 				330F7C001ED333F00009280A /* main.m in Sources */,
 				337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */,
 				B56480101EF91FF9009CF536 /* GCDSemaphore.m in Sources */,
+				334B7A5D1F9E492400F40D7F /* MemoryManageVC.m in Sources */,
 				33454B201F7614EF00DC3F14 /* MRCObject.m in Sources */,
 				33102E3F1F4965E8008CCD64 /* Person.m in Sources */,
 				B507116F1F0E4C8D008EC4AE /* BNPopoverBaseLayout.m in Sources */,
