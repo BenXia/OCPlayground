@@ -95,7 +95,7 @@
 //    } while([timeoutDate timeIntervalSinceNow] > 0.0 && !block());
 //}
 
-- (BOOL)runUntilBlock:(BOOL(^)())block timeout:(NSTimeInterval)timeout {
+- (BOOL)runUntilBlock:(BOOL(^)(void))block timeout:(NSTimeInterval)timeout {
     __block Boolean fulfilled = NO;
     void (^beforeWaiting)(CFRunLoopObserverRef observer, CFRunLoopActivity activity) =
     ^(CFRunLoopObserverRef observer, CFRunLoopActivity activity) {

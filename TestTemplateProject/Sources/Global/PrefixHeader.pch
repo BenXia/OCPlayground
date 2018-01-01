@@ -16,7 +16,7 @@
 #import <Foundation/Foundation.h>
 
 #import "Masonry.h"
-#import "KeyboardManager.h"
+#import "IQKeyboardManager.h"
 #import "Mantle.h"
 #import "JSONModelLib.h"
 #import "MJExtension.h"
