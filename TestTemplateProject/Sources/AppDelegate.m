@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HomePageVC.h"
+#import "SafePushNavigationController.h"
 
 @interface AppDelegate ()
 
@@ -31,7 +32,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[HomePageVC alloc] init]];
+    SafePushNavigationController *nav = [[SafePushNavigationController alloc] initWithRootViewController:[[HomePageVC alloc] init]];
     self.window.rootViewController = nav;
     
     return YES;

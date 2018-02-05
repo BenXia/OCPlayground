@@ -19,6 +19,7 @@
 #import "CategoryVC.h"
 #import "MemoryManageVC.h"
 #import "MultiThreadVC.h"
+#import "SafePushTestVC.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
 
@@ -143,7 +144,12 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                            vcClass:[MultiThreadVC class]
                                                       navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, nil];
+    HomePageCellModel *model13 = [HomePageCellModel modelWithTitle:@"SafePush"
+                                                          subTitle:@"SafePush一些测试"
+                                                           vcClass:[SafePushTestVC class]
+                                                      navigationVC:self.navigationController];
+    
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, nil];
     
     NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }

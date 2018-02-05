@@ -59,6 +59,10 @@
 		B50711741F0E4C8D008EC4AE /* BNPopoverWindowRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B507116E1F0E4C8D008EC4AE /* BNPopoverWindowRootVC.m */; };
 		B50711D11F163187008EC4AE /* ClassPropertyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50711CF1F163187008EC4AE /* ClassPropertyVC.m */; };
 		B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50711D01F163187008EC4AE /* ClassPropertyVC.xib */; };
+		B541E7F52028284600D23093 /* SafePushNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B541E7F22028284600D23093 /* SafePushNavigationController.m */; };
+		B541E7F62028284600D23093 /* UIViewController+APSafeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B541E7F42028284600D23093 /* UIViewController+APSafeTransition.m */; };
+		B541E7FA2028287400D23093 /* SafePushTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B541E7F82028287400D23093 /* SafePushTestVC.m */; };
+		B541E7FB2028287400D23093 /* SafePushTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B541E7F92028287400D23093 /* SafePushTestVC.xib */; };
 		B543377F1F56BC5C0055AECE /* President.m in Sources */ = {isa = PBXBuildFile; fileRef = B543377E1F56BC5C0055AECE /* President.m */; };
 		B54337B21F5E46A50055AECE /* MantleUsageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B54337B01F5E46A50055AECE /* MantleUsageVC.m */; };
 		B54337B31F5E46A50055AECE /* MantleUsageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54337B11F5E46A50055AECE /* MantleUsageVC.xib */; };
@@ -207,6 +211,13 @@
 		B50711CE1F163187008EC4AE /* ClassPropertyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassPropertyVC.h; sourceTree = "<group>"; };
 		B50711CF1F163187008EC4AE /* ClassPropertyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassPropertyVC.m; sourceTree = "<group>"; };
 		B50711D01F163187008EC4AE /* ClassPropertyVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassPropertyVC.xib; sourceTree = "<group>"; };
+		B541E7F12028284600D23093 /* SafePushNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafePushNavigationController.h; sourceTree = "<group>"; };
+		B541E7F22028284600D23093 /* SafePushNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafePushNavigationController.m; sourceTree = "<group>"; };
+		B541E7F32028284600D23093 /* UIViewController+APSafeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+APSafeTransition.h"; sourceTree = "<group>"; };
+		B541E7F42028284600D23093 /* UIViewController+APSafeTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+APSafeTransition.m"; sourceTree = "<group>"; };
+		B541E7F72028287400D23093 /* SafePushTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SafePushTestVC.h; sourceTree = "<group>"; };
+		B541E7F82028287400D23093 /* SafePushTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafePushTestVC.m; sourceTree = "<group>"; };
+		B541E7F92028287400D23093 /* SafePushTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SafePushTestVC.xib; sourceTree = "<group>"; };
 		B543377D1F56BC5C0055AECE /* President.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = President.h; sourceTree = "<group>"; };
 		B543377E1F56BC5C0055AECE /* President.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = President.m; sourceTree = "<group>"; };
 		B54337AF1F5E46A50055AECE /* MantleUsageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MantleUsageVC.h; sourceTree = "<group>"; };
@@ -410,6 +421,7 @@
 				33454B151F76149800DC3F14 /* Category */,
 				334B7A561F9E48DD00F40D7F /* Memory */,
 				33E14FC31F7971E40042F729 /* MultiThread */,
+				B541E7F02028284600D23093 /* SafePush */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -624,6 +636,20 @@
 				B50711D01F163187008EC4AE /* ClassPropertyVC.xib */,
 			);
 			path = ClassProperty;
+			sourceTree = "<group>";
+		};
+		B541E7F02028284600D23093 /* SafePush */ = {
+			isa = PBXGroup;
+			children = (
+				B541E7F72028287400D23093 /* SafePushTestVC.h */,
+				B541E7F82028287400D23093 /* SafePushTestVC.m */,
+				B541E7F92028287400D23093 /* SafePushTestVC.xib */,
+				B541E7F12028284600D23093 /* SafePushNavigationController.h */,
+				B541E7F22028284600D23093 /* SafePushNavigationController.m */,
+				B541E7F32028284600D23093 /* UIViewController+APSafeTransition.h */,
+				B541E7F42028284600D23093 /* UIViewController+APSafeTransition.m */,
+			);
+			path = SafePush;
 			sourceTree = "<group>";
 		};
 		B54337AB1F5E465E0055AECE /* JSONModelUsageVC */ = {
@@ -969,6 +995,7 @@
 				B5633FD11F5FD02700A72567 /* YYModelExceptionTwoTest.json in Resources */,
 				331A8C5A1F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json in Resources */,
 				330F7C021ED334380009280A /* Assets.xcassets in Resources */,
+				B541E7FB2028287400D23093 /* SafePushTestVC.xib in Resources */,
 				33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */,
 				B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */,
 				331A8C571F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json in Resources */,
@@ -1058,9 +1085,11 @@
 				B50711701F0E4C8D008EC4AE /* BNPopoverBottomLayout.m in Sources */,
 				B564800F1EF91FF9009CF536 /* GCDQueue.m in Sources */,
 				33454B261F76151E00DC3F14 /* MRCObject+TestDealloc.m in Sources */,
+				B541E7F62028284600D23093 /* UIViewController+APSafeTransition.m in Sources */,
 				330F7BF61ED333F00009280A /* AppDelegate.m in Sources */,
 				B50711711F0E4C8D008EC4AE /* BNPopoverCustomLayout.m in Sources */,
 				33102E481F4969F5008CCD64 /* SingletonClass.m in Sources */,
+				B541E7F52028284600D23093 /* SafePushNavigationController.m in Sources */,
 				B54337CE1F5E47560055AECE /* ModelForMJExtension.m in Sources */,
 				330F7C0D1ED349AB0009280A /* UIView+Helper.m in Sources */,
 				33454B291F76153200DC3F14 /* ARCObject+TestDealloc.m in Sources */,
@@ -1080,6 +1109,7 @@
 				330F7C001ED333F00009280A /* main.m in Sources */,
 				337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */,
 				B56480101EF91FF9009CF536 /* GCDSemaphore.m in Sources */,
+				B541E7FA2028287400D23093 /* SafePushTestVC.m in Sources */,
 				334B7A5D1F9E492400F40D7F /* MemoryManageVC.m in Sources */,
 				33454B201F7614EF00DC3F14 /* MRCObject.m in Sources */,
 				33102E3F1F4965E8008CCD64 /* Person.m in Sources */,
@@ -1217,7 +1247,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qq.iOSStudio.TestTemplateProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f5cb6e54-084c-4aa0-a3e6-6e4a75fb902e";
+				PROVISIONING_PROFILE = "4545b2b3-276c-4826-b23f-eaef4f116580";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -1240,7 +1270,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qq.iOSStudio.TestTemplateProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f5cb6e54-084c-4aa0-a3e6-6e4a75fb902e";
+				PROVISIONING_PROFILE = "4545b2b3-276c-4826-b23f-eaef4f116580";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
