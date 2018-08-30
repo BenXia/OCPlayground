@@ -62,6 +62,12 @@ static const NSCalendarUnit kDateComponentFlags = NSCalendarUnitYear | NSCalenda
     NSDate *showDate = [calendar dateFromComponents:comps];
     
     NSLog (@"comps: %@ \n\nshowDate: %@\n\n", comps, showDate);
+    
+    NSLog (@"%@  test float format", [self stringWithMaxTwoDecimal:1.006]);
+}
+
+- (NSString *)stringWithMaxTwoDecimal:(double)num {
+    return [NSString stringWithFormat:@"%@", @([[NSString stringWithFormat:@"%.2f", num] floatValue])];
 }
 
 - (void)loadView {

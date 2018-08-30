@@ -55,23 +55,28 @@
 //    obj已经满足了构成一个objc对象的全部要求（首地址指向ClassObject），遂能够正常走消息机制；
 //    由于这个人造的对象在栈上，而取self.name的操作本质上是self指针在内存向高位地址偏移（32位下一个指针是4字节，64位下一个指针是8字节），按viewDidLoad执行时各个变量入栈顺序从高到底为（self, _cmd, self.class, self, obj）（前两个是方法隐含入参，随后两个为super调用的两个压栈参数(注意压栈的顺序)），遂栈低地址的obj+4（64位上obj+8)取到了self。
     
-    // 打开下面一段代码，输出会变成 my name's <Father: 0xXXXXXXXXXXX>
+    // 栈调试技巧
+    // po $esi   打印寄存器中的值
+    // po ((Sark *)0x16f5b7d20).name  地址中值强转
+    
+    // 打开下面一段代码，会崩溃
 //    id fatherCls = [Father class];
 //    void *father;
 //    father = (void *)&fatherCls;
+//    [(__bridge id)father speak];    // 会崩溃。。。
     
-//    id cls = [Sark class];
-//    void *obj = &cls;
-//    NSLog(@"obj pointer = %p", obj);
-//    [(__bridge id)obj speak];
+    id cls = [Sark class];
+    void *obj = &cls;
+    NSLog(@"obj pointer = %p", obj);
+    [(__bridge id)obj speak];
 
 //    NSArray *iVars = [Sark instanceVariables];
 //    NSLog (@"iVars : %@", iVars);
     
     // 添加 property 配合关联属性（）
-    Person* p = [[Person alloc] init];   // 换成子类 President 再看看（子类只打印自己的属性，不打印父类的）
-    p.cjmAge = 20;
-    p.cjmName = @"Jiaming Chen";
+//    Person* p = [[Person alloc] init];   // 换成子类 President 再看看（子类只打印自己的属性，不打印父类的）
+//    p.cjmAge = 20;
+//    p.cjmName = @"Jiaming Chen";
 
 //    unsigned int propertyCount = 0;
 //    objc_property_t *propertyList = class_copyPropertyList([p class], &propertyCount);
@@ -87,16 +92,16 @@
 //    class_addProperty([p class], "studentIdentifier", &attributes, 1);
 //    objc_property_t property = class_getProperty([p class], "studentIdentifier");
 //    NSLog(@"%s %s", property_getName(property), property_getAttributes(property));
-//    
+//
 //    propertyList = class_copyPropertyList([p class], &propertyCount);
 //    for (int i = 0; i < propertyCount; i++) {
 //        const char* name = property_getName(propertyList[i]);
 //        const char* attributes = property_getAttributes(propertyList[i]);
 //        NSLog(@"%s %s", name, attributes);
 //    }
-//    
+    
 //    NSLog (@"p.age: %ld", p.cjmAge);
-    //NSLog (@"p.studentIdentifier: %@", p.studentIdentifier);
+//    NSLog (@"p.studentIdentifier: %@", p.studentIdentifier);
     
 }
 

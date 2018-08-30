@@ -1247,7 +1247,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qq.iOSStudio.TestTemplateProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4545b2b3-276c-4826-b23f-eaef4f116580";
+				PROVISIONING_PROFILE = "2b7fb8f2-dee9-4bf4-a27a-cf57c9f15fa7";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -1270,7 +1270,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qq.iOSStudio.TestTemplateProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4545b2b3-276c-4826-b23f-eaef4f116580";
+				PROVISIONING_PROFILE = "2b7fb8f2-dee9-4bf4-a27a-cf57c9f15fa7";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				USER_HEADER_SEARCH_PATHS = "";
 			};

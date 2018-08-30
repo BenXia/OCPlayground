@@ -151,7 +151,7 @@ static const CGFloat kTableViewCellHeight = 60.0f;
     
     self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, nil];
     
-    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -160,43 +160,58 @@ static const CGFloat kTableViewCellHeight = 60.0f;
     self.title = @"首页";
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
-    NSLog (@"HomePageVC viewWillAppear");
-    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+//    NSLog (@"HomePageVC viewWillAppear");
+//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
 
 - (void)viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     
-    NSLog (@"HomePageVC viewWillLayoutSubviews");
-    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+//    NSLog (@"HomePageVC viewWillLayoutSubviews");
+//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    NSLog (@"HomePageVC viewDidLayoutSubviews");
-    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+//    NSLog (@"HomePageVC viewDidLayoutSubviews");
+//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    NSLog (@"HomePageVC viewDidAppear");
-    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+//    NSLog (@"HomePageVC viewDidAppear");
+//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [self printA];
+//        [self printB];
+//    });
+    
+//    [self performSelector:@selector(printA) withObject:nil afterDelay:3];
+}
+
+- (void)printA {
+    NSLog (@"===========>A");
+}
+
+- (void)printB {
+    NSLog (@"===========>B");
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 
-    NSLog (@"HomePageVC viewWillDisappear");
-    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+//    NSLog (@"HomePageVC viewWillDisappear");
+//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    NSLog (@"HomePageVC viewDidDisappear");
-    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
+//    NSLog (@"HomePageVC viewDidDisappear");
+//    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
 
 - (void)didReceiveMemoryWarning {
