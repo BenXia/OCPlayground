@@ -20,13 +20,19 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        __strong typeof(self) self = weakSelf;
+        [self testGCDSyncOperationExecuteThread];
+    });
+    
 //    [self testGCDSyncOperationExecuteThread];
 //
 //    [self testGCDAsyncSerialOperationExecuteThread];
 //
 //    [self testGCDAsyncConcurrentOperationExecuteThread];
 //
-    [self testMaxGCDConcurrentThreadCount];  // 1 + 65 (1为主线程）
+//    [self testMaxGCDConcurrentThreadCount];  // 1 + 65 (1为主线程）
     
 //    [self testMaxGCDSerialThreadCount];   // 我的天，还有上限吗
     
@@ -42,22 +48,56 @@
 
 - (void)testGCDSyncOperationExecuteThread {
     NSLog(@"main thread = %@", [NSThread mainThread]);
+    NSLog(@"current thread = %@", [NSThread currentThread]);
     
-    dispatch_queue_t serialQueue = dispatch_queue_create("com.summer.serial", 0);
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.summer.concurrent", DISPATCH_QUEUE_CONCURRENT);
     
-    dispatch_sync(serialQueue, ^{
+    for (int i = 0; i < 100; i++) {
+        dispatch_async(concurrentQueue, ^{
+            NSLog(@"%d, for in dispatch_async concurrentQueue, current thread = %@", i, [NSThread currentThread]);
+            sleep(1);
+        });
+    }
+    
+    dispatch_sync(concurrentQueue, ^{
         NSLog(@"1,current thread = %@", [NSThread currentThread]);
     });
     
-    dispatch_sync(serialQueue, ^{
+    dispatch_sync(concurrentQueue, ^{
         NSLog(@"2,current thread = %@", [NSThread currentThread]);
+        sleep(10);
     });
+    
+    NSLog(@">>>>>>>>>>>> Part One END");
     
     dispatch_queue_t serialQueue2 = dispatch_queue_create("com.summer.serial2", 0);
+
+    for (int i = 0; i < 100; i++) {
+        dispatch_async(serialQueue2, ^{
+            NSLog(@"%d, for in dispatch_async serialQueue2, current thread = %@", i, [NSThread currentThread]);
+            sleep(1);
+        });
+    }
     
-    dispatch_sync(serialQueue2, ^{
+    dispatch_async(serialQueue2, ^{
         NSLog(@"11,current thread = %@", [NSThread currentThread]);
     });
+
+    dispatch_async(serialQueue2, ^{
+        NSLog(@"12,current thread = %@", [NSThread currentThread]);
+    });
+
+    dispatch_sync(serialQueue2, ^{
+        NSLog(@"13,current thread = %@", [NSThread currentThread]);
+    });
+
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        dispatch_async(serialQueue2, ^{
+            NSLog(@"14,current thread = %@", [NSThread currentThread]);
+        });
+    });
+    
+    NSLog(@">>>>>>>>>>>> Part Two END");
     
 //    dispatch_release(serialQueue);
 //    dispatch_release(serialQueue2);

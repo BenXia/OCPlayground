@@ -46,11 +46,11 @@
 
 - (void)sofaViewDidAppear:(BOOL)animated
 {
-    NSLog(@"66666666");
+    // NSLog(@"66666666");
     
     if ([self.navigationController isKindOfClass:[SafePushNavigationController class]]) {
         
-        NSLog(@"77777777");
+        // NSLog(@"77777777");
         ((SafePushNavigationController *)self.navigationController).transitionInProgress = NO;
         
     };

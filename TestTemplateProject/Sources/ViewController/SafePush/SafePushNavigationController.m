@@ -127,7 +127,7 @@ typedef void (^APTransitionBlock)(void);
         [super pushViewController:viewController animated:animated];
     }
     else {
-        NSLog(@"00000000");
+        // NSLog(@"00000000");
         __weak typeof(self) weakSelf = self;
         [self addTransitionBlock:^{
             [weakSelf qqpushViewController:viewController animated:animated];
@@ -251,13 +251,13 @@ typedef void (^APTransitionBlock)(void);
 - (void)addTransitionBlock:(void (^)(void))block
 {
     if (![self isTransitionInProgress]) {
-        NSLog(@"111111111");
+        // NSLog(@"111111111");
         self.transitionInProgress = YES;
         block();
     }
     else {
         [_peddingBlocks addObject:[block copy]];
-        NSLog(@"222222222 ----- %@", _peddingBlocks);
+        // NSLog(@"222222222 ----- %@", _peddingBlocks);
     }
 }
 
@@ -268,11 +268,11 @@ typedef void (^APTransitionBlock)(void);
 
 - (void)setTransitionInProgress:(BOOL)transitionInProgress
 {
-    NSLog(@"3333333  ----- %@", _peddingBlocks);
+    // NSLog(@"3333333  ----- %@", _peddingBlocks);
     _transitionInProgress = transitionInProgress;
     if (!transitionInProgress && _peddingBlocks.count > 0) {
         //        _transitionInProgress = YES;    // 这一句要删除，否则 runNextTransition 时执行的 block 又会调到子类的实现中 addTransitionBlock:
-        NSLog(@"4444444");
+        // NSLog(@"4444444");
         [self runNextTransition];
     }
 }
@@ -281,7 +281,7 @@ typedef void (^APTransitionBlock)(void);
 {
     APTransitionBlock block = _peddingBlocks.firstObject;
     [_peddingBlocks removeObject:block];
-    NSLog(@"55555555 --- %@", _peddingBlocks);
+    // NSLog(@"55555555 --- %@", _peddingBlocks);
     block();
 }
 
