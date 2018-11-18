@@ -18,6 +18,7 @@
 #import "RunLoopVC.h"
 #import "CategoryVC.h"
 #import "MemoryManageVC.h"
+#import "ARCVC.h"
 #import "MultiThreadVC.h"
 #import "SafePushTestVC.h"
 
@@ -139,17 +140,23 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                            vcClass:[MemoryManageVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model12 = [HomePageCellModel modelWithTitle:@"多线程"
+    HomePageCellModel *model12 = [HomePageCellModel modelWithTitle:@"内存管理"
+                                                          subTitle:@"MRC/ARC相关测试"
+                                                           vcClass:[ARCVC class]
+                                                      navigationVC:self.navigationController];
+    
+    
+    HomePageCellModel *model13 = [HomePageCellModel modelWithTitle:@"多线程"
                                                           subTitle:@"多线程一些有趣的测试"
                                                            vcClass:[MultiThreadVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model13 = [HomePageCellModel modelWithTitle:@"SafePush"
+    HomePageCellModel *model14 = [HomePageCellModel modelWithTitle:@"SafePush"
                                                           subTitle:@"SafePush一些测试"
                                                            vcClass:[SafePushTestVC class]
                                                       navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, nil];
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, nil];
     
 //    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }

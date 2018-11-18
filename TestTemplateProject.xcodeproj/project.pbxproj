@@ -40,6 +40,8 @@
 		337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */; };
 		338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0641F530A8400E8DD3E /* JSONToModelVC.m */; };
 		338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */; };
+		338CD75621A1B20100EC520C /* ARCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338CD75421A1B20100EC520C /* ARCVC.m */; };
+		338CD75721A1B20100EC520C /* MRCViewB.m in Sources */ = {isa = PBXBuildFile; fileRef = 338CD75521A1B20100EC520C /* MRCViewB.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		33E14FC71F7972010042F729 /* MultiThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E14FC51F7972010042F729 /* MultiThreadVC.m */; };
 		33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E14FC61F7972010042F729 /* MultiThreadVC.xib */; };
 		33F756231F5C498900C7321F /* BOOLTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F756211F5C498900C7321F /* BOOLTestVC.m */; };
@@ -178,6 +180,10 @@
 		338BC0631F530A8400E8DD3E /* JSONToModelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONToModelVC.h; sourceTree = "<group>"; };
 		338BC0641F530A8400E8DD3E /* JSONToModelVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONToModelVC.m; sourceTree = "<group>"; };
 		338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSONToModelVC.xib; sourceTree = "<group>"; };
+		338CD75221A1B20100EC520C /* ARCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCVC.h; sourceTree = "<group>"; };
+		338CD75321A1B20100EC520C /* MRCViewB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCViewB.h; sourceTree = "<group>"; };
+		338CD75421A1B20100EC520C /* ARCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCVC.m; sourceTree = "<group>"; };
+		338CD75521A1B20100EC520C /* MRCViewB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCViewB.m; sourceTree = "<group>"; };
 		33E14FC41F7972010042F729 /* MultiThreadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiThreadVC.h; sourceTree = "<group>"; };
 		33E14FC51F7972010042F729 /* MultiThreadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadVC.m; sourceTree = "<group>"; };
 		33E14FC61F7972010042F729 /* MultiThreadVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiThreadVC.xib; sourceTree = "<group>"; };
@@ -420,6 +426,7 @@
 				333D511F1F6E3F5F00FA084F /* RunLoop */,
 				33454B151F76149800DC3F14 /* Category */,
 				334B7A561F9E48DD00F40D7F /* Memory */,
+				338CD75121A1B20100EC520C /* MRCARC */,
 				33E14FC31F7971E40042F729 /* MultiThread */,
 				B541E7F02028284600D23093 /* SafePush */,
 			);
@@ -549,6 +556,17 @@
 				B54337AE1F5E465E0055AECE /* YYModelUsageVC */,
 			);
 			path = JSONToModel;
+			sourceTree = "<group>";
+		};
+		338CD75121A1B20100EC520C /* MRCARC */ = {
+			isa = PBXGroup;
+			children = (
+				338CD75221A1B20100EC520C /* ARCVC.h */,
+				338CD75421A1B20100EC520C /* ARCVC.m */,
+				338CD75321A1B20100EC520C /* MRCViewB.h */,
+				338CD75521A1B20100EC520C /* MRCViewB.m */,
+			);
+			path = MRCARC;
 			sourceTree = "<group>";
 		};
 		33E14FC31F7971E40042F729 /* MultiThread */ = {
@@ -928,7 +946,7 @@
 		330F7BB51ED3321F0009280A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = iOSStudio;
 				TargetAttributes = {
 					330F7BBC1ED3321F0009280A = {
@@ -1070,6 +1088,7 @@
 				B50711731F0E4C8D008EC4AE /* BNPopoverWindow.m in Sources */,
 				B50394C81EEE5FF70016FA97 /* TimeSequenceVC.m in Sources */,
 				B564800E1EF91FF9009CF536 /* GCDGroup.m in Sources */,
+				338CD75721A1B20100EC520C /* MRCViewB.m in Sources */,
 				B54337C11F5E46E70055AECE /* YYModelUsageVC.m in Sources */,
 				33144F041EF0546C006D27AC /* UIUtils.m in Sources */,
 				B56480151EF9201D009CF536 /* CommonUtils.m in Sources */,
@@ -1082,6 +1101,7 @@
 				B564801F1EF92071009CF536 /* UIImage+Blur.m in Sources */,
 				B50711721F0E4C8D008EC4AE /* BNPopoverCenterLayout.m in Sources */,
 				338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */,
+				338CD75621A1B20100EC520C /* ARCVC.m in Sources */,
 				B50711701F0E4C8D008EC4AE /* BNPopoverBottomLayout.m in Sources */,
 				B564800F1EF91FF9009CF536 /* GCDQueue.m in Sources */,
 				33454B261F76151E00DC3F14 /* MRCObject+TestDealloc.m in Sources */,
@@ -1142,6 +1162,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1149,6 +1170,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1196,6 +1218,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1203,6 +1226,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
