@@ -19,6 +19,7 @@
 #import "CategoryVC.h"
 #import "MemoryManageVC.h"
 #import "ARCVC.h"
+#import "ProxyTestVC.h"
 #import "MultiThreadVC.h"
 #import "SafePushTestVC.h"
 
@@ -145,18 +146,22 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                            vcClass:[ARCVC class]
                                                       navigationVC:self.navigationController];
     
+    HomePageCellModel *model13 = [HomePageCellModel modelWithTitle:@"NSProxy"
+                                                          subTitle:@"代理解决一些内存管理问题"
+                                                           vcClass:[ProxyTestVC class]
+                                                      navigationVC:self.navigationController];
     
-    HomePageCellModel *model13 = [HomePageCellModel modelWithTitle:@"多线程"
+    HomePageCellModel *model14 = [HomePageCellModel modelWithTitle:@"多线程"
                                                           subTitle:@"多线程一些有趣的测试"
                                                            vcClass:[MultiThreadVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model14 = [HomePageCellModel modelWithTitle:@"SafePush"
+    HomePageCellModel *model15 = [HomePageCellModel modelWithTitle:@"SafePush"
                                                           subTitle:@"SafePush一些测试"
                                                            vcClass:[SafePushTestVC class]
                                                       navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, nil];
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, nil];
     
 //    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }

@@ -42,6 +42,11 @@
 		338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */; };
 		338CD75621A1B20100EC520C /* ARCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338CD75421A1B20100EC520C /* ARCVC.m */; };
 		338CD75721A1B20100EC520C /* MRCViewB.m in Sources */ = {isa = PBXBuildFile; fileRef = 338CD75521A1B20100EC520C /* MRCViewB.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3399DEFF21B96E78006C6B85 /* ProxyWithWeakTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DEFA21B96E78006C6B85 /* ProxyWithWeakTarget.m */; };
+		3399DF0021B96E78006C6B85 /* ProxyTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3399DEFB21B96E78006C6B85 /* ProxyTestVC.xib */; };
+		3399DF0121B96E78006C6B85 /* ProxyTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DEFC21B96E78006C6B85 /* ProxyTestVC.m */; };
+		3399DF0721B97259006C6B85 /* CustomTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DF0621B97259006C6B85 /* CustomTarget.m */; };
+		3399DF0B21B973A7006C6B85 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DF0A21B973A7006C6B85 /* Aspects.m */; };
 		33E14FC71F7972010042F729 /* MultiThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E14FC51F7972010042F729 /* MultiThreadVC.m */; };
 		33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E14FC61F7972010042F729 /* MultiThreadVC.xib */; };
 		33F756231F5C498900C7321F /* BOOLTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F756211F5C498900C7321F /* BOOLTestVC.m */; };
@@ -184,6 +189,15 @@
 		338CD75321A1B20100EC520C /* MRCViewB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCViewB.h; sourceTree = "<group>"; };
 		338CD75421A1B20100EC520C /* ARCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCVC.m; sourceTree = "<group>"; };
 		338CD75521A1B20100EC520C /* MRCViewB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCViewB.m; sourceTree = "<group>"; };
+		3399DEFA21B96E78006C6B85 /* ProxyWithWeakTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProxyWithWeakTarget.m; sourceTree = "<group>"; };
+		3399DEFB21B96E78006C6B85 /* ProxyTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProxyTestVC.xib; sourceTree = "<group>"; };
+		3399DEFC21B96E78006C6B85 /* ProxyTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProxyTestVC.m; sourceTree = "<group>"; };
+		3399DEFD21B96E78006C6B85 /* ProxyWithWeakTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProxyWithWeakTarget.h; sourceTree = "<group>"; };
+		3399DEFE21B96E78006C6B85 /* ProxyTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProxyTestVC.h; sourceTree = "<group>"; };
+		3399DF0521B97259006C6B85 /* CustomTarget.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomTarget.h; sourceTree = "<group>"; };
+		3399DF0621B97259006C6B85 /* CustomTarget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTarget.m; sourceTree = "<group>"; };
+		3399DF0921B973A7006C6B85 /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
+		3399DF0A21B973A7006C6B85 /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
 		33E14FC41F7972010042F729 /* MultiThreadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiThreadVC.h; sourceTree = "<group>"; };
 		33E14FC51F7972010042F729 /* MultiThreadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadVC.m; sourceTree = "<group>"; };
 		33E14FC61F7972010042F729 /* MultiThreadVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiThreadVC.xib; sourceTree = "<group>"; };
@@ -395,6 +409,7 @@
 		330F7BE21ED333F00009280A /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				3399DF0821B973A7006C6B85 /* Aspects */,
 				337EEC261EDC3F2C00EDC166 /* DLIntrospection */,
 				B56480091EF91FF9009CF536 /* MBProgressHUD */,
 				B56480001EF91FF9009CF536 /* GCDObjC */,
@@ -427,6 +442,7 @@
 				33454B151F76149800DC3F14 /* Category */,
 				334B7A561F9E48DD00F40D7F /* Memory */,
 				338CD75121A1B20100EC520C /* MRCARC */,
+				3399DEF921B96E78006C6B85 /* NSProxy */,
 				33E14FC31F7971E40042F729 /* MultiThread */,
 				B541E7F02028284600D23093 /* SafePush */,
 			);
@@ -567,6 +583,29 @@
 				338CD75521A1B20100EC520C /* MRCViewB.m */,
 			);
 			path = MRCARC;
+			sourceTree = "<group>";
+		};
+		3399DEF921B96E78006C6B85 /* NSProxy */ = {
+			isa = PBXGroup;
+			children = (
+				3399DEFE21B96E78006C6B85 /* ProxyTestVC.h */,
+				3399DEFC21B96E78006C6B85 /* ProxyTestVC.m */,
+				3399DEFB21B96E78006C6B85 /* ProxyTestVC.xib */,
+				3399DF0521B97259006C6B85 /* CustomTarget.h */,
+				3399DF0621B97259006C6B85 /* CustomTarget.m */,
+				3399DEFD21B96E78006C6B85 /* ProxyWithWeakTarget.h */,
+				3399DEFA21B96E78006C6B85 /* ProxyWithWeakTarget.m */,
+			);
+			path = NSProxy;
+			sourceTree = "<group>";
+		};
+		3399DF0821B973A7006C6B85 /* Aspects */ = {
+			isa = PBXGroup;
+			children = (
+				3399DF0921B973A7006C6B85 /* Aspects.h */,
+				3399DF0A21B973A7006C6B85 /* Aspects.m */,
+			);
+			path = Aspects;
 			sourceTree = "<group>";
 		};
 		33E14FC31F7971E40042F729 /* MultiThread */ = {
@@ -1016,6 +1055,7 @@
 				B541E7FB2028287400D23093 /* SafePushTestVC.xib in Resources */,
 				33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */,
 				B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */,
+				3399DF0021B96E78006C6B85 /* ProxyTestVC.xib in Resources */,
 				331A8C571F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json in Resources */,
 				B54337BD1F5E46D70055AECE /* MJExtensionUsageVC.xib in Resources */,
 				B5633FD51F5FD1F500A72567 /* MJExtensionModelArrayTest.json in Resources */,
@@ -1086,6 +1126,7 @@
 				B50711741F0E4C8D008EC4AE /* BNPopoverWindowRootVC.m in Sources */,
 				33F756231F5C498900C7321F /* BOOLTestVC.m in Sources */,
 				B50711731F0E4C8D008EC4AE /* BNPopoverWindow.m in Sources */,
+				3399DEFF21B96E78006C6B85 /* ProxyWithWeakTarget.m in Sources */,
 				B50394C81EEE5FF70016FA97 /* TimeSequenceVC.m in Sources */,
 				B564800E1EF91FF9009CF536 /* GCDGroup.m in Sources */,
 				338CD75721A1B20100EC520C /* MRCViewB.m in Sources */,
@@ -1093,6 +1134,7 @@
 				33144F041EF0546C006D27AC /* UIUtils.m in Sources */,
 				B56480151EF9201D009CF536 /* CommonUtils.m in Sources */,
 				B54337B71F5E46BB0055AECE /* JSONModelUsageVC.m in Sources */,
+				3399DF0121B96E78006C6B85 /* ProxyTestVC.m in Sources */,
 				B5FA68C81EF270290077349C /* BNNavigationController.m in Sources */,
 				B54337C61F5E47480055AECE /* ModelForJSONModel.m in Sources */,
 				33454B191F7614B200DC3F14 /* CategoryVC.m in Sources */,
@@ -1102,10 +1144,12 @@
 				B50711721F0E4C8D008EC4AE /* BNPopoverCenterLayout.m in Sources */,
 				338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */,
 				338CD75621A1B20100EC520C /* ARCVC.m in Sources */,
+				3399DF0721B97259006C6B85 /* CustomTarget.m in Sources */,
 				B50711701F0E4C8D008EC4AE /* BNPopoverBottomLayout.m in Sources */,
 				B564800F1EF91FF9009CF536 /* GCDQueue.m in Sources */,
 				33454B261F76151E00DC3F14 /* MRCObject+TestDealloc.m in Sources */,
 				B541E7F62028284600D23093 /* UIViewController+APSafeTransition.m in Sources */,
+				3399DF0B21B973A7006C6B85 /* Aspects.m in Sources */,
 				330F7BF61ED333F00009280A /* AppDelegate.m in Sources */,
 				B50711711F0E4C8D008EC4AE /* BNPopoverCustomLayout.m in Sources */,
 				33102E481F4969F5008CCD64 /* SingletonClass.m in Sources */,
