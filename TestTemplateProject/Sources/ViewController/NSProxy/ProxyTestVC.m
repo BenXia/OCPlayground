@@ -82,17 +82,19 @@
     class_addMethod([self.target class], @selector(sayHello), (IMP)sayHelloIMP, "v@:");
     self.repeatTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self.target selector:@selector(sayHello) userInfo:nil repeats:YES];
     
+    // [self.repeatTimer class]: __NSCFTimer
+    
     // 下面几种 hook 方式都无法注入 self.repeatTimer 的 dealloc 方法
 //    Method oriMethod = class_getInstanceMethod([self.repeatTimer class], NSSelectorFromString(@"dealloc"));
 //    Method repMethod = class_getInstanceMethod([self class], @selector(replaceDelloc));
 //    method_exchangeImplementations(oriMethod, repMethod);
     
-    [[self.repeatTimer class] aspect_hookSelector:NSSelectorFromString(@"dealloc")
-                                      withOptions:AspectPositionBefore
-                                       usingBlock:^(id<AspectInfo> info) {
-                                           NSLog(@"NSTimer dealloc");
-                                       }
-                                            error:NULL];
+//    [[self.repeatTimer class] aspect_hookSelector:NSSelectorFromString(@"dealloc")
+//                                      withOptions:AspectPositionBefore
+//                                       usingBlock:^(id<AspectInfo> info) {
+//                                           NSLog(@"NSTimer dealloc");
+//                                       }
+//                                            error:NULL];
     
 //    [self.repeatTimer aspect_hookSelector:NSSelectorFromString(@"dealloc")
 //                              withOptions:AspectPositionBefore
