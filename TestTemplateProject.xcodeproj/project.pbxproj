@@ -66,6 +66,8 @@
 		B50711741F0E4C8D008EC4AE /* BNPopoverWindowRootVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B507116E1F0E4C8D008EC4AE /* BNPopoverWindowRootVC.m */; };
 		B50711D11F163187008EC4AE /* ClassPropertyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50711CF1F163187008EC4AE /* ClassPropertyVC.m */; };
 		B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50711D01F163187008EC4AE /* ClassPropertyVC.xib */; };
+		B53C63B322E83E7E0066F492 /* TextImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53C63B122E83E7E0066F492 /* TextImageVC.m */; };
+		B53C63B422E83E7E0066F492 /* TextImageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53C63B222E83E7E0066F492 /* TextImageVC.xib */; };
 		B541E7F52028284600D23093 /* SafePushNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B541E7F22028284600D23093 /* SafePushNavigationController.m */; };
 		B541E7F62028284600D23093 /* UIViewController+APSafeTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = B541E7F42028284600D23093 /* UIViewController+APSafeTransition.m */; };
 		B541E7FA2028287400D23093 /* SafePushTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B541E7F82028287400D23093 /* SafePushTestVC.m */; };
@@ -231,6 +233,9 @@
 		B50711CE1F163187008EC4AE /* ClassPropertyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassPropertyVC.h; sourceTree = "<group>"; };
 		B50711CF1F163187008EC4AE /* ClassPropertyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassPropertyVC.m; sourceTree = "<group>"; };
 		B50711D01F163187008EC4AE /* ClassPropertyVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassPropertyVC.xib; sourceTree = "<group>"; };
+		B53C63B022E83E7E0066F492 /* TextImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextImageVC.h; sourceTree = "<group>"; };
+		B53C63B122E83E7E0066F492 /* TextImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextImageVC.m; sourceTree = "<group>"; };
+		B53C63B222E83E7E0066F492 /* TextImageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextImageVC.xib; sourceTree = "<group>"; };
 		B541E7F12028284600D23093 /* SafePushNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SafePushNavigationController.h; sourceTree = "<group>"; };
 		B541E7F22028284600D23093 /* SafePushNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafePushNavigationController.m; sourceTree = "<group>"; };
 		B541E7F32028284600D23093 /* UIViewController+APSafeTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+APSafeTransition.h"; sourceTree = "<group>"; };
@@ -445,6 +450,7 @@
 				3399DEF921B96E78006C6B85 /* NSProxy */,
 				33E14FC31F7971E40042F729 /* MultiThread */,
 				B541E7F02028284600D23093 /* SafePush */,
+				B53C63AF22E83E7E0066F492 /* TextImage */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -693,6 +699,16 @@
 				B50711D01F163187008EC4AE /* ClassPropertyVC.xib */,
 			);
 			path = ClassProperty;
+			sourceTree = "<group>";
+		};
+		B53C63AF22E83E7E0066F492 /* TextImage */ = {
+			isa = PBXGroup;
+			children = (
+				B53C63B022E83E7E0066F492 /* TextImageVC.h */,
+				B53C63B122E83E7E0066F492 /* TextImageVC.m */,
+				B53C63B222E83E7E0066F492 /* TextImageVC.xib */,
+			);
+			path = TextImage;
 			sourceTree = "<group>";
 		};
 		B541E7F02028284600D23093 /* SafePush */ = {
@@ -999,6 +1015,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -1032,6 +1049,7 @@
 				B59532A31F5E7F13007B2F30 /* MantleExceptionTwoTest.json in Resources */,
 				B54337B31F5E46A50055AECE /* MantleUsageVC.xib in Resources */,
 				33102E451F4969BB008CCD64 /* SingletonVC.xib in Resources */,
+				B53C63B422E83E7E0066F492 /* TextImageVC.xib in Resources */,
 				33102E3C1F496083008CCD64 /* RuntimeVC.xib in Resources */,
 				B5633FCF1F5FD02700A72567 /* YYModelExceptionOneTest.json in Resources */,
 				33F756241F5C498900C7321F /* BOOLTestVC.xib in Resources */,
@@ -1170,6 +1188,7 @@
 				33102E6B1F49FF7F008CCD64 /* NoXibVC.m in Sources */,
 				B54337BC1F5E46D70055AECE /* MJExtensionUsageVC.m in Sources */,
 				B54337CA1F5E474E0055AECE /* ModelForMantle.m in Sources */,
+				B53C63B322E83E7E0066F492 /* TextImageVC.m in Sources */,
 				330F7C001ED333F00009280A /* main.m in Sources */,
 				337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */,
 				B56480101EF91FF9009CF536 /* GCDSemaphore.m in Sources */,

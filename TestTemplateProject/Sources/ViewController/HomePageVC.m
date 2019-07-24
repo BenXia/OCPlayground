@@ -22,6 +22,7 @@
 #import "ProxyTestVC.h"
 #import "MultiThreadVC.h"
 #import "SafePushTestVC.h"
+#import "TextImageVC.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
 
@@ -161,7 +162,12 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                            vcClass:[SafePushTestVC class]
                                                       navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, nil];
+    HomePageCellModel *model16 = [HomePageCellModel modelWithTitle:@"图文混排"
+                                                          subTitle:@"图文混排一些实现方式"
+                                                           vcClass:[TextImageVC class]
+                                                      navigationVC:self.navigationController];
+    
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, nil];
     
 //    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
