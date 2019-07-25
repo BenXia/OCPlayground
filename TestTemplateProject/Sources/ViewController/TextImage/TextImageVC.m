@@ -7,6 +7,7 @@
 //
 
 #import "TextImageVC.h"
+#import "TestTemplateProject-Swift.h"
 
 @interface TextImageVC ()
 
@@ -24,6 +25,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)didClickShowTextViewTestVC:(id)sender {
+    TextViewTestVC *vc = [TextViewTestVC new];
+    
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

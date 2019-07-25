@@ -26,6 +26,8 @@
 		331A8C581F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C531F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json */; };
 		331A8C591F5EF09A00198ED9 /* JSONModelSubClassOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C541F5EF09A00198ED9 /* JSONModelSubClassOneTest.json */; };
 		331A8C5A1F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C551F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json */; };
+		33345C9322EA169D008EB89F /* TextViewTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33345C9222EA169D008EB89F /* TextViewTestVC.swift */; };
+		33345C9622EA17A5008EB89F /* TextViewTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33345C9522EA17A5008EB89F /* TextViewTestVC.xib */; };
 		333D51231F6E3F5F00FA084F /* RunLoopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D51211F6E3F5F00FA084F /* RunLoopVC.m */; };
 		333D51241F6E3F5F00FA084F /* RunLoopVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333D51221F6E3F5F00FA084F /* RunLoopVC.xib */; };
 		33454B191F7614B200DC3F14 /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33454B171F7614B200DC3F14 /* CategoryVC.m */; };
@@ -163,6 +165,9 @@
 		331A8C531F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelExceptionTwoTest.json; sourceTree = "<group>"; };
 		331A8C541F5EF09A00198ED9 /* JSONModelSubClassOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelSubClassOneTest.json; sourceTree = "<group>"; };
 		331A8C551F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelSubClassTwoTest.json; sourceTree = "<group>"; };
+		33345C9222EA169D008EB89F /* TextViewTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTestVC.swift; sourceTree = "<group>"; };
+		33345C9422EA16DC008EB89F /* TestTemplateProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestTemplateProject-Bridging-Header.h"; sourceTree = "<group>"; };
+		33345C9522EA17A5008EB89F /* TextViewTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewTestVC.xib; sourceTree = "<group>"; };
 		333D51201F6E3F5F00FA084F /* RunLoopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLoopVC.h; sourceTree = "<group>"; };
 		333D51211F6E3F5F00FA084F /* RunLoopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunLoopVC.m; sourceTree = "<group>"; };
 		333D51221F6E3F5F00FA084F /* RunLoopVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunLoopVC.xib; sourceTree = "<group>"; };
@@ -458,6 +463,7 @@
 		330F7BF21ED333F00009280A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				33345C9422EA16DC008EB89F /* TestTemplateProject-Bridging-Header.h */,
 				330F7BF41ED333F00009280A /* Info.plist */,
 				330F7BF51ED333F00009280A /* main.m */,
 			);
@@ -707,6 +713,8 @@
 				B53C63B022E83E7E0066F492 /* TextImageVC.h */,
 				B53C63B122E83E7E0066F492 /* TextImageVC.m */,
 				B53C63B222E83E7E0066F492 /* TextImageVC.xib */,
+				33345C9222EA169D008EB89F /* TextViewTestVC.swift */,
+				33345C9522EA17A5008EB89F /* TextViewTestVC.xib */,
 			);
 			path = TextImage;
 			sourceTree = "<group>";
@@ -1006,6 +1014,7 @@
 				TargetAttributes = {
 					330F7BBC1ED3321F0009280A = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Manual;
 					};
 				};
@@ -1039,6 +1048,7 @@
 				338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */,
 				331A8C581F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json in Resources */,
 				B5633FD21F5FD02700A72567 /* YYModelSubClassOneTest.json in Resources */,
+				33345C9622EA17A5008EB89F /* TextViewTestVC.xib in Resources */,
 				331A8C591F5EF09A00198ED9 /* JSONModelSubClassOneTest.json in Resources */,
 				333D51241F6E3F5F00FA084F /* RunLoopVC.xib in Resources */,
 				B595329D1F5E6D40007B2F30 /* MantleSubClassTwoTest.json in Resources */,
@@ -1140,6 +1150,7 @@
 			files = (
 				B50394C31EEE5FC30016FA97 /* HomePageVC.m in Sources */,
 				B5647FFE1EF91FAE009CF536 /* BasePopoverVC.m in Sources */,
+				33345C9322EA169D008EB89F /* TextViewTestVC.swift in Sources */,
 				B5FA68C71EF270290077349C /* BaseViewController.m in Sources */,
 				B50711741F0E4C8D008EC4AE /* BNPopoverWindowRootVC.m in Sources */,
 				33F756231F5C498900C7321F /* BOOLTestVC.m in Sources */,
@@ -1244,6 +1255,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1300,6 +1312,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1323,6 +1336,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ben Xia (2Z5CGGJ246)";
 				DEVELOPMENT_TEAM = "";
@@ -1336,6 +1350,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2b7fb8f2-dee9-4bf4-a27a-cf57c9f15fa7";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestTemplateProject/Supporting Files/TestTemplateProject-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
@@ -1346,6 +1363,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Ben Xia (2Z5CGGJ246)";
 				DEVELOPMENT_TEAM = "";
@@ -1359,6 +1377,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2b7fb8f2-dee9-4bf4-a27a-cf57c9f15fa7";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "TestTemplateProject/Supporting Files/TestTemplateProject-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
