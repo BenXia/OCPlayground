@@ -31,23 +31,21 @@
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oUC-E1-LqB">
-                    <rect key="frame" x="184" y="350" width="46" height="30"/>
+                    <rect key="frame" x="174" y="350" width="66" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="46" id="YGm-ee-4ET"/>
                         <constraint firstAttribute="height" constant="30" id="jm4-r3-mvC"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="展开/收起"/>
                     <connections>
                         <action selector="hide:" destination="-1" eventType="touchUpInside" id="snW-P5-pdM"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngz-jP-znm">
-                    <rect key="frame" x="184" y="433" width="46" height="30"/>
+                    <rect key="frame" x="161" y="433" width="92" height="30"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="46" id="4yQ-WT-e9s"/>
                         <constraint firstAttribute="height" constant="30" id="7Yh-ji-t6N"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title="调用 OC 测试"/>
                     <connections>
                         <action selector="showTextImageVC:" destination="-1" eventType="touchUpInside" id="c15-fD-55T"/>
                     </connections>

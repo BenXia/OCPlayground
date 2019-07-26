@@ -20,7 +20,7 @@
     
     // 数据初始化
     [[IQKeyboardManager sharedManager] setShouldResignOnTouchOutside:YES];
-    [[IQKeyboardManager sharedManager] setShouldShowTextFieldPlaceholder:NO];
+//    [[IQKeyboardManager sharedManager] setShouldShowTextFieldPlaceholder:NO];
     
     NSLog (@"isMainThread: %d stackSize: %tu",  [NSThread currentThread].isMainThread, [NSThread currentThread].stackSize);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{

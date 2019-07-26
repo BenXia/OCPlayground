@@ -30,11 +30,37 @@
                         <action selector="didClickShowTextViewTestVC:" destination="-1" eventType="touchUpInside" id="Vpi-Wg-b73"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dtj-oq-ICR">
+                    <rect key="frame" x="87.5" y="260" width="200" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="gpA-nn-jdC"/>
+                        <constraint firstAttribute="width" constant="200" id="hLA-oZ-4pr"/>
+                    </constraints>
+                    <state key="normal" title="Show CoreTextTestVC"/>
+                    <connections>
+                        <action selector="didClickShowCoreTextTestVC:" destination="-1" eventType="touchUpInside" id="grr-IJ-Qu7"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RrR-La-9qi">
+                    <rect key="frame" x="87.5" y="320" width="200" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" id="nVU-g6-17L"/>
+                        <constraint firstAttribute="height" constant="30" id="sF9-d6-25l"/>
+                    </constraints>
+                    <state key="normal" title="Show NSAttachmentTestVC"/>
+                    <connections>
+                        <action selector="didClickShowNSAttachmentTestVC:" destination="-1" eventType="touchUpInside" id="8Dy-3z-mPe"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="CeF-wk-y5n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="4WC-sr-63r"/>
                 <constraint firstItem="CeF-wk-y5n" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ECD-FI-OGl"/>
+                <constraint firstItem="Dtj-oq-ICR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="emo-5U-oJh"/>
+                <constraint firstItem="RrR-La-9qi" firstAttribute="top" secondItem="Dtj-oq-ICR" secondAttribute="bottom" constant="30" id="naB-2j-OSX"/>
+                <constraint firstItem="RrR-La-9qi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="oxy-bS-dTY"/>
+                <constraint firstItem="Dtj-oq-ICR" firstAttribute="top" secondItem="CeF-wk-y5n" secondAttribute="bottom" constant="30" id="u0X-9l-gV4"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="146" y="49"/>

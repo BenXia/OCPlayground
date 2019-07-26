@@ -26,8 +26,21 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (IBAction)didClickShowTextViewTestVC:(id)sender {
     TextViewTestVC *vc = [TextViewTestVC new];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)didClickShowCoreTextTestVC:(id)sender {
+    CoreTextTestVC *vc = [CoreTextTestVC new];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (IBAction)didClickShowNSAttachmentTestVC:(id)sender {
+    AttachmentTestVC *vc = [AttachmentTestVC new];
     
     [self.navigationController pushViewController:vc animated:YES];
 }
