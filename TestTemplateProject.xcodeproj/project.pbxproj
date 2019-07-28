@@ -21,6 +21,8 @@
 		33102E6B1F49FF7F008CCD64 /* NoXibVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33102E691F49FF7F008CCD64 /* NoXibVC.m */; };
 		33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144EFE1EF05418006D27AC /* NSString+Size.m */; };
 		33144F041EF0546C006D27AC /* UIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 33144F021EF0546C006D27AC /* UIUtils.m */; };
+		3319AED822EDD49D001722B6 /* icon_fsyb_zhankai@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3319AED622EDD49C001722B6 /* icon_fsyb_zhankai@3x.png */; };
+		3319AED922EDD49D001722B6 /* icon_fsyb_zhankai@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3319AED722EDD49D001722B6 /* icon_fsyb_zhankai@2x.png */; };
 		331A8C561F5EF09A00198ED9 /* JSONModelExceptionOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C511F5EF09A00198ED9 /* JSONModelExceptionOneTest.json */; };
 		331A8C571F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C521F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json */; };
 		331A8C581F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C531F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json */; };
@@ -52,7 +54,7 @@
 		339682B222EB59BE00EB32D8 /* AttachmentTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339682B022EB59BE00EB32D8 /* AttachmentTestVC.xib */; };
 		339682ED22EB5B5400EB32D8 /* blank_icon_contacts@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 339682EB22EB5B5400EB32D8 /* blank_icon_contacts@3x.png */; };
 		339682EE22EB5B5400EB32D8 /* blank_icon_contacts@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 339682EC22EB5B5400EB32D8 /* blank_icon_contacts@2x.png */; };
-		3396832822EB5ED400EB32D8 /* SwiftCommonUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3396832722EB5ED400EB32D8 /* SwiftCommonUtility.m */; };
+		3396832822EB5ED400EB32D8 /* SwiftUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 3396832722EB5ED400EB32D8 /* SwiftUtility.m */; };
 		3396833122EB5FA900EB32D8 /* UIFont+QExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396832A22EB5FA800EB32D8 /* UIFont+QExtension.swift */; };
 		3396833222EB5FA900EB32D8 /* String+QExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396832B22EB5FA800EB32D8 /* String+QExtension.swift */; };
 		3396833322EB5FA900EB32D8 /* Array+QExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396832C22EB5FA800EB32D8 /* Array+QExtension.swift */; };
@@ -176,6 +178,8 @@
 		33144F011EF0546C006D27AC /* UIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIUtils.h; sourceTree = "<group>"; };
 		33144F021EF0546C006D27AC /* UIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIUtils.m; sourceTree = "<group>"; };
 		33144F031EF0546C006D27AC /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
+		3319AED622EDD49C001722B6 /* icon_fsyb_zhankai@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_fsyb_zhankai@3x.png"; sourceTree = "<group>"; };
+		3319AED722EDD49D001722B6 /* icon_fsyb_zhankai@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_fsyb_zhankai@2x.png"; sourceTree = "<group>"; };
 		331A8C511F5EF09A00198ED9 /* JSONModelExceptionOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelExceptionOneTest.json; sourceTree = "<group>"; };
 		331A8C521F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelExceptionThreeTest.json; sourceTree = "<group>"; };
 		331A8C531F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelExceptionTwoTest.json; sourceTree = "<group>"; };
@@ -222,8 +226,8 @@
 		339682B022EB59BE00EB32D8 /* AttachmentTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AttachmentTestVC.xib; sourceTree = "<group>"; };
 		339682EB22EB5B5400EB32D8 /* blank_icon_contacts@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank_icon_contacts@3x.png"; sourceTree = "<group>"; };
 		339682EC22EB5B5400EB32D8 /* blank_icon_contacts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blank_icon_contacts@2x.png"; sourceTree = "<group>"; };
-		3396832622EB5ED400EB32D8 /* SwiftCommonUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftCommonUtility.h; sourceTree = "<group>"; };
-		3396832722EB5ED400EB32D8 /* SwiftCommonUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwiftCommonUtility.m; sourceTree = "<group>"; };
+		3396832622EB5ED400EB32D8 /* SwiftUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftUtility.h; sourceTree = "<group>"; };
+		3396832722EB5ED400EB32D8 /* SwiftUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwiftUtility.m; sourceTree = "<group>"; };
 		3396832A22EB5FA800EB32D8 /* UIFont+QExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+QExtension.swift"; sourceTree = "<group>"; };
 		3396832B22EB5FA800EB32D8 /* String+QExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+QExtension.swift"; sourceTree = "<group>"; };
 		3396832C22EB5FA800EB32D8 /* Array+QExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+QExtension.swift"; sourceTree = "<group>"; };
@@ -560,10 +564,10 @@
 				33144F021EF0546C006D27AC /* UIUtils.m */,
 				B54338011F5E58C90055AECE /* JSONUtils.h */,
 				B54338021F5E58C90055AECE /* JSONUtils.m */,
+				3396832622EB5ED400EB32D8 /* SwiftUtility.h */,
+				3396832722EB5ED400EB32D8 /* SwiftUtility.m */,
 				B56480131EF9201D009CF536 /* CommonUtils.h */,
 				B56480141EF9201D009CF536 /* CommonUtils.m */,
-				3396832622EB5ED400EB32D8 /* SwiftCommonUtility.h */,
-				3396832722EB5ED400EB32D8 /* SwiftCommonUtility.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -798,6 +802,8 @@
 		B53C63AF22E83E7E0066F492 /* TextImage */ = {
 			isa = PBXGroup;
 			children = (
+				3319AED722EDD49D001722B6 /* icon_fsyb_zhankai@2x.png */,
+				3319AED622EDD49C001722B6 /* icon_fsyb_zhankai@3x.png */,
 				B53C63B022E83E7E0066F492 /* TextImageVC.h */,
 				B53C63B122E83E7E0066F492 /* TextImageVC.m */,
 				B53C63B222E83E7E0066F492 /* TextImageVC.xib */,
@@ -1146,6 +1152,7 @@
 				331A8C591F5EF09A00198ED9 /* JSONModelSubClassOneTest.json in Resources */,
 				333D51241F6E3F5F00FA084F /* RunLoopVC.xib in Resources */,
 				B595329D1F5E6D40007B2F30 /* MantleSubClassTwoTest.json in Resources */,
+				3319AED822EDD49D001722B6 /* icon_fsyb_zhankai@3x.png in Resources */,
 				B5633FC31F5FB14700A72567 /* MJExtensionExceptionOneTest.json in Resources */,
 				B59532A21F5E7F13007B2F30 /* MantleExceptionThreeTest.json in Resources */,
 				B54337EA1F5E4CC10055AECE /* MantleTest.json in Resources */,
@@ -1156,6 +1163,7 @@
 				B53C63B422E83E7E0066F492 /* TextImageVC.xib in Resources */,
 				33102E3C1F496083008CCD64 /* RuntimeVC.xib in Resources */,
 				B5633FCF1F5FD02700A72567 /* YYModelExceptionOneTest.json in Resources */,
+				3319AED922EDD49D001722B6 /* icon_fsyb_zhankai@2x.png in Resources */,
 				33F756241F5C498900C7321F /* BOOLTestVC.xib in Resources */,
 				339682B222EB59BE00EB32D8 /* AttachmentTestVC.xib in Resources */,
 				334B7A5E1F9E492400F40D7F /* MemoryManageVC.xib in Resources */,
@@ -1285,7 +1293,7 @@
 				B564801F1EF92071009CF536 /* UIImage+Blur.m in Sources */,
 				B50711721F0E4C8D008EC4AE /* BNPopoverCenterLayout.m in Sources */,
 				331B4D2D22ED819E00BE1A47 /* RACMLKVC.m in Sources */,
-				3396832822EB5ED400EB32D8 /* SwiftCommonUtility.m in Sources */,
+				3396832822EB5ED400EB32D8 /* SwiftUtility.m in Sources */,
 				338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */,
 				338CD75621A1B20100EC520C /* ARCVC.m in Sources */,
 				3399DF0721B97259006C6B85 /* CustomTarget.m in Sources */,

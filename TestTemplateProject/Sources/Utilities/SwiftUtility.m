@@ -1,14 +1,14 @@
 //
-//  SwiftCommonUtility.m
+//  SwiftUtility.m
 //  TestTemplateProject
 //
 //  Created by Ben on 2019/7/27.
 //  Copyright © 2019 iOSStudio. All rights reserved.
 //
 
-#import "SwiftCommonUtility.h"
+#import "SwiftUtility.h"
 
-@implementation SwiftCommonUtility
+@implementation SwiftUtility
 
 + (CGFloat)kScreenWidth_ {
     return kScreenWidth;

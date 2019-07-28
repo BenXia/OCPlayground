@@ -3,7 +3,8 @@
 //
 
 #import "BaseViewController.h"
-#import "SwiftCommonUtility.h"
+#import "SwiftUtility.h"
+#import "UIView+Hierarchy.h"
 #import "UIView+BindAction.h"
 #import "UIButton+BindAction.h"
 #import "TextImageVC.h"

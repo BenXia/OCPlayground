@@ -1,5 +1,5 @@
 //
-//  SwiftCommonUtility.h
+//  SwiftUtility.h
 //  TestTemplateProject
 //
 //  Created by Ben on 2019/7/27.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SwiftCommonUtility : NSObject
+@interface SwiftUtility : NSObject
 
 @property (nonatomic, class, readonly, assign) CGFloat kScreenWidth_;
 @property (nonatomic, class, readonly, assign) CGFloat kScreenHeight_;
