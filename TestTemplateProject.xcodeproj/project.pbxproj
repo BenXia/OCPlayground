@@ -26,6 +26,8 @@
 		331A8C581F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C531F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json */; };
 		331A8C591F5EF09A00198ED9 /* JSONModelSubClassOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C541F5EF09A00198ED9 /* JSONModelSubClassOneTest.json */; };
 		331A8C5A1F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C551F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json */; };
+		331B4D2C22ED819E00BE1A47 /* RACMLKVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331B4D2922ED819D00BE1A47 /* RACMLKVC.xib */; };
+		331B4D2D22ED819E00BE1A47 /* RACMLKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 331B4D2A22ED819D00BE1A47 /* RACMLKVC.m */; };
 		33345C9322EA169D008EB89F /* TextViewTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33345C9222EA169D008EB89F /* TextViewTestVC.swift */; };
 		33345C9622EA17A5008EB89F /* TextViewTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33345C9522EA17A5008EB89F /* TextViewTestVC.xib */; };
 		333D51231F6E3F5F00FA084F /* RunLoopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D51211F6E3F5F00FA084F /* RunLoopVC.m */; };
@@ -179,6 +181,9 @@
 		331A8C531F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelExceptionTwoTest.json; sourceTree = "<group>"; };
 		331A8C541F5EF09A00198ED9 /* JSONModelSubClassOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelSubClassOneTest.json; sourceTree = "<group>"; };
 		331A8C551F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JSONModelSubClassTwoTest.json; sourceTree = "<group>"; };
+		331B4D2922ED819D00BE1A47 /* RACMLKVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RACMLKVC.xib; sourceTree = "<group>"; };
+		331B4D2A22ED819D00BE1A47 /* RACMLKVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACMLKVC.m; sourceTree = "<group>"; };
+		331B4D2B22ED819D00BE1A47 /* RACMLKVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACMLKVC.h; sourceTree = "<group>"; };
 		33345C9222EA169D008EB89F /* TextViewTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTestVC.swift; sourceTree = "<group>"; };
 		33345C9422EA16DC008EB89F /* TestTemplateProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestTemplateProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		33345C9522EA17A5008EB89F /* TextViewTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewTestVC.xib; sourceTree = "<group>"; };
@@ -489,6 +494,7 @@
 				33454B151F76149800DC3F14 /* Category */,
 				334B7A561F9E48DD00F40D7F /* Memory */,
 				338CD75121A1B20100EC520C /* MRCARC */,
+				331B4D2822ED819D00BE1A47 /* RACMLK */,
 				3399DEF921B96E78006C6B85 /* NSProxy */,
 				33E14FC31F7971E40042F729 /* MultiThread */,
 				B541E7F02028284600D23093 /* SafePush */,
@@ -560,6 +566,16 @@
 				3396832722EB5ED400EB32D8 /* SwiftCommonUtility.m */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		331B4D2822ED819D00BE1A47 /* RACMLK */ = {
+			isa = PBXGroup;
+			children = (
+				331B4D2B22ED819D00BE1A47 /* RACMLKVC.h */,
+				331B4D2A22ED819D00BE1A47 /* RACMLKVC.m */,
+				331B4D2922ED819D00BE1A47 /* RACMLKVC.xib */,
+			);
+			path = RACMLK;
 			sourceTree = "<group>";
 		};
 		333D511F1F6E3F5F00FA084F /* RunLoop */ = {
@@ -1119,6 +1135,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				331B4D2C22ED819E00BE1A47 /* RACMLKVC.xib in Resources */,
 				339682ED22EB5B5400EB32D8 /* blank_icon_contacts@3x.png in Resources */,
 				B54337F41F5E4CC70055AECE /* MJExtensionTest.json in Resources */,
 				B50394C91EEE5FF70016FA97 /* TimeSequenceVC.xib in Resources */,
@@ -1267,6 +1284,7 @@
 				33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */,
 				B564801F1EF92071009CF536 /* UIImage+Blur.m in Sources */,
 				B50711721F0E4C8D008EC4AE /* BNPopoverCenterLayout.m in Sources */,
+				331B4D2D22ED819E00BE1A47 /* RACMLKVC.m in Sources */,
 				3396832822EB5ED400EB32D8 /* SwiftCommonUtility.m in Sources */,
 				338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */,
 				338CD75621A1B20100EC520C /* ARCVC.m in Sources */,
