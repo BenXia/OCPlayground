@@ -20,14 +20,40 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    //[self testRecursiveCall_1];
+    [self testRecursiveCall_1];
     
     //[self testRecursiveCall_2];
+    
+    //[self testRecursiveCall_3];
     
     [self testRecursiveLock];
 }
 
 - (void)testRecursiveCall_1 {
+    static void (^p)(int) = nil;
+    
+    __weak typeof(p) weakP = p;
+    
+    p = ^(int i){
+        __strong typeof(p) inStrongP = weakP;
+        if (i > 0) {
+            NSLog(@"Hello, world!");
+            inStrongP(i - 1);
+        }
+    };
+    
+    weakP = p;
+    
+    p(2);
+    
+//    void (^operation)(BOOL) = ^(BOOL flag){
+//        if (flag) {
+//            operation();
+//        }
+//    }
+}
+
+- (void)testRecursiveCall_2 {
     void (^p)(int) = 0;
     static void (^ const blocks)(int) = ^(int i){
        if (i > 0) {
@@ -39,7 +65,7 @@
     p(2);
 }
 
-- (void)testRecursiveCall_2 {
+- (void)testRecursiveCall_3 {
     __block void (^blocks)(int);
     blocks = ^(int i){
         if (i > 0) {
