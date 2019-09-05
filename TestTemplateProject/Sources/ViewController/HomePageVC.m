@@ -24,6 +24,8 @@
 #import "MultiThreadVC.h"
 #import "SafePushTestVC.h"
 #import "TextImageVC.h"
+#import "BlockTestVC.h"
+#import "TestTemplateProject-Swift.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
 
@@ -174,7 +176,17 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                            vcClass:[TextImageVC class]
                                                       navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, nil];
+    HomePageCellModel *model18 = [HomePageCellModel modelWithTitle:@"Block测试"
+                                                          subTitle:@"Block一些有趣测试"
+                                                           vcClass:[BlockTestVC class]
+                                                      navigationVC:self.navigationController];
+    
+    HomePageCellModel *model19 = [HomePageCellModel modelWithTitle:@"Swift测试"
+                                                          subTitle:@"Swift一些有趣测试"
+                                                           vcClass:[SwiftBenTestVC class]
+                                                      navigationVC:self.navigationController];
+    
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, nil];
     
 //    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }

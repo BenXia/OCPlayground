@@ -2,8 +2,8 @@
 //  UIView+Hierarchy.h
 //  QQing
 //
-//  Created by 李杰 on 2/22/15.
-//
+//  Created by Ben on 5/15/14.
+//  Copyright © 2017年 iOSStudio. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

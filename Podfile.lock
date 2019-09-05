@@ -5,7 +5,7 @@ PODS:
     - Mantle/extobjc (= 2.1.0)
   - Mantle/extobjc (2.1.0)
   - Masonry (1.1.0)
-  - MJExtension (3.1.0)
+  - MJExtension (3.1.1)
   - ReactiveCocoa (8.0.2):
     - ReactiveSwift (~> 4.0)
   - ReactiveObjC (3.1.1)
@@ -15,9 +15,9 @@ PODS:
   - ReactiveSwift (4.0.0):
     - Result (~> 4.0)
   - Result (4.1.0)
-  - SDWebImage (5.0.6):
-    - SDWebImage/Core (= 5.0.6)
-  - SDWebImage/Core (5.0.6)
+  - SDWebImage (5.1.1):
+    - SDWebImage/Core (= 5.1.1)
+  - SDWebImage/Core (5.1.1)
   - SnapKit (4.2.0)
   - YYModel (1.0.4)
 
@@ -56,16 +56,16 @@ SPEC CHECKSUMS:
   JSONModel: 02ab723958366a3fd27da57ea2af2113658762e9
   Mantle: 2fa750afa478cd625a94230fbf1c13462f29395b
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJExtension: 6b69b3bef2864fd550ce1a184eda219e321209d2
+  MJExtension: dfef9855ee178e1ce67f3e03b71ca4226330d87d
   ReactiveCocoa: fbd26e9ba60e98417ee47433e59465a98ed9da0f
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   ReactiveObjCBridge: c2e4c6a8c1f960902f48ce2ee4ff2b24b8ae172d
   ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
   Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
-  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+  SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
   SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
 PODFILE CHECKSUM: 0461d4c3dace9991345c708a84b0395c4a51e9ba
 
-COCOAPODS: 1.7.2
+COCOAPODS: 1.7.5

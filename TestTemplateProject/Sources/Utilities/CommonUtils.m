@@ -30,6 +30,32 @@ void BN_swapMethodsFromClass(Class c, SEL orig, SEL new) {
 
 BN_IMP_SINGLETON( CommonUtils )
 
++ (UINavigationController *)topVisibleNavigationViewController {
+    UIViewController *vc = [UIApplication sharedApplication].keyWindow.rootViewController;
+    
+    while ([vc isKindOfClass:[UINavigationController class]] || [vc isKindOfClass:[UITabBarController class]]) {
+        if ([vc isKindOfClass:[UINavigationController class]]) {
+            UINavigationController *navVC = (UINavigationController *)vc;
+            if ([[navVC.viewControllers objectAtIndexIfIndexInBounds:0] isKindOfClass:[UITabBarController class]]) {
+                vc = [navVC.viewControllers objectAtIndexIfIndexInBounds:0];
+                
+                continue;
+            } else {
+                return (UINavigationController *)vc;
+            }
+        }
+        
+        if ([vc isKindOfClass:[UITabBarController class]]) {
+            UITabBarController *tabVC = ((UITabBarController *)vc);
+            vc = [tabVC.viewControllers objectAtIndexIfIndexInBounds:tabVC.selectedIndex];
+            
+            continue;
+        }
+    }
+    
+    return nil;
+}
+
 // Toast
 + (void)showToastWithText:(NSString *)text {
     [CommonUtils showToastWithText:text withImageName:nil blockUI:YES];

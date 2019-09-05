@@ -7,12 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "macrodef.h"
 
 void BN_swapMethodsFromClass(Class c, SEL orig, SEL new);
 
 @interface CommonUtils : NSObject
 
-BN_DEC_SINGLETON( CommonUtils )
+BN_DEC_SINGLETON( CommonUtils );
+
++ (UINavigationController *)topVisibleNavigationViewController;
 
 // Toast
 + (void)showToastWithText:(NSString *)text;
