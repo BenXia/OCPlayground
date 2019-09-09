@@ -86,7 +86,7 @@ extension UIView {
     // MARK: imageView
     
     @discardableResult
-    public func qAddImageView(image: UIImage? = nil, contentMode: UIViewContentMode? = .scaleAspectFit, backgroundColor: UIColor? = nil) -> UIImageView {
+    public func qAddImageView(image: UIImage? = nil, contentMode: UIView.ContentMode? = .scaleAspectFit, backgroundColor: UIColor? = nil) -> UIImageView {
         
         let imageView: UIImageView = UIImageView()
         imageView.image = image

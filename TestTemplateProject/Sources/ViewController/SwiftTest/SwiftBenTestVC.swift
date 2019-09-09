@@ -63,11 +63,21 @@ import UIKit
         // 注意，如果此处的 BenTestModelA 是 OC 代码中定义的类，则使用下面语法是没有问题的
         //let model2: BenTestModelA = BenTestModelA.init()
         let model2: BenTestModelOCA = BenTestModelOCA.init()
-        model2.reactive.producer(forKeyPath: "adjusted").startWithValues { (value) in
-            print("A ajusted: \(value ?? "")")
+        model2.reactive.producer(forKeyPath: "adjusted").startWithResult { (result) in
+            switch result {
+                case .success(let object):
+                    print("A name: \(object as! String)")
+                case .failure:
+                    print("Error")
+            }
         }
-        model2.reactive.producer(forKeyPath: "name").startWithValues { (value) in
-            print("A name: \(value ?? "")")
+        model2.reactive.producer(forKeyPath: "name").startWithResult { (result) in
+            switch result {
+                case .success(let object):
+                    print("A name: \(object as! String)")
+                case .failure:
+                    print("Error")
+            }
         }
         //model2.reactive.producer(forKeyPath: "ageModel.age").startWithValues { (value) in
         //    print("A ageModel age: \(value ?? "")")

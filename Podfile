@@ -13,6 +13,7 @@ target "TestTemplateProject" do
     pod 'Mantle'
     pod 'JSONModel'
     pod 'YYModel'
+    pod 'YYKit'
     pod 'MJExtension'
     pod 'SnapKit'
     pod 'ReactiveSwift'

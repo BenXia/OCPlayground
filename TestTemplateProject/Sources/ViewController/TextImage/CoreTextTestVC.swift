@@ -74,7 +74,7 @@ class CoreTextTestVC: BaseViewController {
         /// 内容
         do {
             /// 内容的边距
-            let contentViewInset: UIEdgeInsets = UIEdgeInsetsMake(0, 98, 0, 13)
+            let contentViewInset: UIEdgeInsets = UIEdgeInsets(top: 0, left: 98, bottom: 0, right: 13)
             
             /// 用于计算文本显示
             let tempLabel: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: SwiftUtility.kScreenWidth_ - contentViewInset.left - contentViewInset.right - 5, height: 0))
@@ -160,7 +160,7 @@ class CoreTextTestVC: BaseViewController {
                         
                         /// 按钮箭头
                         backView
-                            .qAddImageView(image: "icon_fsyb_zhankai".image, contentMode: UIViewContentMode.scaleAspectFill)
+                            .qAddImageView(image: "icon_fsyb_zhankai".image, contentMode: UIView.ContentMode.scaleAspectFill)
                             .qSnpMakeConstraints { (make) in
                                 make.centerY.equalTo(lastLineLabel)
                                 make.right.equalTo(-13)

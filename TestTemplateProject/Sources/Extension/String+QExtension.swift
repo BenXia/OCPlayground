@@ -52,12 +52,12 @@ public extension String {
     
     /// 主工程图片
     var imageWithRenderingModeAlwaysTemplate: UIImage? {
-        return UIImage.init(named: self)?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
+        return UIImage.init(named: self)?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
     }
 
     /// 主工程图片
     var imageWithRenderingModeAlwaysOriginal: UIImage? {
-        return UIImage.init(named: self)?.withRenderingMode(UIImageRenderingMode.alwaysOriginal)
+        return UIImage.init(named: self)?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
     }
     
     /// 子工程图片
