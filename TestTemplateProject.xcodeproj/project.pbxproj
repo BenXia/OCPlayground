@@ -154,6 +154,8 @@
 		B59532A11F5E7F13007B2F30 /* MantleExceptionOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B595329E1F5E7F13007B2F30 /* MantleExceptionOneTest.json */; };
 		B59532A21F5E7F13007B2F30 /* MantleExceptionThreeTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B595329F1F5E7F13007B2F30 /* MantleExceptionThreeTest.json */; };
 		B59532A31F5E7F13007B2F30 /* MantleExceptionTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B59532A01F5E7F13007B2F30 /* MantleExceptionTwoTest.json */; };
+		B5E95733253EBC7700C722D4 /* BenTestModelOCB.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E95732253EBC7700C722D4 /* BenTestModelOCB.m */; };
+		B5E95736253EBE9900C722D4 /* BenTestModelOCA+IsSelected.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E95735253EBE9900C722D4 /* BenTestModelOCA+IsSelected.m */; };
 		B5FA68C71EF270290077349C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FA68C01EF270290077349C /* BaseViewController.m */; };
 		B5FA68C81EF270290077349C /* BNNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FA68C31EF270290077349C /* BNNavigationController.m */; };
 		B5FA68C91EF270290077349C /* BNTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FA68C61EF270290077349C /* BNTabBarController.m */; };
@@ -397,6 +399,10 @@
 		B595329E1F5E7F13007B2F30 /* MantleExceptionOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleExceptionOneTest.json; sourceTree = "<group>"; };
 		B595329F1F5E7F13007B2F30 /* MantleExceptionThreeTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleExceptionThreeTest.json; sourceTree = "<group>"; };
 		B59532A01F5E7F13007B2F30 /* MantleExceptionTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleExceptionTwoTest.json; sourceTree = "<group>"; };
+		B5E95731253EBC7700C722D4 /* BenTestModelOCB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenTestModelOCB.h; sourceTree = "<group>"; };
+		B5E95732253EBC7700C722D4 /* BenTestModelOCB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenTestModelOCB.m; sourceTree = "<group>"; };
+		B5E95734253EBE9800C722D4 /* BenTestModelOCA+IsSelected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BenTestModelOCA+IsSelected.h"; sourceTree = "<group>"; };
+		B5E95735253EBE9900C722D4 /* BenTestModelOCA+IsSelected.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "BenTestModelOCA+IsSelected.m"; sourceTree = "<group>"; };
 		B5FA68BF1EF270290077349C /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		B5FA68C01EF270290077349C /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		B5FA68C21EF270290077349C /* BNNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNNavigationController.h; sourceTree = "<group>"; };
@@ -852,8 +858,12 @@
 				B5190A122320D77A00A648D5 /* SwiftBenTestView.swift */,
 				B5190A0D2320D77A00A648D5 /* SwiftBenTestView.xib */,
 				B5190A112320D77A00A648D5 /* SwiftBenTestModel.swift */,
+				B5E95734253EBE9800C722D4 /* BenTestModelOCA+IsSelected.h */,
+				B5E95735253EBE9900C722D4 /* BenTestModelOCA+IsSelected.m */,
 				B5190A0C2320D77A00A648D5 /* BenTestModelOCA.h */,
 				B5190A102320D77A00A648D5 /* BenTestModelOCA.m */,
+				B5E95731253EBC7700C722D4 /* BenTestModelOCB.h */,
+				B5E95732253EBC7700C722D4 /* BenTestModelOCB.m */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -1422,6 +1432,7 @@
 				33454B291F76153200DC3F14 /* ARCObject+TestDealloc.m in Sources */,
 				333D51231F6E3F5F00FA084F /* RunLoopVC.m in Sources */,
 				3396833F22EB694A00EB32D8 /* UIButton+BindAction.m in Sources */,
+				B5E95736253EBE9900C722D4 /* BenTestModelOCA+IsSelected.m in Sources */,
 				B5190A132320D77B00A648D5 /* SwiftBenTestVC.swift in Sources */,
 				B54337D21F5E475C0055AECE /* ModelForYYModel.m in Sources */,
 				B5190A262320D95C00A648D5 /* TimeService.m in Sources */,
@@ -1455,6 +1466,7 @@
 				B54337B21F5E46A50055AECE /* MantleUsageVC.m in Sources */,
 				B50711D11F163187008EC4AE /* ClassPropertyVC.m in Sources */,
 				33E14FC71F7972010042F729 /* MultiThreadVC.m in Sources */,
+				B5E95733253EBC7700C722D4 /* BenTestModelOCB.m in Sources */,
 				B5FA68C91EF270290077349C /* BNTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

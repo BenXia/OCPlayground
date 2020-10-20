@@ -7,12 +7,22 @@
 
 import UIKit
 
+extension Dictionary {
+    func valuesForKeys(_ keys: [Key]) -> [Value?] {
+        return keys.map { self[$0] }
+    }
+}
+
 @objc(SwiftBenTestVC) class SwiftBenTestVC: BaseViewController {
     var vm : SwiftBenTestVM!
     
     // MARK: - life cycle
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    @objc init() {
+        super.init(nibName: "SwiftBenTestVC", bundle: nil)
     }
     
     @objc init(vm viewModel: SwiftBenTestVM) {
@@ -28,11 +38,45 @@ import UIKit
     }
     
     func initUI() {
-        self.testReactiveSwiftBasic()
+        self.title = "Swift调试页面"
         
-        self.testReactiveObjCBasic()
+        self.testOptionalType()
         
-        self.testSwiftBlock()
+//        self.testReactiveSwiftBasic()
+//
+//        self.testReactiveObjCBasic()
+//
+//        self.testSwiftBlock()
+    }
+    
+    func testOptionalType() {
+        let dic: Dictionary = [ "1": 2, "3": 3, "4": 5 ]
+        let t1 = dic.valuesForKeys(["1", "4"]).last
+        let t2 = dic.valuesForKeys(["3", "9"]).last
+        let t3 = dic.valuesForKeys([]).last
+
+        print("t1: \(String(describing: t1!!))")
+        print("t2: \(String(describing: t2!))")
+        print("t3: \(String(describing: t3))")
+
+        //(lldb) po t1
+        //▿ Optional<Optional<Int>>
+        //  ▿ some : Optional<Int>
+        //    - some : 5
+        //
+        //(lldb) po t2
+        //▿ Optional<Optional<Int>>
+        //  - some : nil
+        //
+        //(lldb) po t3
+        //nil
+        //
+        //(lldb) p t1
+        //(Int??) $R38 = 5
+        //(lldb) p t2
+        //(Int??) $R40 = nil
+        //(lldb) p t1!
+        //(Int?) $R42 = 5
     }
     
     func testReactiveSwiftBasic() {
@@ -48,7 +92,7 @@ import UIKit
         self.view.addSubview(view)
 
 
-//        let kvoModel: ApiGPBApiTeachPlanTemplateForImport_ApiTeachPlanOutlineTemplateForImport = ApiGPBApiTeachPlanTemplateForImport_ApiTeachPlanOutlineTemplateForImport.init()
+//        let kvoModel: BenTestModelOCA = BenTestModelOCA.init()
 //        kvoModel.reactive.producer(forKeyPath: "isSelected").startWithValues { (value) in
 //            if value != nil {
 //                print(value!)
