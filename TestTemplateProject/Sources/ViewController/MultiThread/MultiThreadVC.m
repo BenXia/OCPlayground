@@ -10,6 +10,11 @@
 
 @interface MultiThreadVC ()
 
+//@property (atomic, assign) NSInteger intA;
+
+@property (nonatomic, assign) NSInteger intA;
+@property (nonatomic, strong) NSLock *lock;
+
 @end
 
 @implementation MultiThreadVC
@@ -20,12 +25,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    __weak typeof(self) weakSelf = self;
-    dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        __strong typeof(self) self = weakSelf;
-        [self testGCDSyncOperationExecuteThread];
-    });
+//    [self testAtomicPropertyV1];
     
+    [self testAtomicPropertyV2];
+
+//    __weak typeof(self) weakSelf = self;
+//    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//        __strong typeof(self) self = weakSelf;
+//        [self testGCDSyncOperationExecuteThread];
+//    });
+//
 //    [self testGCDSyncOperationExecuteThread];
 //
 //    [self testGCDAsyncSerialOperationExecuteThread];
@@ -44,6 +53,45 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)testAtomicPropertyV1 {
+    //开启一个线程对intA的值+1
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for (int i = 0;i < 10000;i ++){
+            self.intA = self.intA + 1;
+        }
+        NSLog(@"intA : %ld",(long)self.intA);
+    });
+    
+    //开启一个线程对intA的值+1
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        for (int i = 0;i < 10000;i ++){
+            self.intA = self.intA + 1;
+        }
+        NSLog(@"intA : %ld",(long)self.intA);
+    });
+}
+
+- (void)testAtomicPropertyV2 {
+   self.lock = [[NSLock alloc] init];
+   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+       for (int i = 0; i < 10000; i ++) {
+           [self.lock lock];
+           self.intA = self.intA + 1;
+           [self.lock unlock];
+       }
+       NSLog(@"intA : %ld",(long)self.intA);
+   });
+
+   dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+       for (int i = 0; i < 10000; i ++) {
+           [self.lock lock];
+           self.intA = self.intA + 1;
+           [self.lock unlock];
+       }
+       NSLog(@"intA : %ld",(long)self.intA);
+   });
 }
 
 - (void)testGCDSyncOperationExecuteThread {
