@@ -11,6 +11,7 @@
 #import "TimeSequenceVC.h"
 #import "ClassPropertyVC.h"
 #import "SingletonVC.h"
+#import "LoadInitializeVC.h"
 #import "RuntimeVC.h"
 #import "NoXibVC.h"
 #import "JSONToModelVC.h"
@@ -110,83 +111,88 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[SingletonVC class]
                                                      navigationVC:self.navigationController];
     
-    HomePageCellModel *model5 = [HomePageCellModel modelWithTitle:@"runtime"
+    HomePageCellModel *model5 = [HomePageCellModel modelWithTitle:@"Load & Initialize"
+                                                         subTitle:@"调用时机、继承特性、类别定义等对比"
+                                                          vcClass:[LoadInitializeVC class]
+                                                     navigationVC:self.navigationController];
+    
+    HomePageCellModel *model6 = [HomePageCellModel modelWithTitle:@"runtime"
                                                          subTitle:@"运行时浅析"
                                                           vcClass:[RuntimeVC class]
                                                      navigationVC:self.navigationController];
     
-    HomePageCellModel *model6 = [HomePageCellModel modelWithTitle:@"纯代码ViewController"
+    HomePageCellModel *model7 = [HomePageCellModel modelWithTitle:@"纯代码ViewController"
                                                          subTitle:@"生命周期研究"
                                                           vcClass:[NoXibVC class]
                                                      navigationVC:self.navigationController];
     
-    HomePageCellModel *model7 = [HomePageCellModel modelWithTitle:@"字典转模型"
+    HomePageCellModel *model8 = [HomePageCellModel modelWithTitle:@"字典转模型"
                                                          subTitle:@"JSONModel、Mantle、YYModel、MJExtension使用对比"
                                                           vcClass:[JSONToModelVC class]
                                                      navigationVC:self.navigationController];
 
-    HomePageCellModel *model8 = [HomePageCellModel modelWithTitle:@"BOOL's sharp corners"
+    HomePageCellModel *model9 = [HomePageCellModel modelWithTitle:@"BOOL's sharp corners"
                                                          subTitle:@"32位真机上 BOOL 与 bool 的区别"
                                                           vcClass:[BOOLTestVC class]
                                                      navigationVC:self.navigationController];
     
-    HomePageCellModel *model9 = [HomePageCellModel modelWithTitle:@"RunLoop"
+    HomePageCellModel *model10 = [HomePageCellModel modelWithTitle:@"RunLoop"
                                                          subTitle:@"测试一些看源码产生的疑问"
                                                           vcClass:[RunLoopVC class]
                                                      navigationVC:self.navigationController];
     
-    HomePageCellModel *model10 = [HomePageCellModel modelWithTitle:@"Category"
+    HomePageCellModel *model11 = [HomePageCellModel modelWithTitle:@"Category"
                                                          subTitle:@"测试一下 Category 中重写 dealloc 方法"
                                                           vcClass:[CategoryVC class]
                                                      navigationVC:self.navigationController];
     
-    HomePageCellModel *model11 = [HomePageCellModel modelWithTitle:@"内存管理"
+    HomePageCellModel *model12 = [HomePageCellModel modelWithTitle:@"内存管理"
                                                           subTitle:@"内存管理相关测试"
                                                            vcClass:[MemoryManageVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model12 = [HomePageCellModel modelWithTitle:@"内存管理"
+    HomePageCellModel *model13 = [HomePageCellModel modelWithTitle:@"内存管理"
                                                           subTitle:@"MRC/ARC相关测试"
                                                            vcClass:[ARCVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model13 = [HomePageCellModel modelWithTitle:@"RAC内存泄漏"
+    HomePageCellModel *model14 = [HomePageCellModel modelWithTitle:@"RAC内存泄漏"
                                                           subTitle:@"RAC中经典内存泄漏问题"
                                                            vcClass:[RACMLKVC class]
                                                       navigationVC:self.navigationController];
     
     
-    HomePageCellModel *model14 = [HomePageCellModel modelWithTitle:@"NSProxy"
+    HomePageCellModel *model15 = [HomePageCellModel modelWithTitle:@"NSProxy"
                                                           subTitle:@"代理解决一些内存管理问题"
                                                            vcClass:[ProxyTestVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model15 = [HomePageCellModel modelWithTitle:@"多线程"
+    HomePageCellModel *model16 = [HomePageCellModel modelWithTitle:@"多线程"
                                                           subTitle:@"多线程一些有趣的测试"
                                                            vcClass:[MultiThreadVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model16 = [HomePageCellModel modelWithTitle:@"SafePush"
+    HomePageCellModel *model17 = [HomePageCellModel modelWithTitle:@"SafePush"
                                                           subTitle:@"SafePush一些测试"
                                                            vcClass:[SafePushTestVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model17 = [HomePageCellModel modelWithTitle:@"图文混排"
+    HomePageCellModel *model18 = [HomePageCellModel modelWithTitle:@"图文混排"
                                                           subTitle:@"图文混排一些实现方式"
                                                            vcClass:[TextImageVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model18 = [HomePageCellModel modelWithTitle:@"Block测试"
+    HomePageCellModel *model19 = [HomePageCellModel modelWithTitle:@"Block测试"
                                                           subTitle:@"Block一些有趣测试"
                                                            vcClass:[BlockTestVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model19 = [HomePageCellModel modelWithTitle:@"Swift测试"
+    HomePageCellModel *model20 = [HomePageCellModel modelWithTitle:@"Swift测试"
                                                           subTitle:@"Swift一些有趣测试"
                                                            vcClass:[SwiftBenTestVC class]
                                                       navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, nil];
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, model20, nil];
     
 //    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }

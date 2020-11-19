@@ -102,6 +102,9 @@
 		B5190A262320D95C00A648D5 /* TimeService.m in Sources */ = {isa = PBXBuildFile; fileRef = B5190A242320D95C00A648D5 /* TimeService.m */; };
 		B5190A292320E05B00A648D5 /* RACSignal+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = B5190A282320E05B00A648D5 /* RACSignal+Extension.m */; };
 		B5190A2D2320E64C00A648D5 /* NSArray+ObjectAtIndexWithBoundsCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = B5190A2B2320E64C00A648D5 /* NSArray+ObjectAtIndexWithBoundsCheck.m */; };
+		B51C08DC2566993C00C54CE3 /* LoadInitializeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C08DA2566993C00C54CE3 /* LoadInitializeVC.m */; };
+		B51C08DD2566993C00C54CE3 /* LoadInitializeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B51C08DB2566993C00C54CE3 /* LoadInitializeVC.xib */; };
+		B51C08FF2566A74D00C54CE3 /* Case7SuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C08FD2566A74D00C54CE3 /* Case7SuperClass.m */; };
 		B53C63B322E83E7E0066F492 /* TextImageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B53C63B122E83E7E0066F492 /* TextImageVC.m */; };
 		B53C63B422E83E7E0066F492 /* TextImageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B53C63B222E83E7E0066F492 /* TextImageVC.xib */; };
 		B541E7F52028284600D23093 /* SafePushNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B541E7F22028284600D23093 /* SafePushNavigationController.m */; };
@@ -320,6 +323,23 @@
 		B5190A282320E05B00A648D5 /* RACSignal+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RACSignal+Extension.m"; sourceTree = "<group>"; };
 		B5190A2B2320E64C00A648D5 /* NSArray+ObjectAtIndexWithBoundsCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ObjectAtIndexWithBoundsCheck.m"; sourceTree = "<group>"; };
 		B5190A2C2320E64C00A648D5 /* NSArray+ObjectAtIndexWithBoundsCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ObjectAtIndexWithBoundsCheck.h"; sourceTree = "<group>"; };
+		B51C08D0256698BD00C54CE3 /* Case1SuperClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Case1SuperClass.h; sourceTree = "<group>"; };
+		B51C08D1256698BD00C54CE3 /* Case1SuperClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Case1SuperClass.m; sourceTree = "<group>"; };
+		B51C08D3256698D400C54CE3 /* Case2SuperClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Case2SuperClass.h; sourceTree = "<group>"; };
+		B51C08D4256698D400C54CE3 /* Case2SuperClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Case2SuperClass.m; sourceTree = "<group>"; };
+		B51C08D6256698E000C54CE3 /* Case3SuperClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Case3SuperClass.h; sourceTree = "<group>"; };
+		B51C08D7256698E000C54CE3 /* Case3SuperClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Case3SuperClass.m; sourceTree = "<group>"; };
+		B51C08D92566993C00C54CE3 /* LoadInitializeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoadInitializeVC.h; sourceTree = "<group>"; };
+		B51C08DA2566993C00C54CE3 /* LoadInitializeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoadInitializeVC.m; sourceTree = "<group>"; };
+		B51C08DB2566993C00C54CE3 /* LoadInitializeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadInitializeVC.xib; sourceTree = "<group>"; };
+		B51C08F12566A5FD00C54CE3 /* Case5SuperClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Case5SuperClass.h; sourceTree = "<group>"; };
+		B51C08F22566A5FD00C54CE3 /* Case5SuperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Case5SuperClass.m; sourceTree = "<group>"; };
+		B51C08F42566A5FD00C54CE3 /* Case6SuperClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Case6SuperClass.h; sourceTree = "<group>"; };
+		B51C08F52566A5FD00C54CE3 /* Case6SuperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Case6SuperClass.m; sourceTree = "<group>"; };
+		B51C08F72566A5FD00C54CE3 /* Case4SuperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Case4SuperClass.m; sourceTree = "<group>"; };
+		B51C08F82566A5FD00C54CE3 /* Case4SuperClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Case4SuperClass.h; sourceTree = "<group>"; };
+		B51C08FD2566A74D00C54CE3 /* Case7SuperClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Case7SuperClass.m; sourceTree = "<group>"; };
+		B51C08FE2566A74D00C54CE3 /* Case7SuperClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Case7SuperClass.h; sourceTree = "<group>"; };
 		B53C63B022E83E7E0066F492 /* TextImageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextImageVC.h; sourceTree = "<group>"; };
 		B53C63B122E83E7E0066F492 /* TextImageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextImageVC.m; sourceTree = "<group>"; };
 		B53C63B222E83E7E0066F492 /* TextImageVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TextImageVC.xib; sourceTree = "<group>"; };
@@ -536,6 +556,7 @@
 				B50394BE1EEE5F9D0016FA97 /* KVONotificationTimeSequence */,
 				B50711CD1F163187008EC4AE /* ClassProperty */,
 				33102E401F496997008CCD64 /* Singleton */,
+				B51C08CC2566943B00C54CE3 /* LoadInitialize */,
 				33102E371F49605D008CCD64 /* Runtime */,
 				33102E671F49FF66008CCD64 /* NoXibVC */,
 				338BC0621F5307EF00E8DD3E /* JSONToModel */,
@@ -902,6 +923,86 @@
 			path = "安全检查";
 			sourceTree = "<group>";
 		};
+		B51C08CC2566943B00C54CE3 /* LoadInitialize */ = {
+			isa = PBXGroup;
+			children = (
+				B51C08D92566993C00C54CE3 /* LoadInitializeVC.h */,
+				B51C08DA2566993C00C54CE3 /* LoadInitializeVC.m */,
+				B51C08DB2566993C00C54CE3 /* LoadInitializeVC.xib */,
+				B51C08CD2566943B00C54CE3 /* Case1 */,
+				B51C08CE2566943B00C54CE3 /* Case2 */,
+				B51C08CF2566943B00C54CE3 /* Case3 */,
+				B51C08F62566A5FD00C54CE3 /* Case4 */,
+				B51C08F02566A5FD00C54CE3 /* Case5 */,
+				B51C08F32566A5FD00C54CE3 /* Case6 */,
+				B51C08FC2566A74D00C54CE3 /* Case7 */,
+			);
+			path = LoadInitialize;
+			sourceTree = "<group>";
+		};
+		B51C08CD2566943B00C54CE3 /* Case1 */ = {
+			isa = PBXGroup;
+			children = (
+				B51C08D0256698BD00C54CE3 /* Case1SuperClass.h */,
+				B51C08D1256698BD00C54CE3 /* Case1SuperClass.m */,
+			);
+			path = Case1;
+			sourceTree = "<group>";
+		};
+		B51C08CE2566943B00C54CE3 /* Case2 */ = {
+			isa = PBXGroup;
+			children = (
+				B51C08D3256698D400C54CE3 /* Case2SuperClass.h */,
+				B51C08D4256698D400C54CE3 /* Case2SuperClass.m */,
+			);
+			path = Case2;
+			sourceTree = "<group>";
+		};
+		B51C08CF2566943B00C54CE3 /* Case3 */ = {
+			isa = PBXGroup;
+			children = (
+				B51C08D6256698E000C54CE3 /* Case3SuperClass.h */,
+				B51C08D7256698E000C54CE3 /* Case3SuperClass.m */,
+			);
+			path = Case3;
+			sourceTree = "<group>";
+		};
+		B51C08F02566A5FD00C54CE3 /* Case5 */ = {
+			isa = PBXGroup;
+			children = (
+				B51C08F12566A5FD00C54CE3 /* Case5SuperClass.h */,
+				B51C08F22566A5FD00C54CE3 /* Case5SuperClass.m */,
+			);
+			path = Case5;
+			sourceTree = "<group>";
+		};
+		B51C08F32566A5FD00C54CE3 /* Case6 */ = {
+			isa = PBXGroup;
+			children = (
+				B51C08F42566A5FD00C54CE3 /* Case6SuperClass.h */,
+				B51C08F52566A5FD00C54CE3 /* Case6SuperClass.m */,
+			);
+			path = Case6;
+			sourceTree = "<group>";
+		};
+		B51C08F62566A5FD00C54CE3 /* Case4 */ = {
+			isa = PBXGroup;
+			children = (
+				B51C08F82566A5FD00C54CE3 /* Case4SuperClass.h */,
+				B51C08F72566A5FD00C54CE3 /* Case4SuperClass.m */,
+			);
+			path = Case4;
+			sourceTree = "<group>";
+		};
+		B51C08FC2566A74D00C54CE3 /* Case7 */ = {
+			isa = PBXGroup;
+			children = (
+				B51C08FE2566A74D00C54CE3 /* Case7SuperClass.h */,
+				B51C08FD2566A74D00C54CE3 /* Case7SuperClass.m */,
+			);
+			path = Case7;
+			sourceTree = "<group>";
+		};
 		B53C63AF22E83E7E0066F492 /* TextImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1266,6 +1367,7 @@
 				B53C63B422E83E7E0066F492 /* TextImageVC.xib in Resources */,
 				33102E3C1F496083008CCD64 /* RuntimeVC.xib in Resources */,
 				B5633FCF1F5FD02700A72567 /* YYModelExceptionOneTest.json in Resources */,
+				B51C08DD2566993C00C54CE3 /* LoadInitializeVC.xib in Resources */,
 				3319AED922EDD49D001722B6 /* icon_fsyb_zhankai@2x.png in Resources */,
 				33F756241F5C498900C7321F /* BOOLTestVC.xib in Resources */,
 				339682B222EB59BE00EB32D8 /* AttachmentTestVC.xib in Resources */,
@@ -1394,6 +1496,7 @@
 				3399DF0121B96E78006C6B85 /* ProxyTestVC.m in Sources */,
 				B5190A232320D8DB00A648D5 /* NSDateFormatter+ChiSymbols.m in Sources */,
 				B5190A1D2320D89300A648D5 /* NSDate+QQCalendar.m in Sources */,
+				B51C08FF2566A74D00C54CE3 /* Case7SuperClass.m in Sources */,
 				B5FA68C81EF270290077349C /* BNNavigationController.m in Sources */,
 				B54337C61F5E47480055AECE /* ModelForJSONModel.m in Sources */,
 				33454B191F7614B200DC3F14 /* CategoryVC.m in Sources */,
@@ -1456,6 +1559,7 @@
 				334B7A5D1F9E492400F40D7F /* MemoryManageVC.m in Sources */,
 				33454B201F7614EF00DC3F14 /* MRCObject.m in Sources */,
 				33102E3F1F4965E8008CCD64 /* Person.m in Sources */,
+				B51C08DC2566993C00C54CE3 /* LoadInitializeVC.m in Sources */,
 				B507116F1F0E4C8D008EC4AE /* BNPopoverBaseLayout.m in Sources */,
 				B564801A1EF92040009CF536 /* BNPopupWindow.m in Sources */,
 				33102E4B1F496A07008CCD64 /* SomeClass.m in Sources */,
