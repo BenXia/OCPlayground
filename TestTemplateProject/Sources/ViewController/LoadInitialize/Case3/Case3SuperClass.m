@@ -8,6 +8,8 @@
 
 #import "Case3SuperClass.h"
 
+static NSMutableArray *kSomeObjects;
+
 @implementation Case3SuperClass
 
 //+ (void)load {
@@ -16,6 +18,12 @@
 
 + (void)initialize {
     NSLog(@"%@ %s", [self class], __FUNCTION__);
+    
+    // 加上这条检测语句之后，只有当开发者所期望的那个类载入系统时，才会执行相关初始化操作。
+    // 这样就不会因为子类没有实现 initialize，触发父类的 initialize 而执行多次。
+    if (self == [Case3SuperClass class]) {
+        kSomeObjects = [NSMutableArray new];
+    }
 }
 
 @end

@@ -56,3 +56,34 @@ static SingletonClass *g_singleton = nil;
 @end
 
 
+
+//static NSMutableDictionary *sharedInstances = nil;
+//
+//@implementation PPDataController
+//
+//#pragma mark - 构造方法
+//+ (instancetype)sharedDataController
+//{
+//    PPDataController *aController;
+//    
+//    @synchronized(self) {
+//        if (sharedInstances == nil) {
+//            sharedInstances = [[NSMutableDictionary alloc] init];
+//        }
+//        
+//        NSString *keyName = NSStringFromClass([self class]);
+//        if (keyName) {
+//            aController = [sharedInstances objectForKey:keyName];
+//            
+//            if (aController == nil) {
+//                aController = [[self alloc] init];
+//                
+//                [sharedInstances setObject:aController forKey:keyName];
+//            }
+//        }
+//    }
+//    
+//    return aController;
+//}
+//
+//@end

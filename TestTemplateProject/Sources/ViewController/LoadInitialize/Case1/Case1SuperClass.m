@@ -38,6 +38,7 @@
 @implementation Case1AnotherClass
 
 + (void)load {
+    // runtime 对 +(void)load 的调用不一定肯定是类的第一个方法，可能其他类的 +(void)load 先执行调用了该类的 +(void)initialize 方法或其他方法
     NSLog(@"%s", __FUNCTION__);
 }
 

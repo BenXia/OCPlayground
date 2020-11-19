@@ -29,7 +29,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-//    [Case2ChildClass load];
+    // Case2ChildClass 继承下了 +(void)load 而且可以被安全地当作普通类方法被使用。这也就是我之前所说的load和initialize被调用一次是相对 runtime 而言（比如Case2SuperClass的initialize不会因为自身load方法调用一次，又因为子类调用了 load 又执行一次），⚠️⚠️⚠️：我们依然可以直接去反复调用这些方法。
+    [Case2ChildClass load];
 }
 
 @end
