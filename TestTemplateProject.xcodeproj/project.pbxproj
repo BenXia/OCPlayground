@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		330E810C257221290037E2DE /* CustomOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 330E810B257221290037E2DE /* CustomOperation.m */; };
 		330F7BF61ED333F00009280A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F7BDA1ED333F00009280A /* AppDelegate.m */; };
 		330F7C001ED333F00009280A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 330F7BF51ED333F00009280A /* main.m */; };
 		330F7C021ED334380009280A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330F7C011ED334380009280A /* Assets.xcassets */; };
@@ -165,6 +166,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		330E810A257221290037E2DE /* CustomOperation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomOperation.h; sourceTree = "<group>"; };
+		330E810B257221290037E2DE /* CustomOperation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomOperation.m; sourceTree = "<group>"; };
 		330F7BBD1ED3321F0009280A /* TestTemplateProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTemplateProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		330F7BD91ED333F00009280A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		330F7BDA1ED333F00009280A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -789,6 +792,8 @@
 				33E14FC41F7972010042F729 /* MultiThreadVC.h */,
 				33E14FC51F7972010042F729 /* MultiThreadVC.m */,
 				33E14FC61F7972010042F729 /* MultiThreadVC.xib */,
+				330E810A257221290037E2DE /* CustomOperation.h */,
+				330E810B257221290037E2DE /* CustomOperation.m */,
 			);
 			path = MultiThread;
 			sourceTree = "<group>";
@@ -1510,6 +1515,7 @@
 				3396832822EB5ED400EB32D8 /* SwiftUtility.m in Sources */,
 				338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */,
 				338CD75621A1B20100EC520C /* ARCVC.m in Sources */,
+				330E810C257221290037E2DE /* CustomOperation.m in Sources */,
 				3399DF0721B97259006C6B85 /* CustomTarget.m in Sources */,
 				B50711701F0E4C8D008EC4AE /* BNPopoverBottomLayout.m in Sources */,
 				B564800F1EF91FF9009CF536 /* GCDQueue.m in Sources */,
