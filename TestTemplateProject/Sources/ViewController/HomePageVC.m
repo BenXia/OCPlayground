@@ -26,6 +26,7 @@
 #import "SafePushTestVC.h"
 #import "TextImageVC.h"
 #import "BlockTestVC.h"
+#import "CustomContainerVC.h"
 #import "TestTemplateProject-Swift.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
@@ -192,7 +193,12 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                            vcClass:[SwiftBenTestVC class]
                                                       navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, model20, nil];
+    HomePageCellModel *model21 = [HomePageCellModel modelWithTitle:@"容器视图"
+                                                          subTitle:@"自定义容器视图研究"
+                                                           vcClass:[CustomContainerVC class]
+                                                      navigationVC:self.navigationController];
+    
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, model20, model21, nil];
     
 //    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }

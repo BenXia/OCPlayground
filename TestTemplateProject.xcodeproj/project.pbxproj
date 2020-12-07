@@ -131,6 +131,12 @@
 		B54337FE1F5E4CCE0055AECE /* YYModelTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B54337FA1F5E4CCE0055AECE /* YYModelTest.json */; };
 		B54338001F5E55E10055AECE /* MantleSubClassOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B54337FF1F5E55E10055AECE /* MantleSubClassOneTest.json */; };
 		B54338031F5E58C90055AECE /* JSONUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = B54338021F5E58C90055AECE /* JSONUtils.m */; };
+		B54CC642257E53B600594DA9 /* ContainerLeftChildVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B54CC639257E53B600594DA9 /* ContainerLeftChildVC.m */; };
+		B54CC643257E53B600594DA9 /* CustomContainerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B54CC63A257E53B600594DA9 /* CustomContainerVC.m */; };
+		B54CC644257E53B600594DA9 /* ContainerRightChildVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B54CC63B257E53B600594DA9 /* ContainerRightChildVC.m */; };
+		B54CC645257E53B600594DA9 /* CustomContainerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54CC63C257E53B600594DA9 /* CustomContainerVC.xib */; };
+		B54CC646257E53B600594DA9 /* ContainerRightChildVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54CC63D257E53B600594DA9 /* ContainerRightChildVC.xib */; };
+		B54CC647257E53B600594DA9 /* ContainerLeftChildVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B54CC63E257E53B600594DA9 /* ContainerLeftChildVC.xib */; };
 		B5633FC31F5FB14700A72567 /* MJExtensionExceptionOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FBE1F5FB14700A72567 /* MJExtensionExceptionOneTest.json */; };
 		B5633FC41F5FB14700A72567 /* MJExtensionExceptionThreeTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FBF1F5FB14700A72567 /* MJExtensionExceptionThreeTest.json */; };
 		B5633FC51F5FB14700A72567 /* MJExtensionExceptionTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B5633FC01F5FB14700A72567 /* MJExtensionExceptionTwoTest.json */; };
@@ -382,6 +388,15 @@
 		B54337FF1F5E55E10055AECE /* MantleSubClassOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleSubClassOneTest.json; sourceTree = "<group>"; };
 		B54338011F5E58C90055AECE /* JSONUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONUtils.h; sourceTree = "<group>"; };
 		B54338021F5E58C90055AECE /* JSONUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONUtils.m; sourceTree = "<group>"; };
+		B54CC639257E53B600594DA9 /* ContainerLeftChildVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerLeftChildVC.m; sourceTree = "<group>"; };
+		B54CC63A257E53B600594DA9 /* CustomContainerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomContainerVC.m; sourceTree = "<group>"; };
+		B54CC63B257E53B600594DA9 /* ContainerRightChildVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContainerRightChildVC.m; sourceTree = "<group>"; };
+		B54CC63C257E53B600594DA9 /* CustomContainerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomContainerVC.xib; sourceTree = "<group>"; };
+		B54CC63D257E53B600594DA9 /* ContainerRightChildVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerRightChildVC.xib; sourceTree = "<group>"; };
+		B54CC63E257E53B600594DA9 /* ContainerLeftChildVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContainerLeftChildVC.xib; sourceTree = "<group>"; };
+		B54CC63F257E53B600594DA9 /* CustomContainerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomContainerVC.h; sourceTree = "<group>"; };
+		B54CC640257E53B600594DA9 /* ContainerLeftChildVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerLeftChildVC.h; sourceTree = "<group>"; };
+		B54CC641257E53B600594DA9 /* ContainerRightChildVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContainerRightChildVC.h; sourceTree = "<group>"; };
 		B5633FBE1F5FB14700A72567 /* MJExtensionExceptionOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MJExtensionExceptionOneTest.json; sourceTree = "<group>"; };
 		B5633FBF1F5FB14700A72567 /* MJExtensionExceptionThreeTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MJExtensionExceptionThreeTest.json; sourceTree = "<group>"; };
 		B5633FC01F5FB14700A72567 /* MJExtensionExceptionTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MJExtensionExceptionTwoTest.json; sourceTree = "<group>"; };
@@ -575,6 +590,7 @@
 				B53C63AF22E83E7E0066F492 /* TextImage */,
 				B5190A002320D66B00A648D5 /* SwiftTest */,
 				B5190A032320D66B00A648D5 /* BlockTest */,
+				B54CC638257E53B600594DA9 /* CustomContainerVC */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1179,6 +1195,22 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B54CC638257E53B600594DA9 /* CustomContainerVC */ = {
+			isa = PBXGroup;
+			children = (
+				B54CC63F257E53B600594DA9 /* CustomContainerVC.h */,
+				B54CC63A257E53B600594DA9 /* CustomContainerVC.m */,
+				B54CC63C257E53B600594DA9 /* CustomContainerVC.xib */,
+				B54CC640257E53B600594DA9 /* ContainerLeftChildVC.h */,
+				B54CC639257E53B600594DA9 /* ContainerLeftChildVC.m */,
+				B54CC63E257E53B600594DA9 /* ContainerLeftChildVC.xib */,
+				B54CC641257E53B600594DA9 /* ContainerRightChildVC.h */,
+				B54CC63B257E53B600594DA9 /* ContainerRightChildVC.m */,
+				B54CC63D257E53B600594DA9 /* ContainerRightChildVC.xib */,
+			);
+			path = CustomContainerVC;
+			sourceTree = "<group>";
+		};
 		B5647FF81EF91FAE009CF536 /* BasePopoverVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1382,6 +1414,7 @@
 				B5633FC41F5FB14700A72567 /* MJExtensionExceptionThreeTest.json in Resources */,
 				33454B1A1F7614B200DC3F14 /* CategoryVC.xib in Resources */,
 				B54337B81F5E46BB0055AECE /* JSONModelUsageVC.xib in Resources */,
+				B54CC647257E53B600594DA9 /* ContainerLeftChildVC.xib in Resources */,
 				B54337E01F5E4CBA0055AECE /* JSONModelTest.json in Resources */,
 				B5633FD71F5FEF4A00A72567 /* YYModelModelArrayTest.json in Resources */,
 				B50394C41EEE5FC30016FA97 /* HomePageVC.xib in Resources */,
@@ -1396,7 +1429,9 @@
 				330F7C021ED334380009280A /* Assets.xcassets in Resources */,
 				B541E7FB2028287400D23093 /* SafePushTestVC.xib in Resources */,
 				33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */,
+				B54CC645257E53B600594DA9 /* CustomContainerVC.xib in Resources */,
 				B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */,
+				B54CC646257E53B600594DA9 /* ContainerRightChildVC.xib in Resources */,
 				3399DF0021B96E78006C6B85 /* ProxyTestVC.xib in Resources */,
 				331A8C571F5EF09A00198ED9 /* JSONModelExceptionThreeTest.json in Resources */,
 				339682EE22EB5B5400EB32D8 /* blank_icon_contacts@2x.png in Resources */,
@@ -1529,6 +1564,8 @@
 				330F7BF61ED333F00009280A /* AppDelegate.m in Sources */,
 				3396833822EB603500EB32D8 /* UIView+SnapKit.swift in Sources */,
 				3396833622EB5FA900EB32D8 /* UIView+QAddView.swift in Sources */,
+				B54CC644257E53B600594DA9 /* ContainerRightChildVC.m in Sources */,
+				B54CC642257E53B600594DA9 /* ContainerLeftChildVC.m in Sources */,
 				3396833E22EB694A00EB32D8 /* UIView+BindAction.m in Sources */,
 				B50711711F0E4C8D008EC4AE /* BNPopoverCustomLayout.m in Sources */,
 				33102E481F4969F5008CCD64 /* SingletonClass.m in Sources */,
@@ -1568,6 +1605,7 @@
 				B507116F1F0E4C8D008EC4AE /* BNPopoverBaseLayout.m in Sources */,
 				B564801A1EF92040009CF536 /* BNPopupWindow.m in Sources */,
 				33102E4B1F496A07008CCD64 /* SomeClass.m in Sources */,
+				B54CC643257E53B600594DA9 /* CustomContainerVC.m in Sources */,
 				3396833522EB5FA900EB32D8 /* UIImage+QExtension.swift in Sources */,
 				B56480201EF92071009CF536 /* UIView+Hierarchy.m in Sources */,
 				B5190A182320D77B00A648D5 /* SwiftBenTestModel.swift in Sources */,
