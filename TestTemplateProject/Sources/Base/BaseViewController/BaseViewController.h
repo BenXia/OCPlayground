@@ -15,6 +15,9 @@
 // 是否禁止右滑手势返回,默认为NO
 - (BOOL)preferPopGestureRecognizerForbidden;
 
+
+- (void)justForTestMethod;
+
 @end
 
 

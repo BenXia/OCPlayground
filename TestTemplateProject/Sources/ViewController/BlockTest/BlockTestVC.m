@@ -20,13 +20,15 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self testRecursiveCall_1];
+//    [self testRecursiveCall_1];
     
     //[self testRecursiveCall_2];
     
     //[self testRecursiveCall_3];
     
-    [self testRecursiveLock];
+//    [self testRecursiveLock];
+    
+    [self testCallSuperMethod];
 }
 
 - (void)testRecursiveCall_1 {
@@ -103,6 +105,26 @@
         
         NSLog(@"test end");
     });
+}
+
+- (void)justForTestMethod {
+    NSLog (@"====BlockTestVC====justForTestMethod");
+}
+
+- (void)testCallSuperMethod {
+    static NSMutableArray *s_blockArray = nil;
+    
+    if (!s_blockArray || s_blockArray.count == 0) {
+        void (^operationBlock)(void) = ^{
+            [super justForTestMethod];
+        };
+        
+        s_blockArray = [NSMutableArray arrayWithObject:[operationBlock copy]];
+    }
+    
+    void (^nextBlock)(void) = [s_blockArray firstObject];
+    
+    nextBlock();
 }
 
 @end

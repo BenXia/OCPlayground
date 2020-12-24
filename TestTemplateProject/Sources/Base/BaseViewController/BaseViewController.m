@@ -46,6 +46,10 @@
     return NO;
 }
 
+- (void)justForTestMethod {
+    NSLog (@"====BaseViewController====justForTestMethod");
+}
+
 - (void)dealloc {
     NSLog (@"====DEALLOC==== %@ ", NSStringFromClass([self class]));
 }
