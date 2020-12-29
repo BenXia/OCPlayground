@@ -40,13 +40,60 @@ extension Dictionary {
     func initUI() {
         self.title = "Swift调试页面"
         
-        self.testOptionalType()
+        self.testForceCastBasicDataType()
+        
+//        self.testOptionalType()
         
 //        self.testReactiveSwiftBasic()
 //
 //        self.testReactiveObjCBasic()
 //
 //        self.testSwiftBlock()
+    }
+    
+    func testForceCastBasicDataType() {
+        let a: Float32 = -Float32.greatestFiniteMagnitude
+        let b: Float32 = Float32.nan
+        let c: Float32 = Float32.infinity
+        
+        var ai: Int64 = 0
+        var bi: Int64 = 0
+        var ci: Int64 = 0
+        if a > Float32(Int64.max) {
+            ai = Int64.max
+        } else if a < Float32(Int64.min) {
+            ai = Int64.min
+        } else if a.isNaN {
+            ai = 0
+        } else if a.isInfinite {
+            ai = Int64.max
+        } else {
+            ai = Int64(a)
+        }
+        if b > Float32(Int64.max) {
+            bi = Int64.max
+        } else if b < Float32(Int64.min) {
+            bi = Int64.min
+        } else if b.isNaN {
+            bi = 0
+        } else if b.isInfinite {
+            bi = Int64.max
+        } else {
+            bi = Int64(b)
+        }
+        if c > Float32(Int64.max) {
+            ci = Int64.max
+        } else if c < Float32(Int64.min) {
+            ci = Int64.min
+        } else if c.isNaN {
+            ci = 0
+        } else if c.isInfinite {
+            ci = Int64.max
+        } else {
+            ci = Int64(c)
+        }
+
+        print("\(ai) + \(bi) + \(ci)")
     }
     
     func testOptionalType() {
