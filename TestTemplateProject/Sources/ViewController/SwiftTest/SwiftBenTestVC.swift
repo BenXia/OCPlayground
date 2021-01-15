@@ -105,6 +105,10 @@ extension Dictionary {
         print("t1: \(String(describing: t1!!))")
         print("t2: \(String(describing: t2!))")
         print("t3: \(String(describing: t3))")
+        
+//        t1: 5
+//        t2: nil
+//        t3: nil
 
         //(lldb) po t1
         //▿ Optional<Optional<Int>>
