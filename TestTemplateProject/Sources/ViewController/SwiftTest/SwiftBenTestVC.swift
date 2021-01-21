@@ -17,6 +17,10 @@ extension Dictionary {
     var vm : SwiftBenTestVM!
     
     var swiftKVOModel: SwiftBenTestModel!
+    var swiftKVOModel2: SwiftBenTestModel!
+    
+    var observer1: NSKeyValueObservation?
+    var observer2: NSKeyValueObservation?
     
     // MARK: - life cycle
     required init?(coder aDecoder: NSCoder) {
@@ -44,6 +48,7 @@ extension Dictionary {
         
 //        self.tempTestFunc()
         
+//        self.testOptionalType()
 //        self.testForceCastBasicDataType()
         
         self.testReactiveSwiftBasic()
@@ -155,31 +160,33 @@ extension Dictionary {
     }
     
     func testReactiveSwiftBasic() {
-        let model: SwiftBenTestModel = SwiftBenTestModel.init()
-        model.qingqingWhateverId = "11818212"
-        model.adjusted = false
-        model.startTime = 1563765226000
-        model.endTime = 1563765226000
-
-        let view: SwiftBenTestView = SwiftBenTestView.init(frame: CGRect(x: (SwiftUtility.kScreenWidth_ - SwiftBenTestView.kTestViewWidth) / 2, y: 100, width: SwiftBenTestView.kTestViewWidth, height:SwiftBenTestView.kTestViewHeight))
-        view.refreshUI(model: model)
-
-        self.view.addSubview(view)
+//        let model: SwiftBenTestModel = SwiftBenTestModel.init()
+//        model.qingqingWhateverId = "11818212"
+//        model.adjusted = false
+//        model.startTime = 1563765226000
+//        model.endTime = 1563765226000
+//
+//        let view: SwiftBenTestView = SwiftBenTestView.init(frame: CGRect(x: (SwiftUtility.kScreenWidth_ - SwiftBenTestView.kTestViewWidth) / 2, y: 100, width: SwiftBenTestView.kTestViewWidth, height:SwiftBenTestView.kTestViewHeight))
+//        view.refreshUI(model: model)
+//
+//        self.view.addSubview(view)
+//
+//
+//        // 第一种 swift model 的 KVO 观察实现方式（需要注意析构时候移除观察者）
+//        self.swiftKVOModel = SwiftBenTestModel.init()
+//        self.swiftKVOModel.qingqingWhateverId = "11818212"
+//        self.swiftKVOModel.adjusted = false
+//        self.swiftKVOModel.startTime = 1563765226000
+//        self.swiftKVOModel.endTime = 1563765226000
+//
+//        self.swiftKVOModel.addObserver(self, forKeyPath: "qingqingWhateverId", options: [.new, .old], context: nil)
+//        self.swiftKVOModel.addObserver(self, forKeyPath: "adjusted", options: [.new, .old], context: nil)
+//
+//        self.swiftKVOModel.qingqingWhateverId = "22222222"
+//        self.swiftKVOModel.adjusted = true
         
         
-        self.swiftKVOModel = SwiftBenTestModel.init()
-        self.swiftKVOModel.qingqingWhateverId = "11818212"
-        self.swiftKVOModel.adjusted = false
-        self.swiftKVOModel.startTime = 1563765226000
-        self.swiftKVOModel.endTime = 1563765226000
-
-        self.swiftKVOModel.addObserver(self, forKeyPath: "qingqingWhateverId", options: [.new, .old], context: nil)
-        self.swiftKVOModel.addObserver(self, forKeyPath: "adjusted", options: [.new, .old], context: nil)
-
-        self.swiftKVOModel.qingqingWhateverId = "22222222"
-        self.swiftKVOModel.adjusted = true
-        
-        
+        // 第二种 swift model 的 KVO 观察实现方式（感觉比第一种方式方便一点，代码集中一点，观察者对象释放时候就会自动解除观察（invalidate() will be called automatically when an NSKeyValueObservation is deinited））
         let swiftKVOModel2 = SwiftBenTestModel.init()
         var observer1: NSKeyValueObservation?
         var observer2: NSKeyValueObservation?
@@ -208,59 +215,81 @@ extension Dictionary {
 
         swiftKVOModel2.qingqingWhateverId = "22222222"
         swiftKVOModel2.adjusted = true
+        self.swiftKVOModel2 = swiftKVOModel2
+        self.observer1 = observer1
+        self.observer2 = observer2
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+            guard let `self` = self else { return }
+            
+            self.swiftKVOModel2.qingqingWhateverId = "33333333"
+            self.swiftKVOModel2.adjusted = false
+            
+            ///invalidate() will be called automatically when an NSKeyValueObservation is deinited
+            self.observer1 = nil
+            self.observer2 = nil
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+                guard let `self` = self else { return }
+                
+                self.swiftKVOModel2.qingqingWhateverId = "44444444"
+                self.swiftKVOModel2.adjusted = true
+                
+            }
+        }
         
 
-        let kvoModel: BenTestModelOCA = BenTestModelOCA.init()
-        kvoModel.reactive.producer(forKeyPath: "isSelected").startWithValues { (value) in
-            if value != nil {
-                print(value!)
-            }
-            //print(kvoModel.isSelected)
-        }
-
-        kvoModel.isSelected = false
-        kvoModel.isSelected = true
-
-
-        // 注意，如果此处的 BenTestModelA 是 OC 代码中定义的类，则使用下面语法是没有问题的
-        //let model2: BenTestModelA = BenTestModelA.init()
-        let model2: BenTestModelOCA = BenTestModelOCA.init()
-        model2.reactive.producer(forKeyPath: "adjusted").startWithValues { (value) in
-            print("A ajusted: \(value ?? "")")
-        }
-        model2.reactive.producer(forKeyPath: "name").startWithValues { (value) in
-            print("A name: \(value ?? "")")
-        }
-        //model2.reactive.producer(forKeyPath: "ageModel.age").startWithValues { (value) in
-        //    print("A ageModel age: \(value ?? "")")
-        //}
-
-        model2.adjusted = false
-        model2.adjusted = true
-        model2.name = "bbb"
-        model2.name = "ccc"
-        //model2.ageModel.age.value = 20
-
-
-        let model3: BenTestModelB = BenTestModelB.init()
-        model3.adjusted.producer.startWithValues { (value) in
-            print("B ajusted: \(value)")
-        }
-        model3.name.producer.startWithValues { (value) in
-            print("B name: \(value)")
-        }
-        model3.ageModel.age.producer.startWithValues { (value) in
-            print("B ageModel age: \(value)")
-        }
-
-        model3.adjusted.value = false
-        model3.adjusted.value = true
-        model3.name.value = "BBB"
-        model3.name.value = "CCC"
-        model3.ageModel.age.value = 20
-
-
-        //BasicErrorHandler.sharedInstance()?.showToast(withAllError: NSError.init(domain: kErrorDomainPB_GeneralRequest, code: ErrorCodeCommon._Whatever.rawValue, userInfo: [ "ErrorUserInfoDict_ErrorMessageKey": "网络不给力，请稍候再试"]))
+//        let kvoModel: BenTestModelA = BenTestModelA.init()
+//        kvoModel.reactive.producer(forKeyPath: "isSelected").startWithValues { (value) in
+//            if value != nil {
+//                print(value!)
+//            }
+//            //print(kvoModel.isSelected)
+//        }
+//
+//        kvoModel.isSelected = false
+//        kvoModel.isSelected = true
+//
+//
+//        // 注意，如果此处的 BenTestModelA 是 OC 代码中定义的类，则使用下面语法是没有问题的
+//        //let model2: BenTestModelA = BenTestModelA.init()
+//        let model2: BenTestModelOCA = BenTestModelOCA.init()
+//        model2.reactive.producer(forKeyPath: "adjusted").startWithValues { (value) in
+//            print("A ajusted: \(value ?? "")")
+//        }
+//        model2.reactive.producer(forKeyPath: "name").startWithValues { (value) in
+//            print("A name: \(value ?? "")")
+//        }
+//        //model2.reactive.producer(forKeyPath: "ageModel.age").startWithValues { (value) in
+//        //    print("A ageModel age: \(value ?? "")")
+//        //}
+//
+//        model2.adjusted = false
+//        model2.adjusted = true
+//        model2.name = "bbb"
+//        model2.name = "ccc"
+//        //model2.ageModel.age.value = 20
+//
+//
+//        let model3: BenTestModelB = BenTestModelB.init()
+//        model3.adjusted.producer.startWithValues { (value) in
+//            print("B ajusted: \(value)")
+//        }
+//        model3.name.producer.startWithValues { (value) in
+//            print("B name: \(value)")
+//        }
+//        model3.ageModel.age.producer.startWithValues { (value) in
+//            print("B ageModel age: \(value)")
+//        }
+//
+//        model3.adjusted.value = false
+//        model3.adjusted.value = true
+//        model3.name.value = "BBB"
+//        model3.name.value = "CCC"
+//        model3.ageModel.age.value = 20
+//
+//
+//        BasicErrorHandler.sharedInstance()?.showToast(withAllError: NSError.init(domain: kErrorDomainPB_GeneralRequest, code: ErrorCodeCommon._Whatever.rawValue, userInfo: [ "ErrorUserInfoDict_ErrorMessageKey": "网络不给力，请稍候再试"]))
     }
     
     // 重写响应方法
