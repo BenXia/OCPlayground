@@ -8,7 +8,7 @@
 import UIKit
 
 @objc(SwiftBenTestModel) class SwiftBenTestModel : NSObject {
-    @objc var qingqingWhateverId: String = ""
+    @objc dynamic var qingqingWhateverId: String = ""
     @objc var adjusted: Bool = false
     @objc var startTime: Int64 = 0
     @objc var endTime: Int64 = 0

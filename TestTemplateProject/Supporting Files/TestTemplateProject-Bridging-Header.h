@@ -19,6 +19,7 @@
 #import "TextImageVC.h"
 #import "AttachmentTestVC.h"
 #import "BenTestModelOCA.h"
+#import "BenTestModelOCA+IsSelected.h"
 
 @import UIKit;
 @import Foundation;

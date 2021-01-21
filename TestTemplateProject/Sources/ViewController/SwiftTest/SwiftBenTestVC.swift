@@ -16,6 +16,8 @@ extension Dictionary {
 @objc(SwiftBenTestVC) class SwiftBenTestVC: BaseViewController {
     var vm : SwiftBenTestVM!
     
+    var swiftKVOModel: SwiftBenTestModel!
+    
     // MARK: - life cycle
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -40,15 +42,37 @@ extension Dictionary {
     func initUI() {
         self.title = "Swift调试页面"
         
-        self.testForceCastBasicDataType()
+//        self.tempTestFunc()
         
-//        self.testOptionalType()
+//        self.testForceCastBasicDataType()
         
-//        self.testReactiveSwiftBasic()
+        self.testReactiveSwiftBasic()
 //
 //        self.testReactiveObjCBasic()
 //
 //        self.testSwiftBlock()
+    }
+    
+    func tempTestFunc() {
+        
+//        let alertV = UIAlertView.init(title: "轻轻提示", message: "请在iPhone的“设置－隐私－相机”选项中，允许轻轻助教访问您的手机相册。", delegate: nil, cancelButtonTitle: "我知道了")
+//        alertV.show()
+        
+        let alertView = UIAlertController(title: "轻轻提示", message: "请在iPhone的“设置－隐私－相机”选项中，允许轻轻助教访问您的手机相册。", preferredStyle: UIAlertController.Style.alert)
+        let alertAction1 = UIAlertAction(title: "我知道了", style: UIAlertAction.Style.default, handler:{ _ in })
+        alertView.addAction(alertAction1)
+        self.present(alertView, animated: true, completion: nil)
+        
+        
+//        let vc = PublicTransferSucessVC.init(needDeleteLastVC:false, completionBlock: { [weak self] in
+//            guard let `self` = self else { return }
+//
+//            self.navigationController?.popToViewController(self, animated: true)
+//        })
+//
+//        self.pushVC(vc);
+        
+        //VCSwitchHandler.sharedInstance()?.pushWebVC(withUrl: String.init(format: kStudent_ClassHourV2ContractURLString, "12345", 67890) as String, animated: true)
     }
     
     func testForceCastBasicDataType() {
@@ -132,7 +156,7 @@ extension Dictionary {
     
     func testReactiveSwiftBasic() {
         let model: SwiftBenTestModel = SwiftBenTestModel.init()
-        model.qingqingWhateverId = "11818212";
+        model.qingqingWhateverId = "11818212"
         model.adjusted = false
         model.startTime = 1563765226000
         model.endTime = 1563765226000
@@ -141,38 +165,71 @@ extension Dictionary {
         view.refreshUI(model: model)
 
         self.view.addSubview(view)
+        
+        
+        self.swiftKVOModel = SwiftBenTestModel.init()
+        self.swiftKVOModel.qingqingWhateverId = "11818212"
+        self.swiftKVOModel.adjusted = false
+        self.swiftKVOModel.startTime = 1563765226000
+        self.swiftKVOModel.endTime = 1563765226000
 
+        self.swiftKVOModel.addObserver(self, forKeyPath: "qingqingWhateverId", options: [.new, .old], context: nil)
+        self.swiftKVOModel.addObserver(self, forKeyPath: "adjusted", options: [.new, .old], context: nil)
 
-//        let kvoModel: BenTestModelOCA = BenTestModelOCA.init()
-//        kvoModel.reactive.producer(forKeyPath: "isSelected").startWithValues { (value) in
-//            if value != nil {
-//                print(value!)
-//            }
-//            //print(kvoModel.isSelected)
-//        }
-//
-//        kvoModel.isSelected = false
-//        kvoModel.isSelected = true
+        self.swiftKVOModel.qingqingWhateverId = "22222222"
+        self.swiftKVOModel.adjusted = true
+        
+        
+        let swiftKVOModel2 = SwiftBenTestModel.init()
+        var observer1: NSKeyValueObservation?
+        var observer2: NSKeyValueObservation?
+
+        swiftKVOModel2.qingqingWhateverId = "11818212"
+        swiftKVOModel2.adjusted = false
+        swiftKVOModel2.startTime = 1563765226000
+        swiftKVOModel2.endTime = 1563765226000
+
+        observer1 = swiftKVOModel2.observe(\SwiftBenTestModel.qingqingWhateverId, options: [.old, .new]) { (model, change) in
+            if let old = change.oldValue {
+                print("qingqingWhateverId oldValue: \(old)")
+            }
+            if let new = change.newValue {
+                print("qingqingWhateverId newValue: \(new)")
+            }
+        }
+        observer2 = swiftKVOModel2.observe(\SwiftBenTestModel.adjusted, options: [.old, .new]) { (model, change) in
+            if let old = change.oldValue {
+                print("adjusted oldValue: \(old)")
+            }
+            if let new = change.newValue {
+                print("adjusted newValue: \(new)")
+            }
+        }
+
+        swiftKVOModel2.qingqingWhateverId = "22222222"
+        swiftKVOModel2.adjusted = true
+        
+
+        let kvoModel: BenTestModelOCA = BenTestModelOCA.init()
+        kvoModel.reactive.producer(forKeyPath: "isSelected").startWithValues { (value) in
+            if value != nil {
+                print(value!)
+            }
+            //print(kvoModel.isSelected)
+        }
+
+        kvoModel.isSelected = false
+        kvoModel.isSelected = true
 
 
         // 注意，如果此处的 BenTestModelA 是 OC 代码中定义的类，则使用下面语法是没有问题的
         //let model2: BenTestModelA = BenTestModelA.init()
         let model2: BenTestModelOCA = BenTestModelOCA.init()
-        model2.reactive.producer(forKeyPath: "adjusted").startWithResult { (result) in
-            switch result {
-                case .success(let object):
-                    print("A name: \(object as! String)")
-                case .failure:
-                    print("Error")
-            }
+        model2.reactive.producer(forKeyPath: "adjusted").startWithValues { (value) in
+            print("A ajusted: \(value ?? "")")
         }
-        model2.reactive.producer(forKeyPath: "name").startWithResult { (result) in
-            switch result {
-                case .success(let object):
-                    print("A name: \(object as! String)")
-                case .failure:
-                    print("Error")
-            }
+        model2.reactive.producer(forKeyPath: "name").startWithValues { (value) in
+            print("A name: \(value ?? "")")
         }
         //model2.reactive.producer(forKeyPath: "ageModel.age").startWithValues { (value) in
         //    print("A ageModel age: \(value ?? "")")
@@ -202,6 +259,27 @@ extension Dictionary {
         model3.name.value = "CCC"
         model3.ageModel.age.value = 20
 
+
+        //BasicErrorHandler.sharedInstance()?.showToast(withAllError: NSError.init(domain: kErrorDomainPB_GeneralRequest, code: ErrorCodeCommon._Whatever.rawValue, userInfo: [ "ErrorUserInfoDict_ErrorMessageKey": "网络不给力，请稍候再试"]))
+    }
+    
+    // 重写响应方法
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        print("keypath: \(String(describing: keyPath))") // name
+        if let old = change?[NSKeyValueChangeKey.oldKey] {
+            print("oldValue: \(old)")
+        }
+        
+        if let new = change?[NSKeyValueChangeKey.newKey] {
+            print("newValue: \(new)")
+        }
+    }
+    
+    deinit {
+        if let model = self.swiftKVOModel {
+            model.removeObserver(self, forKeyPath: "qingqingWhateverId")
+            model.removeObserver(self, forKeyPath: "adjusted")
+        }
     }
     
     func testReactiveObjCBasic() {
