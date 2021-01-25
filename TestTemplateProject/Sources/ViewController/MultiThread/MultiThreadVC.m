@@ -8,6 +8,8 @@
 
 #import "MultiThreadVC.h"
 #import "CustomOperation.h"
+#include <pthread.h>
+#include <semaphore.h>
 
 @interface MultiThreadVC ()
 
@@ -32,7 +34,7 @@
     
 //    [self testBlockOperationAndMainOperationQueue];
     
-    [self testCustomOperation];
+//    [self testCustomOperation];
     
 //    [self testMainOperationQueue];
     
@@ -60,7 +62,25 @@
     
 //    [self testMaxGCDSerialThreadCount];   // 我的天，还有上限吗
     
-//    [self testGCDConfigMaxConcurrentTreadCount];
+//    [self testGCDConfigMaxConcurrentThreadCount];
+    
+//    [self testGCDSetTargetQueue];
+    
+//    [self testGCDDispatchGroup];
+    
+//    [self testGCDSomeAPI];
+    
+    // 经典的多读一写互斥问题
+    [self testGCDReadWriteHandle];
+//
+//    // 多线程数据竞争问题（多个线程更新相同的资源会导致数据的不一致）
+//    [self testMultiThreadSafe];
+//
+//    // 多线程的死锁问题（停止等待事件的线程会导致多个线程相互持续等待）（dispatch_sync单线程也会死锁）
+//    [self testMultiThreadDeadLock];
+    
+    // 使用太多线程会消耗大量内存
+    // 避免创建大量 gcd 的 serial queue。一旦生成 Serial Dispatch Queue 并追加处理，系统对于一个 Serial Dispatch Queue 就只生成并使用一个线程。
     
 //    [self testRecursiveSynchronized];
 }
@@ -505,7 +525,7 @@
     }
 }
 
-- (void)testGCDConfigMaxConcurrentTreadCount {
+- (void)testGCDConfigMaxConcurrentThreadCount {
     dispatch_group_t group = dispatch_group_create();
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(10);
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -518,6 +538,713 @@
         });
     }
     dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+}
+
+- (void)testGCDSetTargetQueue {
+    // 默认 dispatch_queue_create 函数生成的 Dispatch Queue 不管是 Serial Dispatch Queue 还是 Concurrent Dispatch Queue,
+    // 都使用与默认优先级 Global Dispatch Queue 相同执行优先级的线程。
+    // 而变更生成的 Dispatch Queue 的执行优先级要使用 dispatc_set_target_queue 函数。
+    dispatch_queue_t serialQueue = dispatch_queue_create("com.summer.customSerialQueue", NULL);
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.summer.customConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_set_target_queue(concurrentQueue, serialQueue);
+
+    for (int i = 0; i < 1000; i++) {
+        dispatch_async(concurrentQueue, ^{
+            NSLog(@"%d, for in dispatch_async concurrentQueue, current thread = %@", i, [NSThread currentThread]);
+            sleep(3);
+        });
+    }
+    
+    // 下面的还是串行的，只是优先级发生了变化
+//        dispatch_set_target_queue(serialQueue, concurrentQueue);
+//
+//        for (int i = 0; i < 1000; i++) {
+//            dispatch_async(serialQueue, ^{
+//                NSLog(@"%d, for in dispatch_async concurrentQueue, current thread = %@", i, [NSThread currentThread]);
+//                sleep(3);
+//            });
+//        }
+    
+//    dispatch_release(serialQueue);
+//    dispatch_release(concurrentQueue);
+}
+
+- (void)testGCDDispatchGroup {
+    // 在追加到 Dispatch Queue 中的多个处理全部结束后想执行结束处理
+
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_group_t group = dispatch_group_create();
+    
+    dispatch_group_async(group, globalQueue, ^{
+        NSLog(@"blk0");
+    });
+    dispatch_group_async(group, globalQueue, ^{
+        NSLog(@"blk1");
+    });
+    dispatch_group_async(group, globalQueue, ^{
+        NSLog(@"blk2");
+    });
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        NSLog(@"done");
+    });
+    
+    // 上面这个 dispatch_group_notify 也可以换成下面的 dispatch_group_wait，仅等待全部处理执行结束
+    //dispatch_group_wait(group, DISPATCH_TIME_FOREVER); // 一直等待
+    //dispatch_group_wait(group, DISPATCH_TIME_NOW);  // 不等待，直接判断属于 group 的处理是否执行结束
+    
+    dispatch_time_t time = dispatch_time(DISPATCH_TIME_NOW, 1ull * NSEC_PER_SEC);
+    long result = dispatch_group_wait(group, time);
+    if (result == 0) {
+        NSLog(@"All finished");
+    } else {
+        NSLog(@"Not all finished");
+    }
+    
+//    dispatch_release(group);
+}
+
+dispatch_time_t getDispatchTimeByDate(NSDate *date)
+{
+    NSTimeInterval interval;
+    double second, subsecond;
+    struct timespec time;
+    dispatch_time_t milestone;
+    
+    interval = [date timeIntervalSince1970];
+    subsecond = modf(interval, &second);
+    time.tv_sec = second;
+    time.tv_sec = subsecond * NSEC_PER_SEC;
+    milestone = dispatch_walltime(&time, 0);
+    
+    return milestone;
+}
+
+- (void)testGCDSomeAPI {
+     //dispatch_apply
+     //dispatch_apply 函数是 dispatch_sync 函数和 Dispatch Group 的关联 API。
+     //该函数按指定的次数将指定的 Block 追加到指定 Dispatch Queue 中，并等待全部处理执行结束。
+     //另外，由于 dispatch_apply 函数也与 dispatch_sync 函数相同会等待处理执行结束，因此推荐在 dispatch_async 函数中非同步地执行 dispath_apply 函数。
+//      dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+////    dispatch_apply(10, queue, ^(size_t index){
+////        NSLog(@"%zu", index);
+////    });
+////    NSLog(@"done");
+//
+//    dispatch_async(queue, ^{
+//        dispatch_apply(10, queue, ^(size_t index){
+//            NSLog(@"%zu", index);
+//        });
+//
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            NSLog(@"done");
+//        });
+//    });
+//
+////    NSArray *array = @[@"000", @"111", @"222", @"333", @"444", @"555", @"666", @"777", @"888", @"999"];
+////    dispatch_apply(array.count, queue, ^(size_t index) {
+////        NSLog(@"%zu: %@", index, [array objectAtIndex:index]);
+////    });
+    
+    
+    
+    // dispatch_suspend / dispatch_resume
+    // 注意，对于系统的 global queue 没有作用
+//    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.summer.customConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+//    for (int i = 0; i < 10; i++) {
+//        dispatch_async(concurrentQueue, ^{
+//            NSLog(@"%d", i);
+//        });
+//    }
+//
+//    dispatch_suspend(concurrentQueue);
+//
+//    for (int i = 100; i < 110; i++) {
+//        dispatch_async(concurrentQueue, ^{
+//            NSLog(@"%d", i);
+//        });
+//    }
+//
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        dispatch_resume(concurrentQueue);
+//    });
+    
+    
+    
+    // dispatch_source
+    // DISPATCH_SOURCE_TYPE_DATA_ADD   变量增加
+    // DISPATCH_SOURCE_TYPE_DATA_OR    变量 OR
+    // DISPATCH_SOURCE_TYPE_MACH_SEND  MACH 端口发送
+    // DISPATCH_SOURCE_TYPE_MACH_RECV  MACH 端口接收
+    // DISPATCH_SOURCE_TYPE_PROC       监测到与进程相关的事件
+    // DISPATCH_SOURCE_TYPE_READ       可读取文件映像
+    // DISPATCH_SOURCE_TYPE_SIGNAL     接收信号
+    // DISPATCH_SOURCE_TYPE_TIMER      定时器
+    // DISPATCH_SOURCE_TYPE_VNODE      文件系统有变更
+    // DISPATCH_SOURCE_TYPE_WRITE      可写入文件映像
+    
+    // 在定时器经过指定时间时设定 Main Dispatch Queue 为追加处理的 Dispatch Queue
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
+    // 将定时器设定为 15 秒后。不指定为重复。允许延迟1秒。
+    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 15ull * NSEC_PER_SEC), DISPATCH_TIME_FOREVER, 1ull * NSEC_PER_SEC);
+    
+    // 指定定时器指定时间内执行的处理
+    dispatch_source_set_event_handler(timer, ^{
+        NSLog(@"wakeup!");
+        
+        // 取消 Dispatch Source
+        dispatch_source_cancel(timer);
+    });
+    
+    // 指定取消 Dispatch Source 时的处理
+    dispatch_source_set_cancel_handler(timer, ^{
+        NSLog(@"canceled");
+        
+        // 释放 Dispatch Source
+//        dispatch_release(timer);
+    });
+    
+    // 启动 Dispatch Source
+    dispatch_resume(timer);
+}
+
+- (void)testGCDReadWriteHandle {
+//    [self testGCDAsyncBarrierHandle];
+    
+//    [self testGCDSetTargetQueueAndDispatchGroupHandle];
+    
+    // 下面两种实现方式与 gcd 无关
+//    [self testPthreadReadWriteLock];
+    
+//    [self testPthreadMutex];
+    
+//    [self testPthreadSem];
+    
+    [self testPthreadMutexAndCondition];
+}
+
+- (void)testGCDAsyncBarrierHandle {
+    // ⚠️：dispatch_barrier_async 对于系统的 global queue 没有用
+//    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.summer.concurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+    
+    dispatch_async(concurrentQueue, ^{
+        NSLog(@"Read 1");
+        sleep(3);
+    });
+    dispatch_async(concurrentQueue, ^{
+        NSLog(@"Read 2");
+        sleep(3);
+    });
+    dispatch_async(concurrentQueue, ^{
+        NSLog(@"Read 3");
+        sleep(3);
+    });
+    dispatch_async(concurrentQueue, ^{
+        NSLog(@"Read 4");
+        sleep(3);
+    });
+    
+    dispatch_barrier_async(concurrentQueue, ^{
+        NSLog(@"Write 1");
+        sleep(3);
+    });
+    
+    dispatch_async(concurrentQueue, ^{
+        NSLog(@"Read 5");
+        sleep(3);
+    });
+    dispatch_async(concurrentQueue, ^{
+        NSLog(@"Read 6");
+        sleep(3);
+    });
+    dispatch_async(concurrentQueue, ^{
+        NSLog(@"Read 7");
+        sleep(3);
+    });
+    dispatch_async(concurrentQueue, ^{
+        NSLog(@"Read 8");
+        sleep(3);
+    });
+}
+
+- (void)testGCDSetTargetQueueAndDispatchGroupHandle {
+    // Objective-C 高级编程中提到利用 Dispatch Group 和 dispatch_set_target_queue 函数可以实现，但是我不太知道怎么实现
+}
+
+- (void)testPthreadReadWriteLock {
+    // 直接使用 pthread 中提供的读写锁
+    pthread_rwlock_t rwlock = PTHREAD_RWLOCK_INITIALIZER;
+    
+    pthread_rwlock_rdlock(&rwlock);
+    NSLog(@"读：1");
+    pthread_rwlock_unlock(&rwlock);
+    pthread_rwlock_rdlock(&rwlock);
+    NSLog(@"读：2");
+    pthread_rwlock_unlock(&rwlock);
+    pthread_rwlock_rdlock(&rwlock);
+    NSLog(@"读：3");
+    pthread_rwlock_unlock(&rwlock);
+    pthread_rwlock_rdlock(&rwlock);
+    NSLog(@"读：4");
+    pthread_rwlock_unlock(&rwlock);
+    
+    pthread_rwlock_wrlock(&rwlock);
+    NSLog(@"写：1");
+    pthread_rwlock_unlock(&rwlock);
+    
+    pthread_rwlock_rdlock(&rwlock);
+    NSLog(@"读：5");
+    pthread_rwlock_unlock(&rwlock);
+    pthread_rwlock_rdlock(&rwlock);
+    NSLog(@"读：6");
+    pthread_rwlock_unlock(&rwlock);
+    pthread_rwlock_rdlock(&rwlock);
+    NSLog(@"读：7");
+    pthread_rwlock_unlock(&rwlock);
+    pthread_rwlock_rdlock(&rwlock);
+    NSLog(@"读：8");
+    pthread_rwlock_unlock(&rwlock);
+}
+
+- (void)testPthreadMutex {
+    pthread_mutex_t r_mutex = PTHREAD_MUTEX_INITIALIZER;
+    pthread_mutex_t w_mutex = PTHREAD_MUTEX_INITIALIZER;
+    int readers = 0;  // 记录读者的个数
+    
+    // 读
+    pthread_mutex_lock(&r_mutex);
+    if (readers == 0) {
+        pthread_mutex_lock(&w_mutex);
+    }
+    readers++;
+    pthread_mutex_unlock(&r_mutex);
+    NSLog(@"读：1");
+    pthread_mutex_lock(&r_mutex);
+    readers--;
+    if (readers == 0) {
+        pthread_mutex_unlock(&w_mutex);
+    }
+    pthread_mutex_unlock(&r_mutex);
+    
+    pthread_mutex_lock(&r_mutex);
+    if (readers == 0) {
+        pthread_mutex_lock(&w_mutex);
+    }
+    readers++;
+    pthread_mutex_unlock(&r_mutex);
+    NSLog(@"读：2");
+    pthread_mutex_lock(&r_mutex);
+    readers--;
+    if (readers == 0) {
+        pthread_mutex_unlock(&w_mutex);
+    }
+    pthread_mutex_unlock(&r_mutex);
+    
+    pthread_mutex_lock(&r_mutex);
+    if (readers == 0) {
+        pthread_mutex_lock(&w_mutex);
+    }
+    readers++;
+    pthread_mutex_unlock(&r_mutex);
+    NSLog(@"读：3");
+    pthread_mutex_lock(&r_mutex);
+    readers--;
+    if (readers == 0) {
+        pthread_mutex_unlock(&w_mutex);
+    }
+    pthread_mutex_unlock(&r_mutex);
+    
+    pthread_mutex_lock(&r_mutex);
+    if (readers == 0) {
+        pthread_mutex_lock(&w_mutex);
+    }
+    readers++;
+    pthread_mutex_unlock(&r_mutex);
+    NSLog(@"读：4");
+    pthread_mutex_lock(&r_mutex);
+    readers--;
+    if (readers == 0) {
+        pthread_mutex_unlock(&w_mutex);
+    }
+    pthread_mutex_unlock(&r_mutex);
+    
+    // 写
+    pthread_mutex_lock(&w_mutex);
+    NSLog(@"写：1");
+    pthread_mutex_unlock(&w_mutex);
+    
+    // 读
+    pthread_mutex_lock(&r_mutex);
+    if (readers == 0) {
+        pthread_mutex_lock(&w_mutex);
+    }
+    readers++;
+    pthread_mutex_unlock(&r_mutex);
+    NSLog(@"读：5");
+    pthread_mutex_lock(&r_mutex);
+    readers--;
+    if (readers == 0) {
+        pthread_mutex_unlock(&w_mutex);
+    }
+    pthread_mutex_unlock(&r_mutex);
+    
+    pthread_mutex_lock(&r_mutex);
+    if (readers == 0) {
+        pthread_mutex_lock(&w_mutex);
+    }
+    readers++;
+    pthread_mutex_unlock(&r_mutex);
+    NSLog(@"读：6");
+    pthread_mutex_lock(&r_mutex);
+    readers--;
+    if (readers == 0) {
+        pthread_mutex_unlock(&w_mutex);
+    }
+    pthread_mutex_unlock(&r_mutex);
+    
+    pthread_mutex_lock(&r_mutex);
+    if (readers == 0) {
+        pthread_mutex_lock(&w_mutex);
+    }
+    readers++;
+    pthread_mutex_unlock(&r_mutex);
+    NSLog(@"读：7");
+    pthread_mutex_lock(&r_mutex);
+    readers--;
+    if (readers == 0) {
+        pthread_mutex_unlock(&w_mutex);
+    }
+    pthread_mutex_unlock(&r_mutex);
+    
+    pthread_mutex_lock(&r_mutex);
+    if (readers == 0) {
+        pthread_mutex_lock(&w_mutex);
+    }
+    readers++;
+    pthread_mutex_unlock(&r_mutex);
+    NSLog(@"读：8");
+    pthread_mutex_lock(&r_mutex);
+    readers--;
+    if (readers == 0) {
+        pthread_mutex_unlock(&w_mutex);
+    }
+    pthread_mutex_unlock(&r_mutex);
+}
+
+- (void)testPthreadSem {
+    // 这里使用2个信号量+1个整型变量来实现。令信号量的初始值为1，那么信号量的作用就和互斥量等价了
+    sem_t r_sem;
+    sem_init(&r_sem, 0, 1);
+    
+    sem_t w_sem;
+    sem_init(&w_sem, 0, 1);
+    
+    int readers = 0;
+    
+    // 读
+    sem_wait(&r_sem);
+    if (readers == 0) {
+        sem_wait(&w_sem);
+    }
+    readers++;
+    sem_post(&r_sem);
+    NSLog(@"读：1");
+    sem_wait(&r_sem);
+    readers--;
+    if (readers == 0) {
+        sem_post(&w_sem);
+    }
+    sem_post(&r_sem);
+    
+    sem_wait(&r_sem);
+    if (readers == 0) {
+        sem_wait(&w_sem);
+    }
+    readers++;
+    sem_post(&r_sem);
+    NSLog(@"读：2");
+    sem_wait(&r_sem);
+    readers--;
+    if (readers == 0) {
+        sem_post(&w_sem);
+    }
+    sem_post(&r_sem);
+    
+    sem_wait(&r_sem);
+    if (readers == 0) {
+        sem_wait(&w_sem);
+    }
+    readers++;
+    sem_post(&r_sem);
+    NSLog(@"读：3");
+    sem_wait(&r_sem);
+    readers--;
+    if (readers == 0) {
+        sem_post(&w_sem);
+    }
+    sem_post(&r_sem);
+    
+    sem_wait(&r_sem);
+    if (readers == 0) {
+        sem_wait(&w_sem);
+    }
+    readers++;
+    sem_post(&r_sem);
+    NSLog(@"读：4");
+    sem_wait(&r_sem);
+    readers--;
+    if (readers == 0) {
+        sem_post(&w_sem);
+    }
+    sem_post(&r_sem);
+    
+    // 写
+    sem_wait(&w_sem);
+    NSLog(@"写：1");
+    sem_post(&w_sem);
+    
+    // 读
+    sem_wait(&r_sem);
+    if (readers == 0) {
+        sem_wait(&w_sem);
+    }
+    readers++;
+    sem_post(&r_sem);
+    NSLog(@"读：5");
+    sem_wait(&r_sem);
+    readers--;
+    if (readers == 0) {
+        sem_post(&w_sem);
+    }
+    sem_post(&r_sem);
+    
+    sem_wait(&r_sem);
+    if (readers == 0) {
+        sem_wait(&w_sem);
+    }
+    readers++;
+    sem_post(&r_sem);
+    NSLog(@"读：6");
+    sem_wait(&r_sem);
+    readers--;
+    if (readers == 0) {
+        sem_post(&w_sem);
+    }
+    sem_post(&r_sem);
+    
+    sem_wait(&r_sem);
+    if (readers == 0) {
+        sem_wait(&w_sem);
+    }
+    readers++;
+    sem_post(&r_sem);
+    NSLog(@"读：7");
+    sem_wait(&r_sem);
+    readers--;
+    if (readers == 0) {
+        sem_post(&w_sem);
+    }
+    sem_post(&r_sem);
+    
+    sem_wait(&r_sem);
+    if (readers == 0) {
+        sem_wait(&w_sem);
+    }
+    readers++;
+    sem_post(&r_sem);
+    NSLog(@"读：8");
+    sem_wait(&r_sem);
+    readers--;
+    if (readers == 0) {
+        sem_post(&w_sem);
+    }
+    sem_post(&r_sem);
+}
+
+- (void)testPthreadMutexAndCondition {
+    // 使用条件变量+互斥锁来实现。注意：条件变量必须和互斥锁一起使用，等待、释放的时候需要加锁。
+    pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
+    pthread_cond_t  cond  = PTHREAD_COND_INITIALIZER;
+    int w = 0, r = 0;
+    
+    // 读
+    pthread_mutex_lock(&mutex);
+    while(w != 0) {                         // 注意这个地方是 while
+        pthread_cond_wait(&cond, &mutex);   // 等待条件变量的成立
+    }
+    r++;
+    pthread_mutex_unlock(&mutex);
+    NSLog(@"读：1");
+    pthread_mutex_lock(&mutex);
+    r--;
+    if (r == 0) {
+        pthread_cond_broadcast(&cond);     // 唤醒其他因条件变量而产生的阻塞
+    }
+    pthread_mutex_unlock(&mutex);
+    
+    pthread_mutex_lock(&mutex);
+    while(w != 0) {
+        pthread_cond_wait(&cond, &mutex);
+    }
+    r++;
+    pthread_mutex_unlock(&mutex);
+    NSLog(@"读：2");
+    pthread_mutex_lock(&mutex);
+    r--;
+    if (r == 0) {
+        pthread_cond_broadcast(&cond);
+    }
+    pthread_mutex_unlock(&mutex);
+    
+    pthread_mutex_lock(&mutex);
+    while(w != 0) {
+        pthread_cond_wait(&cond, &mutex);
+    }
+    r++;
+    pthread_mutex_unlock(&mutex);
+    NSLog(@"读：3");
+    pthread_mutex_lock(&mutex);
+    r--;
+    if (r == 0) {
+        pthread_cond_broadcast(&cond);
+    }
+    pthread_mutex_unlock(&mutex);
+    
+    pthread_mutex_lock(&mutex);
+    while(w != 0) {
+        pthread_cond_wait(&cond, &mutex);
+    }
+    r++;
+    pthread_mutex_unlock(&mutex);
+    NSLog(@"读：4");
+    pthread_mutex_lock(&mutex);
+    r--;
+    if (r == 0) {
+        pthread_cond_broadcast(&cond);
+    }
+    pthread_mutex_unlock(&mutex);
+    
+    // 写
+    pthread_mutex_lock(&mutex);
+    while(w != 0 || r > 0) {               // 注意这个地方是 while
+        pthread_cond_wait(&cond, &mutex);  // 等待条件变量的成立
+    }
+    w = 1;
+    pthread_mutex_unlock(&mutex);
+    NSLog(@"写：1");
+    pthread_mutex_lock(&mutex);
+    w = 0;
+    pthread_cond_broadcast(&cond);   // 唤醒其他因条件变量而产生的阻塞
+    pthread_mutex_unlock(&mutex);
+    
+    // 读
+    pthread_mutex_lock(&mutex);
+    while(w != 0) {
+        pthread_cond_wait(&cond, &mutex);
+    }
+    r++;
+    pthread_mutex_unlock(&mutex);
+    NSLog(@"读：5");
+    pthread_mutex_lock(&mutex);
+    r--;
+    if (r == 0) {
+        pthread_cond_broadcast(&cond);
+    }
+    pthread_mutex_unlock(&mutex);
+    
+    pthread_mutex_lock(&mutex);
+    while(w != 0) {
+        pthread_cond_wait(&cond, &mutex);
+    }
+    r++;
+    pthread_mutex_unlock(&mutex);
+    NSLog(@"读：6");
+    pthread_mutex_lock(&mutex);
+    r--;
+    if (r == 0) {
+        pthread_cond_broadcast(&cond);
+    }
+    pthread_mutex_unlock(&mutex);
+    
+    pthread_mutex_lock(&mutex);
+    while(w != 0) {
+        pthread_cond_wait(&cond, &mutex);
+    }
+    r++;
+    pthread_mutex_unlock(&mutex);
+    NSLog(@"读：7");
+    pthread_mutex_lock(&mutex);
+    r--;
+    if (r == 0) {
+        pthread_cond_broadcast(&cond);
+    }
+    pthread_mutex_unlock(&mutex);
+    
+    pthread_mutex_lock(&mutex);
+    while(w != 0) {
+        pthread_cond_wait(&cond, &mutex);
+    }
+    r++;
+    pthread_mutex_unlock(&mutex);
+    NSLog(@"读：8");
+    pthread_mutex_lock(&mutex);
+    r--;
+    if (r == 0) {
+        pthread_cond_broadcast(&cond);
+    }
+    pthread_mutex_unlock(&mutex);
+}
+
+// 多线程数据竞争问题（多个线程更新相同的资源会导致数据的不一致）
+- (void)testMultiThreadSafe {
+    // 1.使用 gcd 的 serial queue，保证在一个线程中执行，可避免数据竞争问题
+    // 2.dispatch_barrier_async
+    
+    // 3.dispatch_semaphore
+//    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_semaphore_t semaphore = dispatch_semaphore_create(1);
+//    NSMutableArray *array = [[NSMutableArray alloc] init];
+//    for (int i = 0; i < 1000; ++i) {
+//        dispatch_async(queue, ^{
+//            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+//            // 这个地方也可以指定等待具体的超时时间
+//            // 判断返回值为 0 则是由于 Dispatch Semaphore 的计数值达到大于等于1，或者在待机中的指定时间内 Dispatch Semaphore 的计数值达到大于等于1，所以 Dispatch Semaphore 的计数值减去 1。
+//            // 判断返回值不为 0 则是由于在待机时间内 Dispatch Semaphore 的计数值为 0
+//
+//            [array addObject:[NSNumber numberWithInt:i]];
+//
+//            dispatch_semaphore_signal(semaphore);
+//        });
+//    }
+//
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        NSLog(@"array.count: %zd", array.count);
+//    });
+//
+////    dispatch_release(semaphore);
+    
+    // 4.Lock
+    
+    // 5.mutext
+    
+    // 6.@synchronized() {}
+    
+    // 7.atomic function
+    
+    // 8.dispatch_once
+    // 用于保证在应用程序执行中只执行一次指定处理的API。（多线程安全的）
+    // 常用于单件的实现
+    static dispatch_once_t pred;
+    dispatch_once(&pred, ^{
+        NSLog(@"Only execute once");
+    });
+}
+
+// 多线程的死锁问题（停止等待事件的线程会导致多个线程相互持续等待）
+- (void)testMultiThreadDeadLock {
+    
 }
 
 - (void)testRecursiveSynchronized {
