@@ -64,14 +64,14 @@
     
 //    [self testGCDConfigMaxConcurrentThreadCount];
     
-//    [self testGCDSetTargetQueue];
+    [self testGCDSetTargetQueue];
     
 //    [self testGCDDispatchGroup];
     
 //    [self testGCDSomeAPI];
     
     // 经典的多读一写互斥问题
-    [self testGCDReadWriteHandle];
+//    [self testGCDReadWriteHandle];
 //
 //    // 多线程数据竞争问题（多个线程更新相同的资源会导致数据的不一致）
 //    [self testMultiThreadSafe];
@@ -546,7 +546,7 @@
     // 而变更生成的 Dispatch Queue 的执行优先级要使用 dispatc_set_target_queue 函数。
     dispatch_queue_t serialQueue = dispatch_queue_create("com.summer.customSerialQueue", NULL);
     dispatch_queue_t concurrentQueue = dispatch_queue_create("com.summer.customConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
-    
+
     dispatch_set_target_queue(concurrentQueue, serialQueue);
 
     for (int i = 0; i < 1000; i++) {
@@ -565,6 +565,20 @@
 //                sleep(3);
 //            });
 //        }
+    
+//    dispatch_release(serialQueue);
+//    dispatch_release(concurrentQueue);
+    
+    // serial queue 的 target queue 设置为主线程，则该 serial queue 中还未执行的 block 也会在主线程执行
+//    dispatch_queue_t serialQueue = dispatch_queue_create("com.summer.customSerialQueue", NULL);
+//    dispatch_set_target_queue(serialQueue, dispatch_get_main_queue());
+//
+//    for (int i = 0; i < 1000; i++) {
+//        dispatch_async(serialQueue, ^{
+//            NSLog(@"%d, for in dispatch_async concurrentQueue, current thread = %@", i, [NSThread currentThread]);
+//            sleep(3);
+//        });
+//    }
     
 //    dispatch_release(serialQueue);
 //    dispatch_release(concurrentQueue);
