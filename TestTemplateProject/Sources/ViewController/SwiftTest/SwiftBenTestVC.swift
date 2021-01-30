@@ -51,11 +51,14 @@ extension Dictionary {
 //        self.testOptionalType()
 //        self.testForceCastBasicDataType()
         
-        self.testReactiveSwiftBasic()
+//        self.testReactiveSwiftBasic()
 //
 //        self.testReactiveObjCBasic()
 //
 //        self.testSwiftBlock()
+//        
+//        self.testSwiftArgDefaultValue("Wang")
+        self.testSwiftArgDefaultValue(age: 13)
     }
     
     func tempTestFunc() {
@@ -392,6 +395,10 @@ extension Dictionary {
         print(fn(2))
         print(fn(3))
         print(fn(4))
+    }
+    
+    func testSwiftArgDefaultValue(_ name: String = "Ben", age: Int = 13) {
+        print("name: \(name) age: \(age)");
     }
 }
 
