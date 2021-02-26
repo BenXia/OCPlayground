@@ -37,5 +37,6 @@
 #import "BNTabBarController.h"
 #import "BNPopoverWindow.h"
 #import "BasePopoverVC.h"
+#import <MagicalRecord/MagicalRecord.h>
 
 #endif /* PrefixHeader_pch */

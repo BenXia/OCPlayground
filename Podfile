@@ -19,6 +19,7 @@ target "TestTemplateProject" do
     pod 'ReactiveSwift'
     pod 'ReactiveCocoa'
     pod 'ReactiveObjCBridge'
+    pod 'MagicalRecord'
 end
 
 post_install do |installer|
