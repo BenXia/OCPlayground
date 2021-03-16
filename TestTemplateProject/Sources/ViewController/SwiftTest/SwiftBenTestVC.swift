@@ -241,7 +241,7 @@ extension Dictionary {
             }
         }
         
-        // 第三种 oc model 的关联属性也可以使用 ReactiveSwift 的 api 实现 KVO（内部使用了 object.addObserver(,forKeyPath:,options:,context:)
+        // 第三种 oc model 的关联属性也可以使用 ReactiveSwift 的 api 实现 KVO（内部使用了 object.addObserver(,forKeyPath:,options:,context:))
 //        let kvoModel: BenTestModelA = BenTestModelA.init()
 //        kvoModel.reactive.producer(forKeyPath: "isSelected").startWithValues { (value) in
 //            if value != nil {
@@ -254,7 +254,7 @@ extension Dictionary {
 //        kvoModel.isSelected = true
 
         
-        // 第四种 oc model 普通属性，使用 ReactiveSwift 的 api 实现 KVO（内部使用了 object.addObserver(,forKeyPath:,options:,context:)
+        // 第四种 oc model 普通属性，使用 ReactiveSwift 的 api 实现 KVO（内部使用了 object.addObserver(,forKeyPath:,options:,context:))
         let model2: BenTestModelOCA = BenTestModelOCA.init()
         model2.objB = BenTestModelOCB.init()
         let oldB = model2.objB;
