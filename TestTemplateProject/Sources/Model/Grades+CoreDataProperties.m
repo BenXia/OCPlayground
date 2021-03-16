@@ -1,9 +1,8 @@
 //
 //  Grades+CoreDataProperties.m
-//  TestTemplateProject
+//  
 //
-//  Created by Ben on 2021/2/26.
-//  Copyright © 2021 iOSStudio. All rights reserved.
+//  Created by Ben on 2021/3/16.
 //
 //
 
@@ -16,9 +15,9 @@
 }
 
 @dynamic groupName;
+@dynamic groupType;
 @dynamic id;
 @dynamic name;
 @dynamic shortName;
-@dynamic groupType;
 
 @end

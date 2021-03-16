@@ -1,9 +1,8 @@
 //
 //  Grades+CoreDataProperties.h
-//  TestTemplateProject
+//  
 //
-//  Created by Ben on 2021/2/26.
-//  Copyright © 2021 iOSStudio. All rights reserved.
+//  Created by Ben on 2021/3/16.
 //
 //
 
@@ -17,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<Grades *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *groupName;
+@property (nonatomic) int32_t groupType;
 @property (nullable, nonatomic, copy) NSNumber *id;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSString *shortName;
-@property (nonatomic) int32_t groupType;
 
 @end
 

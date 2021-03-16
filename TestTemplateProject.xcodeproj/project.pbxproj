@@ -160,6 +160,8 @@
 		B564801A1EF92040009CF536 /* BNPopupWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B56480191EF92040009CF536 /* BNPopupWindow.m */; };
 		B564801F1EF92071009CF536 /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = B564801C1EF92071009CF536 /* UIImage+Blur.m */; };
 		B56480201EF92071009CF536 /* UIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = B564801E1EF92071009CF536 /* UIView+Hierarchy.m */; };
+		B5699E182600864F007885F6 /* Grades+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B5699E142600864F007885F6 /* Grades+CoreDataClass.m */; };
+		B5699E192600864F007885F6 /* Grades+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B5699E152600864F007885F6 /* Grades+CoreDataProperties.m */; };
 		B595329D1F5E6D40007B2F30 /* MantleSubClassTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B595329C1F5E6D40007B2F30 /* MantleSubClassTwoTest.json */; };
 		B59532A11F5E7F13007B2F30 /* MantleExceptionOneTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B595329E1F5E7F13007B2F30 /* MantleExceptionOneTest.json */; };
 		B59532A21F5E7F13007B2F30 /* MantleExceptionThreeTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B595329F1F5E7F13007B2F30 /* MantleExceptionThreeTest.json */; };
@@ -167,8 +169,6 @@
 		B5C7253F25E8E18D0030F5D9 /* CoreDataTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7253D25E8E18D0030F5D9 /* CoreDataTestVC.m */; };
 		B5C7254025E8E18D0030F5D9 /* CoreDataTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5C7253E25E8E18D0030F5D9 /* CoreDataTestVC.xib */; };
 		B5C7254525E8E2B60030F5D9 /* db.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5C7254325E8E2B60030F5D9 /* db.xcdatamodeld */; };
-		B5C7257625E8EC020030F5D9 /* Grades+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7257425E8EC020030F5D9 /* Grades+CoreDataClass.m */; };
-		B5C7257725E8EC020030F5D9 /* Grades+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7257525E8EC020030F5D9 /* Grades+CoreDataProperties.m */; };
 		B5E95733253EBC7700C722D4 /* BenTestModelOCB.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E95732253EBC7700C722D4 /* BenTestModelOCB.m */; };
 		B5E95736253EBE9900C722D4 /* BenTestModelOCA+IsSelected.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E95735253EBE9900C722D4 /* BenTestModelOCA+IsSelected.m */; };
 		B5FA68C71EF270290077349C /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FA68C01EF270290077349C /* BaseViewController.m */; };
@@ -438,6 +438,10 @@
 		B564801C1EF92071009CF536 /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blur.m"; sourceTree = "<group>"; };
 		B564801D1EF92071009CF536 /* UIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Hierarchy.h"; sourceTree = "<group>"; };
 		B564801E1EF92071009CF536 /* UIView+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Hierarchy.m"; sourceTree = "<group>"; };
+		B5699E142600864F007885F6 /* Grades+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Grades+CoreDataClass.m"; sourceTree = "<group>"; };
+		B5699E152600864F007885F6 /* Grades+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Grades+CoreDataProperties.m"; sourceTree = "<group>"; };
+		B5699E162600864F007885F6 /* Grades+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Grades+CoreDataClass.h"; sourceTree = "<group>"; };
+		B5699E172600864F007885F6 /* Grades+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Grades+CoreDataProperties.h"; sourceTree = "<group>"; };
 		B595329C1F5E6D40007B2F30 /* MantleSubClassTwoTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleSubClassTwoTest.json; sourceTree = "<group>"; };
 		B595329E1F5E7F13007B2F30 /* MantleExceptionOneTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleExceptionOneTest.json; sourceTree = "<group>"; };
 		B595329F1F5E7F13007B2F30 /* MantleExceptionThreeTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MantleExceptionThreeTest.json; sourceTree = "<group>"; };
@@ -446,10 +450,6 @@
 		B5C7253D25E8E18D0030F5D9 /* CoreDataTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataTestVC.m; sourceTree = "<group>"; };
 		B5C7253E25E8E18D0030F5D9 /* CoreDataTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoreDataTestVC.xib; sourceTree = "<group>"; };
 		B5C7254425E8E2B60030F5D9 /* db.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = db.xcdatamodel; sourceTree = "<group>"; };
-		B5C7257225E8EC020030F5D9 /* Grades+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Grades+CoreDataProperties.h"; sourceTree = "<group>"; };
-		B5C7257325E8EC020030F5D9 /* Grades+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Grades+CoreDataClass.h"; sourceTree = "<group>"; };
-		B5C7257425E8EC020030F5D9 /* Grades+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Grades+CoreDataClass.m"; sourceTree = "<group>"; };
-		B5C7257525E8EC020030F5D9 /* Grades+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Grades+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B5E95731253EBC7700C722D4 /* BenTestModelOCB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenTestModelOCB.h; sourceTree = "<group>"; };
 		B5E95732253EBC7700C722D4 /* BenTestModelOCB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenTestModelOCB.m; sourceTree = "<group>"; };
 		B5E95734253EBE9800C722D4 /* BenTestModelOCA+IsSelected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BenTestModelOCA+IsSelected.h"; sourceTree = "<group>"; };
@@ -523,6 +523,7 @@
 				330F7BDB1ED333F00009280A /* Category */,
 				B5FA68BD1EF270290077349C /* Base */,
 				B56480161EF92040009CF536 /* Common */,
+				B5699E07260085F9007885F6 /* Model */,
 				330F7BE31ED333F00009280A /* View */,
 				330F7BEE1ED333F00009280A /* ViewController */,
 				330F7BD91ED333F00009280A /* AppDelegate.h */,
@@ -1287,13 +1288,20 @@
 			path = BNPopupWindow;
 			sourceTree = "<group>";
 		};
+		B5699E07260085F9007885F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B5699E162600864F007885F6 /* Grades+CoreDataClass.h */,
+				B5699E142600864F007885F6 /* Grades+CoreDataClass.m */,
+				B5699E172600864F007885F6 /* Grades+CoreDataProperties.h */,
+				B5699E152600864F007885F6 /* Grades+CoreDataProperties.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B5C7253B25E8E15C0030F5D9 /* CoreDataTestVC */ = {
 			isa = PBXGroup;
 			children = (
-				B5C7257325E8EC020030F5D9 /* Grades+CoreDataClass.h */,
-				B5C7257425E8EC020030F5D9 /* Grades+CoreDataClass.m */,
-				B5C7257225E8EC020030F5D9 /* Grades+CoreDataProperties.h */,
-				B5C7257525E8EC020030F5D9 /* Grades+CoreDataProperties.m */,
 				B5C7253C25E8E18D0030F5D9 /* CoreDataTestVC.h */,
 				B5C7253D25E8E18D0030F5D9 /* CoreDataTestVC.m */,
 				B5C7253E25E8E18D0030F5D9 /* CoreDataTestVC.xib */,
@@ -1622,7 +1630,7 @@
 				B543377F1F56BC5C0055AECE /* President.m in Sources */,
 				33102E3B1F496083008CCD64 /* RuntimeVC.m in Sources */,
 				B54338031F5E58C90055AECE /* JSONUtils.m in Sources */,
-				B5C7257625E8EC020030F5D9 /* Grades+CoreDataClass.m in Sources */,
+				B5699E182600864F007885F6 /* Grades+CoreDataClass.m in Sources */,
 				33102E6B1F49FF7F008CCD64 /* NoXibVC.m in Sources */,
 				B54337BC1F5E46D70055AECE /* MJExtensionUsageVC.m in Sources */,
 				B54337CA1F5E474E0055AECE /* ModelForMantle.m in Sources */,
@@ -1651,7 +1659,7 @@
 				B5E95733253EBC7700C722D4 /* BenTestModelOCB.m in Sources */,
 				B5FA68C91EF270290077349C /* BNTabBarController.m in Sources */,
 				33D6166C2566C38B00A1101F /* Case2SuperClass.m in Sources */,
-				B5C7257725E8EC020030F5D9 /* Grades+CoreDataProperties.m in Sources */,
+				B5699E192600864F007885F6 /* Grades+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -124,4 +124,32 @@ BN_IMP_SINGLETON( CommonUtils )
     return image;
 }
 
+// 单独的CoreData操作的后台线程串行队列
++ (dispatch_queue_t)coreDataOperationQueue {
+    static dispatch_queue_t s_qingqingCoreDataBackgroundOperationSerialQueue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        s_qingqingCoreDataBackgroundOperationSerialQueue = dispatch_queue_create("com.qq.student.coreDataBackgroundOperationSerialQueue", DISPATCH_QUEUE_SERIAL);
+        dispatch_queue_t priority = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+        dispatch_set_target_queue(priority, s_qingqingCoreDataBackgroundOperationSerialQueue);
+    });
+
+    return s_qingqingCoreDataBackgroundOperationSerialQueue;
+}
+
+// 公用的后台线程串行队列
++ (dispatch_queue_t)backgroundUtilQueue {
+    static dispatch_queue_t s_qingqingBackgroundUtilSerialQueue;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        s_qingqingBackgroundUtilSerialQueue = dispatch_queue_create("com.qq.studentackgroundUtilSerialQueue", DISPATCH_QUEUE_SERIAL);
+        dispatch_queue_t priority = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+        dispatch_set_target_queue(priority, s_qingqingBackgroundUtilSerialQueue);
+    });
+
+    return s_qingqingBackgroundUtilSerialQueue;
+}
+
 @end
+
+

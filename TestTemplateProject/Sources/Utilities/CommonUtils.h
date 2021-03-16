@@ -26,6 +26,12 @@ BN_DEC_SINGLETON( CommonUtils );
 // Screenshot
 + (UIImage *)screenshotForView:(UIView *)view;
 
+// 单独的CoreData操作的后台线程串行队列
++ (dispatch_queue_t)coreDataOperationQueue;
+
+// 公用的后台线程串行队列
++ (dispatch_queue_t)backgroundUtilQueue;
+
 @end
 
 

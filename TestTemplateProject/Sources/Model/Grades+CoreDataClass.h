@@ -1,9 +1,8 @@
 //
 //  Grades+CoreDataClass.h
-//  TestTemplateProject
+//  
 //
-//  Created by Ben on 2021/2/26.
-//  Copyright © 2021 iOSStudio. All rights reserved.
+//  Created by Ben on 2021/3/16.
 //
 //
 
