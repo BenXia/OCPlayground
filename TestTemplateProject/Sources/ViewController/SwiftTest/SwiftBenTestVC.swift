@@ -175,7 +175,7 @@ extension Dictionary {
 //        self.view.addSubview(view)
 //
 //
-//        // 第一种 swift model 的 KVO 观察实现方式（需要注意析构时候移除观察者）
+//        // 第一种 swift model 的 KVO 观察实现方式（需要注意析构时候移除观察者）（属性需要 @objc dynamic 修饰）
 //        self.swiftKVOModel = SwiftBenTestModel.init()
 //        self.swiftKVOModel.qingqingWhateverId = "11818212"
 //        self.swiftKVOModel.adjusted = false
@@ -189,7 +189,7 @@ extension Dictionary {
 //        self.swiftKVOModel.adjusted = true
         
         
-        // 第二种 swift model 的 KVO 观察实现方式（感觉比第一种方式方便一点，代码集中一点，观察者对象释放时候就会自动解除观察（invalidate() will be called automatically when an NSKeyValueObservation is deinited））
+        // 第二种 swift model 的 KVO 观察实现方式（属性需要 @objc dynamic 修饰）（感觉比第一种方式方便一点，代码集中一点，观察者对象释放时候就会自动解除观察（invalidate() will be called automatically when an NSKeyValueObservation is deinited））
         let swiftKVOModel2 = SwiftBenTestModel.init()
         var observer1: NSKeyValueObservation?
         var observer2: NSKeyValueObservation?
@@ -241,7 +241,7 @@ extension Dictionary {
             }
         }
         
-
+        // 第三种 oc model 的关联属性也可以使用 ReactiveSwift 的 api 实现 KVO（内部使用了 object.addObserver(,forKeyPath:,options:,context:)
 //        let kvoModel: BenTestModelA = BenTestModelA.init()
 //        kvoModel.reactive.producer(forKeyPath: "isSelected").startWithValues { (value) in
 //            if value != nil {
@@ -252,28 +252,32 @@ extension Dictionary {
 //
 //        kvoModel.isSelected = false
 //        kvoModel.isSelected = true
-//
-//
-//        // 注意，如果此处的 BenTestModelA 是 OC 代码中定义的类，则使用下面语法是没有问题的
-//        //let model2: BenTestModelA = BenTestModelA.init()
-//        let model2: BenTestModelOCA = BenTestModelOCA.init()
-//        model2.reactive.producer(forKeyPath: "adjusted").startWithValues { (value) in
-//            print("A ajusted: \(value ?? "")")
-//        }
-//        model2.reactive.producer(forKeyPath: "name").startWithValues { (value) in
-//            print("A name: \(value ?? "")")
-//        }
-//        //model2.reactive.producer(forKeyPath: "ageModel.age").startWithValues { (value) in
-//        //    print("A ageModel age: \(value ?? "")")
-//        //}
-//
-//        model2.adjusted = false
-//        model2.adjusted = true
-//        model2.name = "bbb"
-//        model2.name = "ccc"
-//        //model2.ageModel.age.value = 20
-//
-//
+
+        
+        // 第四种 oc model 普通属性，使用 ReactiveSwift 的 api 实现 KVO（内部使用了 object.addObserver(,forKeyPath:,options:,context:)
+        let model2: BenTestModelOCA = BenTestModelOCA.init()
+        model2.objB = BenTestModelOCB.init()
+        let oldB = model2.objB;
+        model2.reactive.producer(forKeyPath: "adjusted").startWithValues { (value) in
+            print("A ajusted: \(value ?? "")")
+        }
+        model2.reactive.producer(forKeyPath: "name").startWithValues { (value) in
+            print("A name: \(value ?? "")")
+        }
+        model2.reactive.producer(forKeyPath: "objB.name").startWithValues { (value) in
+            print("A objB name: \(value ?? "")")
+        }
+//        model2.addObserver(self, forKeyPath: "objB.name", options: [.new, .old], context: nil)
+
+        model2.adjusted = false
+        model2.adjusted = true
+        model2.name = "bbb"
+        model2.name = "ccc"
+        model2.objB.name = "objB-name"
+        model2.objB = BenTestModelOCB.init()
+        oldB.name = "oldObjB-name"
+
+        // 第五种 swift model 使用 MutableProperty 方便实现 KVO 观察
 //        let model3: BenTestModelB = BenTestModelB.init()
 //        model3.adjusted.producer.startWithValues { (value) in
 //            print("B ajusted: \(value)")
@@ -290,8 +294,7 @@ extension Dictionary {
 //        model3.name.value = "BBB"
 //        model3.name.value = "CCC"
 //        model3.ageModel.age.value = 20
-//
-//
+
 //        BasicErrorHandler.sharedInstance()?.showToast(withAllError: NSError.init(domain: kErrorDomainPB_GeneralRequest, code: ErrorCodeCommon._Whatever.rawValue, userInfo: [ "ErrorUserInfoDict_ErrorMessageKey": "网络不给力，请稍候再试"]))
     }
     
