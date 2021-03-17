@@ -32,6 +32,8 @@
     NSArray *gss = [Grades MR_findAll];
     NSLog(@"1. gradeList: %tu", gss.count);
     
+    // ⚠️：3-3 和 3-4 的顺序
+    
     // 测试1: 主线程写，看下后台线程何时同步拿到更新数据
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), [CommonUtils coreDataOperationQueue], ^{
         NSArray *gss = [Grades MR_findAll];
