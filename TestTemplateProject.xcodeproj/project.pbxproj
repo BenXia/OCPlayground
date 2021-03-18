@@ -81,6 +81,7 @@
 		B50394C91EEE5FF70016FA97 /* TimeSequenceVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50394C71EEE5FF70016FA97 /* TimeSequenceVC.xib */; };
 		B50394D31EEE61F80016FA97 /* PlaygroundVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B50394D11EEE61F80016FA97 /* PlaygroundVC.m */; };
 		B50394D41EEE61F80016FA97 /* PlaygroundVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B50394D21EEE61F80016FA97 /* PlaygroundVC.xib */; };
+		B5053B992603877D007002BB /* BenTestModelOCC.m in Sources */ = {isa = PBXBuildFile; fileRef = B5053B972603877D007002BB /* BenTestModelOCC.m */; };
 		B507116F1F0E4C8D008EC4AE /* BNPopoverBaseLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B50711641F0E4C8D008EC4AE /* BNPopoverBaseLayout.m */; };
 		B50711701F0E4C8D008EC4AE /* BNPopoverBottomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B50711661F0E4C8D008EC4AE /* BNPopoverBottomLayout.m */; };
 		B50711711F0E4C8D008EC4AE /* BNPopoverCustomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B50711681F0E4C8D008EC4AE /* BNPopoverCustomLayout.m */; };
@@ -298,6 +299,8 @@
 		B50394D01EEE61F80016FA97 /* PlaygroundVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaygroundVC.h; sourceTree = "<group>"; };
 		B50394D11EEE61F80016FA97 /* PlaygroundVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaygroundVC.m; sourceTree = "<group>"; };
 		B50394D21EEE61F80016FA97 /* PlaygroundVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaygroundVC.xib; sourceTree = "<group>"; };
+		B5053B972603877D007002BB /* BenTestModelOCC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BenTestModelOCC.m; sourceTree = "<group>"; };
+		B5053B982603877D007002BB /* BenTestModelOCC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BenTestModelOCC.h; sourceTree = "<group>"; };
 		B50711611F0E4C8D008EC4AE /* BNPopoverCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNPopoverCommon.h; sourceTree = "<group>"; };
 		B50711631F0E4C8D008EC4AE /* BNPopoverBaseLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNPopoverBaseLayout.h; sourceTree = "<group>"; };
 		B50711641F0E4C8D008EC4AE /* BNPopoverBaseLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNPopoverBaseLayout.m; sourceTree = "<group>"; };
@@ -922,6 +925,8 @@
 				B5190A102320D77A00A648D5 /* BenTestModelOCA.m */,
 				B5E95731253EBC7700C722D4 /* BenTestModelOCB.h */,
 				B5E95732253EBC7700C722D4 /* BenTestModelOCB.m */,
+				B5053B982603877D007002BB /* BenTestModelOCC.h */,
+				B5053B972603877D007002BB /* BenTestModelOCC.m */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -1647,6 +1652,7 @@
 				B51C08DC2566993C00C54CE3 /* LoadInitializeVC.m in Sources */,
 				B507116F1F0E4C8D008EC4AE /* BNPopoverBaseLayout.m in Sources */,
 				B564801A1EF92040009CF536 /* BNPopupWindow.m in Sources */,
+				B5053B992603877D007002BB /* BenTestModelOCC.m in Sources */,
 				33102E4B1F496A07008CCD64 /* SomeClass.m in Sources */,
 				B54CC643257E53B600594DA9 /* CustomContainerVC.m in Sources */,
 				3396833522EB5FA900EB32D8 /* UIImage+QExtension.swift in Sources */,
