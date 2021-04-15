@@ -29,11 +29,34 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+//    [self testRACKVOEndlessLoop];
+    
 //    [self testKVOSequence];
 //    
 //    [self testKVOKeyPath];
     
     [self testRACKVO];
+}
+
+- (void)testRACKVOEndlessLoop {
+    @weakify(self);
+    
+    // 测试1: 下面这种写法，会导致死循环
+    [RACObserve(self, testKVOModelA) subscribeNext:^(BenTestModelOCA *obj) {
+        NSLog(@"adjusted: %d name: %@", obj.adjusted, obj.name);
+    }];
+    
+    [[[[RACSignal combineLatest:@[RACObserve(self, testKVOModelA.adjusted),
+                                  RACObserve(self, testKVOModelA.name)
+                                 ]] deliverOnMainThread] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(id x) {
+        @strongify(self);
+        
+        self.testKVOModelA = self.testKVOModelA;
+    }];
+    
+    self.testKVOModelA = [BenTestModelOCA new];
+    self.testKVOModelA.adjusted = YES;
+    self.testKVOModelA.name = @"hello world";
 }
 
 - (void)testKVOSequence {
