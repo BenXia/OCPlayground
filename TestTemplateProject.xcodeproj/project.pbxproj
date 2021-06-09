@@ -161,6 +161,7 @@
 		B564801A1EF92040009CF536 /* BNPopupWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B56480191EF92040009CF536 /* BNPopupWindow.m */; };
 		B564801F1EF92071009CF536 /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = B564801C1EF92071009CF536 /* UIImage+Blur.m */; };
 		B56480201EF92071009CF536 /* UIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = B564801E1EF92071009CF536 /* UIView+Hierarchy.m */; };
+		B568834E2670647F00B1EED9 /* TestButtonQQingUIStandardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56883482670647F00B1EED9 /* TestButtonQQingUIStandardVC.xib */; };
 		B56895B8263955F900802E37 /* QQingCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56895AE263955F900802E37 /* QQingCustomView.xib */; };
 		B56895B9263955F900802E37 /* UIView+UIView_InspectableExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = B56895B0263955F900802E37 /* UIView+UIView_InspectableExtend.m */; };
 		B56895BA263955F900802E37 /* Test2021QQingUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B56895B2263955F900802E37 /* Test2021QQingUIVC.m */; };
@@ -448,6 +449,13 @@
 		B564801C1EF92071009CF536 /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blur.m"; sourceTree = "<group>"; };
 		B564801D1EF92071009CF536 /* UIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Hierarchy.h"; sourceTree = "<group>"; };
 		B564801E1EF92071009CF536 /* UIView+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Hierarchy.m"; sourceTree = "<group>"; };
+		B56883452670647F00B1EED9 /* QQingBottomButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQingBottomButtonView.m; sourceTree = "<group>"; };
+		B56883462670647F00B1EED9 /* UIButton+QQingUIStandard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+QQingUIStandard.m"; sourceTree = "<group>"; };
+		B56883472670647F00B1EED9 /* TestButtonQQingUIStandardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestButtonQQingUIStandardVC.h; sourceTree = "<group>"; };
+		B56883482670647F00B1EED9 /* TestButtonQQingUIStandardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestButtonQQingUIStandardVC.xib; sourceTree = "<group>"; };
+		B56883492670647F00B1EED9 /* QQingBottomButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQingBottomButtonView.h; sourceTree = "<group>"; };
+		B568834A2670647F00B1EED9 /* TestButtonQQingUIStandardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestButtonQQingUIStandardVC.m; sourceTree = "<group>"; };
+		B568834B2670647F00B1EED9 /* UIButton+QQingUIStandard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+QQingUIStandard.h"; sourceTree = "<group>"; };
 		B56895AD263955F900802E37 /* Test2021QQingUIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test2021QQingUIVC.h; sourceTree = "<group>"; };
 		B56895AE263955F900802E37 /* QQingCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QQingCustomView.xib; sourceTree = "<group>"; };
 		B56895AF263955F900802E37 /* QQingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQingButton.h; sourceTree = "<group>"; };
@@ -1312,9 +1320,24 @@
 			path = BNPopupWindow;
 			sourceTree = "<group>";
 		};
+		B56883442670647F00B1EED9 /* 按钮相关 */ = {
+			isa = PBXGroup;
+			children = (
+				B56883492670647F00B1EED9 /* QQingBottomButtonView.h */,
+				B56883452670647F00B1EED9 /* QQingBottomButtonView.m */,
+				B568834B2670647F00B1EED9 /* UIButton+QQingUIStandard.h */,
+				B56883462670647F00B1EED9 /* UIButton+QQingUIStandard.m */,
+				B56883472670647F00B1EED9 /* TestButtonQQingUIStandardVC.h */,
+				B568834A2670647F00B1EED9 /* TestButtonQQingUIStandardVC.m */,
+				B56883482670647F00B1EED9 /* TestButtonQQingUIStandardVC.xib */,
+			);
+			path = "按钮相关";
+			sourceTree = "<group>";
+		};
 		B56895AC263955F900802E37 /* IBAdvance */ = {
 			isa = PBXGroup;
 			children = (
+				B56883442670647F00B1EED9 /* 按钮相关 */,
 				B56895AD263955F900802E37 /* Test2021QQingUIVC.h */,
 				B56895B2263955F900802E37 /* Test2021QQingUIVC.m */,
 				B56895B4263955F900802E37 /* Test2021QQingUIVC.xib */,
@@ -1512,6 +1535,7 @@
 				B541E7FB2028287400D23093 /* SafePushTestVC.xib in Resources */,
 				33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */,
 				B54CC645257E53B600594DA9 /* CustomContainerVC.xib in Resources */,
+				B568834E2670647F00B1EED9 /* TestButtonQQingUIStandardVC.xib in Resources */,
 				B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */,
 				B54CC646257E53B600594DA9 /* ContainerRightChildVC.xib in Resources */,
 				3399DF0021B96E78006C6B85 /* ProxyTestVC.xib in Resources */,
