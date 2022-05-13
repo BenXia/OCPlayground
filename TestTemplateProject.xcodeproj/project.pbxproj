@@ -162,6 +162,14 @@
 		B564801A1EF92040009CF536 /* BNPopupWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B56480191EF92040009CF536 /* BNPopupWindow.m */; };
 		B564801F1EF92071009CF536 /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = B564801C1EF92071009CF536 /* UIImage+Blur.m */; };
 		B56480201EF92071009CF536 /* UIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = B564801E1EF92071009CF536 /* UIView+Hierarchy.m */; };
+		B568834E2670647F00B1EED9 /* TestButtonQQingUIStandardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56883482670647F00B1EED9 /* TestButtonQQingUIStandardVC.xib */; };
+		B56895B8263955F900802E37 /* QQingCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56895AE263955F900802E37 /* QQingCustomView.xib */; };
+		B56895B9263955F900802E37 /* UIView+UIView_InspectableExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = B56895B0263955F900802E37 /* UIView+UIView_InspectableExtend.m */; };
+		B56895BA263955F900802E37 /* Test2021QQingUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B56895B2263955F900802E37 /* Test2021QQingUIVC.m */; };
+		B56895BB263955F900802E37 /* QQingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B56895B3263955F900802E37 /* QQingButton.m */; };
+		B56895BC263955F900802E37 /* Test2021QQingUIVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56895B4263955F900802E37 /* Test2021QQingUIVC.xib */; };
+		B56895BD263955F900802E37 /* QQingVView.m in Sources */ = {isa = PBXBuildFile; fileRef = B56895B5263955F900802E37 /* QQingVView.m */; };
+		B56895BE263955F900802E37 /* QQingCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56895B7263955F900802E37 /* QQingCustomView.swift */; };
 		B5699E182600864F007885F6 /* Grades+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B5699E142600864F007885F6 /* Grades+CoreDataClass.m */; };
 		B5699E192600864F007885F6 /* Grades+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = B5699E152600864F007885F6 /* Grades+CoreDataProperties.m */; };
 		B595329D1F5E6D40007B2F30 /* MantleSubClassTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = B595329C1F5E6D40007B2F30 /* MantleSubClassTwoTest.json */; };
@@ -444,6 +452,24 @@
 		B564801C1EF92071009CF536 /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blur.m"; sourceTree = "<group>"; };
 		B564801D1EF92071009CF536 /* UIView+Hierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Hierarchy.h"; sourceTree = "<group>"; };
 		B564801E1EF92071009CF536 /* UIView+Hierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Hierarchy.m"; sourceTree = "<group>"; };
+		B56883452670647F00B1EED9 /* QQingBottomButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQingBottomButtonView.m; sourceTree = "<group>"; };
+		B56883462670647F00B1EED9 /* UIButton+QQingUIStandard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+QQingUIStandard.m"; sourceTree = "<group>"; };
+		B56883472670647F00B1EED9 /* TestButtonQQingUIStandardVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestButtonQQingUIStandardVC.h; sourceTree = "<group>"; };
+		B56883482670647F00B1EED9 /* TestButtonQQingUIStandardVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestButtonQQingUIStandardVC.xib; sourceTree = "<group>"; };
+		B56883492670647F00B1EED9 /* QQingBottomButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQingBottomButtonView.h; sourceTree = "<group>"; };
+		B568834A2670647F00B1EED9 /* TestButtonQQingUIStandardVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestButtonQQingUIStandardVC.m; sourceTree = "<group>"; };
+		B568834B2670647F00B1EED9 /* UIButton+QQingUIStandard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+QQingUIStandard.h"; sourceTree = "<group>"; };
+		B56895AD263955F900802E37 /* Test2021QQingUIVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test2021QQingUIVC.h; sourceTree = "<group>"; };
+		B56895AE263955F900802E37 /* QQingCustomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QQingCustomView.xib; sourceTree = "<group>"; };
+		B56895AF263955F900802E37 /* QQingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQingButton.h; sourceTree = "<group>"; };
+		B56895B0263955F900802E37 /* UIView+UIView_InspectableExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UIView_InspectableExtend.m"; sourceTree = "<group>"; };
+		B56895B1263955F900802E37 /* QQingVView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQingVView.h; sourceTree = "<group>"; };
+		B56895B2263955F900802E37 /* Test2021QQingUIVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test2021QQingUIVC.m; sourceTree = "<group>"; };
+		B56895B3263955F900802E37 /* QQingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQingButton.m; sourceTree = "<group>"; };
+		B56895B4263955F900802E37 /* Test2021QQingUIVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Test2021QQingUIVC.xib; sourceTree = "<group>"; };
+		B56895B5263955F900802E37 /* QQingVView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQingVView.m; sourceTree = "<group>"; };
+		B56895B6263955F900802E37 /* UIView+UIView_InspectableExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UIView_InspectableExtend.h"; sourceTree = "<group>"; };
+		B56895B7263955F900802E37 /* QQingCustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQingCustomView.swift; sourceTree = "<group>"; };
 		B5699E142600864F007885F6 /* Grades+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Grades+CoreDataClass.m"; sourceTree = "<group>"; };
 		B5699E152600864F007885F6 /* Grades+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Grades+CoreDataProperties.m"; sourceTree = "<group>"; };
 		B5699E162600864F007885F6 /* Grades+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Grades+CoreDataClass.h"; sourceTree = "<group>"; };
@@ -614,6 +640,7 @@
 				B5190A032320D66B00A648D5 /* BlockTest */,
 				B54CC638257E53B600594DA9 /* CustomContainerVC */,
 				B5C7253B25E8E15C0030F5D9 /* CoreDataTestVC */,
+				B56895AC263955F900802E37 /* IBAdvance */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1306,6 +1333,39 @@
 			path = BNPopupWindow;
 			sourceTree = "<group>";
 		};
+		B56883442670647F00B1EED9 /* 按钮相关 */ = {
+			isa = PBXGroup;
+			children = (
+				B56883492670647F00B1EED9 /* QQingBottomButtonView.h */,
+				B56883452670647F00B1EED9 /* QQingBottomButtonView.m */,
+				B568834B2670647F00B1EED9 /* UIButton+QQingUIStandard.h */,
+				B56883462670647F00B1EED9 /* UIButton+QQingUIStandard.m */,
+				B56883472670647F00B1EED9 /* TestButtonQQingUIStandardVC.h */,
+				B568834A2670647F00B1EED9 /* TestButtonQQingUIStandardVC.m */,
+				B56883482670647F00B1EED9 /* TestButtonQQingUIStandardVC.xib */,
+			);
+			path = "按钮相关";
+			sourceTree = "<group>";
+		};
+		B56895AC263955F900802E37 /* IBAdvance */ = {
+			isa = PBXGroup;
+			children = (
+				B56883442670647F00B1EED9 /* 按钮相关 */,
+				B56895AD263955F900802E37 /* Test2021QQingUIVC.h */,
+				B56895B2263955F900802E37 /* Test2021QQingUIVC.m */,
+				B56895B4263955F900802E37 /* Test2021QQingUIVC.xib */,
+				B56895B7263955F900802E37 /* QQingCustomView.swift */,
+				B56895AE263955F900802E37 /* QQingCustomView.xib */,
+				B56895AF263955F900802E37 /* QQingButton.h */,
+				B56895B3263955F900802E37 /* QQingButton.m */,
+				B56895B0263955F900802E37 /* UIView+UIView_InspectableExtend.m */,
+				B56895B6263955F900802E37 /* UIView+UIView_InspectableExtend.h */,
+				B56895B1263955F900802E37 /* QQingVView.h */,
+				B56895B5263955F900802E37 /* QQingVView.m */,
+			);
+			path = IBAdvance;
+			sourceTree = "<group>";
+		};
 		B5699E07260085F9007885F6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1439,6 +1499,7 @@
 			files = (
 				331B4D2C22ED819E00BE1A47 /* RACMLKVC.xib in Resources */,
 				339682ED22EB5B5400EB32D8 /* blank_icon_contacts@3x.png in Resources */,
+				B56895BC263955F900802E37 /* Test2021QQingUIVC.xib in Resources */,
 				B54337F41F5E4CC70055AECE /* MJExtensionTest.json in Resources */,
 				B50394C91EEE5FF70016FA97 /* TimeSequenceVC.xib in Resources */,
 				338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */,
@@ -1474,6 +1535,7 @@
 				B54337E01F5E4CBA0055AECE /* JSONModelTest.json in Resources */,
 				B5633FD71F5FEF4A00A72567 /* YYModelModelArrayTest.json in Resources */,
 				B50394C41EEE5FC30016FA97 /* HomePageVC.xib in Resources */,
+				B56895B8263955F900802E37 /* QQingCustomView.xib in Resources */,
 				B59532A11F5E7F13007B2F30 /* MantleExceptionOneTest.json in Resources */,
 				B5633FC71F5FB14700A72567 /* MJExtensionSubClassTwoTest.json in Resources */,
 				B54337C21F5E46E70055AECE /* YYModelUsageVC.xib in Resources */,
@@ -1486,6 +1548,7 @@
 				B541E7FB2028287400D23093 /* SafePushTestVC.xib in Resources */,
 				33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */,
 				B54CC645257E53B600594DA9 /* CustomContainerVC.xib in Resources */,
+				B568834E2670647F00B1EED9 /* TestButtonQQingUIStandardVC.xib in Resources */,
 				B50711D21F163187008EC4AE /* ClassPropertyVC.xib in Resources */,
 				B54CC646257E53B600594DA9 /* ContainerRightChildVC.xib in Resources */,
 				3399DF0021B96E78006C6B85 /* ProxyTestVC.xib in Resources */,
@@ -1575,6 +1638,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B50394C31EEE5FC30016FA97 /* HomePageVC.m in Sources */,
+				B56895BA263955F900802E37 /* Test2021QQingUIVC.m in Sources */,
 				B5647FFE1EF91FAE009CF536 /* BasePopoverVC.m in Sources */,
 				33345C9322EA169D008EB89F /* TextViewTestVC.swift in Sources */,
 				B5FA68C71EF270290077349C /* BaseViewController.m in Sources */,
@@ -1600,6 +1664,8 @@
 				33454B191F7614B200DC3F14 /* CategoryVC.m in Sources */,
 				B5190A192320D77B00A648D5 /* SwiftBenTestView.swift in Sources */,
 				B56480121EF91FF9009CF536 /* MBProgressHUD.m in Sources */,
+				B56895B9263955F900802E37 /* UIView+UIView_InspectableExtend.m in Sources */,
+				B56895BB263955F900802E37 /* QQingButton.m in Sources */,
 				339682AC22EB58F000EB32D8 /* CoreTextTestVC.swift in Sources */,
 				33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */,
 				B5190A222320D8DB00A648D5 /* NSDateFormatter+Category.m in Sources */,
@@ -1650,6 +1716,7 @@
 				33102E3B1F496083008CCD64 /* RuntimeVC.m in Sources */,
 				B54338031F5E58C90055AECE /* JSONUtils.m in Sources */,
 				B5699E182600864F007885F6 /* Grades+CoreDataClass.m in Sources */,
+				B56895BE263955F900802E37 /* QQingCustomView.swift in Sources */,
 				33102E6B1F49FF7F008CCD64 /* NoXibVC.m in Sources */,
 				B54337BC1F5E46D70055AECE /* MJExtensionUsageVC.m in Sources */,
 				B54337CA1F5E474E0055AECE /* ModelForMantle.m in Sources */,
@@ -1659,6 +1726,7 @@
 				B56480101EF91FF9009CF536 /* GCDSemaphore.m in Sources */,
 				339682B122EB59BE00EB32D8 /* AttachmentTestVC.m in Sources */,
 				B541E7FA2028287400D23093 /* SafePushTestVC.m in Sources */,
+				B56895BD263955F900802E37 /* QQingVView.m in Sources */,
 				B5C7254525E8E2B60030F5D9 /* db.xcdatamodeld in Sources */,
 				334B7A5D1F9E492400F40D7F /* MemoryManageVC.m in Sources */,
 				33454B201F7614EF00DC3F14 /* MRCObject.m in Sources */,

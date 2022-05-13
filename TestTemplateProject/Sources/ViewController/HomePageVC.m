@@ -29,6 +29,7 @@
 #import "CustomContainerVC.h"
 #import "CoreDataTestVC.h"
 #import "TaggedPointerTestVC.h"
+#import "Test2021QQingUIVC.h"
 #import "TestTemplateProject-Swift.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
@@ -210,8 +211,12 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                            vcClass:[CoreDataTestVC class]
                                                       navigationVC:self.navigationController];
 
+    HomePageCellModel *model24 = [HomePageCellModel modelWithTitle:@"IB高级用法"
+                                                          subTitle:@"IBInspectable/IBDesignable"
+                                                           vcClass:[Test2021QQingUIVC class]
+                                                      navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, model20, model21, model22, model23, nil];
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, model20, model21, model22, model23, model24, nil];
     
 //    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
