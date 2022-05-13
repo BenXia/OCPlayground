@@ -49,6 +49,7 @@
 		338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */; };
 		338CD75621A1B20100EC520C /* ARCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338CD75421A1B20100EC520C /* ARCVC.m */; };
 		338CD75721A1B20100EC520C /* MRCViewB.m in Sources */ = {isa = PBXBuildFile; fileRef = 338CD75521A1B20100EC520C /* MRCViewB.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		3395C6C3282E863C001F3C7A /* TaggedPointerTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3395C6C2282E863C001F3C7A /* TaggedPointerTestVC.m */; };
 		339682AC22EB58F000EB32D8 /* CoreTextTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339682AA22EB58F000EB32D8 /* CoreTextTestVC.swift */; };
 		339682AD22EB58F000EB32D8 /* CoreTextTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339682AB22EB58F000EB32D8 /* CoreTextTestVC.xib */; };
 		339682B122EB59BE00EB32D8 /* AttachmentTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 339682AF22EB59BE00EB32D8 /* AttachmentTestVC.m */; };
@@ -254,6 +255,8 @@
 		338CD75321A1B20100EC520C /* MRCViewB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCViewB.h; sourceTree = "<group>"; };
 		338CD75421A1B20100EC520C /* ARCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCVC.m; sourceTree = "<group>"; };
 		338CD75521A1B20100EC520C /* MRCViewB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCViewB.m; sourceTree = "<group>"; };
+		3395C6C1282E863C001F3C7A /* TaggedPointerTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TaggedPointerTestVC.h; sourceTree = "<group>"; };
+		3395C6C2282E863C001F3C7A /* TaggedPointerTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TaggedPointerTestVC.m; sourceTree = "<group>"; };
 		339682AA22EB58F000EB32D8 /* CoreTextTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTextTestVC.swift; sourceTree = "<group>"; };
 		339682AB22EB58F000EB32D8 /* CoreTextTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CoreTextTestVC.xib; sourceTree = "<group>"; };
 		339682AE22EB59BE00EB32D8 /* AttachmentTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AttachmentTestVC.h; sourceTree = "<group>"; };
@@ -600,6 +603,7 @@
 				333D511F1F6E3F5F00FA084F /* RunLoop */,
 				33454B151F76149800DC3F14 /* Category */,
 				334B7A561F9E48DD00F40D7F /* Memory */,
+				3395C6C0282E8618001F3C7A /* TaggedPointer */,
 				338CD75121A1B20100EC520C /* MRCARC */,
 				331B4D2822ED819D00BE1A47 /* RACMLK */,
 				3399DEF921B96E78006C6B85 /* NSProxy */,
@@ -761,6 +765,15 @@
 				338CD75521A1B20100EC520C /* MRCViewB.m */,
 			);
 			path = MRCARC;
+			sourceTree = "<group>";
+		};
+		3395C6C0282E8618001F3C7A /* TaggedPointer */ = {
+			isa = PBXGroup;
+			children = (
+				3395C6C1282E863C001F3C7A /* TaggedPointerTestVC.h */,
+				3395C6C2282E863C001F3C7A /* TaggedPointerTestVC.m */,
+			);
+			path = TaggedPointer;
 			sourceTree = "<group>";
 		};
 		339682EA22EB5B5400EB32D8 /* Images */ = {
@@ -1601,6 +1614,7 @@
 				B50711701F0E4C8D008EC4AE /* BNPopoverBottomLayout.m in Sources */,
 				B564800F1EF91FF9009CF536 /* GCDQueue.m in Sources */,
 				33454B261F76151E00DC3F14 /* MRCObject+TestDealloc.m in Sources */,
+				3395C6C3282E863C001F3C7A /* TaggedPointerTestVC.m in Sources */,
 				3396833322EB5FA900EB32D8 /* Array+QExtension.swift in Sources */,
 				B541E7F62028284600D23093 /* UIViewController+APSafeTransition.m in Sources */,
 				3396833122EB5FA900EB32D8 /* UIFont+QExtension.swift in Sources */,

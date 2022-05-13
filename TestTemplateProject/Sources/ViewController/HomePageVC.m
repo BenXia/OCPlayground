@@ -28,6 +28,7 @@
 #import "BlockTestVC.h"
 #import "CustomContainerVC.h"
 #import "CoreDataTestVC.h"
+#import "TaggedPointerTestVC.h"
 #import "TestTemplateProject-Swift.h"
 
 static const CGFloat kTableViewCellHeight = 60.0f;
@@ -153,58 +154,64 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                            vcClass:[MemoryManageVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model13 = [HomePageCellModel modelWithTitle:@"内存管理"
+    HomePageCellModel *model13 = [HomePageCellModel modelWithTitle:@"TaggedPointer"
+                                                          subTitle:@"TaggedPointer对象测试"
+                                                           vcClass:[TaggedPointerTestVC class]
+                                                      navigationVC:self.navigationController];
+    
+    HomePageCellModel *model14 = [HomePageCellModel modelWithTitle:@"内存管理"
                                                           subTitle:@"MRC/ARC相关测试"
                                                            vcClass:[ARCVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model14 = [HomePageCellModel modelWithTitle:@"RAC内存泄漏"
+    HomePageCellModel *model15 = [HomePageCellModel modelWithTitle:@"RAC内存泄漏"
                                                           subTitle:@"RAC中经典内存泄漏问题"
                                                            vcClass:[RACMLKVC class]
                                                       navigationVC:self.navigationController];
     
     
-    HomePageCellModel *model15 = [HomePageCellModel modelWithTitle:@"NSProxy"
+    HomePageCellModel *model16 = [HomePageCellModel modelWithTitle:@"NSProxy"
                                                           subTitle:@"代理解决一些内存管理问题"
                                                            vcClass:[ProxyTestVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model16 = [HomePageCellModel modelWithTitle:@"多线程"
+    HomePageCellModel *model17 = [HomePageCellModel modelWithTitle:@"多线程"
                                                           subTitle:@"多线程一些有趣的测试"
                                                            vcClass:[MultiThreadVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model17 = [HomePageCellModel modelWithTitle:@"SafePush"
+    HomePageCellModel *model18 = [HomePageCellModel modelWithTitle:@"SafePush"
                                                           subTitle:@"SafePush一些测试"
                                                            vcClass:[SafePushTestVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model18 = [HomePageCellModel modelWithTitle:@"图文混排"
+    HomePageCellModel *model19 = [HomePageCellModel modelWithTitle:@"图文混排"
                                                           subTitle:@"图文混排一些实现方式"
                                                            vcClass:[TextImageVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model19 = [HomePageCellModel modelWithTitle:@"Block测试"
+    HomePageCellModel *model20 = [HomePageCellModel modelWithTitle:@"Block测试"
                                                           subTitle:@"Block一些有趣测试"
                                                            vcClass:[BlockTestVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model20 = [HomePageCellModel modelWithTitle:@"Swift测试"
+    HomePageCellModel *model21 = [HomePageCellModel modelWithTitle:@"Swift测试"
                                                           subTitle:@"Swift一些有趣测试"
                                                            vcClass:[SwiftBenTestVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model21 = [HomePageCellModel modelWithTitle:@"容器视图"
+    HomePageCellModel *model22 = [HomePageCellModel modelWithTitle:@"容器视图"
                                                           subTitle:@"自定义容器视图研究"
                                                            vcClass:[CustomContainerVC class]
                                                       navigationVC:self.navigationController];
     
-    HomePageCellModel *model22 = [HomePageCellModel modelWithTitle:@"CoreData"
+    HomePageCellModel *model23 = [HomePageCellModel modelWithTitle:@"CoreData"
                                                           subTitle:@"CoreData多线程测试"
                                                            vcClass:[CoreDataTestVC class]
                                                       navigationVC:self.navigationController];
+
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, model20, model21, model22, nil];
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, model20, model21, model22, model23, nil];
     
 //    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }

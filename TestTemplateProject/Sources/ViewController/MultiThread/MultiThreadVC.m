@@ -18,6 +18,8 @@
 @property (nonatomic, assign) NSInteger intA;
 @property (nonatomic, strong) NSLock *lock;
 
+@property (nonatomic, strong) NSString *videoPath;
+
 @end
 
 @implementation MultiThreadVC
@@ -45,6 +47,8 @@
 //    [self testAtomicPropertyV1];
     
 //    [self testAtomicPropertyV2];
+    
+//    [self testAtomicPropertyV3];
 
 //    __weak typeof(self) weakSelf = self;
 //    dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -368,6 +372,24 @@
        }
        NSLog(@"intA : %ld",(long)self.intA);
    });
+}
+
+- (void)testAtomicPropertyV3 {
+    dispatch_queue_t queue = dispatch_get_global_queue(0, 0);
+    for (int i = 0; i < 1000; i++) {
+        dispatch_async(queue, ^{
+            self.videoPath = [NSString stringWithFormat:@"abcdefghij"];  // 不是 TaggedPointerString
+        });
+    }
+    
+    /**
+     我们异步并发执行setter方法，可能就会有多条线程同时执行[_name release]，连续release两次就会造成对象的过度释放，导致Crash。
+
+     解决办法：
+
+     1.使用atomic属性关键字修饰 videoPath property
+     2.在不同线程中操作 self.videoPath = xxx; 前后加锁解锁
+     */
 }
 
 - (void)testGCDSyncOperationExecuteThread {
