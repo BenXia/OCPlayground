@@ -12,7 +12,7 @@ void printClassInfo(id obj)
 {
     Class cls = object_getClass(obj);
     Class superCls = class_getSuperclass(cls);
-    NSLog(@"self:%s - superClass:%s", class_getName(cls), class_getName(superCls));
+    NSLog(@"pointer:%p - self:%s - superClass:%s", obj, class_getName(cls), class_getName(superCls));
 }
 
 @interface MemoryManageVC ()
@@ -84,8 +84,8 @@ void printClassInfo(id obj)
 //    self.videoPath = [NSString stringWithFormat:@"%@", @"中"];  // 1个字节的 unicode码字符不能使用 tagged pointer
 //    self.videoPath = [NSString stringWithFormat:@"中%d", 1];  // 2个字节的 unicode码字符不能使用 tagged pointer
 //    self.videoPath = [NSString stringWithFormat:@"中国%d", 1];  // 3个字节的 unicode码字符不能使用 tagged pointer
-//    self.videoPath = [NSString stringWithFormat:@";;;;;;%d", 1];  // 7个字节的 ASCII码字符
-//    self.videoPath = [NSString stringWithFormat:@";;;;;;;%d", 1]; // 8个字节的 ASCII码字符已经不能使用 tagged pointer
+//    self.videoPath = [NSString stringWithFormat:@";;;;;;%d", 1];  // 7个字节的 ASCII码字符（8位ASCII编码，不是7位的）
+//    self.videoPath = [NSString stringWithFormat:@";;;;;;;%d", 1]; // 8个字节的 ASCII码字符（8位ASCII编码，不是7位的）已经不能使用 tagged pointer
 //    self.videoPath = [NSString stringWithFormat:@"Abcdefg-%d", 1];   // 6位编码 9 * 6 + 2 + 4 + 4 = 64
 //    self.videoPath = [NSString stringWithFormat:@"Abcdefg;%d", 1];   // 6位编码不行，其中；不在64个允许编码字符中，不能使用 tagged pointer
     self.videoPath = [NSString stringWithFormat:@"eilotrm.ap%d", 1];  // 5位编码 11 * 5 + 1 + 4 + 4 = 64

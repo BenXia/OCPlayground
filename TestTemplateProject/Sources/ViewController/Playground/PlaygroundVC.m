@@ -26,8 +26,8 @@ static const NSCalendarUnit kDateComponentFlags = NSCalendarUnitYear | NSCalenda
     self.testAttributedTextLabel.attributedText = [[NSMutableAttributedString alloc] initWithString:@"测试[[NSMutableAttributedString alloc] initWithString:]字体大小"];
     
     // 打开下面代码会触发无穷递归（栈溢出）
-    //self.view = nil;
-    // UIView *view = (UIView *)self.view;
+//    self.view = nil;
+//     UIView *view = (UIView *)self.view;
     
     // 自定义线程中注意 for 循环最好加局部的 NSAutoReleasePool
     //[NSThread detachNewThreadSelector:@selector(doSomeThing:) toTarget:self withObject:nil];
