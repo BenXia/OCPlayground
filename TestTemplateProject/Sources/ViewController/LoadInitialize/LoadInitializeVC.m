@@ -21,7 +21,7 @@
 //                           Runtime调用+(void)load时没有autorelease pool
 
 //若自身未定义，是否沿用父类的方法？    否（只相对runtime而言，手动调用还是会沿用父类）                                是
-//                                不需要显示使用super调用父类中的方法                            不需要显示使用super调用父类中的方法
+//                                不需要显式使用super调用父类中的方法                            不需要显式使用super调用父类中的方法
 
 //类别中的定义                    全都执行，但后于类中的方法                                           覆盖类中的方法，只执行一个
 //调用顺序                            父类->本类->分类                                           父类->本类(如果有分类直接调用分类，本类不会调用)
@@ -37,8 +37,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    // Case2ChildClass 继承下了 +(void)load 而且可以被安全地当作普通类方法被使用。这也就是我之前所说的load和initialize被调用一次是相对 runtime 而言（比如Case2SuperClass的initialize不会因为自身load方法调用一次，又因为子类调用了 load 又执行一次），⚠️⚠️⚠️：我们依然可以直接去反复调用这些方法。
-    [Case2ChildClass load];
+    // Case2ChildClass 继承下了 +(void)load 而且可以被安全地当作普通类方法被使用。这也就是我之前所说的load和initialize被调用一次是相对 runtime 而言。
+//    [Case2ChildClass load];
 }
 
 @end
