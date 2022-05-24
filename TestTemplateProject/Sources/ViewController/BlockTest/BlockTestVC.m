@@ -28,7 +28,17 @@
     
 //    [self testRecursiveLock];
     
-    [self testCallSuperMethod];
+//    [self testCallSuperMethod];
+    
+//    [self testWhetherBlockCopy];
+    
+//    [self testWhetherBlockCopy2];
+    
+//    [self testBlockCaptureObjectOnlyInStack];
+    
+//    [self testBlockCaptureObjectAndRetainWhenCopyToHeap];
+    
+    [self testBlockCaptureWeakObjectAndCopyToHeap];
 }
 
 - (void)testRecursiveCall_1 {
@@ -126,6 +136,127 @@
     
     nextBlock();
 }
+
+- (NSArray *)getBlockArray {
+    int val = 10;
+    return [[NSArray alloc] initWithObjects:
+            ^{NSLog(@"blk0:%d", val);},
+            ^{NSLog(@"blk1:%d", val);}, nil];
+}
+
+- (void)testWhetherBlockCopy {
+    NSArray *obj = [self getBlockArray];
+    typedef void (^blk_t)(void);
+    blk_t blk = (blk_t)[obj objectAtIndex:0];
+    blk(); // 运行时访问的是悬垂指针
+}
+
+- (NSArray *)getBlockArray2 {
+    int val = 10;
+    return [[NSArray alloc] initWithObjects:
+            [^{NSLog(@"blk0:%d", val);} copy],
+            [^{NSLog(@"blk1:%d", val);} copy], nil];
+}
+
+- (void)testWhetherBlockCopy2 {
+    NSArray *obj = [self getBlockArray2];
+    typedef void (^blk_t)(void);
+    blk_t blk = (blk_t)[obj objectAtIndex:0];
+    blk();
+}
+
+- (void)testBlockCaptureObjectOnlyInStack {
+    typedef void (^blk_t)(id obj);
+    
+    blk_t blk;
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        blk = ^(id obj){
+            [array addObject:obj];
+            NSLog(@"array count = %ld", [array count]);
+        };
+    }
+    
+    blk([[NSObject alloc] init]);
+    blk([[NSObject alloc] init]);
+    blk([[NSObject alloc] init]);
+}
+
+- (void)testBlockCaptureObjectAndRetainWhenCopyToHeap {
+    typedef void (^blk_t)(id obj);
+    
+    blk_t blk;
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        blk = [^(id obj){
+            [array addObject:obj];
+            NSLog(@"array count = %ld", [array count]);
+        } copy];
+    }
+    
+    blk([[NSObject alloc] init]);
+    blk([[NSObject alloc] init]);
+    blk([[NSObject alloc] init]);
+}
+
+- (void)testBlockCaptureWeakObjectAndCopyToHeap {
+    typedef void (^blk_t)(id obj);
+    
+    blk_t blk;
+    {
+        NSMutableArray *array = [[NSMutableArray alloc] init];
+        NSMutableArray __weak *array2 = array;
+        blk = [^(id obj){
+            [array2 addObject:obj];
+            NSLog(@"array count = %ld", [array count]);
+        } copy];
+    }
+    
+    blk([[NSObject alloc] init]);
+    blk([[NSObject alloc] init]);
+    blk([[NSObject alloc] init]);
+}
+
+
+/**
+ * 下面的代码单独拿出去用
+ * clang -rewrite-objc 源代码文件名
+ * 生成C++代码看下
+ 
+ #include <stdio.h>
+ int main() {
+     int dmy = 256;
+     int val = 10;
+     const char *fmt = "val = %d\n";
+     void (^blk)(void) = ^{printf(fmt, val);};
+
+     val = 2;
+     fmt = "These values were changed, val = %d\n";
+
+     blk();
+
+     return 0;
+ }
+
+ #include <stdio.h>
+ #import <Foundation/Foundation.h>
+
+ int main() {
+     typedef void (^blk_t)(id obj);
+
+     blk_t blk;
+     {
+         NSMutableArray *array = [[NSMutableArray alloc] init];
+         blk = ^(id obj){
+             [array addObject:obj];
+             NSLog(@"array count = %ld", [array count]);
+         };
+     }
+
+     blk([[NSObject alloc] init]);
+ }
+ 
+ */
 
 @end
 
