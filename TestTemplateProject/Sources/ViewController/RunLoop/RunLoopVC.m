@@ -12,6 +12,8 @@
 
 @property (nonatomic, strong) CADisplayLink *displayLink;
 
+@property (nonatomic, strong) NSTimer *repeatTimer;
+
 @end
 
 @implementation RunLoopVC
@@ -21,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // 测试 Timer 如果被阻塞导致超时触发会怎么样
+    [self testTimer];
     
     // CADispalyLink 由 Source1 mach port 触发
     //[self startDisplayLink];
@@ -39,6 +44,18 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - NSTimer test
+
+- (void)testTimer {
+    self.repeatTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(sayHello) userInfo:nil repeats:NO];
+    //self.repeatTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(sayHello) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:self.repeatTimer forMode:NSDefaultRunLoopMode];
+}
+
+- (void)sayHello {
+    NSLog(@"hello");
 }
 
 #pragma mark - CADisplayLink test
