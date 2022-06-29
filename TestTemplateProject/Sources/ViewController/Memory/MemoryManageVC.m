@@ -44,6 +44,7 @@ void printClassInfo(id obj)
 @property (nonatomic, strong) NSHashTable *hashTable;
 @property (nonatomic, strong) NSMapTable  *mapTable;
 @property (nonatomic, strong) NSPointerArray *pointerArray;
+@property (nonatomic, strong) NSString *testStrongKey;
 @property (nonatomic, strong) NSString *testWeakObj;
 
 @end
@@ -99,13 +100,17 @@ void printClassInfo(id obj)
     self.mapTable = [NSMapTable strongToWeakObjectsMapTable];
     self.pointerArray = [NSPointerArray weakObjectsPointerArray];
     
+    self.testStrongKey = [@"Strong key" mutableCopy];
     self.testWeakObj = [[@"Hello world" mutableCopy] copy];
     [self.hashTable addObject:self.testWeakObj];
-    [self.mapTable setObject:self.testWeakObj forKey:@"1"];
+    [self.mapTable setObject:self.testWeakObj forKey:self.testStrongKey];
     [self.pointerArray addPointer:(__bridge void *)self.testWeakObj];
+    
+    [(NSMutableString *)self.testStrongKey appendString:@" append after insert"];
     
     NSLog (@"self.hashTable: %@\nself.mapTable: %@\nself.pointerArray: %@", self.hashTable, self.mapTable, self.pointerArray);
     //NSLog (@"self.hashTable: %@\nself.mapTable: %@\nself.pointerArray: %@ %@", self.hashTable, self.mapTable, self.pointerArray, (__bridge id)[self.pointerArray pointerAtIndex:0]);
+    
     
     self.testWeakObj = nil;
     
