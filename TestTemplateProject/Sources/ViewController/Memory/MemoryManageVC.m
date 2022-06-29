@@ -15,12 +15,36 @@ void printClassInfo(id obj)
     NSLog(@"pointer:%p - self:%s - superClass:%s", obj, class_getName(cls), class_getName(superCls));
 }
 
+// testPropertyOne
+//@implementation Rectangle
+//
+//- (void)setName:(NSMutableString *)name {
+//    _name = name;
+//}
+//
+//@end
+
+
+// testPropertyTwo
+@implementation Rectangle
+
+- (void)setName:(NSString *)name {
+    _name = [name copy];
+}
+
+@end
+
 @interface MemoryManageVC ()
 
 @property (nonatomic, strong) Block block;
 @property (nonatomic, strong) NSMutableArray *tempArray;
 
 @property (nonatomic, strong) NSString *videoPath;
+
+@property (nonatomic, strong) NSHashTable *hashTable;
+@property (nonatomic, strong) NSMapTable  *mapTable;
+@property (nonatomic, strong) NSPointerArray *pointerArray;
+@property (nonatomic, strong) NSString *testWeakObj;
 
 @end
 
@@ -32,11 +56,17 @@ void printClassInfo(id obj)
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+//    [self testPropertyOne];
+    
+//    [self testPropertyTwo];
+    
+    [self testHashTableHashMapPointerArray];
+    
 //    [self testAutoVarARC];
     
 //    [self testBlockMemoryManage];
     
-    [self testArgMemoryManage];
+//    [self testArgMemoryManage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,6 +79,38 @@ void printClassInfo(id obj)
 }
 
 #pragma mark - Private methods
+
+- (void)testPropertyOne {
+    Rectangle *object = [[Rectangle alloc] init];
+    NSMutableString *mStr = [NSMutableString stringWithFormat:@"Hello, world"];
+    object.name = mStr;
+    NSLog (@"mStr: %p object.name: %p", mStr, object.name);
+}
+
+- (void)testPropertyTwo {
+    Rectangle *object = [[Rectangle alloc] init];
+    NSString *mStr = [NSString stringWithFormat:@"Hello, world"];
+    object.name = mStr;
+    NSLog (@"mStr: %p object.name: %p", mStr, object.name);
+}
+
+- (void)testHashTableHashMapPointerArray {
+    self.hashTable = [NSHashTable weakObjectsHashTable];
+    self.mapTable = [NSMapTable strongToWeakObjectsMapTable];
+    self.pointerArray = [NSPointerArray weakObjectsPointerArray];
+    
+    self.testWeakObj = [[@"Hello world" mutableCopy] copy];
+    [self.hashTable addObject:self.testWeakObj];
+    [self.mapTable setObject:self.testWeakObj forKey:@"1"];
+    [self.pointerArray addPointer:(__bridge void *)self.testWeakObj];
+    
+    NSLog (@"self.hashTable: %@\nself.mapTable: %@\nself.pointerArray: %@", self.hashTable, self.mapTable, self.pointerArray);
+    //NSLog (@"self.hashTable: %@\nself.mapTable: %@\nself.pointerArray: %@ %@", self.hashTable, self.mapTable, self.pointerArray, (__bridge id)[self.pointerArray pointerAtIndex:0]);
+    
+    self.testWeakObj = nil;
+    
+    NSLog (@"self.hashTable: %@\nself.mapTable: %@\nself.pointerArray: %@ %@", self.hashTable, self.mapTable, self.pointerArray, (__bridge id)[self.pointerArray pointerAtIndex:0]);
+}
 
 - (void)testAutoVarARC {
     NSObject *a = [[NSObject alloc] init];

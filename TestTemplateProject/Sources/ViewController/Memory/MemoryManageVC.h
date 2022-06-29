@@ -8,6 +8,21 @@
 
 #import "BaseViewController.h"
 
+// testPropertyOne
+//@interface Rectangle : NSObject
+//
+//@property (nonatomic, copy) NSMutableString *name;
+//
+//@end
+
+// testPropertyTwo
+@interface Rectangle : NSObject
+
+@property (nonatomic, copy) NSString *name;
+
+@end
+
+
 @interface MemoryManageVC : BaseViewController
 
 @end
