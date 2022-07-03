@@ -32,13 +32,13 @@
     
 //    [self testWhetherBlockCopy];
     
-//    [self testWhetherBlockCopy2];
+    [self testWhetherBlockCopy2];
     
 //    [self testBlockCaptureObjectOnlyInStack];
     
 //    [self testBlockCaptureObjectAndRetainWhenCopyToHeap];
     
-    [self testBlockCaptureWeakObjectAndCopyToHeap];
+//    [self testBlockCaptureWeakObjectAndCopyToHeap];
 }
 
 - (void)testRecursiveCall_1 {
@@ -151,10 +151,20 @@
     blk(); // 运行时访问的是悬垂指针
 }
 
+static void blockCleanUp(__strong void(^*block)(void)) {
+    //(*block)();
+    NSLog(@"I'm dying...");
+}
+
 - (NSArray *)getBlockArray2 {
     int val = 10;
+    
+    __strong void(^block)(void) __attribute__((cleanup(blockCleanUp), unused)) = ^{
+        NSLog(@"blk0:%d", val);
+    };
+    
     return [[NSArray alloc] initWithObjects:
-            [^{NSLog(@"blk0:%d", val);} copy],
+            [block copy],
             [^{NSLog(@"blk1:%d", val);} copy], nil];
 }
 
@@ -208,7 +218,8 @@
         NSMutableArray __weak *array2 = array;
         blk = [^(id obj){
             [array2 addObject:obj];
-            NSLog(@"array count = %ld", [array count]);
+            NSLog(@"array count = %ld", [array2 count]);
+            //NSLog(@"array count = %ld", [array count]);
         } copy];
     }
     
