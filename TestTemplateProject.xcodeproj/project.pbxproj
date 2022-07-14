@@ -71,6 +71,7 @@
 		3399DF0121B96E78006C6B85 /* ProxyTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DEFC21B96E78006C6B85 /* ProxyTestVC.m */; };
 		3399DF0721B97259006C6B85 /* CustomTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DF0621B97259006C6B85 /* CustomTarget.m */; };
 		3399DF0B21B973A7006C6B85 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DF0A21B973A7006C6B85 /* Aspects.m */; };
+		33CACD63288030340000B1E9 /* test3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33CACD61288030340000B1E9 /* test3.cpp */; };
 		33E14FC71F7972010042F729 /* MultiThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E14FC51F7972010042F729 /* MultiThreadVC.m */; };
 		33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E14FC61F7972010042F729 /* MultiThreadVC.xib */; };
 		33F756231F5C498900C7321F /* BOOLTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F756211F5C498900C7321F /* BOOLTestVC.m */; };
@@ -293,6 +294,8 @@
 		3399DF0621B97259006C6B85 /* CustomTarget.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomTarget.m; sourceTree = "<group>"; };
 		3399DF0921B973A7006C6B85 /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
 		3399DF0A21B973A7006C6B85 /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
+		33CACD60288030340000B1E9 /* test3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test3.m; sourceTree = "<group>"; };
+		33CACD61288030340000B1E9 /* test3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test3.cpp; sourceTree = "<group>"; };
 		33D2FCD3283D3ED000B59039 /* test2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = test2.cpp; sourceTree = "<group>"; };
 		33D2FCD4283D3ED000B59039 /* test2.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test2.m; sourceTree = "<group>"; };
 		33D2FCD5283D3ED000B59039 /* test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = test.m; sourceTree = "<group>"; };
@@ -985,6 +988,8 @@
 				33D2FCD6283D3ED000B59039 /* test.cpp */,
 				33D2FCD4283D3ED000B59039 /* test2.m */,
 				33D2FCD3283D3ED000B59039 /* test2.cpp */,
+				33CACD60288030340000B1E9 /* test3.m */,
+				33CACD61288030340000B1E9 /* test3.cpp */,
 			);
 			path = BlockTest;
 			sourceTree = "<group>";
@@ -1727,6 +1732,7 @@
 				B56895BE263955F900802E37 /* QQingCustomView.swift in Sources */,
 				33102E6B1F49FF7F008CCD64 /* NoXibVC.m in Sources */,
 				B54337BC1F5E46D70055AECE /* MJExtensionUsageVC.m in Sources */,
+				33CACD63288030340000B1E9 /* test3.cpp in Sources */,
 				B54337CA1F5E474E0055AECE /* ModelForMantle.m in Sources */,
 				B53C63B322E83E7E0066F492 /* TextImageVC.m in Sources */,
 				330F7C001ED333F00009280A /* main.m in Sources */,
