@@ -71,7 +71,6 @@
 		3399DF0121B96E78006C6B85 /* ProxyTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DEFC21B96E78006C6B85 /* ProxyTestVC.m */; };
 		3399DF0721B97259006C6B85 /* CustomTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DF0621B97259006C6B85 /* CustomTarget.m */; };
 		3399DF0B21B973A7006C6B85 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DF0A21B973A7006C6B85 /* Aspects.m */; };
-		33CACD63288030340000B1E9 /* test3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33CACD61288030340000B1E9 /* test3.cpp */; };
 		33E14FC71F7972010042F729 /* MultiThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E14FC51F7972010042F729 /* MultiThreadVC.m */; };
 		33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E14FC61F7972010042F729 /* MultiThreadVC.xib */; };
 		33F756231F5C498900C7321F /* BOOLTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F756211F5C498900C7321F /* BOOLTestVC.m */; };
@@ -1732,7 +1731,6 @@
 				B56895BE263955F900802E37 /* QQingCustomView.swift in Sources */,
 				33102E6B1F49FF7F008CCD64 /* NoXibVC.m in Sources */,
 				B54337BC1F5E46D70055AECE /* MJExtensionUsageVC.m in Sources */,
-				33CACD63288030340000B1E9 /* test3.cpp in Sources */,
 				B54337CA1F5E474E0055AECE /* ModelForMantle.m in Sources */,
 				B53C63B322E83E7E0066F492 /* TextImageVC.m in Sources */,
 				330F7C001ED333F00009280A /* main.m in Sources */,

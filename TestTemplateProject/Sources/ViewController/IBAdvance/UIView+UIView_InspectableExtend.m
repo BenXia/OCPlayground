@@ -7,7 +7,10 @@
 
 #import "UIView+UIView_InspectableExtend.h"
 
+
 @implementation UIView (UIView_InspectableExtend)
+
+@dynamic ccr;
 
 - (void)setCcr:(CGFloat)ccr {
     self.layer.cornerRadius = ccr;
