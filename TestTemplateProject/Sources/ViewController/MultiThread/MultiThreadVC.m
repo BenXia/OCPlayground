@@ -55,16 +55,16 @@
 //        __strong typeof(self) self = weakSelf;
 //        [self testGCDSyncOperationExecuteThread];
 //    });
-//
+
 //    [self testGCDSyncOperationExecuteThread];
-//
+
 //    [self testGCDAsyncSerialOperationExecuteThread];
-//
+
 //    [self testGCDAsyncConcurrentOperationExecuteThread];
-//
+
 //    [self testMaxGCDConcurrentThreadCount];  // 1 + 65 (1为主线程）
     
-//    [self testMaxGCDSerialThreadCount];   // 我的天，还有上限吗
+//    [self testMaxGCDSerialThreadCount];   // 我的天，还有上限吗，8核断点看了下是500多个线程
     
 //    [self testGCDConfigMaxConcurrentThreadCount];
     
@@ -75,11 +75,11 @@
 //    [self testGCDSomeAPI];
     
     // 经典的多读一写互斥问题
-//    [self testGCDReadWriteHandle];
-//
+    [self testGCDReadWriteHandle];
+
 //    // 多线程数据竞争问题（多个线程更新相同的资源会导致数据的不一致）
 //    [self testMultiThreadSafe];
-//
+
 //    // 多线程的死锁问题（停止等待事件的线程会导致多个线程相互持续等待）（dispatch_sync单线程也会死锁）
 //    [self testMultiThreadDeadLock];
     
@@ -127,30 +127,32 @@
     NSBlockOperation *op = [NSBlockOperation blockOperationWithBlock:^{
         [self task:@"BlockOperationJob"];
     }];
-    // NSBlockOperation该操作有个方法能在该操作中持续添加操作任务addExecutionBlock，直到全部的block中的任务都执行完成后，该操作op才算执行完毕。当该操作在addExecutionBlock加入比较多的任务时，该op的block中的（包括blockOperationWithBlock和addExecutionBlock中的操作）会在新开的线程中执行。不一定在创建该op的线程中执行。（⚠️⚠️⚠️：即使这个 operaton 是在主线程start，也会出现其中某些 block 在非主线程运行，但是 [NSOperationQueue.currentQueue isEqual:NSOperationQueue.mainQueue]）
+    // NSBlockOperation该操作有个方法能在该操作中持续添加操作任务addExecutionBlock，直到全部的block中的任务都执行完成后，该操作op才算执行完毕。当该操作在addExecutionBlock加入比较多的任务时，
+    // 该op的block中的（包括blockOperationWithBlock和addExecutionBlock中的操作）会在新开的线程中执行。不一定在创建该op的线程中执行。（⚠️⚠️⚠️：即使这个 operaton 是在主线程start，也会出现其中某些 block 在非主线程运行，但是 [NSOperationQueue.currentQueue isEqual:NSOperationQueue.mainQueue]）
+    // 各个添加的 executionBlock 是并行的
     [op addExecutionBlock:^{
-        [self task:@"add"];
+        [self task:@"add 1"];
     }];
     [op addExecutionBlock:^{
-        [self task:@"add"];
+        [self task:@"add 2"];
     }];
     [op addExecutionBlock:^{
-        [self task:@"add"];
+        [self task:@"add 3"];
     }];
     [op addExecutionBlock:^{
-        [self task:@"add"];
+        [self task:@"add 4"];
     }];
     [op addExecutionBlock:^{
-        [self task:@"add"];
+        [self task:@"add 5"];
     }];
     [op addExecutionBlock:^{
-        [self task:@"add"];
+        [self task:@"add 6"];
     }];
     [op addExecutionBlock:^{
-        [self task:@"add"];
+        [self task:@"add 7"];
     }];
     [op addExecutionBlock:^{
-        [self task:@"add"];
+        [self task:@"add 8"];
     }];
     [op start];
 }
@@ -202,7 +204,8 @@
     }];
     [op1 addExecutionBlock:^{
         [self task:@"1.1"];
-    }];[op1 addExecutionBlock:^{
+    }];
+    [op1 addExecutionBlock:^{
         [self task:@"1.1"];
     }];
     [op1 addExecutionBlock:^{
@@ -232,6 +235,10 @@
     NSLog(@"创建操作:%@", [NSThread currentThread]);
     CustomOperation *op = [[CustomOperation alloc] initWithData:@"CustomOperationJob"];
     [op start];
+    
+    dispatch_sync(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"测试主线程sync操作: thread: %@ isMainOperationQueue: %d isMainThread: %d", [NSThread currentThread], [NSOperationQueue.currentQueue isEqual:NSOperationQueue.mainQueue], [NSThread isMainThread]);
+    });
 }
 
 - (void)executeCustomOperationInNewThread {
@@ -338,18 +345,18 @@
 - (void)testAtomicPropertyV1 {
     //开启一个线程对intA的值+1
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        for (int i = 0;i < 10000;i ++){
+        for (int i = 0; i < 100000; i++) {
             self.intA = self.intA + 1;
         }
-        NSLog(@"intA : %ld",(long)self.intA);
+        NSLog(@"intA : %ld", (long)self.intA);
     });
     
     //开启一个线程对intA的值+1
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        for (int i = 0;i < 10000;i ++){
+        for (int i = 0; i < 100000; i++) {
             self.intA = self.intA + 1;
         }
-        NSLog(@"intA : %ld",(long)self.intA);
+        NSLog(@"intA : %ld", (long)self.intA);
     });
 }
 
@@ -397,22 +404,25 @@
     NSLog(@"current thread = %@", [NSThread currentThread]);
     
     dispatch_queue_t concurrentQueue = dispatch_queue_create("com.summer.concurrent", DISPATCH_QUEUE_CONCURRENT);
-    
+
     for (int i = 0; i < 100; i++) {
         dispatch_async(concurrentQueue, ^{
             NSLog(@"%d, for in dispatch_async concurrentQueue, current thread = %@", i, [NSThread currentThread]);
             sleep(1);
         });
     }
-    
+
     dispatch_sync(concurrentQueue, ^{
         NSLog(@"1,current thread = %@", [NSThread currentThread]);
     });
-    
+
     dispatch_sync(concurrentQueue, ^{
         NSLog(@"2,current thread = %@", [NSThread currentThread]);
         sleep(10);
     });
+    
+    // iOS6 以后 gcd 对象已经纳入 ARC 管理
+    //dispatch_release(concurrentQueue);
     
     NSLog(@">>>>>>>>>>>> Part One END");
     
@@ -424,7 +434,7 @@
             sleep(1);
         });
     }
-    
+
     dispatch_async(serialQueue2, ^{
         NSLog(@"11,current thread = %@", [NSThread currentThread]);
     });
@@ -442,11 +452,11 @@
             NSLog(@"14,current thread = %@", [NSThread currentThread]);
         });
     });
-    
+
+    // iOS6 以后 gcd 对象已经纳入 ARC 管理
+    //dispatch_release(serialQueue2);
+
     NSLog(@">>>>>>>>>>>> Part Two END");
-    
-//    dispatch_release(serialQueue);
-//    dispatch_release(serialQueue2);
 }
 
 - (void)testGCDAsyncSerialOperationExecuteThread {
@@ -566,17 +576,17 @@
     // 默认 dispatch_queue_create 函数生成的 Dispatch Queue 不管是 Serial Dispatch Queue 还是 Concurrent Dispatch Queue,
     // 都使用与默认优先级 Global Dispatch Queue 相同执行优先级的线程。
     // 而变更生成的 Dispatch Queue 的执行优先级要使用 dispatc_set_target_queue 函数。
-    dispatch_queue_t serialQueue = dispatch_queue_create("com.summer.customSerialQueue", NULL);
-    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.summer.customConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
+//    dispatch_queue_t serialQueue = dispatch_queue_create("com.summer.customSerialQueue", NULL);
+//    dispatch_queue_t concurrentQueue = dispatch_queue_create("com.summer.customConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
 
-    dispatch_set_target_queue(concurrentQueue, serialQueue);
-
-    for (int i = 0; i < 1000; i++) {
-        dispatch_async(concurrentQueue, ^{
-            NSLog(@"%d, for in dispatch_async concurrentQueue, current thread = %@", i, [NSThread currentThread]);
-            sleep(3);
-        });
-    }
+//    dispatch_set_target_queue(concurrentQueue, serialQueue);
+//
+//    for (int i = 0; i < 1000; i++) {
+//        dispatch_async(concurrentQueue, ^{
+//            NSLog(@"%d, for in dispatch_async concurrentQueue, current thread = %@", i, [NSThread currentThread]);
+//            sleep(3);
+//        });
+//    }
     
     // 下面的还是串行的，只是优先级发生了变化
 //        dispatch_set_target_queue(serialQueue, concurrentQueue);
@@ -592,15 +602,15 @@
 //    dispatch_release(concurrentQueue);
     
     // serial queue 的 target queue 设置为主线程，则该 serial queue 中还未执行的 block 也会在主线程执行
-//    dispatch_queue_t serialQueue = dispatch_queue_create("com.summer.customSerialQueue", NULL);
-//    dispatch_set_target_queue(serialQueue, dispatch_get_main_queue());
-//
-//    for (int i = 0; i < 1000; i++) {
-//        dispatch_async(serialQueue, ^{
-//            NSLog(@"%d, for in dispatch_async concurrentQueue, current thread = %@", i, [NSThread currentThread]);
-//            sleep(3);
-//        });
-//    }
+    dispatch_queue_t serialQueue = dispatch_queue_create("com.summer.customSerialQueue", NULL);
+    dispatch_set_target_queue(serialQueue, dispatch_get_main_queue());
+
+    for (int i = 0; i < 1000; i++) {
+        dispatch_async(serialQueue, ^{
+            NSLog(@"%d, for in dispatch_async concurrentQueue, current thread = %@", i, [NSThread currentThread]);
+            sleep(3);
+        });
+    }
     
 //    dispatch_release(serialQueue);
 //    dispatch_release(concurrentQueue);
@@ -658,16 +668,16 @@ dispatch_time_t getDispatchTimeByDate(NSDate *date)
 }
 
 - (void)testGCDSomeAPI {
-     //dispatch_apply
-     //dispatch_apply 函数是 dispatch_sync 函数和 Dispatch Group 的关联 API。
-     //该函数按指定的次数将指定的 Block 追加到指定 Dispatch Queue 中，并等待全部处理执行结束。
-     //另外，由于 dispatch_apply 函数也与 dispatch_sync 函数相同会等待处理执行结束，因此推荐在 dispatch_async 函数中非同步地执行 dispath_apply 函数。
-//      dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-////    dispatch_apply(10, queue, ^(size_t index){
-////        NSLog(@"%zu", index);
-////    });
-////    NSLog(@"done");
-//
+    //dispatch_apply
+    //dispatch_apply 函数是 dispatch_sync 函数和 Dispatch Group 的关联 API。
+    //该函数按指定的次数将指定的 Block 追加到指定 Dispatch Queue 中，并等待全部处理执行结束。
+    //另外，由于 dispatch_apply 函数也与 dispatch_sync 函数相同会等待处理执行结束，因此推荐在 dispatch_async 函数中非同步地执行 dispath_apply 函数。
+    dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+//    dispatch_apply(10, queue, ^(size_t index){
+//        NSLog(@"%zu", index);
+//    });
+//    NSLog(@"done");
+
 //    dispatch_async(queue, ^{
 //        dispatch_apply(10, queue, ^(size_t index){
 //            NSLog(@"%zu", index);
@@ -678,10 +688,10 @@ dispatch_time_t getDispatchTimeByDate(NSDate *date)
 //        });
 //    });
 //
-////    NSArray *array = @[@"000", @"111", @"222", @"333", @"444", @"555", @"666", @"777", @"888", @"999"];
-////    dispatch_apply(array.count, queue, ^(size_t index) {
-////        NSLog(@"%zu: %@", index, [array objectAtIndex:index]);
-////    });
+//    NSArray *array = @[@"000", @"111", @"222", @"333", @"444", @"555", @"666", @"777", @"888", @"999"];
+//    dispatch_apply(array.count, queue, ^(size_t index) {
+//        NSLog(@"%zu: %@", index, [array objectAtIndex:index]);
+//    });
     
     
     
@@ -724,23 +734,23 @@ dispatch_time_t getDispatchTimeByDate(NSDate *date)
     dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
     // 将定时器设定为 15 秒后。不指定为重复。允许延迟1秒。
     dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 15ull * NSEC_PER_SEC), DISPATCH_TIME_FOREVER, 1ull * NSEC_PER_SEC);
-    
+
     // 指定定时器指定时间内执行的处理
     dispatch_source_set_event_handler(timer, ^{
         NSLog(@"wakeup!");
-        
+
         // 取消 Dispatch Source
         dispatch_source_cancel(timer);
     });
-    
+
     // 指定取消 Dispatch Source 时的处理
     dispatch_source_set_cancel_handler(timer, ^{
         NSLog(@"canceled");
-        
+
         // 释放 Dispatch Source
 //        dispatch_release(timer);
     });
-    
+
     // 启动 Dispatch Source
     dispatch_resume(timer);
 }
@@ -1258,8 +1268,8 @@ dispatch_time_t getDispatchTimeByDate(NSDate *date)
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        NSLog(@"array.count: %zd", array.count);
 //    });
-//
-////    dispatch_release(semaphore);
+
+//    dispatch_release(semaphore);
     
     // 4.Lock
     

@@ -67,10 +67,10 @@
                     disableBgGradientStartPoint:CGPointMake(1, 0.5)
                       disableBgGradientEndPoint:CGPointMake(0, 0.5)
                           disableBgGradientSize:frameToSet.size
-                            selectedIconImage:gifImage
-                                    titleFont:[UIFont systemFontOfSize:16]
-                               titleFontColor:[UIColor whiteColor]
-                                 cornerRadius:4];
+                              selectedIconImage:gifImage
+                                      titleFont:[UIFont systemFontOfSize:16]
+                                 titleFontColor:[UIColor whiteColor]
+                                   cornerRadius:4];
     
     self.layer.borderWidth = 0;
     self.layer.backgroundColor = [UIColor whiteColor].CGColor;
@@ -128,10 +128,10 @@
                     disableBgGradientStartPoint:CGPointMake(0, 0.5)
                       disableBgGradientEndPoint:CGPointMake(1, 0.5)
                           disableBgGradientSize:frameToSet.size
-                            selectedIconImage:gifImage
-                                    titleFont:[UIFont systemFontOfSize:16]
-                               titleFontColor:[UIColor whiteColor]
-                                 cornerRadius:4];
+                              selectedIconImage:gifImage
+                                      titleFont:[UIFont systemFontOfSize:16]
+                                 titleFontColor:[UIColor whiteColor]
+                                   cornerRadius:4];
     
     self.layer.borderWidth = 0;
     self.layer.backgroundColor = [UIColor whiteColor].CGColor;
@@ -181,10 +181,10 @@
                     disableBgGradientStartPoint:CGPointMake(1, 0.5)
                       disableBgGradientEndPoint:CGPointMake(0, 0.5)
                           disableBgGradientSize:frameToSet.size
-                            selectedIconImage:gifImage
-                                    titleFont:[UIFont systemFontOfSize:16]
-                               titleFontColor:[UIColor whiteColor]
-                                 cornerRadius:4];
+                              selectedIconImage:gifImage
+                                      titleFont:[UIFont systemFontOfSize:16]
+                                 titleFontColor:[UIColor whiteColor]
+                                   cornerRadius:4];
     
     self.layer.borderWidth = 0;
     self.layer.backgroundColor = [UIColor whiteColor].CGColor;
@@ -234,10 +234,10 @@
                     disableBgGradientStartPoint:CGPointMake(0, 0.5)
                       disableBgGradientEndPoint:CGPointMake(1, 0.5)
                           disableBgGradientSize:frameToSet.size
-                            selectedIconImage:gifImage
-                                    titleFont:[UIFont systemFontOfSize:16]
-                               titleFontColor:[UIColor whiteColor]
-                                 cornerRadius:4];
+                              selectedIconImage:gifImage
+                                      titleFont:[UIFont systemFontOfSize:16]
+                                 titleFontColor:[UIColor whiteColor]
+                                   cornerRadius:4];
 }
 
 // 多个按钮时候的自由宽度纯文字按钮
@@ -409,10 +409,10 @@
                     disableBgGradientStartPoint:CGPointMake(1, 0.5)
                       disableBgGradientEndPoint:CGPointMake(0, 0.5)
                           disableBgGradientSize:frameToSet.size
-                            selectedIconImage:gifImage
-                                    titleFont:[UIFont systemFontOfSize:16]
-                               titleFontColor:[UIColor whiteColor]
-                                 cornerRadius:frameToSet.size.height/2];
+                              selectedIconImage:gifImage
+                                      titleFont:[UIFont systemFontOfSize:16]
+                                 titleFontColor:[UIColor whiteColor]
+                                   cornerRadius:frameToSet.size.height/2];
 }
 - (void)configAsQQingLargeSolidOrange {
 #ifdef DEBUG
@@ -452,10 +452,10 @@
                     disableBgGradientStartPoint:CGPointMake(0, 0.5)
                       disableBgGradientEndPoint:CGPointMake(1, 0.5)
                           disableBgGradientSize:frameToSet.size
-                            selectedIconImage:gifImage
-                                    titleFont:[UIFont systemFontOfSize:16]
-                               titleFontColor:[UIColor whiteColor]
-                                 cornerRadius:frameToSet.size.height/2];
+                              selectedIconImage:gifImage
+                                      titleFont:[UIFont systemFontOfSize:16]
+                                 titleFontColor:[UIColor whiteColor]
+                                   cornerRadius:frameToSet.size.height/2];
 }
 
 - (void)configAsQQingMiddleSolidBlue {
@@ -514,10 +514,10 @@
                         disableBgGradientStartPoint:CGPointMake(1, 0.5)
                           disableBgGradientEndPoint:CGPointMake(0, 0.5)
                               disableBgGradientSize:frameToSet.size
-                                selectedIconImage:nil
-                                        titleFont:titleFont
-                                   titleFontColor:[UIColor whiteColor]
-                                     cornerRadius:frameToSet.size.height/2];
+                                  selectedIconImage:nil
+                                          titleFont:titleFont
+                                     titleFontColor:[UIColor whiteColor]
+                                       cornerRadius:frameToSet.size.height/2];
     }];
 }
 - (void)configAsQQingMiddleBorderBlue {
@@ -580,10 +580,10 @@
 //                        disableBgGradientStartPoint:CGPointMake(1, 0.5)
 //                          disableBgGradientEndPoint:CGPointMake(0, 0.5)
 //                              disableBgGradientSize:frameToSet.size
-//                                selectedIconImage:nil
-//                                        titleFont:titleFont
-//                                   titleFontColor:[UIColor whiteColor]
-//                                     cornerRadius:frameToSet.size.height/2];
+//                                  selectedIconImage:nil
+//                                          titleFont:titleFont
+//                                     titleFontColor:[UIColor whiteColor]
+//                                       cornerRadius:frameToSet.size.height/2];
     }];
     
     self.layer.borderWidth = ([UIScreen mainScreen].scale >= 2) ? 0.5 : 1;
@@ -665,10 +665,10 @@
 //                        disableBgGradientStartPoint:CGPointMake(1, 0.5)
 //                          disableBgGradientEndPoint:CGPointMake(0, 0.5)
 //                              disableBgGradientSize:frameToSet.size
-//                                selectedIconImage:nil
-//                                        titleFont:titleFont
-//                                   titleFontColor:[UIColor whiteColor]
-//                                     cornerRadius:frameToSet.size.height/2];
+//                                  selectedIconImage:nil
+//                                          titleFont:titleFont
+//                                     titleFontColor:[UIColor whiteColor]
+//                                       cornerRadius:frameToSet.size.height/2];
     }];
     
     self.layer.borderWidth = ([UIScreen mainScreen].scale >= 2) ? 0.5 : 1;
@@ -819,10 +819,10 @@
                         disableBgGradientStartPoint:CGPointMake(1, 0.5)
                           disableBgGradientEndPoint:CGPointMake(0, 0.5)
                               disableBgGradientSize:frameToSet.size
-                                selectedIconImage:nil
-                                        titleFont:titleFont
-                                   titleFontColor:[UIColor whiteColor]
-                                     cornerRadius:frameToSet.size.height/2];
+                                  selectedIconImage:nil
+                                          titleFont:titleFont
+                                     titleFontColor:[UIColor whiteColor]
+                                       cornerRadius:frameToSet.size.height/2];
     }];
 }
 - (void)configAsQQingNormalBorderBlue {
@@ -1098,10 +1098,10 @@
                         disableBgGradientStartPoint:CGPointMake(1, 0.5)
                           disableBgGradientEndPoint:CGPointMake(0, 0.5)
                               disableBgGradientSize:frameToSet.size
-                                selectedIconImage:nil
-                                        titleFont:titleFont
-                                   titleFontColor:[UIColor whiteColor]
-                                     cornerRadius:frameToSet.size.height/2];
+                                  selectedIconImage:nil
+                                          titleFont:titleFont
+                                     titleFontColor:[UIColor whiteColor]
+                                       cornerRadius:frameToSet.size.height/2];
     }];
 }
 - (void)configAsQQingSmallBorderBlue {
@@ -1377,10 +1377,10 @@
                         disableBgGradientStartPoint:CGPointMake(1, 0.5)
                           disableBgGradientEndPoint:CGPointMake(0, 0.5)
                               disableBgGradientSize:frameToSet.size
-                                selectedIconImage:nil
-                                        titleFont:titleFont
-                                   titleFontColor:[UIColor whiteColor]
-                                     cornerRadius:frameToSet.size.height/2];
+                                  selectedIconImage:nil
+                                          titleFont:titleFont
+                                     titleFontColor:[UIColor whiteColor]
+                                       cornerRadius:frameToSet.size.height/2];
     }];
 }
 

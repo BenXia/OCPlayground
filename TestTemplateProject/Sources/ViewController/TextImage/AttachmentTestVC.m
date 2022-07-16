@@ -30,7 +30,7 @@
         [string addAttribute:NSForegroundColorAttributeName value:[UIColor grayColor] range:NSMakeRange(0, title.length)];
         [string addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15] range:NSMakeRange(0, title.length)];
         //2.创建图片附件
-        NSTextAttachment *attach = [[NSTextAttachment alloc]init];
+        NSTextAttachment *attach = [[NSTextAttachment alloc] init];
         attach.image = [UIImage imageNamed:tipIconName];
         attach.bounds = CGRectMake(0, -5, 20, 20);
         //3.创建属性字符串 通过图片附件

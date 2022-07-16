@@ -16,7 +16,7 @@ import UIKit
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let path = UIBezierPath(rect: CGRect(x: 200, y: 5 * 20 - 1, width: textView.frame.size.width - 200, height: 20))
+        let path = UIBezierPath(rect: CGRect(x: 300, y: 5 * 20 - 1, width: textView.frame.size.width - 300, height: 20))
         textView.textContainer.exclusionPaths = [path]
         textView.textContainer.lineFragmentPadding = 0
         textView.textContainerInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
@@ -32,7 +32,7 @@ import UIKit
             textView.textContainer.exclusionPaths = []
         } else {
             textView.textContainer.maximumNumberOfLines = 5
-            let path = UIBezierPath(rect: CGRect(x: 200, y: 5 * 20 - 1, width: textView.frame.size.width - 200, height: 20))
+            let path = UIBezierPath(rect: CGRect(x: 300, y: 5 * 20 - 1, width: textView.frame.size.width - 300, height: 20))
             textView.textContainer.exclusionPaths = [path]
         }
     }

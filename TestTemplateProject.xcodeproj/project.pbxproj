@@ -1370,8 +1370,8 @@
 				B56895AE263955F900802E37 /* QQingCustomView.xib */,
 				B56895AF263955F900802E37 /* QQingButton.h */,
 				B56895B3263955F900802E37 /* QQingButton.m */,
-				B56895B0263955F900802E37 /* UIView+UIView_InspectableExtend.m */,
 				B56895B6263955F900802E37 /* UIView+UIView_InspectableExtend.h */,
+				B56895B0263955F900802E37 /* UIView+UIView_InspectableExtend.m */,
 				B56895B1263955F900802E37 /* QQingVView.h */,
 				B56895B5263955F900802E37 /* QQingVView.m */,
 			);
