@@ -55,14 +55,14 @@ static const NSCalendarUnit kDateComponentFlags = NSCalendarUnitYear | NSCalenda
     NSDateComponents *comps = [[NSDateComponents alloc] init];
     comps = [calendar components:kDateComponentFlags fromDate:nowDate];
     NSLog (@"comps: %@ \ntimeZone: %@\n\n", comps, comps.timeZone);
-    
+
     comps.timeZone = [NSTimeZone timeZoneForSecondsFromGMT:11*60*60];
-    
+
     // comps 中设置的 timeZone 在下面这个接口中将会有用
     NSDate *showDate = [calendar dateFromComponents:comps];
-    
+
     NSLog (@"comps: %@ \n\nshowDate: %@\n\n", comps, showDate);
-    
+
     NSLog (@"%@  test float format", [self stringWithMaxTwoDecimal:1.006]);
 }
 

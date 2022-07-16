@@ -31,10 +31,10 @@
 //    [self testGeneralUsage];
     
     //2.自定义类打破环引用
-    [self testCustomTarget];
+//    [self testCustomTarget];
     
     //3.中间人（NSProxy）打破环引用
-//    [self testProxy];
+    [self testProxy];
 }
 
 // 1.常规使用 打开该方法

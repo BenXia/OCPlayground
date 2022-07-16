@@ -68,7 +68,7 @@
     
 //    [self testGCDConfigMaxConcurrentThreadCount];
     
-    [self testGCDSetTargetQueue];
+//    [self testGCDSetTargetQueue];
     
 //    [self testGCDDispatchGroup];
     

@@ -14,11 +14,11 @@
 
 
 //                                   +(void)load                                                 +(void)initialize
-//执行时机                          在程序运行后立即执行                                           在类的方法第一次被调时执行
-//注意事项                         会阻塞应用程序启动流程。                       只有执行initialize的那个线程可以操作类或类实例。其他线程都要先阻塞，等着initialize执行完。
-//                              load中调用的其他类可能还未load                          initialize中调用的类可能触发initialize后，其中用到当前类导致死锁
-//                            load中调用对象或类方法会引发其initialize
-//                           Runtime调用+(void)load时没有autorelease pool
+//执行时机                          在程序运行后立即执行                                            在类的方法第一次被调时执行
+//注意事项                         会阻塞应用程序启动流程。                     只有执行initialize的那个线程可以操作类或类实例。其他线程都要先阻塞，等着initialize执行完。
+//                             load中调用的其他类可能还未load                           initialize中调用的类可能触发initialize后，其中用到当前类导致死锁
+//                          load中调用对象或类方法会引发其initialize
+//                       Runtime调用+(void)load时没有autorelease pool
 
 //若自身未定义，是否沿用父类的方法？    否（只相对runtime而言，手动调用还是会沿用父类）                                是
 //                                不需要显式使用super调用父类中的方法                            不需要显式使用super调用父类中的方法

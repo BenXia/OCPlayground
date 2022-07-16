@@ -25,7 +25,7 @@
     // Do any additional setup after loading the view from its nib.
     
     // 测试 Timer 如果被阻塞导致超时触发会怎么样
-    [self testTimer];
+    //[self testTimer];
     
     // CADispalyLink 由 Source1 mach port 触发
     //[self startDisplayLink];
@@ -36,9 +36,7 @@
     // waitUntilDone NO 则为 Source0， YES 则栈中继续执行
     //[self performSelectorOnMainThread:@selector(performOnMainFunction) withObject:nil waitUntilDone:YES];
     
-    //[self testAsyncWaiting];
-    
-    // 
+    [self testAsyncWaiting];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,8 +47,8 @@
 #pragma mark - NSTimer test
 
 - (void)testTimer {
-    self.repeatTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(sayHello) userInfo:nil repeats:NO];
-    //self.repeatTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(sayHello) userInfo:nil repeats:YES];
+//    self.repeatTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(sayHello) userInfo:nil repeats:NO];
+    self.repeatTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(sayHello) userInfo:nil repeats:YES];
     [[NSRunLoop currentRunLoop] addTimer:self.repeatTimer forMode:NSDefaultRunLoopMode];
 }
 

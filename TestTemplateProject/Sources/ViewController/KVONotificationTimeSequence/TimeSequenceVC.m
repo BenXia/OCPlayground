@@ -33,9 +33,9 @@
     
 //    [self testKVOSequence];
 //    
-//    [self testKVOKeyPath];
+    [self testKVOKeyPath];
     
-    [self testRACKVO];
+//    [self testRACKVO];
 }
 
 - (void)testRACKVOEndlessLoop {
@@ -90,6 +90,8 @@
 
     [self.testKVOModelA addObserver:self forKeyPath:@"objB.adjusted" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
     [self.testKVOModelA addObserver:self forKeyPath:@"objB.name" options:NSKeyValueObservingOptionOld | NSKeyValueObservingOptionNew context:nil];
+    
+//    self.testKVOModelA.objB = modelB1;
 
     // 下面这两种方式去除KVO观察都会出现回调block中self为nil的问题
 //    @weakify(self);
@@ -118,6 +120,16 @@
 
         self.testKVOModelA.objB = modelB2;
     });
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.testKVOModelA.objB = nil;
+    });
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"objB.adjusted"] || [keyPath isEqualToString:@"objB.name"]) {
+        NSLog (@"%@", [NSString stringWithFormat:@"%@: %@", keyPath, change[NSKeyValueChangeNewKey]]);
+    }
 }
 
 - (void)testRACKVO {

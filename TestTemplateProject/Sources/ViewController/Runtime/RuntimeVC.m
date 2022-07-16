@@ -70,39 +70,38 @@
     NSLog(@"obj pointer = %p", obj);
     [(__bridge id)obj speak];
 
-//    NSArray *iVars = [Sark instanceVariables];
-//    NSLog (@"iVars : %@", iVars);
+    NSArray *iVars = [Sark instanceVariables];
+    NSLog (@"iVars : %@", iVars);
     
     // 添加 property 配合关联属性（）
-//    Person* p = [[Person alloc] init];   // 换成子类 President 再看看（子类只打印自己的属性，不打印父类的）
-//    p.cjmAge = 20;
-//    p.cjmName = @"Jiaming Chen";
+    Person* p = [[Person alloc] init];   // 换成子类 President 再看看（子类只打印自己的属性，不打印父类的）
+    p.cjmAge = 20;
+    p.cjmName = @"Jiaming Chen";
 
-//    unsigned int propertyCount = 0;
-//    objc_property_t *propertyList = class_copyPropertyList([p class], &propertyCount);
-//    for (int i = 0; i < propertyCount; i++) {
-//        const char* name = property_getName(propertyList[i]);
-//        const char* attributes = property_getAttributes(propertyList[i]);
-//        NSLog(@"%s %s", name, attributes);
-//    }
-//    objc_property_attribute_t attributes = {
-//        "T@\"NSString\",C,N,V_studentIdentifier",
-//        "",
-//    };
-//    class_addProperty([p class], "studentIdentifier", &attributes, 1);
-//    objc_property_t property = class_getProperty([p class], "studentIdentifier");
-//    NSLog(@"%s %s", property_getName(property), property_getAttributes(property));
-//
-//    propertyList = class_copyPropertyList([p class], &propertyCount);
-//    for (int i = 0; i < propertyCount; i++) {
-//        const char* name = property_getName(propertyList[i]);
-//        const char* attributes = property_getAttributes(propertyList[i]);
-//        NSLog(@"%s %s", name, attributes);
-//    }
+    unsigned int propertyCount = 0;
+    objc_property_t *propertyList = class_copyPropertyList([p class], &propertyCount);
+    for (int i = 0; i < propertyCount; i++) {
+        const char* name = property_getName(propertyList[i]);
+        const char* attributes = property_getAttributes(propertyList[i]);
+        NSLog(@"%s %s", name, attributes);
+    }
+    objc_property_attribute_t attributes = {
+        "T@\"NSString\",C,N,V_studentIdentifier",
+        "",
+    };
+    class_addProperty([p class], "studentIdentifier", &attributes, 1);
+    objc_property_t property = class_getProperty([p class], "studentIdentifier");
+    NSLog(@"%s %s", property_getName(property), property_getAttributes(property));
+
+    propertyList = class_copyPropertyList([p class], &propertyCount);
+    for (int i = 0; i < propertyCount; i++) {
+        const char* name = property_getName(propertyList[i]);
+        const char* attributes = property_getAttributes(propertyList[i]);
+        NSLog(@"%s %s", name, attributes);
+    }
     
-//    NSLog (@"p.age: %ld", p.cjmAge);
-//    NSLog (@"p.studentIdentifier: %@", p.studentIdentifier);
-    
+    NSLog (@"p.age: %ld", p.cjmAge);
+    NSLog (@"p.studentIdentifier: %@", [p valueForKey:@"studentIdentifier"]);
 }
 
 - (void)didReceiveMemoryWarning {

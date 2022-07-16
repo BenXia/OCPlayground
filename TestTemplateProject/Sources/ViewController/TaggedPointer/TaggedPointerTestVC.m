@@ -29,12 +29,14 @@ static void printClassInfo(id obj)
     
 //    [self testTaggedPointerString];
     
-    [self testTaggedPointerString2];
+//    [self testTaggedPointerString2];
     
-//    [self testMultiThreadSafeRelease];
+    [self testMultiThreadSafeRelease];
 }
 
 - (void)testTaggedPointerString {
+    //分析Tagged Pointer之前，我们需要先关闭Tagged Pointer的数据混淆，以方便我们调试程序。通过设置环境变量OBJC_DISABLE_TAG_OBFUSCATION为YES。
+    //还可以通过OBJC_DISABLE_TAGGED_POINTERS设置为YES关闭Tagged Pointer。
     //6位编码表：eilotrm.apdnsIc ufkMShjTRxgC4013bDNvwyUL2O856P-B79AFKEWV_zGJ/HYX
     //5位编码表：eilotrm.apdnsIc ufkMShjTRxgC4013
 //    self.videoPath = [NSString stringWithFormat:@"%@", @"中"];  // 1个字节的 unicode码字符不能使用 tagged pointer

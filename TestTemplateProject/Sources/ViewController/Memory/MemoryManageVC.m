@@ -61,13 +61,13 @@ void printClassInfo(id obj)
     
 //    [self testPropertyTwo];
     
-    [self testHashTableHashMapPointerArray];
+//    [self testHashTableHashMapPointerArray];
     
 //    [self testAutoVarARC];
     
 //    [self testBlockMemoryManage];
     
-//    [self testArgMemoryManage];
+    [self testArgMemoryManage];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -109,7 +109,7 @@ void printClassInfo(id obj)
     [(NSMutableString *)self.testStrongKey appendString:@" append after insert"];
     
     NSLog (@"self.hashTable: %@\nself.mapTable: %@\nself.pointerArray: %@", self.hashTable, self.mapTable, self.pointerArray);
-    //NSLog (@"self.hashTable: %@\nself.mapTable: %@\nself.pointerArray: %@ %@", self.hashTable, self.mapTable, self.pointerArray, (__bridge id)[self.pointerArray pointerAtIndex:0]);
+//    NSLog (@"self.hashTable: %@\nself.mapTable: %@\nself.pointerArray: %@ %@", self.hashTable, self.mapTable, self.pointerArray, (__bridge id)[self.pointerArray pointerAtIndex:0]);
     
     
     self.testWeakObj = nil;
@@ -146,6 +146,8 @@ void printClassInfo(id obj)
 }
 
 - (void)testArgMemoryManage {
+    //分析Tagged Pointer之前，我们需要先关闭Tagged Pointer的数据混淆，以方便我们调试程序。通过设置环境变量OBJC_DISABLE_TAG_OBFUSCATION为YES。
+    //还可以通过OBJC_DISABLE_TAGGED_POINTERS设置为YES关闭Tagged Pointer。
     //6位编码表：eilotrm.apdnsIc ufkMShjTRxgC4013bDNvwyUL2O856P-B79AFKEWV_zGJ/HYX
     //5位编码表：eilotrm.apdnsIc ufkMShjTRxgC4013
 //    self.videoPath = [NSString stringWithFormat:@"%@", @"中"];  // 1个字节的 unicode码字符不能使用 tagged pointer
@@ -176,10 +178,10 @@ void printClassInfo(id obj)
     printClassInfo(videoPath);
     
 //  TestTemplateProject[18209:1891263] self.videoPath: (null)
-//  TestTemplateProject[18209:1891263] self.videoPath: Abcdef-1
-//  TestTemplateProject[18209:1891263] self:nil - superClass:nil
-//  TestTemplateProject[18209:1891263] self:NSTaggedPointerString - superClass:NSString
-//  打开 scheme 设置中的 Zombie Object 没有出现 _NSZombie_NSTaggedPointerString 类名，出名传参数压栈默认都会 strong 强引用
+//  TestTemplateProject[18209:1891263] videoPath: eilotrm.ap1
+//  TestTemplateProject[18209:1891263] pointer:0x0 - self:nil - superClass:nil
+//  TestTemplateProject[18209:1891263] pointer:0x9488510100bef80d - self:NSTaggedPointerString - superClass:NSString
+//  打开 scheme 设置中的 Zombie Object 没有出现 _NSZombie_NSTaggedPointerString 类名，说明传参数压栈默认都会 strong 强引用
 }
 
 @end

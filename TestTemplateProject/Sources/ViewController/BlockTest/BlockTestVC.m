@@ -22,9 +22,9 @@
     
 //    [self testRecursiveCall_1];
     
-    //[self testRecursiveCall_2];
+//    [self testRecursiveCall_2];
     
-    //[self testRecursiveCall_3];
+//    [self testRecursiveCall_3];
     
 //    [self testRecursiveLock];
     
@@ -32,37 +32,32 @@
     
 //    [self testWhetherBlockCopy];
     
-    [self testWhetherBlockCopy2];
+//    [self testWhetherBlockCopy2];
     
 //    [self testBlockCaptureObjectOnlyInStack];
     
 //    [self testBlockCaptureObjectAndRetainWhenCopyToHeap];
     
-//    [self testBlockCaptureWeakObjectAndCopyToHeap];
+    [self testBlockCaptureWeakObjectAndCopyToHeap];
 }
 
 - (void)testRecursiveCall_1 {
     static void (^p)(int) = nil;
     
-    __weak typeof(p) weakP = p;
+    //__weak typeof(p) weakP = p;
     
     p = ^(int i){
-        __strong typeof(p) inStrongP = weakP;
+        //__strong typeof(p) inStrongP = weakP;
         if (i > 0) {
             NSLog(@"Hello, world!");
-            inStrongP(i - 1);
+            //inStrongP(i - 1);
+            p(i - 1);
         }
     };
     
-    weakP = p;
+    //weakP = p;
     
     p(2);
-    
-//    void (^operation)(BOOL) = ^(BOOL flag){
-//        if (flag) {
-//            operation();
-//        }
-//    }
 }
 
 - (void)testRecursiveCall_2 {

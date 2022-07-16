@@ -15,7 +15,7 @@
 @implementation ARCObject
 
 - (void)dealloc {
-    NSLog (@"MRCObject dealloc");
+    NSLog (@"ARCObject dealloc");
 }
 
 @end
