@@ -9,7 +9,7 @@ import UIKit
 
 @objc(SwiftBenTestModel) class SwiftBenTestModel : NSObject {
     @objc dynamic var qingqingWhateverId: String = ""
-    @objc var adjusted: Bool = false
+    @objc var adjusted: Bool = false   // dynamic
     @objc var startTime: Int64 = 0
     @objc var endTime: Int64 = 0
     
@@ -19,7 +19,7 @@ import UIKit
                "adjusted: \(adjusted)\n" +
                "startTime: \(startTime)\n" +
                "endTime: \(endTime)\n" +
-              "================================\n"
+               "================================\n"
     }
 }
 

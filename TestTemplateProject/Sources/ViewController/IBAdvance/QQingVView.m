@@ -7,6 +7,7 @@
 
 #import "QQingVView.h"
 
+IB_DESIGNABLE
 @implementation QQingVView
 
 - (instancetype)initWithCoder:(NSCoder *)coder {

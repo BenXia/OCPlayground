@@ -46,6 +46,7 @@
 		334B7A5E1F9E492400F40D7F /* MemoryManageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 334B7A5C1F9E492400F40D7F /* MemoryManageVC.xib */; };
 		336ADCF92881915100ECEE25 /* Case7SuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C08FD2566A74D00C54CE3 /* Case7SuperClass.m */; };
 		337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */; };
+		338718E52883D4F000E78416 /* UIView+UIView_InspectableExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = B56895B0263955F900802E37 /* UIView+UIView_InspectableExtend.m */; };
 		338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0641F530A8400E8DD3E /* JSONToModelVC.m */; };
 		338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */; };
 		338CD75621A1B20100EC520C /* ARCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338CD75421A1B20100EC520C /* ARCVC.m */; };
@@ -164,7 +165,6 @@
 		B56480201EF92071009CF536 /* UIView+Hierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = B564801E1EF92071009CF536 /* UIView+Hierarchy.m */; };
 		B568834E2670647F00B1EED9 /* TestButtonQQingUIStandardVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56883482670647F00B1EED9 /* TestButtonQQingUIStandardVC.xib */; };
 		B56895B8263955F900802E37 /* QQingCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56895AE263955F900802E37 /* QQingCustomView.xib */; };
-		B56895B9263955F900802E37 /* UIView+UIView_InspectableExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = B56895B0263955F900802E37 /* UIView+UIView_InspectableExtend.m */; };
 		B56895BA263955F900802E37 /* Test2021QQingUIVC.m in Sources */ = {isa = PBXBuildFile; fileRef = B56895B2263955F900802E37 /* Test2021QQingUIVC.m */; };
 		B56895BB263955F900802E37 /* QQingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B56895B3263955F900802E37 /* QQingButton.m */; };
 		B56895BC263955F900802E37 /* Test2021QQingUIVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = B56895B4263955F900802E37 /* Test2021QQingUIVC.xib */; };
@@ -1677,7 +1677,7 @@
 				33454B191F7614B200DC3F14 /* CategoryVC.m in Sources */,
 				B5190A192320D77B00A648D5 /* SwiftBenTestView.swift in Sources */,
 				B56480121EF91FF9009CF536 /* MBProgressHUD.m in Sources */,
-				B56895B9263955F900802E37 /* UIView+UIView_InspectableExtend.m in Sources */,
+				338718E52883D4F000E78416 /* UIView+UIView_InspectableExtend.m in Sources */,
 				B56895BB263955F900802E37 /* QQingButton.m in Sources */,
 				339682AC22EB58F000EB32D8 /* CoreTextTestVC.swift in Sources */,
 				33144EFF1EF05418006D27AC /* NSString+Size.m in Sources */,

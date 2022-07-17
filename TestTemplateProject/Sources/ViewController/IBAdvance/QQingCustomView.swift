@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MapKit
 
 @IBDesignable @objc(QQingCustomView) class QQingCustomView: UIView {
 
@@ -21,12 +22,22 @@ import UIKit
         super.init(coder: aDecoder)
         customSetup()
     }
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        customSetup()
+//    }
+//    override func prepareForInterfaceBuilder() {
+//        super.prepareForInterfaceBuilder()
+//        customSetup()
+//    }
     @IBInspectable @objc var testText: String? {
         get {
             return testLabel.text
         }
         set (testText) {
-            testLabel.text = testText
+            if let testLabel2 = testLabel {
+                testLabel2.text = testText
+            }
         }
     }
     @IBInspectable @objc var cornerValue: CGFloat {
@@ -34,11 +45,13 @@ import UIKit
             return self.view.layer.cornerRadius
         }
         set (cornerValue) {
-            self.view.layer.cornerRadius = cornerValue
+            if let view2 = self.view {
+                view2.layer.cornerRadius = cornerValue
+            }
         }
     }
     func customSetup() {
-//      view = (Bundle.main.loadNibNamed("MyCustomView", owner: self, options: nil)?.first as! UIView)
+//        view = (Bundle.main.loadNibNamed("QQingCustomView", owner: self, options: nil)?.first as! UIView)
         view = loadViewFromNibAction()
         view.frame = bounds
         view.autoresizingMask = [.flexibleHeight, .flexibleWidth]

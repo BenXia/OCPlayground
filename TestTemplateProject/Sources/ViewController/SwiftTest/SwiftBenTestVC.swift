@@ -49,16 +49,18 @@ extension Dictionary {
 //        self.tempTestFunc()
         
 //        self.testOptionalType()
+        
 //        self.testForceCastBasicDataType()
         
-//        self.testReactiveSwiftBasic()
-//
+        self.testReactiveSwiftBasic()
+
 //        self.testReactiveObjCBasic()
-//
+
 //        self.testSwiftBlock()
-//        
+        
 //        self.testSwiftArgDefaultValue("Wang")
-        self.testSwiftArgDefaultValue(age: 13)
+        
+//        self.testSwiftArgDefaultValue(age: 13)
     }
     
     func tempTestFunc() {
@@ -81,6 +83,40 @@ extension Dictionary {
 //        self.pushVC(vc);
         
         //VCSwitchHandler.sharedInstance()?.pushWebVC(withUrl: String.init(format: kStudent_ClassHourV2ContractURLString, "12345", 67890) as String, animated: true)
+    }
+    
+    func testOptionalType() {
+        let dic: Dictionary = [ "1": 2, "3": 3, "4": 5 ]
+        let t1 = dic.valuesForKeys(["1", "4"]).last
+        let t2 = dic.valuesForKeys(["3", "9"]).last
+        let t3 = dic.valuesForKeys([]).last
+
+        print("t1: \(String(describing: t1!!))")
+        print("t2: \(String(describing: t2!))")
+        print("t3: \(String(describing: t3))")
+        
+//        t1: 5
+//        t2: nil
+//        t3: nil
+
+        //(lldb) po t1
+        //▿ Optional<Optional<Int>>
+        //  ▿ some : Optional<Int>
+        //    - some : 5
+        //
+        //(lldb) po t2
+        //▿ Optional<Optional<Int>>
+        //  - some : nil
+        //
+        //(lldb) po t3
+        //nil
+        //
+        //(lldb) p t1
+        //(Int??) $R38 = 5
+        //(lldb) p t2
+        //(Int??) $R40 = nil
+        //(lldb) p t1!
+        //(Int?) $R42 = 5
     }
     
     func testForceCastBasicDataType() {
@@ -128,40 +164,6 @@ extension Dictionary {
         print("\(ai) + \(bi) + \(ci)")
     }
     
-    func testOptionalType() {
-        let dic: Dictionary = [ "1": 2, "3": 3, "4": 5 ]
-        let t1 = dic.valuesForKeys(["1", "4"]).last
-        let t2 = dic.valuesForKeys(["3", "9"]).last
-        let t3 = dic.valuesForKeys([]).last
-
-        print("t1: \(String(describing: t1!!))")
-        print("t2: \(String(describing: t2!))")
-        print("t3: \(String(describing: t3))")
-        
-//        t1: 5
-//        t2: nil
-//        t3: nil
-
-        //(lldb) po t1
-        //▿ Optional<Optional<Int>>
-        //  ▿ some : Optional<Int>
-        //    - some : 5
-        //
-        //(lldb) po t2
-        //▿ Optional<Optional<Int>>
-        //  - some : nil
-        //
-        //(lldb) po t3
-        //nil
-        //
-        //(lldb) p t1
-        //(Int??) $R38 = 5
-        //(lldb) p t2
-        //(Int??) $R40 = nil
-        //(lldb) p t1!
-        //(Int?) $R42 = 5
-    }
-    
     func testReactiveSwiftBasic() {
 //        let model: SwiftBenTestModel = SwiftBenTestModel.init()
 //        model.qingqingWhateverId = "11818212"
@@ -173,9 +175,8 @@ extension Dictionary {
 //        view.refreshUI(model: model)
 //
 //        self.view.addSubview(view)
-//
-//
-//        // 第一种 swift model 的 KVO 观察实现方式（需要注意析构时候移除观察者）（属性需要 @objc dynamic 修饰）
+
+        // 第一种 swift model 的 KVO 观察实现方式（需要注意析构时候移除观察者）（属性需要 @objc dynamic 修饰）
 //        self.swiftKVOModel = SwiftBenTestModel.init()
 //        self.swiftKVOModel.qingqingWhateverId = "11818212"
 //        self.swiftKVOModel.adjusted = false
@@ -190,110 +191,121 @@ extension Dictionary {
         
         
         // 第二种 swift model 的 KVO 观察实现方式（属性需要 @objc dynamic 修饰）（感觉比第一种方式方便一点，代码集中一点，观察者对象释放时候就会自动解除观察（invalidate() will be called automatically when an NSKeyValueObservation is deinited））
-        let swiftKVOModel2 = SwiftBenTestModel.init()
-        var observer1: NSKeyValueObservation?
-        var observer2: NSKeyValueObservation?
-
-        swiftKVOModel2.qingqingWhateverId = "11818212"
-        swiftKVOModel2.adjusted = false
-        swiftKVOModel2.startTime = 1563765226000
-        swiftKVOModel2.endTime = 1563765226000
-
-        observer1 = swiftKVOModel2.observe(\SwiftBenTestModel.qingqingWhateverId, options: [.old, .new]) { (model, change) in
-            if let old = change.oldValue {
-                print("qingqingWhateverId oldValue: \(old)")
-            }
-            if let new = change.newValue {
-                print("qingqingWhateverId newValue: \(new)")
-            }
-        }
-        observer2 = swiftKVOModel2.observe(\SwiftBenTestModel.adjusted, options: [.old, .new]) { (model, change) in
-            if let old = change.oldValue {
-                print("adjusted oldValue: \(old)")
-            }
-            if let new = change.newValue {
-                print("adjusted newValue: \(new)")
-            }
-        }
-
-        swiftKVOModel2.qingqingWhateverId = "22222222"
-        swiftKVOModel2.adjusted = true
-        self.swiftKVOModel2 = swiftKVOModel2
-        self.observer1 = observer1
-        self.observer2 = observer2
+//        let swiftKVOModel2 = SwiftBenTestModel.init()
+//        var observer1: NSKeyValueObservation?
+//        var observer2: NSKeyValueObservation?
+//
+//        swiftKVOModel2.qingqingWhateverId = "11818212"
+//        swiftKVOModel2.adjusted = false
+//        swiftKVOModel2.startTime = 1563765226000
+//        swiftKVOModel2.endTime = 1563765226000
+//
+//        observer1 = swiftKVOModel2.observe(\SwiftBenTestModel.qingqingWhateverId, options: [.old, .new]) { (model, change) in
+//            if let old = change.oldValue {
+//                print("qingqingWhateverId oldValue: \(old)")
+//            }
+//            if let new = change.newValue {
+//                print("qingqingWhateverId newValue: \(new)")
+//            }
+//        }
+//        observer2 = swiftKVOModel2.observe(\SwiftBenTestModel.adjusted, options: [.old, .new]) { (model, change) in
+//            if let old = change.oldValue {
+//                print("adjusted oldValue: \(old)")
+//            }
+//            if let new = change.newValue {
+//                print("adjusted newValue: \(new)")
+//            }
+//        }
+//
+//        swiftKVOModel2.qingqingWhateverId = "22222222"
+//        swiftKVOModel2.adjusted = true
+//        self.swiftKVOModel2 = swiftKVOModel2
+//        self.observer1 = observer1
+//        self.observer2 = observer2
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+//            guard let `self` = self else { return }
+//
+//            self.swiftKVOModel2.qingqingWhateverId = "33333333"
+//            self.swiftKVOModel2.adjusted = false
+//
+//            ///invalidate() will be called automatically when an NSKeyValueObservation is deinited
+//            self.observer1 = nil
+//            self.observer2 = nil
+//
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+//                guard let `self` = self else { return }
+//
+//                self.swiftKVOModel2.qingqingWhateverId = "44444444"
+//                self.swiftKVOModel2.adjusted = true
+//
+//            }
+//        }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            guard let `self` = self else { return }
-            
-            self.swiftKVOModel2.qingqingWhateverId = "33333333"
-            self.swiftKVOModel2.adjusted = false
-            
-            ///invalidate() will be called automatically when an NSKeyValueObservation is deinited
-            self.observer1 = nil
-            self.observer2 = nil
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-                guard let `self` = self else { return }
-                
-                self.swiftKVOModel2.qingqingWhateverId = "44444444"
-                self.swiftKVOModel2.adjusted = true
-                
-            }
-        }
-        
-        // 第三种 oc model 的关联属性也可以使用 ReactiveSwift 的 api 实现 KVO（内部使用了 object.addObserver(,forKeyPath:,options:,context:))
+        // 第三种 swift model 也可以使用 ReactiveSwift 的 api 实现 KVO（属性需要 @objc dynamic 修饰）（内部使用了 object.addObserver(,forKeyPath:,options:,context:))
 //        let kvoModel: BenTestModelA = BenTestModelA.init()
-//        kvoModel.reactive.producer(forKeyPath: "isSelected").startWithValues { (value) in
+//        kvoModel.reactive.producer(forKeyPath: "adjusted").startWithValues { (value) in
 //            if value != nil {
 //                print(value!)
 //            }
 //            //print(kvoModel.isSelected)
 //        }
 //
-//        kvoModel.isSelected = false
-//        kvoModel.isSelected = true
-
+//        kvoModel.adjusted = false
+//        kvoModel.adjusted = true
         
-        // 第四种 oc model 普通属性，使用 ReactiveSwift 的 api 实现 KVO（内部使用了 object.addObserver(,forKeyPath:,options:,context:))
-        let model2: BenTestModelOCA = BenTestModelOCA.init()
-        model2.objB = BenTestModelOCB.init()
-        let oldB = model2.objB;
-        model2.reactive.producer(forKeyPath: "adjusted").startWithValues { (value) in
-            print("A ajusted: \(value ?? "")")
-        }
-        model2.reactive.producer(forKeyPath: "name").startWithValues { (value) in
-            print("A name: \(value ?? "")")
-        }
-        model2.reactive.producer(forKeyPath: "objB.name").startWithValues { (value) in
-            print("A objB name: \(value ?? "")")
-        }
-//        model2.addObserver(self, forKeyPath: "objB.name", options: [.new, .old], context: nil)
-
-        model2.adjusted = false
-        model2.adjusted = true
-        model2.name = "bbb"
-        model2.name = "ccc"
-        model2.objB.name = "objB-name"
-        model2.objB = BenTestModelOCB.init()
-        oldB.name = "oldObjB-name"
-
-        // 第五种 swift model 使用 MutableProperty 方便实现 KVO 观察
-//        let model3: BenTestModelB = BenTestModelB.init()
-//        model3.adjusted.producer.startWithValues { (value) in
-//            print("B ajusted: \(value)")
-//        }
-//        model3.name.producer.startWithValues { (value) in
-//            print("B name: \(value)")
-//        }
-//        model3.ageModel.age.producer.startWithValues { (value) in
-//            print("B ageModel age: \(value)")
+        // 第四种 oc model 的关联属性也可以使用 ReactiveSwift 的 api 实现 KVO（属性需要 @objc dynamic 修饰）（内部使用了 object.addObserver(,forKeyPath:,options:,context:))
+//        let kvoModelX: BenTestModelOCA = BenTestModelOCA.init()
+//        kvoModelX.reactive.producer(forKeyPath: "isSelected").startWithValues { (value) in
+//            if value != nil {
+//                print(value!)
+//            }
+//            //print(kvoModel.isSelected)
 //        }
 //
-//        model3.adjusted.value = false
-//        model3.adjusted.value = true
-//        model3.name.value = "BBB"
-//        model3.name.value = "CCC"
-//        model3.ageModel.age.value = 20
+//        kvoModelX.isSelected = false
+//        kvoModelX.isSelected = true
+
+        // 第五种 oc model 普通属性，使用 ReactiveSwift 的 api 实现 KVO（内部使用了 object.addObserver(,forKeyPath:,options:,context:))
+//        let model2: BenTestModelOCA = BenTestModelOCA.init()
+//        model2.objB = BenTestModelOCB.init()
+//        let oldB = model2.objB;
+//        model2.reactive.producer(forKeyPath: "adjusted").startWithValues { (value) in
+//            print("A ajusted: \(value ?? "")")
+//        }
+//        model2.reactive.producer(forKeyPath: "name").startWithValues { (value) in
+//            print("A name: \(value ?? "")")
+//        }
+//        model2.reactive.producer(forKeyPath: "objB.name").startWithValues { (value) in
+//            print("A objB name: \(value ?? "")")
+//        }
+//        model2.addObserver(self, forKeyPath: "objB.name", options: [.new, .old], context: nil)
+//
+//        model2.adjusted = false
+//        model2.adjusted = true
+//        model2.name = "bbb"
+//        model2.name = "ccc"
+//        model2.objB.name = "objB-name"
+//        model2.objB = BenTestModelOCB.init()
+//        oldB.name = "oldObjB-name"
+
+        // 第六种 swift model 使用 MutableProperty 方便实现 KVO 观察
+        let model3: BenTestModelB = BenTestModelB.init()
+        model3.adjusted.producer.startWithValues { (value) in
+            print("B ajusted: \(value)")
+        }
+        model3.name.producer.startWithValues { (value) in
+            print("B name: \(value)")
+        }
+        model3.ageModel.age.producer.startWithValues { (value) in
+            print("B ageModel age: \(value)")
+        }
+
+        model3.adjusted.value = false
+        model3.adjusted.value = true
+        model3.name.value = "BBB"
+        model3.name.value = "CCC"
+        model3.ageModel.age.value = 20
 
 //        BasicErrorHandler.sharedInstance()?.showToast(withAllError: NSError.init(domain: kErrorDomainPB_GeneralRequest, code: ErrorCodeCommon._Whatever.rawValue, userInfo: [ "ErrorUserInfoDict_ErrorMessageKey": "网络不给力，请稍候再试"]))
     }
@@ -406,7 +418,7 @@ extension Dictionary {
 }
 
 @objc(BenTestModelA) class BenTestModelA : NSObject {
-    @objc var adjusted: Bool = false
+    @objc dynamic var adjusted: Bool = false  // dynamic
     @objc var name: String = "a"
     @objc var ageModel: BenTestInnerModel = BenTestInnerModel()
 }
