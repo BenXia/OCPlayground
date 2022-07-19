@@ -13,4 +13,6 @@
 @property (nonatomic, copy) NSString *cjmName;
 @property (nonatomic, assign) NSUInteger cjmAge;
 
+- (void)test;
+
 @end

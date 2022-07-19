@@ -74,9 +74,16 @@
     NSLog (@"iVars : %@", iVars);
     
     // 添加 property 配合关联属性（）
-    Person* p = [[Person alloc] init];   // 换成子类 President 再看看（子类只打印自己的属性，不打印父类的）
+    Person* p = [[President alloc] init];   // 换成子类 President 再看看（子类只打印自己的属性，不打印父类的）
     p.cjmAge = 20;
     p.cjmName = @"Jiaming Chen";
+    
+    
+    //class: 任何一个类调用class方法：目的是获取方法调用者的类型
+    //superclass: 任何一个类调用superclass方法：目的是获取方法调用者的父类
+    //super: 不是指针，编译器指示符，表示去调用父类的方法，本质还是当前对象去调用父类方法
+    //⚠️注意⚠️：super不是父类对象，仅仅是一个指向父类方法标志
+    [p test];   // self、super、superclass、class的区别
 
     unsigned int propertyCount = 0;
     objc_property_t *propertyList = class_copyPropertyList([p class], &propertyCount);
@@ -101,7 +108,7 @@
     }
     
     NSLog (@"p.age: %ld", p.cjmAge);
-    NSLog (@"p.studentIdentifier: %@", [p valueForKey:@"studentIdentifier"]);
+    //NSLog (@"p.studentIdentifier: %@", [p valueForKey:@"studentIdentifier"]);
 }
 
 - (void)didReceiveMemoryWarning {

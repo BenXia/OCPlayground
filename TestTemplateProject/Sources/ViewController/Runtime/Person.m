@@ -10,4 +10,13 @@
 
 @implementation Person
 
+- (void)test {
+    NSLog(@"self class: %p %p %p %p %@ %@ %@ %@",
+          [self class], [self superclass], [super class], [super superclass],
+          NSStringFromClass([self class]),
+          NSStringFromClass([self superclass]),
+          NSStringFromClass([super class]),
+          NSStringFromClass([super superclass]));
+}
+
 @end

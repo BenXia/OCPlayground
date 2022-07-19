@@ -72,10 +72,10 @@
     
 //    [self testGCDDispatchGroup];
     
-//    [self testGCDSomeAPI];
+    [self testGCDSomeAPI];
     
     // 经典的多读一写互斥问题
-    [self testGCDReadWriteHandle];
+//    [self testGCDReadWriteHandle];
 
 //    // 多线程数据竞争问题（多个线程更新相同的资源会导致数据的不一致）
 //    [self testMultiThreadSafe];
