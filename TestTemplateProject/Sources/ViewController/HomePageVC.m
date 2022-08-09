@@ -8,6 +8,7 @@
 
 #import "HomePageVC.h"
 #import "PlaygroundVC.h"
+#import "CrashTestVC.h"
 #import "TimeSequenceVC.h"
 #import "ClassPropertyVC.h"
 #import "SingletonVC.h"
@@ -98,6 +99,11 @@ static const CGFloat kTableViewCellHeight = 60.0f;
     HomePageCellModel *model1 = [HomePageCellModel modelWithTitle:@"操场"
                                                          subTitle:@"Do whatever you want here"
                                                           vcClass:[PlaygroundVC class]
+                                                     navigationVC:self.navigationController];
+    
+    HomePageCellModel *model02 = [HomePageCellModel modelWithTitle:@"crash 测试"
+                                                         subTitle:@"测试点击 cell 触发 dimissVC"
+                                                          vcClass:[CrashTestVC class]
                                                      navigationVC:self.navigationController];
     
     HomePageCellModel *model2 = [HomePageCellModel modelWithTitle:@"时序"
@@ -216,7 +222,7 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                            vcClass:[Test2021QQingUIVC class]
                                                       navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, model20, model21, model22, model23, model24, nil];
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model02, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, model20, model21, model22, model23, model24, nil];
     
 //    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }
@@ -318,6 +324,12 @@ static const CGFloat kTableViewCellHeight = 60.0f;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (indexPath.row == 1) {
+        CrashTestVC *vc = [[CrashTestVC alloc] init];
+        vc.modalPresentationStyle = UIModalPresentationFullScreen;
+        [self presentViewController:vc animated:YES completion:^{}];
+        return;
+    }
     Block clickHandleBlock = [self.dataSourceArray objectAtIndex:indexPath.row].didSelectCellHandleBlock;
     if (clickHandleBlock) {
         clickHandleBlock();

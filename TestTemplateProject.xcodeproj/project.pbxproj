@@ -74,6 +74,13 @@
 		3399DF0B21B973A7006C6B85 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DF0A21B973A7006C6B85 /* Aspects.m */; };
 		33E14FC71F7972010042F729 /* MultiThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E14FC51F7972010042F729 /* MultiThreadVC.m */; };
 		33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E14FC61F7972010042F729 /* MultiThreadVC.xib */; };
+		33E3D9C028A2474500BD0E8D /* CrashTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E3D9BE28A2474500BD0E8D /* CrashTestVC.m */; };
+		33E3D9C128A2474500BD0E8D /* CrashTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E3D9BF28A2474500BD0E8D /* CrashTestVC.xib */; };
+		33E3D9C328A24E3C00BD0E8D /* SwiftMethodDispatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E3D9C228A24E3C00BD0E8D /* SwiftMethodDispatch.png */; };
+		33E3D9C528A2508100BD0E8D /* TableDispatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E3D9C428A2508100BD0E8D /* TableDispatch.png */; };
+		33E3D9C728A251F100BD0E8D /* MessageDispatch.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E3D9C628A251F100BD0E8D /* MessageDispatch.png */; };
+		33E3D9CA28A2545900BD0E8D /* LocationMatters.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E3D9C828A2545900BD0E8D /* LocationMatters.png */; };
+		33E3D9CB28A2545900BD0E8D /* ModifierOverview.png in Resources */ = {isa = PBXBuildFile; fileRef = 33E3D9C928A2545900BD0E8D /* ModifierOverview.png */; };
 		33F756231F5C498900C7321F /* BOOLTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33F756211F5C498900C7321F /* BOOLTestVC.m */; };
 		33F756241F5C498900C7321F /* BOOLTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F756221F5C498900C7321F /* BOOLTestVC.xib */; };
 		593D4358C4D7BA6806ECE65A /* Pods_TestTemplateProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B92F4AC314A3F1E4C8C51367 /* Pods_TestTemplateProject.framework */; };
@@ -302,6 +309,14 @@
 		33E14FC41F7972010042F729 /* MultiThreadVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiThreadVC.h; sourceTree = "<group>"; };
 		33E14FC51F7972010042F729 /* MultiThreadVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiThreadVC.m; sourceTree = "<group>"; };
 		33E14FC61F7972010042F729 /* MultiThreadVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MultiThreadVC.xib; sourceTree = "<group>"; };
+		33E3D9BD28A2474500BD0E8D /* CrashTestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CrashTestVC.h; sourceTree = "<group>"; };
+		33E3D9BE28A2474500BD0E8D /* CrashTestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CrashTestVC.m; sourceTree = "<group>"; };
+		33E3D9BF28A2474500BD0E8D /* CrashTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CrashTestVC.xib; sourceTree = "<group>"; };
+		33E3D9C228A24E3C00BD0E8D /* SwiftMethodDispatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SwiftMethodDispatch.png; sourceTree = "<group>"; };
+		33E3D9C428A2508100BD0E8D /* TableDispatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TableDispatch.png; sourceTree = "<group>"; };
+		33E3D9C628A251F100BD0E8D /* MessageDispatch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MessageDispatch.png; sourceTree = "<group>"; };
+		33E3D9C828A2545900BD0E8D /* LocationMatters.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LocationMatters.png; sourceTree = "<group>"; };
+		33E3D9C928A2545900BD0E8D /* ModifierOverview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ModifierOverview.png; sourceTree = "<group>"; };
 		33F756201F5C498900C7321F /* BOOLTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOOLTestVC.h; sourceTree = "<group>"; };
 		33F756211F5C498900C7321F /* BOOLTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOOLTestVC.m; sourceTree = "<group>"; };
 		33F756221F5C498900C7321F /* BOOLTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BOOLTestVC.xib; sourceTree = "<group>"; };
@@ -624,6 +639,7 @@
 				B50394C11EEE5FC30016FA97 /* HomePageVC.m */,
 				B50394C21EEE5FC30016FA97 /* HomePageVC.xib */,
 				B50394CF1EEE61E60016FA97 /* Playground */,
+				33E3D9BC28A2471D00BD0E8D /* CrashTest */,
 				B50394BE1EEE5F9D0016FA97 /* KVONotificationTimeSequence */,
 				B50711CD1F163187008EC4AE /* ClassProperty */,
 				33102E401F496997008CCD64 /* Singleton */,
@@ -879,6 +895,16 @@
 			path = MultiThread;
 			sourceTree = "<group>";
 		};
+		33E3D9BC28A2471D00BD0E8D /* CrashTest */ = {
+			isa = PBXGroup;
+			children = (
+				33E3D9BD28A2474500BD0E8D /* CrashTestVC.h */,
+				33E3D9BE28A2474500BD0E8D /* CrashTestVC.m */,
+				33E3D9BF28A2474500BD0E8D /* CrashTestVC.xib */,
+			);
+			path = CrashTest;
+			sourceTree = "<group>";
+		};
 		33F7561F1F5C496F00C7321F /* BOOL */ = {
 			isa = PBXGroup;
 			children = (
@@ -973,6 +999,11 @@
 				B5E95732253EBC7700C722D4 /* BenTestModelOCB.m */,
 				B5053B982603877D007002BB /* BenTestModelOCC.h */,
 				B5053B972603877D007002BB /* BenTestModelOCC.m */,
+				33E3D9C228A24E3C00BD0E8D /* SwiftMethodDispatch.png */,
+				33E3D9C428A2508100BD0E8D /* TableDispatch.png */,
+				33E3D9C628A251F100BD0E8D /* MessageDispatch.png */,
+				33E3D9C828A2545900BD0E8D /* LocationMatters.png */,
+				33E3D9C928A2545900BD0E8D /* ModifierOverview.png */,
 			);
 			path = SwiftTest;
 			sourceTree = "<group>";
@@ -1511,6 +1542,7 @@
 			files = (
 				331B4D2C22ED819E00BE1A47 /* RACMLKVC.xib in Resources */,
 				339682ED22EB5B5400EB32D8 /* blank_icon_contacts@3x.png in Resources */,
+				33E3D9C128A2474500BD0E8D /* CrashTestVC.xib in Resources */,
 				B56895BC263955F900802E37 /* Test2021QQingUIVC.xib in Resources */,
 				B54337F41F5E4CC70055AECE /* MJExtensionTest.json in Resources */,
 				B50394C91EEE5FF70016FA97 /* TimeSequenceVC.xib in Resources */,
@@ -1520,6 +1552,7 @@
 				33345C9622EA17A5008EB89F /* TextViewTestVC.xib in Resources */,
 				331A8C591F5EF09A00198ED9 /* JSONModelSubClassOneTest.json in Resources */,
 				333D51241F6E3F5F00FA084F /* RunLoopVC.xib in Resources */,
+				33E3D9C528A2508100BD0E8D /* TableDispatch.png in Resources */,
 				B595329D1F5E6D40007B2F30 /* MantleSubClassTwoTest.json in Resources */,
 				3319AED822EDD49D001722B6 /* icon_fsyb_zhankai@3x.png in Resources */,
 				B5633FC31F5FB14700A72567 /* MJExtensionExceptionOneTest.json in Resources */,
@@ -1533,6 +1566,7 @@
 				B53C63B422E83E7E0066F492 /* TextImageVC.xib in Resources */,
 				33102E3C1F496083008CCD64 /* RuntimeVC.xib in Resources */,
 				B5633FCF1F5FD02700A72567 /* YYModelExceptionOneTest.json in Resources */,
+				33E3D9CB28A2545900BD0E8D /* ModifierOverview.png in Resources */,
 				B51C08DD2566993C00C54CE3 /* LoadInitializeVC.xib in Resources */,
 				3319AED922EDD49D001722B6 /* icon_fsyb_zhankai@2x.png in Resources */,
 				33F756241F5C498900C7321F /* BOOLTestVC.xib in Resources */,
@@ -1543,6 +1577,7 @@
 				B5633FC41F5FB14700A72567 /* MJExtensionExceptionThreeTest.json in Resources */,
 				33454B1A1F7614B200DC3F14 /* CategoryVC.xib in Resources */,
 				B54337B81F5E46BB0055AECE /* JSONModelUsageVC.xib in Resources */,
+				33E3D9C728A251F100BD0E8D /* MessageDispatch.png in Resources */,
 				B54CC647257E53B600594DA9 /* ContainerLeftChildVC.xib in Resources */,
 				B54337E01F5E4CBA0055AECE /* JSONModelTest.json in Resources */,
 				B5633FD71F5FEF4A00A72567 /* YYModelModelArrayTest.json in Resources */,
@@ -1555,6 +1590,7 @@
 				331A8C561F5EF09A00198ED9 /* JSONModelExceptionOneTest.json in Resources */,
 				B5633FD31F5FD02700A72567 /* YYModelSubClassTwoTest.json in Resources */,
 				B5633FD11F5FD02700A72567 /* YYModelExceptionTwoTest.json in Resources */,
+				33E3D9CA28A2545900BD0E8D /* LocationMatters.png in Resources */,
 				331A8C5A1F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json in Resources */,
 				330F7C021ED334380009280A /* Assets.xcassets in Resources */,
 				B541E7FB2028287400D23093 /* SafePushTestVC.xib in Resources */,
@@ -1570,6 +1606,7 @@
 				B54337BD1F5E46D70055AECE /* MJExtensionUsageVC.xib in Resources */,
 				B5633FD51F5FD1F500A72567 /* MJExtensionModelArrayTest.json in Resources */,
 				B5190A092320D66B00A648D5 /* BlockTestVC.xib in Resources */,
+				33E3D9C328A24E3C00BD0E8D /* SwiftMethodDispatch.png in Resources */,
 				B50394D41EEE61F80016FA97 /* PlaygroundVC.xib in Resources */,
 				B5633FC51F5FB14700A72567 /* MJExtensionExceptionTwoTest.json in Resources */,
 				B5190A152320D77B00A648D5 /* SwiftBenTestVC.xib in Resources */,
@@ -1747,6 +1784,7 @@
 				B51C08DC2566993C00C54CE3 /* LoadInitializeVC.m in Sources */,
 				B507116F1F0E4C8D008EC4AE /* BNPopoverBaseLayout.m in Sources */,
 				B564801A1EF92040009CF536 /* BNPopupWindow.m in Sources */,
+				33E3D9C028A2474500BD0E8D /* CrashTestVC.m in Sources */,
 				B5053B992603877D007002BB /* BenTestModelOCC.m in Sources */,
 				33102E4B1F496A07008CCD64 /* SomeClass.m in Sources */,
 				B54CC643257E53B600594DA9 /* CustomContainerVC.m in Sources */,

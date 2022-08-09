@@ -52,7 +52,7 @@ extension Dictionary {
         
 //        self.testForceCastBasicDataType()
         
-        self.testReactiveSwiftBasic()
+//        self.testReactiveSwiftBasic()
 
 //        self.testReactiveObjCBasic()
 
@@ -61,6 +61,8 @@ extension Dictionary {
 //        self.testSwiftArgDefaultValue("Wang")
         
 //        self.testSwiftArgDefaultValue(age: 13)
+        
+        self.testSwiftMethodDispatch()
     }
     
     func tempTestFunc() {
@@ -415,7 +417,157 @@ extension Dictionary {
     func testSwiftArgDefaultValue(_ name: String = "Ben", age: Int = 13) {
         print("name: \(name) age: \(age)");
     }
+    
+    func testSwiftMethodDispatch() {
+        // 详见文章：https://segmentfault.com/a/1190000008063625
+        // 见图：SwiftMethodDispatch.png
+        // 1.直接派发（Direct Dispatch）（静态调用）
+        // 2.函数表派发（Table Dispatch）（见图：TableDispatch.png）
+//        class ParentClass {
+//            func method1() {
+//                print("ParentClass::method1")
+//            }
+//            func method2() {
+//                print("ParentClass::method2")
+//            }
+//        }
+//        class ChildClass: ParentClass {
+//            override func method2() { print("ChildClass::method2")
+//            }
+//            func method3() {}
+//        }
+//        let obj = ChildClass()
+//        obj.method2()
+        
+        // 3.消息机制派发（Message Dispatch）（见图：MessageDispatch.png）
+//        class ParentClass {
+//            dynamic func method1() {
+//                print("ParentClass::method1")
+//            }
+//            dynamic func method2() {
+//                print("ParentClass::method2")
+//            }
+//        }
+//        class ChildClass: ParentClass {
+//            override func method2() {
+//                print("ChildClass::method2")
+//            }
+//            dynamic func method3() {
+//                print("ChildClass::method3")
+//            }
+//        }
+//        let obj = ChildClass()
+//        obj.method2()
+        
+        // 4. 四个影响派发方式的因素存在
+        // 4-1.声明的位置（见图：LocationMatters.png）
+        // 4-2.引用类型
+        // 4-3.特定的行为（指定派发方式）（见图：ModifierOverview.png）
+        // 4-4.显式地优化
+        
+        // 4-2.引用类型 code
+//        let myStruct = MyStruct()
+//        let proto: MyProtocol = myStruct
+//        myStruct.extensionMethod()
+//        proto.extensionMethod()
+//
+//        let myClass = MyClass()
+//        let proto2: MyProtocol = myClass
+//        myClass.extensionMethod()
+//        proto2.extensionMethod()
+        
+        // 5.有趣 errors and bugs 源码
+        // 5-1.code（最新的 swift 版本编译不过）
+//        greetings(person: Person())
+//        greetings(person: MisunderstoodPerson())
+        
+        // 5-2.code
+        greetings(greeter: People())
+        greetings(greeter: LoudPeople())
+    }
 }
+
+// 4-2.引用类型 code
+protocol MyProtocol {
+    // ⚠️：放开下面这行注释，则会使用函数表派发
+    //func extensionMethod()
+}
+struct MyStruct: MyProtocol {
+}
+extension MyProtocol {
+    func extensionMethod() {
+        print("协议")
+    }
+}
+extension MyStruct {
+    func extensionMethod() {
+        print("结构体")
+    }
+}
+class MyClass: MyProtocol {
+    func extensionMethod() {
+        print("类")
+    }
+}
+
+// 5-1.code（最新的 swift 版本编译不过）
+//class Person: NSObject {
+//    dynamic func sayHi() {
+//        print("Hello")
+//    }
+//}
+//func greetings(person: Person) {
+//    person.sayHi()
+//}
+//class MisunderstoodPerson: Person {
+//}
+//extension MisunderstoodPerson {
+//    override func sayHi() {
+//        print("No one gets me.")
+//    }
+//}
+
+// 5-2.code
+protocol Greetable {
+    func sayHi()
+}
+extension Greetable {
+    func sayHi() {
+        print("Hello")
+    }
+}
+func greetings(greeter: Greetable) {
+    greeter.sayHi()
+}
+class People: Greetable {
+//    // 2.test
+//    func sayHi() {
+//        print("HELLO 1")
+//    }
+}
+class LoudPeople: People {
+    // 1.test
+    func sayHi() {
+        print("HELLO")
+    }
+    
+//    // 2.test
+//    override func sayHi() {
+//        print("HELLO")
+//    }
+}
+
+// 5-3.code（最新的 swift 版本编译不过）
+//class MyClassName {
+//}
+//extension MyClassName {
+//    func extensionMethod() {
+//    }
+//}
+//class SubClass: MyClassName {
+//    override func extensionMethod() {
+//    }
+//}
 
 @objc(BenTestModelA) class BenTestModelA : NSObject {
     @objc dynamic var adjusted: Bool = false  // dynamic
