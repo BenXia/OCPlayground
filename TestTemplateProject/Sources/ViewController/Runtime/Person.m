@@ -11,8 +11,8 @@
 @implementation Person
 
 - (void)test {
-    NSLog(@"self class: %p %p %p %p %@ %@ %@ %@",
-          [self class], [self superclass], [super class], [super superclass],
+    NSLog(@"self: %p self class: %p %p %p %p %@ %@ %@ %@",
+          self, [self class], [self superclass], [super class], [super superclass],
           NSStringFromClass([self class]),
           NSStringFromClass([self superclass]),
           NSStringFromClass([super class]),
