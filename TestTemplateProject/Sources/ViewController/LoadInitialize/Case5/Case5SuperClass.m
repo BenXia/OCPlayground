@@ -10,9 +10,9 @@
 
 @implementation Case5SuperClass
 
-//+ (void)load {
-//    NSLog(@"%@ %s", [self class], __FUNCTION__);
-//}
++ (void)load {
+    NSLog(@"%@ %s", [self class], __FUNCTION__);
+}
 
 + (void)initialize {
     NSLog(@"%@ %s", [self class], __FUNCTION__);
@@ -22,9 +22,11 @@
 
 @implementation Case5ChildClass
 
-//+ (void)load {
-//    NSLog(@"%@ %s", [self class], __FUNCTION__);
-//}
++ (void)load {
+    [super load];
+    
+    NSLog(@"%@ %s", [self class], __FUNCTION__);
+}
 
 + (void)initialize {
     NSLog(@"%@ %s", [self class], __FUNCTION__);

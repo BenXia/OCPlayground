@@ -44,7 +44,6 @@
 		33454B2D1F76199E00DC3F14 /* BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 33454B2C1F76199E00DC3F14 /* BaseObject.m */; };
 		334B7A5D1F9E492400F40D7F /* MemoryManageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 334B7A5B1F9E492400F40D7F /* MemoryManageVC.m */; };
 		334B7A5E1F9E492400F40D7F /* MemoryManageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 334B7A5C1F9E492400F40D7F /* MemoryManageVC.xib */; };
-		336ADCF92881915100ECEE25 /* Case7SuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C08FD2566A74D00C54CE3 /* Case7SuperClass.m */; };
 		337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */; };
 		338718E52883D4F000E78416 /* UIView+UIView_InspectableExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = B56895B0263955F900802E37 /* UIView+UIView_InspectableExtend.m */; };
 		338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0641F530A8400E8DD3E /* JSONToModelVC.m */; };
@@ -72,6 +71,7 @@
 		3399DF0121B96E78006C6B85 /* ProxyTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DEFC21B96E78006C6B85 /* ProxyTestVC.m */; };
 		3399DF0721B97259006C6B85 /* CustomTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DF0621B97259006C6B85 /* CustomTarget.m */; };
 		3399DF0B21B973A7006C6B85 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DF0A21B973A7006C6B85 /* Aspects.m */; };
+		33C97E7728B79E3400BC5539 /* Case5SuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C08F22566A5FD00C54CE3 /* Case5SuperClass.m */; };
 		33E14FC71F7972010042F729 /* MultiThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E14FC51F7972010042F729 /* MultiThreadVC.m */; };
 		33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E14FC61F7972010042F729 /* MultiThreadVC.xib */; };
 		33E3D9C028A2474500BD0E8D /* CrashTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E3D9BE28A2474500BD0E8D /* CrashTestVC.m */; };
@@ -1704,10 +1704,10 @@
 				B5190A292320E05B00A648D5 /* RACSignal+Extension.m in Sources */,
 				B56480151EF9201D009CF536 /* CommonUtils.m in Sources */,
 				B54337B71F5E46BB0055AECE /* JSONModelUsageVC.m in Sources */,
+				33C97E7728B79E3400BC5539 /* Case5SuperClass.m in Sources */,
 				3399DF0121B96E78006C6B85 /* ProxyTestVC.m in Sources */,
 				B5190A232320D8DB00A648D5 /* NSDateFormatter+ChiSymbols.m in Sources */,
 				B5C7253F25E8E18D0030F5D9 /* CoreDataTestVC.m in Sources */,
-				336ADCF92881915100ECEE25 /* Case7SuperClass.m in Sources */,
 				B5190A1D2320D89300A648D5 /* NSDate+QQCalendar.m in Sources */,
 				B5FA68C81EF270290077349C /* BNNavigationController.m in Sources */,
 				B54337C61F5E47480055AECE /* ModelForJSONModel.m in Sources */,
