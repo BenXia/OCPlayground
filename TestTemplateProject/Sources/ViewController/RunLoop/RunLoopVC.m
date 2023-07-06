@@ -34,9 +34,9 @@
     //[self performSelector:@selector(delayFunction) withObject:nil afterDelay:3];
     
     // waitUntilDone NO 则为 Source0， YES 则栈中继续执行
-    //[self performSelectorOnMainThread:@selector(performOnMainFunction) withObject:nil waitUntilDone:YES];
+    [self performSelectorOnMainThread:@selector(performOnMainFunction) withObject:nil waitUntilDone:NO];
     
-    [self testAsyncWaiting];
+//    [self testAsyncWaiting];
 }
 
 - (void)didReceiveMemoryWarning {
