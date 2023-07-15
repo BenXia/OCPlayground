@@ -59,7 +59,7 @@ void printClassInfo(id obj)
     
 //    [self testPropertyOne];
     
-//    [self testPropertyTwo];
+    [self testPropertyTwo];
     
 //    [self testHashTableHashMapPointerArray];
     
@@ -67,7 +67,7 @@ void printClassInfo(id obj)
     
 //    [self testBlockMemoryManage];
     
-    [self testArgMemoryManage];
+//    [self testArgMemoryManage];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -72,7 +72,7 @@
     
 //    [self testGCDDispatchGroup];
     
-    [self testGCDSomeAPI];
+//    [self testGCDSomeAPI];
     
     // 经典的多读一写互斥问题
 //    [self testGCDReadWriteHandle];
