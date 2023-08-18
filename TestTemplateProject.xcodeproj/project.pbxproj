@@ -44,6 +44,9 @@
 		33454B2D1F76199E00DC3F14 /* BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 33454B2C1F76199E00DC3F14 /* BaseObject.m */; };
 		334B7A5D1F9E492400F40D7F /* MemoryManageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 334B7A5B1F9E492400F40D7F /* MemoryManageVC.m */; };
 		334B7A5E1F9E492400F40D7F /* MemoryManageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 334B7A5C1F9E492400F40D7F /* MemoryManageVC.xib */; };
+		337790AA2A8F793A00B722F4 /* WeakDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 337790A92A8F793A00B722F4 /* WeakDictionary.m */; };
+		337790AD2A8F79BB00B722F4 /* WeakSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 337790AC2A8F79BB00B722F4 /* WeakSet.m */; };
+		337790B02A8F7A0700B722F4 /* WeakArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 337790AF2A8F7A0700B722F4 /* WeakArray.m */; };
 		337EEC291EDC3F2C00EDC166 /* NSObject+DLIntrospection.m in Sources */ = {isa = PBXBuildFile; fileRef = 337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */; };
 		338718E52883D4F000E78416 /* UIView+UIView_InspectableExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = B56895B0263955F900802E37 /* UIView+UIView_InspectableExtend.m */; };
 		338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 338BC0641F530A8400E8DD3E /* JSONToModelVC.m */; };
@@ -263,6 +266,12 @@
 		334B7A5C1F9E492400F40D7F /* MemoryManageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoryManageVC.xib; sourceTree = "<group>"; };
 		3354F6E02A25AB9D0030A011 /* test4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test4.m; sourceTree = "<group>"; };
 		3354F6F62A25B81B0030A011 /* test4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test4.cpp; sourceTree = "<group>"; };
+		337790A82A8F793A00B722F4 /* WeakDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakDictionary.h; sourceTree = "<group>"; };
+		337790A92A8F793A00B722F4 /* WeakDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakDictionary.m; sourceTree = "<group>"; };
+		337790AB2A8F79BB00B722F4 /* WeakSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakSet.h; sourceTree = "<group>"; };
+		337790AC2A8F79BB00B722F4 /* WeakSet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakSet.m; sourceTree = "<group>"; };
+		337790AE2A8F7A0700B722F4 /* WeakArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakArray.h; sourceTree = "<group>"; };
+		337790AF2A8F7A0700B722F4 /* WeakArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakArray.m; sourceTree = "<group>"; };
 		337EEC271EDC3F2C00EDC166 /* NSObject+DLIntrospection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DLIntrospection.h"; sourceTree = "<group>"; };
 		337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DLIntrospection.m"; sourceTree = "<group>"; };
 		338BC0631F530A8400E8DD3E /* JSONToModelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONToModelVC.h; sourceTree = "<group>"; };
@@ -780,6 +789,12 @@
 				334B7A5A1F9E492400F40D7F /* MemoryManageVC.h */,
 				334B7A5B1F9E492400F40D7F /* MemoryManageVC.m */,
 				334B7A5C1F9E492400F40D7F /* MemoryManageVC.xib */,
+				337790A82A8F793A00B722F4 /* WeakDictionary.h */,
+				337790A92A8F793A00B722F4 /* WeakDictionary.m */,
+				337790AB2A8F79BB00B722F4 /* WeakSet.h */,
+				337790AC2A8F79BB00B722F4 /* WeakSet.m */,
+				337790AE2A8F7A0700B722F4 /* WeakArray.h */,
+				337790AF2A8F7A0700B722F4 /* WeakArray.m */,
 			);
 			path = Memory;
 			sourceTree = "<group>";
@@ -1747,6 +1762,7 @@
 				B54CC644257E53B600594DA9 /* ContainerRightChildVC.m in Sources */,
 				B54CC642257E53B600594DA9 /* ContainerLeftChildVC.m in Sources */,
 				3396833E22EB694A00EB32D8 /* UIView+BindAction.m in Sources */,
+				337790AA2A8F793A00B722F4 /* WeakDictionary.m in Sources */,
 				B50711711F0E4C8D008EC4AE /* BNPopoverCustomLayout.m in Sources */,
 				33102E481F4969F5008CCD64 /* SingletonClass.m in Sources */,
 				B541E7F52028284600D23093 /* SafePushNavigationController.m in Sources */,
@@ -1755,6 +1771,7 @@
 				B5190A2D2320E64C00A648D5 /* NSArray+ObjectAtIndexWithBoundsCheck.m in Sources */,
 				330F7C0D1ED349AB0009280A /* UIView+Helper.m in Sources */,
 				33454B291F76153200DC3F14 /* ARCObject+TestDealloc.m in Sources */,
+				337790B02A8F7A0700B722F4 /* WeakArray.m in Sources */,
 				333D51231F6E3F5F00FA084F /* RunLoopVC.m in Sources */,
 				3396833F22EB694A00EB32D8 /* UIButton+BindAction.m in Sources */,
 				B5E95736253EBE9900C722D4 /* BenTestModelOCA+IsSelected.m in Sources */,
@@ -1767,6 +1784,7 @@
 				33102E441F4969BB008CCD64 /* SingletonVC.m in Sources */,
 				B56480111EF91FF9009CF536 /* MBProgressHUD+Add.m in Sources */,
 				B543377F1F56BC5C0055AECE /* President.m in Sources */,
+				337790AD2A8F79BB00B722F4 /* WeakSet.m in Sources */,
 				33102E3B1F496083008CCD64 /* RuntimeVC.m in Sources */,
 				B54338031F5E58C90055AECE /* JSONUtils.m in Sources */,
 				B5699E182600864F007885F6 /* Grades+CoreDataClass.m in Sources */,
