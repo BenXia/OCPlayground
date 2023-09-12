@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 extension Dictionary {
     func valuesForKeys(_ keys: [Key]) -> [Value?] {
@@ -13,14 +14,19 @@ extension Dictionary {
     }
 }
 
+@available(iOS 13.0, *)
 @objc(SwiftBenTestVC) class SwiftBenTestVC: BaseViewController {
     var vm : SwiftBenTestVM!
     
     var swiftKVOModel: SwiftBenTestModel!
     var swiftKVOModel2: SwiftBenTestModel!
+    var swiftKVOModel3: SwiftBenTestModel2!
     
     var observer1: NSKeyValueObservation?
     var observer2: NSKeyValueObservation?
+    
+    var cancellable1: Cancellable?
+    var cancellable2: Cancellable?
     
     // MARK: - life cycle
     required init?(coder aDecoder: NSCoder) {
@@ -53,6 +59,8 @@ extension Dictionary {
 //        self.testForceCastBasicDataType()
         
 //        self.testReactiveSwiftBasic()
+        
+        self.testSwiftCombine()
 
 //        self.testReactiveObjCBasic()
 
@@ -62,7 +70,7 @@ extension Dictionary {
         
 //        self.testSwiftArgDefaultValue(age: 13)
         
-        self.testSwiftMethodDispatch()
+//        self.testSwiftMethodDispatch()
     }
     
     func tempTestFunc() {
@@ -328,6 +336,99 @@ extension Dictionary {
         if let model = self.swiftKVOModel {
             model.removeObserver(self, forKeyPath: "qingqingWhateverId")
             model.removeObserver(self, forKeyPath: "adjusted")
+        }
+    }
+    
+    func testSwiftCombine() {
+        // 第一种写法，需要 @objc dynamic 修饰属性
+        // ⚠️：这种写法可以在事件触发时候，model 里面的值已经更新
+//        self.swiftKVOModel = SwiftBenTestModel.init()
+//        self.swiftKVOModel.qingqingWhateverId = "11818212"
+//        self.swiftKVOModel.adjusted = false
+//        self.swiftKVOModel.startTime = 1563765226000
+//        self.swiftKVOModel.endTime = 1563765226000
+//
+//        if #available(iOS 13.0, *) {
+//            cancellable1 = self.swiftKVOModel.publisher(for: \.qingqingWhateverId).sink { [weak self] latestString in
+//                print("qingqingWhateverId sendValue: \(latestString)")
+//
+//                print("qingqingWhateverId value: \(self?.swiftKVOModel.qingqingWhateverId ?? "<Empty>")")
+//            }
+//
+//            cancellable2 = self.swiftKVOModel.publisher(for: \.adjusted).sink { [weak self] latestValue in
+//                print("adjusted sendValue: \(latestValue)")
+//
+//                print("adjusted value: \(self?.swiftKVOModel.adjusted ?? false)")
+//            }
+//
+//            self.swiftKVOModel.qingqingWhateverId = "22222222"
+//            self.swiftKVOModel.adjusted = true
+//
+//            DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).asyncAfter(deadline: .now() + 3) { [weak self] in
+//                guard let `self` = self else { return }
+//
+//                self.swiftKVOModel.qingqingWhateverId = "33333333"
+//                self.swiftKVOModel.adjusted = false
+//
+//                ///cancel() will be called automatically when an Cancellable is deinited
+//                self.cancellable1 = nil
+//                self.cancellable2 = nil
+//
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+//                    guard let `self` = self else { return }
+//
+//                    self.swiftKVOModel.qingqingWhateverId = "44444444"
+//                    self.swiftKVOModel.adjusted = true
+//
+//                }
+//            }
+//        } else {
+//            // Fallback on earlier versions
+//        }
+        
+        // 第二种写法，需要 ObserableObject 与 @Published 修饰
+        // ⚠️：这种写法事件触发时候，model 里面的值还可能没更新
+        self.swiftKVOModel3 = SwiftBenTestModel2.init()
+        self.swiftKVOModel3.qingqingWhateverId = "11818212"
+        self.swiftKVOModel3.adjusted = false
+        self.swiftKVOModel3.startTime = 1563765226000
+        self.swiftKVOModel3.endTime = 1563765226000
+
+        if #available(iOS 13.0, *) {
+            cancellable1 = self.swiftKVOModel3.$qingqingWhateverId.sink { [weak self] latestString in
+                print("qingqingWhateverId sendValue: \(latestString)")
+
+                print("qingqingWhateverId value: \(self?.swiftKVOModel3.qingqingWhateverId ?? "<Empty>")")
+            }
+
+            cancellable2 = self.swiftKVOModel3.$adjusted.sink { [weak self] latestValue in
+                print("adjusted sendValue: \(latestValue)")
+
+                print("adjusted value: \(self?.swiftKVOModel3.adjusted ?? false)")
+            }
+
+            self.swiftKVOModel3.qingqingWhateverId = "22222222"
+            self.swiftKVOModel3.adjusted = true
+            
+            DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).asyncAfter(deadline: .now() + 3) { [weak self] in
+                guard let `self` = self else { return }
+    
+                self.swiftKVOModel3.qingqingWhateverId = "33333333"
+                self.swiftKVOModel3.adjusted = false
+    
+                ///cancel() will be called automatically when an Cancellable is deinited
+//                self.cancellable1 = nil
+//                self.cancellable2 = nil
+    
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+                    guard let `self` = self else { return }
+    
+                    self.swiftKVOModel3.qingqingWhateverId = "44444444"
+                    self.swiftKVOModel3.adjusted = true
+                }
+            }
+        } else {
+            // Fallback on earlier versions
         }
     }
     

@@ -33,6 +33,7 @@
 		331B4D2D22ED819E00BE1A47 /* RACMLKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 331B4D2A22ED819D00BE1A47 /* RACMLKVC.m */; };
 		33345C9322EA169D008EB89F /* TextViewTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33345C9222EA169D008EB89F /* TextViewTestVC.swift */; };
 		33345C9622EA17A5008EB89F /* TextViewTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33345C9522EA17A5008EB89F /* TextViewTestVC.xib */; };
+		333953A72AB09E92003EF368 /* SwiftBenTestModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333953A62AB09E92003EF368 /* SwiftBenTestModel2.swift */; };
 		333D51231F6E3F5F00FA084F /* RunLoopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D51211F6E3F5F00FA084F /* RunLoopVC.m */; };
 		333D51241F6E3F5F00FA084F /* RunLoopVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333D51221F6E3F5F00FA084F /* RunLoopVC.xib */; };
 		33454B191F7614B200DC3F14 /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33454B171F7614B200DC3F14 /* CategoryVC.m */; };
@@ -245,6 +246,7 @@
 		33345C9222EA169D008EB89F /* TextViewTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTestVC.swift; sourceTree = "<group>"; };
 		33345C9422EA16DC008EB89F /* TestTemplateProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestTemplateProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		33345C9522EA17A5008EB89F /* TextViewTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewTestVC.xib; sourceTree = "<group>"; };
+		333953A62AB09E92003EF368 /* SwiftBenTestModel2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftBenTestModel2.swift; sourceTree = "<group>"; };
 		333D51201F6E3F5F00FA084F /* RunLoopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLoopVC.h; sourceTree = "<group>"; };
 		333D51211F6E3F5F00FA084F /* RunLoopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunLoopVC.m; sourceTree = "<group>"; };
 		333D51221F6E3F5F00FA084F /* RunLoopVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunLoopVC.xib; sourceTree = "<group>"; };
@@ -1008,6 +1010,7 @@
 				B5190A122320D77A00A648D5 /* SwiftBenTestView.swift */,
 				B5190A0D2320D77A00A648D5 /* SwiftBenTestView.xib */,
 				B5190A112320D77A00A648D5 /* SwiftBenTestModel.swift */,
+				333953A62AB09E92003EF368 /* SwiftBenTestModel2.swift */,
 				B5E95734253EBE9800C722D4 /* BenTestModelOCA+IsSelected.h */,
 				B5E95735253EBE9900C722D4 /* BenTestModelOCA+IsSelected.m */,
 				B5190A0C2320D77A00A648D5 /* BenTestModelOCA.h */,
@@ -1789,6 +1792,7 @@
 				B54338031F5E58C90055AECE /* JSONUtils.m in Sources */,
 				B5699E182600864F007885F6 /* Grades+CoreDataClass.m in Sources */,
 				B56895BE263955F900802E37 /* QQingCustomView.swift in Sources */,
+				333953A72AB09E92003EF368 /* SwiftBenTestModel2.swift in Sources */,
 				33102E6B1F49FF7F008CCD64 /* NoXibVC.m in Sources */,
 				B54337BC1F5E46D70055AECE /* MJExtensionUsageVC.m in Sources */,
 				B54337CA1F5E474E0055AECE /* ModelForMantle.m in Sources */,
@@ -1953,6 +1957,7 @@
 					"\"${PODS_ROOT}/Headers/Public/ReactiveObjC\"",
 				);
 				INFOPLIST_FILE = "TestTemplateProject/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qq.iOSStudio.TestTemplateProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1984,6 +1989,7 @@
 					"\"${PODS_ROOT}/Headers/Public/ReactiveObjC\"",
 				);
 				INFOPLIST_FILE = "TestTemplateProject/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.qq.iOSStudio.TestTemplateProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
