@@ -11,6 +11,8 @@
 #import <objc/runtime.h>
 #import "Person.h"
 #import "President.h"
+#import "Animal.h"
+#import "Bird.h"
 
 @interface Sark : NSObject
 
@@ -48,6 +50,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    // 交换方法中中的注意事项
+//    Bird *bird = [[Bird alloc] init];
+//    [bird speak];
+//    //-[Bird run]: unrecognized selector sent to instance 0x600000011f40'
+//    [bird run];
+//    
+//    // -[Animal custom_speak]: unrecognized selector sent to instance 0x60000002a610
+//    Animal *ani = [[Animal alloc] init];
+//    [ani speak];
     
 //    编译运行正常，输出ViewController中的self对象。 编译运行正常，调用了-speak方法，由于
 //    id cls = [Sark class];
