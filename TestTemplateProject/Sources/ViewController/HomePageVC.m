@@ -106,6 +106,7 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[CrashTestVC class]
                                                      navigationVC:self.navigationController];
     
+    // 知识点 @unsafeify(self) 可避免 weak 表已经置为 nil 的情况
     HomePageCellModel *model2 = [HomePageCellModel modelWithTitle:@"时序"
                                                          subTitle:@"KVO、通知、RACSignal的时序研究"
                                                           vcClass:[TimeSequenceVC class]
@@ -116,6 +117,7 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[ClassPropertyVC class]
                                                      navigationVC:self.navigationController];
     
+    // 知识点 dispatch_once(&onceToken, ^{}) 同一个线程递归出现调用，会死锁
     HomePageCellModel *model4 = [HomePageCellModel modelWithTitle:@"单例注意点"
                                                          subTitle:@"在单例初始化时一定不能出现对单例的引用"
                                                           vcClass:[SingletonVC class]

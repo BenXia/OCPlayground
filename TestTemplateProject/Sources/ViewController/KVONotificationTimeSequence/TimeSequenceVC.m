@@ -32,10 +32,10 @@
 //    [self testRACKVOEndlessLoop];
     
 //    [self testKVOSequence];
-//    
-    [self testKVOKeyPath];
     
-//    [self testRACKVO];
+//    [self testKVOKeyPath];
+    
+    [self testRACKVO];
 }
 
 - (void)testRACKVOEndlessLoop {
@@ -93,16 +93,23 @@
     
 //    self.testKVOModelA.objB = modelB1;
 
-    // 下面这两种方式去除KVO观察都会出现回调block中self为nil的问题
-//    @weakify(self);
-//    [self.rac_deallocDisposable addDisposable:[RACDisposable disposableWithBlock:^{
-//        @strongify(self);
-//        [self.testKVOModelA removeObserver:self forKeyPath:@"objB.adjusted"];
-//        [self.testKVOModelA removeObserver:self forKeyPath:@"objB.name"];
-//    }]];
-//
+    // 下面这两种方式去除KVO观察都会出现回调block中self为nil的问题，原因是 dealloc 中 hook 的代码之前已经把 weak 表中指针都置为 nil 了，所以换成 @unsafeify(self) 可以避免这个问题
+    //@weakify(self);
+    
+    @unsafeify(self);
+    
+    [self.rac_deallocDisposable addDisposable:[RACDisposable disposableWithBlock:^{
+        @strongify(self);
+//        NSLog(@"self_weak_: %p self: %p\n", self_weak_, self);
+        
+        [self.testKVOModelA removeObserver:self forKeyPath:@"objB.adjusted"];
+        [self.testKVOModelA removeObserver:self forKeyPath:@"objB.name"];
+    }]];
+
 //    [self.rac_willDeallocSignal subscribeCompleted:^{
 //        @strongify(self);
+//        NSLog(@"self_weak_: %p self: %p\n", self_weak_, self);
+    
 //        [self.testKVOModelA removeObserver:self forKeyPath:@"objB.adjusted"];
 //        [self.testKVOModelA removeObserver:self forKeyPath:@"objB.name"];
 //    }];

@@ -51,7 +51,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    // 交换方法中中的注意事项
+    // 交换方法中的注意事项
 //    Bird *bird = [[Bird alloc] init];
 //    [bird speak];
 //    //-[Bird run]: unrecognized selector sent to instance 0x600000011f40'
@@ -129,5 +129,7 @@
 }
 
 @end
+
+
 
 

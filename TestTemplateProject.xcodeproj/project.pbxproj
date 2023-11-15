@@ -70,6 +70,7 @@
 		3396833822EB603500EB32D8 /* UIView+SnapKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3396832D22EB5FA800EB32D8 /* UIView+SnapKit.swift */; };
 		3396833E22EB694A00EB32D8 /* UIView+BindAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3396833A22EB694A00EB32D8 /* UIView+BindAction.m */; };
 		3396833F22EB694A00EB32D8 /* UIButton+BindAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3396833C22EB694A00EB32D8 /* UIButton+BindAction.m */; };
+		3396EF0E2B051833001FA3E8 /* Case2SuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C08D4256698D400C54CE3 /* Case2SuperClass.m */; };
 		3399DEFF21B96E78006C6B85 /* ProxyWithWeakTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DEFA21B96E78006C6B85 /* ProxyWithWeakTarget.m */; };
 		3399DF0021B96E78006C6B85 /* ProxyTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3399DEFB21B96E78006C6B85 /* ProxyTestVC.xib */; };
 		3399DF0121B96E78006C6B85 /* ProxyTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3399DEFC21B96E78006C6B85 /* ProxyTestVC.m */; };
@@ -78,7 +79,6 @@
 		33AB5CF92AF508D0008644B0 /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AB5CF82AF508D0008644B0 /* Animal.m */; };
 		33AB5CFC2AF508F3008644B0 /* Bird.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AB5CFB2AF508F3008644B0 /* Bird.m */; };
 		33AB5CFF2AF50FDF008644B0 /* FlyAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 33AB5CFE2AF50FDF008644B0 /* FlyAnimal.m */; };
-		33C97E7728B79E3400BC5539 /* Case5SuperClass.m in Sources */ = {isa = PBXBuildFile; fileRef = B51C08F22566A5FD00C54CE3 /* Case5SuperClass.m */; };
 		33E14FC71F7972010042F729 /* MultiThreadVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E14FC51F7972010042F729 /* MultiThreadVC.m */; };
 		33E14FC81F7972010042F729 /* MultiThreadVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33E14FC61F7972010042F729 /* MultiThreadVC.xib */; };
 		33E3D9C028A2474500BD0E8D /* CrashTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33E3D9BE28A2474500BD0E8D /* CrashTestVC.m */; };
@@ -1741,7 +1741,6 @@
 				B5190A292320E05B00A648D5 /* RACSignal+Extension.m in Sources */,
 				B56480151EF9201D009CF536 /* CommonUtils.m in Sources */,
 				B54337B71F5E46BB0055AECE /* JSONModelUsageVC.m in Sources */,
-				33C97E7728B79E3400BC5539 /* Case5SuperClass.m in Sources */,
 				3399DF0121B96E78006C6B85 /* ProxyTestVC.m in Sources */,
 				B5190A232320D8DB00A648D5 /* NSDateFormatter+ChiSymbols.m in Sources */,
 				B5C7253F25E8E18D0030F5D9 /* CoreDataTestVC.m in Sources */,
@@ -1842,6 +1841,7 @@
 				B5FA68C91EF270290077349C /* BNTabBarController.m in Sources */,
 				33AB5CFF2AF50FDF008644B0 /* FlyAnimal.m in Sources */,
 				B5699E192600864F007885F6 /* Grades+CoreDataProperties.m in Sources */,
+				3396EF0E2B051833001FA3E8 /* Case2SuperClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

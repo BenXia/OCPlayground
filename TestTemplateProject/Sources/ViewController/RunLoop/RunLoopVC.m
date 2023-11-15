@@ -25,16 +25,16 @@
     // Do any additional setup after loading the view from its nib.
     
     // 测试 Timer 如果被阻塞导致超时触发会怎么样
-    //[self testTimer];
+//    [self testTimer];
     
     // CADispalyLink 由 Source1 mach port 触发
-    //[self startDisplayLink];
+//    [self startDisplayLink];
     
     // 由 Timer mach port 触发
-    //[self performSelector:@selector(delayFunction) withObject:nil afterDelay:3];
+//    [self performSelector:@selector(delayFunction) withObject:nil afterDelay:3];
     
     // waitUntilDone NO 则为 Source0， YES 则栈中继续执行
-    [self performSelectorOnMainThread:@selector(performOnMainFunction) withObject:nil waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(performOnMainFunction) withObject:nil waitUntilDone:YES];
     
 //    [self testAsyncWaiting];
 }
@@ -63,6 +63,7 @@
     
     self.displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(displayLinkAction)];
     [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+//    [self.displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
 }
 
 - (void)stopDisplayLink {

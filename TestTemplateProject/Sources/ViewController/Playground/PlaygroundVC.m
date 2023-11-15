@@ -114,6 +114,8 @@ static const NSCalendarUnit kDateComponentFlags = NSCalendarUnitYear | NSCalenda
     
     UIView *viewA = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 100)];
     viewA.backgroundColor = [UIColor redColor];
+    NSLog(@"viewA clipsToBounds: %d\n", viewA.clipsToBounds);
+    viewA.clipsToBounds = YES;
     [self.view addSubview:viewA];
     
     UIView *viewB = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 80, 80)];

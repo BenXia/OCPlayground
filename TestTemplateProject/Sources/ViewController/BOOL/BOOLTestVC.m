@@ -18,7 +18,8 @@ static NSString *g_name2 = @"wjkflasj";
 static NSString *g_name = @"wjkflasjdf";
 
 static BOOL haveName () {
-    return (BOOL)g_name;  //(BOOL)0x10000000;
+    //return (BOOL)g_name;  //(BOOL)0x10000000;
+    return (BOOL)0x10000000;
 } // haveName
 
 //static BOOL haveName () {
