@@ -7,6 +7,7 @@
 //
 
 #import "EOCAutoDictionary.h"
+#import "MockTarget.h"
 #import <objc/runtime.h>
 
 @interface EOCAutoDictionary ()
@@ -19,7 +20,7 @@
 
 // 如果 setDate: 方法是需要等动态添加（打开@dynamic）的话，则动态添加的方法中的 _cmd 为 aspects__ 加上原始方法名前缀，需要注意一下。
 // 此处即方法名会变成 aspects__setDate: （因为把原始实现放到了这个别名 selector 中）
-@dynamic string, number, date, opaqueObject;
+//@dynamic string, number, date, opaqueObject;
 
 - (instancetype)init {
     if (self = [super init]) {
@@ -92,6 +93,18 @@ void autoDictionarySetter(id self, SEL _cmd, id value) {
     }
     
     return YES;
+}
+
+- (id)forwardingTargetForSelector:(SEL)selector {
+//    MockTarget *target = [MockTarget new];
+//    return target;
+    id target = [super forwardingTargetForSelector:selector];
+    return target;
+}
+
+- (NSMethodSignature *)methodSignatureForSelector:(SEL)selector {
+    NSMethodSignature *sig = [super methodSignatureForSelector:selector];
+    return sig;
 }
 
 @end

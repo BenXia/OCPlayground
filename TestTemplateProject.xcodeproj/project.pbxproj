@@ -40,6 +40,7 @@
 		33431ECE2B064EBE00FF4D49 /* AspectsTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33431ECC2B064EBE00FF4D49 /* AspectsTestVC.xib */; };
 		33431ECF2B064EBE00FF4D49 /* AspectsTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33431ECD2B064EBE00FF4D49 /* AspectsTestVC.m */; };
 		33431ED22B0650C500FF4D49 /* EOCAutoDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 33431ED12B0650C400FF4D49 /* EOCAutoDictionary.m */; };
+		33431ED52B06742700FF4D49 /* MockTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = 33431ED32B06742700FF4D49 /* MockTarget.m */; };
 		33454B191F7614B200DC3F14 /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33454B171F7614B200DC3F14 /* CategoryVC.m */; };
 		33454B1A1F7614B200DC3F14 /* CategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33454B181F7614B200DC3F14 /* CategoryVC.xib */; };
 		33454B201F7614EF00DC3F14 /* MRCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 33454B1F1F7614EF00DC3F14 /* MRCObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -266,6 +267,8 @@
 		33431ECD2B064EBE00FF4D49 /* AspectsTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AspectsTestVC.m; sourceTree = "<group>"; };
 		33431ED02B0650C400FF4D49 /* EOCAutoDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCAutoDictionary.h; sourceTree = "<group>"; };
 		33431ED12B0650C400FF4D49 /* EOCAutoDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCAutoDictionary.m; sourceTree = "<group>"; };
+		33431ED32B06742700FF4D49 /* MockTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MockTarget.m; sourceTree = "<group>"; };
+		33431ED42B06742700FF4D49 /* MockTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MockTarget.h; sourceTree = "<group>"; };
 		33454B161F7614B200DC3F14 /* CategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryVC.h; sourceTree = "<group>"; };
 		33454B171F7614B200DC3F14 /* CategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryVC.m; sourceTree = "<group>"; };
 		33454B181F7614B200DC3F14 /* CategoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryVC.xib; sourceTree = "<group>"; };
@@ -802,6 +805,8 @@
 				33431ECC2B064EBE00FF4D49 /* AspectsTestVC.xib */,
 				33431ED02B0650C400FF4D49 /* EOCAutoDictionary.h */,
 				33431ED12B0650C400FF4D49 /* EOCAutoDictionary.m */,
+				33431ED42B06742700FF4D49 /* MockTarget.h */,
+				33431ED32B06742700FF4D49 /* MockTarget.m */,
 			);
 			path = AspectsTest;
 			sourceTree = "<group>";
@@ -1795,6 +1800,7 @@
 				330E810C257221290037E2DE /* CustomOperation.m in Sources */,
 				3399DF0721B97259006C6B85 /* CustomTarget.m in Sources */,
 				B50711701F0E4C8D008EC4AE /* BNPopoverBottomLayout.m in Sources */,
+				33431ED52B06742700FF4D49 /* MockTarget.m in Sources */,
 				B564800F1EF91FF9009CF536 /* GCDQueue.m in Sources */,
 				33454B261F76151E00DC3F14 /* MRCObject+TestDealloc.m in Sources */,
 				3395C6C3282E863C001F3C7A /* TaggedPointerTestVC.m in Sources */,

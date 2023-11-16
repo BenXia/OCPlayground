@@ -33,6 +33,8 @@
                            NSLog(@"EOCAutoDictionary will perform setDate:");
                        }
                             error:NULL];
+    
+    // 执行下面的 setDate：是已经被上面替换掉的 _objc_msgForward 实现（因为已经 respondsToSelector:@selector(setDate:) ，所以不会再走 resolveInstanceMethod: 方法，但是会走 forwardingTargetForSelector: 方法（所以此步骤如果有直接转发，则 Aspects 会不生效），然后再走 methodSignatureForSelector：方法，最终会走到替换后的 forwardInvocation: -> __ASPECTS_ARE_BEING_CALLED__ 实现中）
     self.dict.date = [NSDate dateWithTimeIntervalSince1970:475372800];
     NSLog(@"self.dict.date = %@", self.dict.date);
     
@@ -49,6 +51,20 @@
                        NSLog(@"AspectsTestVC will dealloc");
                         }
                         error:NULL];
+    
+    [[self class] aspect_hookSelector:NSSelectorFromString(@"dealloc")
+                          withOptions:AspectPositionBefore
+                           usingBlock:^(id<AspectInfo> info) {
+                                NSLog(@"AspectsTestVC will dealloc");
+                           }
+                                error:NULL];
+    
+    [[UIViewController class] aspect_hookSelector:NSSelectorFromString(@"dealloc")
+                          withOptions:AspectPositionBefore
+                           usingBlock:^(id<AspectInfo> info) {
+                                NSLog(@"AspectsTestVC will dealloc");
+                           }
+                                error:NULL];
     
     [self selectorForTestHook];
 }
