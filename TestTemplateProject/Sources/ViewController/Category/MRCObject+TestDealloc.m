@@ -10,9 +10,9 @@
 
 @implementation MRCObject (TestDealloc)
 
-- (void)dealloc {
-    NSLog (@"MRCObject(TestDealloc) dealloc");
-}
+//- (void)dealloc {
+//    NSLog (@"MRCObject(TestDealloc) dealloc");
+//}
 
 @end
 

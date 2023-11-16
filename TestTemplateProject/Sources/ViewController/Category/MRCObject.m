@@ -26,8 +26,12 @@
 }
 
 - (void)dealloc {
+    // 注意：下面两段代码都会对 self.arcObject 做 release 操作，所以不能都打开
     [self.arcObject release];
-    self.arcObject = nil;
+    _arcObject = nil;
+    
+//    self.arcObject = nil;
+    
     [super dealloc];
     
     NSLog (@"MRCObject dealloc");

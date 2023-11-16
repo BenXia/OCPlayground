@@ -106,7 +106,7 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[CrashTestVC class]
                                                      navigationVC:self.navigationController];
     
-    // 知识点 @unsafeify(self) 可避免 weak 表已经置为 nil 的情况
+    // 知识点： @unsafeify(self) 可避免 weak 表已经置为 nil 的情况
     HomePageCellModel *model2 = [HomePageCellModel modelWithTitle:@"时序"
                                                          subTitle:@"KVO、通知、RACSignal的时序研究"
                                                           vcClass:[TimeSequenceVC class]
@@ -117,7 +117,7 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[ClassPropertyVC class]
                                                      navigationVC:self.navigationController];
     
-    // 知识点 dispatch_once(&onceToken, ^{}) 同一个线程递归出现调用，会死锁
+    // 知识点： dispatch_once(&onceToken, ^{}) 同一个线程递归出现调用，会死锁
     HomePageCellModel *model4 = [HomePageCellModel modelWithTitle:@"单例注意点"
                                                          subTitle:@"在单例初始化时一定不能出现对单例的引用"
                                                           vcClass:[SingletonVC class]
@@ -153,11 +153,13 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[RunLoopVC class]
                                                      navigationVC:self.navigationController];
     
+    // 知识点：self.xxx = nil 在 MRC 中就会对 self.xxx 执行 release 操作
     HomePageCellModel *model11 = [HomePageCellModel modelWithTitle:@"Category"
                                                          subTitle:@"测试一下 Category 中重写 dealloc 方法"
                                                           vcClass:[CategoryVC class]
                                                      navigationVC:self.navigationController];
     
+    // 知识点：迭代器访问中修改了集合，会导致迭代器重新计算迭代中间状态，方便后面迭代
     HomePageCellModel *model12 = [HomePageCellModel modelWithTitle:@"内存管理"
                                                           subTitle:@"内存管理相关测试"
                                                            vcClass:[MemoryManageVC class]

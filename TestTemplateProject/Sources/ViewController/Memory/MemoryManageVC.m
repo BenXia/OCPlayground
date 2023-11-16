@@ -7,6 +7,7 @@
 //
 
 #import "MemoryManageVC.h"
+#import "ARCObject.h"
 
 void printClassInfo(id obj)
 {
@@ -61,7 +62,7 @@ void printClassInfo(id obj)
     
 //    [self testPropertyTwo];
     
-    [self testHashTableHashMapPointerArray];
+//    [self testHashTableHashMapPointerArray];
     
 //    [self testAutoVarARC];
     
@@ -69,7 +70,7 @@ void printClassInfo(id obj)
     
 //    [self testArgMemoryManage];
     
-//    [self testNSEnumerator];
+    [self testNSEnumerator];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -136,8 +137,10 @@ void printClassInfo(id obj)
     NSHashTable *hashTable = [NSHashTable hashTableWithOptions:NSPointerFunctionsWeakMemory];
     [hashTable addObject:@"hello"];
     {
-        NSString *tmp = [NSString stringWithFormat:@"%@-%@", @"tmp", @"string"];
-        [hashTable addObject:tmp];
+//        @autoreleasepool {
+            NSString *tmp = [NSString stringWithFormat:@"%@-%@", @"tmp", @"string"];
+            [hashTable addObject:tmp];
+//        }
     }
     [hashTable addObject:@10];
     [hashTable addObject:@"world"];
@@ -197,9 +200,11 @@ void printClassInfo(id obj)
 }
 
 - (void)testAutoVarARC {
-    NSObject *a = [[NSObject alloc] init];
+    NSObject *a = [[ARCObject alloc] init];
     NSLog(@"在lldb输入:po %p", a);
     a = nil;
+    
+    // 编译器会在此处添加 a 对象的释放代码
     
     NSLog(@"此行设置断点");
 }
@@ -270,7 +275,6 @@ void printClassInfo(id obj)
 //    // 未列举的对象数组。
 //    @property (readonly, copy) NSArray<ObjectType> *allObjects;
     
-    
     NSMutableArray *array = [NSMutableArray arrayWithObjects:@"1",@"2",@"3",@"4",@"5", nil];
 
     // 获取数组的枚举器
@@ -279,37 +283,46 @@ void printClassInfo(id obj)
     // 获取枚举器中所有的元素
     NSArray *arr = [enumerator allObjects];
     
-//    [array removeObjectAtIndex:1];
-    
     NSLog(@"arr = %@\n",arr);
 
     // 创建一个新的枚举器，遍历枚举器的元素
-    enumerator = [array objectEnumerator];
-    for (NSString *obj in enumerator) {
-        NSLog(@"==%@",obj);
-        
-//        // 通过下面这个删除，可以大概看到 NSArray 的 NSEnumerator 实现（里面维护了一个 _currentIndex）
-//        [array removeObjectAtIndex:0];
-    }
-
-    // 创建一个新的枚举器，遍历枚举器的元素
-    enumerator = [array objectEnumerator];
-    NSString *object;
-    while (object = [enumerator nextObject]) {
-        NSLog(@"开始打印：%@\n",object);
-        
-//        // 通过下面这个删除，可以大概看到 NSArray 的 NSEnumerator 实现（里面维护了一个 _currentIndex）
-//        [array removeObjectAtIndex:0];
-    }
+//    enumerator = [array objectEnumerator];
+//    [array removeObjectAtIndex:1];
+//    
+//    for (NSString *obj in enumerator) {
+//        NSLog(@"==%@", obj);
+//
+//        // 具体底层实现可以看下文件夹下面的 main.m 和 main.cpp（其实迭代过程中修改就会导致迭代器重新去计算迭代缓存状态，所以就容易解释下面的现象了）
+////        [array removeObjectAtIndex:0];
+//    }
+//
+//    // 创建一个新的枚举器，遍历枚举器的元素
+//    NSEnumerator *enumerator2 = [array objectEnumerator];
+//    NSString *object;
+//    while (object = [enumerator2 nextObject]) {
+//        NSLog(@"开始打印：%@\n", object);
+//        
+////        // 具体底层实现可以看下文件夹下面的 main.m 和 main.cpp（其实迭代过程中修改就会导致迭代器重新去计算迭代缓存状态，所以就容易解释下面的现象了）
+////        [array removeObjectAtIndex:1];
+//    }
 
     // 创建一个新的枚举器，遍历枚举器的元素
     enumerator = [array objectEnumerator];
     for (NSUInteger i = 0; i < array.count; i++) {
-        NSLog(@"%@",enumerator.nextObject);
+        NSLog(@"%@", enumerator.nextObject);
         
-        // 通过下面这个删除，可以大概看到 NSArray 的 NSEnumerator 实现（里面维护了一个 _currentIndex）
+        // 具体底层实现可以看下文件夹下面的 main.m 和 main.cpp（其实迭代过程中修改就会导致迭代器重新去计算迭代缓存状态，所以就容易解释下面的现象了）
         [array removeObjectAtIndex:0];
+        [array removeObjectAtIndex:1];
+        //[array removeObjectAtIndex:4 - i];
     }
+    
+    // Collection <__NSArrayM: 0x600000d6fc90> was mutated while being enumerated.
+//    for (NSString *str in array) {
+//        NSLog(@"%@", str);
+//        
+//        [array removeObjectAtIndex:0];
+//    }
 
 
 //    NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:@"obj0",@"key0",@"obj1",@"key1",@"obj2",@"key2",@"obj3",@"key3",@"obj4",@"key4", nil];

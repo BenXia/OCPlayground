@@ -253,6 +253,8 @@
 		333D51201F6E3F5F00FA084F /* RunLoopVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunLoopVC.h; sourceTree = "<group>"; };
 		333D51211F6E3F5F00FA084F /* RunLoopVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunLoopVC.m; sourceTree = "<group>"; };
 		333D51221F6E3F5F00FA084F /* RunLoopVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunLoopVC.xib; sourceTree = "<group>"; };
+		33431CF42B06079C00FF4D49 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		33431CF52B06079C00FF4D49 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		33454B161F7614B200DC3F14 /* CategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryVC.h; sourceTree = "<group>"; };
 		33454B171F7614B200DC3F14 /* CategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryVC.m; sourceTree = "<group>"; };
 		33454B181F7614B200DC3F14 /* CategoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryVC.xib; sourceTree = "<group>"; };
@@ -806,6 +808,8 @@
 				334B7A5A1F9E492400F40D7F /* MemoryManageVC.h */,
 				334B7A5B1F9E492400F40D7F /* MemoryManageVC.m */,
 				334B7A5C1F9E492400F40D7F /* MemoryManageVC.xib */,
+				33431CF52B06079C00FF4D49 /* main.m */,
+				33431CF42B06079C00FF4D49 /* main.cpp */,
 				337790A82A8F793A00B722F4 /* WeakDictionary.h */,
 				337790A92A8F793A00B722F4 /* WeakDictionary.m */,
 				337790AB2A8F79BB00B722F4 /* WeakSet.h */,
