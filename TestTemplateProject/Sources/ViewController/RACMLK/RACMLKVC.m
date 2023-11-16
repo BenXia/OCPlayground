@@ -22,12 +22,16 @@
     
     [self racMemoryLeakTestSample1];
     
-    [self racMemoryLeakTestSample2];
+//    [self racMemoryLeakTestSample2];
 }
 
 - (void)racMemoryLeakTestSample1 {
     RACSignal *signal = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         LocationModel *model = [[LocationModel alloc] init];
+        model.address = @"ShangHai";
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            model.address = @"NanJing";
+//        });
         [subscriber sendNext:model];
         [subscriber sendCompleted];
         return nil;
@@ -82,9 +86,10 @@
 
 @end
 
-
 @implementation LocationModel
 
 @end
+
+
 
 

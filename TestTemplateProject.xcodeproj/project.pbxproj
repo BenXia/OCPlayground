@@ -36,6 +36,10 @@
 		333953A72AB09E92003EF368 /* SwiftBenTestModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333953A62AB09E92003EF368 /* SwiftBenTestModel2.swift */; };
 		333D51231F6E3F5F00FA084F /* RunLoopVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 333D51211F6E3F5F00FA084F /* RunLoopVC.m */; };
 		333D51241F6E3F5F00FA084F /* RunLoopVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 333D51221F6E3F5F00FA084F /* RunLoopVC.xib */; };
+		33431D092B061CE100FF4D49 /* NSTimer+NSTimer_Dealloc.m in Sources */ = {isa = PBXBuildFile; fileRef = 33431D082B061CE100FF4D49 /* NSTimer+NSTimer_Dealloc.m */; };
+		33431ECE2B064EBE00FF4D49 /* AspectsTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33431ECC2B064EBE00FF4D49 /* AspectsTestVC.xib */; };
+		33431ECF2B064EBE00FF4D49 /* AspectsTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33431ECD2B064EBE00FF4D49 /* AspectsTestVC.m */; };
+		33431ED22B0650C500FF4D49 /* EOCAutoDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 33431ED12B0650C400FF4D49 /* EOCAutoDictionary.m */; };
 		33454B191F7614B200DC3F14 /* CategoryVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 33454B171F7614B200DC3F14 /* CategoryVC.m */; };
 		33454B1A1F7614B200DC3F14 /* CategoryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33454B181F7614B200DC3F14 /* CategoryVC.xib */; };
 		33454B201F7614EF00DC3F14 /* MRCObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 33454B1F1F7614EF00DC3F14 /* MRCObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -255,6 +259,13 @@
 		333D51221F6E3F5F00FA084F /* RunLoopVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunLoopVC.xib; sourceTree = "<group>"; };
 		33431CF42B06079C00FF4D49 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		33431CF52B06079C00FF4D49 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		33431D072B061CE100FF4D49 /* NSTimer+NSTimer_Dealloc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSTimer+NSTimer_Dealloc.h"; sourceTree = "<group>"; };
+		33431D082B061CE100FF4D49 /* NSTimer+NSTimer_Dealloc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+NSTimer_Dealloc.m"; sourceTree = "<group>"; };
+		33431ECB2B064EBE00FF4D49 /* AspectsTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AspectsTestVC.h; sourceTree = "<group>"; };
+		33431ECC2B064EBE00FF4D49 /* AspectsTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AspectsTestVC.xib; sourceTree = "<group>"; };
+		33431ECD2B064EBE00FF4D49 /* AspectsTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AspectsTestVC.m; sourceTree = "<group>"; };
+		33431ED02B0650C400FF4D49 /* EOCAutoDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EOCAutoDictionary.h; sourceTree = "<group>"; };
+		33431ED12B0650C400FF4D49 /* EOCAutoDictionary.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EOCAutoDictionary.m; sourceTree = "<group>"; };
 		33454B161F7614B200DC3F14 /* CategoryVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryVC.h; sourceTree = "<group>"; };
 		33454B171F7614B200DC3F14 /* CategoryVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryVC.m; sourceTree = "<group>"; };
 		33454B181F7614B200DC3F14 /* CategoryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryVC.xib; sourceTree = "<group>"; };
@@ -669,6 +680,7 @@
 				33102E401F496997008CCD64 /* Singleton */,
 				B51C08CC2566943B00C54CE3 /* LoadInitialize */,
 				33102E371F49605D008CCD64 /* Runtime */,
+				33431ECA2B064EBE00FF4D49 /* AspectsTest */,
 				33102E671F49FF66008CCD64 /* NoXibVC */,
 				338BC0621F5307EF00E8DD3E /* JSONToModel */,
 				33F7561F1F5C496F00C7321F /* BOOL */,
@@ -780,6 +792,18 @@
 				333D51221F6E3F5F00FA084F /* RunLoopVC.xib */,
 			);
 			path = RunLoop;
+			sourceTree = "<group>";
+		};
+		33431ECA2B064EBE00FF4D49 /* AspectsTest */ = {
+			isa = PBXGroup;
+			children = (
+				33431ECB2B064EBE00FF4D49 /* AspectsTestVC.h */,
+				33431ECD2B064EBE00FF4D49 /* AspectsTestVC.m */,
+				33431ECC2B064EBE00FF4D49 /* AspectsTestVC.xib */,
+				33431ED02B0650C400FF4D49 /* EOCAutoDictionary.h */,
+				33431ED12B0650C400FF4D49 /* EOCAutoDictionary.m */,
+			);
+			path = AspectsTest;
 			sourceTree = "<group>";
 		};
 		33454B151F76149800DC3F14 /* Category */ = {
@@ -908,6 +932,8 @@
 				3399DF0621B97259006C6B85 /* CustomTarget.m */,
 				3399DEFD21B96E78006C6B85 /* ProxyWithWeakTarget.h */,
 				3399DEFA21B96E78006C6B85 /* ProxyWithWeakTarget.m */,
+				33431D072B061CE100FF4D49 /* NSTimer+NSTimer_Dealloc.h */,
+				33431D082B061CE100FF4D49 /* NSTimer+NSTimer_Dealloc.m */,
 			);
 			path = NSProxy;
 			sourceTree = "<group>";
@@ -1587,6 +1613,7 @@
 				B56895BC263955F900802E37 /* Test2021QQingUIVC.xib in Resources */,
 				B54337F41F5E4CC70055AECE /* MJExtensionTest.json in Resources */,
 				B50394C91EEE5FF70016FA97 /* TimeSequenceVC.xib in Resources */,
+				33431ECE2B064EBE00FF4D49 /* AspectsTestVC.xib in Resources */,
 				338BC0671F530A8400E8DD3E /* JSONToModelVC.xib in Resources */,
 				331A8C581F5EF09A00198ED9 /* JSONModelExceptionTwoTest.json in Resources */,
 				B5633FD21F5FD02700A72567 /* YYModelSubClassOneTest.json in Resources */,
@@ -1774,6 +1801,7 @@
 				3396833322EB5FA900EB32D8 /* Array+QExtension.swift in Sources */,
 				B541E7F62028284600D23093 /* UIViewController+APSafeTransition.m in Sources */,
 				3396833122EB5FA900EB32D8 /* UIFont+QExtension.swift in Sources */,
+				33431ECF2B064EBE00FF4D49 /* AspectsTestVC.m in Sources */,
 				B5190A162320D77B00A648D5 /* SwiftBenTestVM.swift in Sources */,
 				B5190A172320D77B00A648D5 /* BenTestModelOCA.m in Sources */,
 				3399DF0B21B973A7006C6B85 /* Aspects.m in Sources */,
@@ -1821,6 +1849,7 @@
 				B56480101EF91FF9009CF536 /* GCDSemaphore.m in Sources */,
 				339682B122EB59BE00EB32D8 /* AttachmentTestVC.m in Sources */,
 				B541E7FA2028287400D23093 /* SafePushTestVC.m in Sources */,
+				33431D092B061CE100FF4D49 /* NSTimer+NSTimer_Dealloc.m in Sources */,
 				B56895BD263955F900802E37 /* QQingVView.m in Sources */,
 				B5C7254525E8E2B60030F5D9 /* db.xcdatamodeld in Sources */,
 				334B7A5D1F9E492400F40D7F /* MemoryManageVC.m in Sources */,
@@ -1837,6 +1866,7 @@
 				3396833522EB5FA900EB32D8 /* UIImage+QExtension.swift in Sources */,
 				B56480201EF92071009CF536 /* UIView+Hierarchy.m in Sources */,
 				B5190A182320D77B00A648D5 /* SwiftBenTestModel.swift in Sources */,
+				33431ED22B0650C500FF4D49 /* EOCAutoDictionary.m in Sources */,
 				33454B2D1F76199E00DC3F14 /* BaseObject.m in Sources */,
 				B54337B21F5E46A50055AECE /* MantleUsageVC.m in Sources */,
 				B50711D11F163187008EC4AE /* ClassPropertyVC.m in Sources */,
