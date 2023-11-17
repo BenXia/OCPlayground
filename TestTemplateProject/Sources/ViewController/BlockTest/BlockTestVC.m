@@ -30,7 +30,7 @@
     
 //    [self testCallSuperMethod];
     
-//    [self testWhetherBlockCopy];
+    [self testWhetherBlockCopy];
     
 //    [self testWhetherBlockCopy2];
     
@@ -38,38 +38,80 @@
     
 //    [self testBlockCaptureObjectAndRetainWhenCopyToHeap];
     
-    [self testBlockCaptureWeakObjectAndCopyToHeap];
+//    [self testBlockCaptureWeakObjectAndCopyToHeap];
 }
 
 - (void)testRecursiveCall_1 {
-    static void (^p)(int) = nil;
+    // 测试一：
+//    static void (^p)(int) = nil;
+//    p = ^(int i){
+//        if (i > 0) {
+//            NSLog(@"Hello, world!");
+//            p(i - 1);
+//        }
+//    };
+//    p(2);
     
-    //__weak typeof(p) weakP = p;
     
+    // 测试二：
+//    __block void (^p)(int) = nil;
+//    
+//    p = ^(int i){
+//        if (i > 0) {
+//            NSLog(@"Hello, world!");
+//            p(i-1);
+//        }
+//    };
+//    
+//    p(2);
+    
+    
+    // 测试三：错误的（截获的是指针 nil）
+//    void (^p)(int) = nil;
+//    
+//    __weak typeof(p) weakP = p;
+//    
+//    p = ^(int i){
+//        __strong typeof(p) inStrongP = weakP;
+//        if (i > 0) {
+//            NSLog(@"Hello, world!");
+//            inStrongP(i - 1);
+//        }
+//    };
+//    
+//    weakP = p;
+//    
+//    p(2);
+    
+    
+    // 测试四：截获指针的指针是可以的
+    void (^p)(int) = nil;
+
+    __strong id *blockPointer = &p;
+
     p = ^(int i){
-        //__strong typeof(p) inStrongP = weakP;
+        void (^block)(int) = (void (^)(int))(*blockPointer);
         if (i > 0) {
             NSLog(@"Hello, world!");
-            //inStrongP(i - 1);
-            p(i - 1);
+            block(i - 1);
         }
     };
-    
-    //weakP = p;
-    
+
     p(2);
 }
 
 - (void)testRecursiveCall_2 {
-    void (^p)(int) = 0;
+//    void (^p)(int) = 0;
     static void (^ const blocks)(int) = ^(int i){
        if (i > 0) {
           NSLog(@"Hello, world!");
           blocks(i - 1);
        }
     };
-    p = blocks;
-    p(2);
+//    p = blocks;
+//    p(2);
+    
+    blocks(2);
 }
 
 - (void)testRecursiveCall_3 {
@@ -141,9 +183,20 @@
 
 - (void)testWhetherBlockCopy {
     NSArray *obj = [self getBlockArray];
+    // po obj
+//    <__NSArrayI 0x600000287e40>(
+//        <__NSMallocBlock__: 0x600000d6c0c0>
+//        <__NSMallocBlock__: 0x600000d6c270>
+//    )
+                                
     typedef void (^blk_t)(void);
-    blk_t blk = (blk_t)[obj objectAtIndex:0];
-    blk(); // 运行时访问的是悬垂指针
+    int val[100000];  // 定义一个比较大的栈中数组，试图擦掉之前入栈初始化的block
+    memset(val, -1, sizeof(val));
+    
+    blk_t blk = (blk_t)[obj objectAtIndex:1];
+    blk(); // （跟书上说的运行时访问的是悬垂指针不一样，竟然已经拷贝到堆中了）
+    // 跟这篇文章中说的也不一样，https://www.jianshu.com/p/357e250ca6c7
+    printf("%d\n", val[0]);
 }
 
 static void blockCleanUp(__strong void(^*block)(void)) {
@@ -159,7 +212,8 @@ static void blockCleanUp(__strong void(^*block)(void)) {
     };
     
     return [[NSArray alloc] initWithObjects:
-            [block copy],
+            //[block copy],
+            block,
             [^{NSLog(@"blk1:%d", val);} copy], nil];
 }
 
@@ -170,12 +224,24 @@ static void blockCleanUp(__strong void(^*block)(void)) {
     blk();
 }
 
+static void blockCleanUp2(__strong void(^*block)(id obj)) {
+    //(*block)();
+    NSLog(@"I'm dying...");
+}
+
 - (void)testBlockCaptureObjectOnlyInStack {
     typedef void (^blk_t)(id obj);
     
     blk_t blk;
     {
         NSMutableArray *array = [[NSMutableArray alloc] init];
+        
+//        __strong blk_t block __attribute__((cleanup(blockCleanUp2), unused)) = ^(id obj){
+//            [array addObject:obj];
+//            NSLog(@"array count = %ld", [array count]);
+//        };
+//        blk = block;
+        
         blk = ^(id obj){
             [array addObject:obj];
             NSLog(@"array count = %ld", [array count]);

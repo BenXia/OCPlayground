@@ -60,7 +60,7 @@ extension Dictionary {
         
 //        self.testReactiveSwiftBasic()
         
-        self.testSwiftCombine()
+//        self.testSwiftCombine()
 
 //        self.testReactiveObjCBasic()
 
@@ -68,9 +68,9 @@ extension Dictionary {
         
 //        self.testSwiftArgDefaultValue("Wang")
         
-//        self.testSwiftArgDefaultValue(age: 13)
+//        self.testSwiftArgDefaultValue(age: 15)
         
-//        self.testSwiftMethodDispatch()
+        self.testSwiftMethodDispatch()
     }
     
     func tempTestFunc() {
@@ -175,16 +175,16 @@ extension Dictionary {
     }
     
     func testReactiveSwiftBasic() {
-//        let model: SwiftBenTestModel = SwiftBenTestModel.init()
-//        model.qingqingWhateverId = "11818212"
-//        model.adjusted = false
-//        model.startTime = 1563765226000
-//        model.endTime = 1563765226000
-//
-//        let view: SwiftBenTestView = SwiftBenTestView.init(frame: CGRect(x: (SwiftUtility.kScreenWidth_ - SwiftBenTestView.kTestViewWidth) / 2, y: 100, width: SwiftBenTestView.kTestViewWidth, height:SwiftBenTestView.kTestViewHeight))
-//        view.refreshUI(model: model)
-//
-//        self.view.addSubview(view)
+        let model: SwiftBenTestModel = SwiftBenTestModel.init()
+        model.qingqingWhateverId = "11818212"
+        model.adjusted = false
+        model.startTime = 1563765226000
+        model.endTime = 1563765226000
+
+        let view: SwiftBenTestView = SwiftBenTestView.init(frame: CGRect(x: (SwiftUtility.kScreenWidth_ - SwiftBenTestView.kTestViewWidth) / 2, y: 100, width: SwiftBenTestView.kTestViewWidth, height:SwiftBenTestView.kTestViewHeight))
+        view.refreshUI(model: model)
+
+        self.view.addSubview(view)
 
         // 第一种 swift model 的 KVO 观察实现方式（需要注意析构时候移除观察者）（属性需要 @objc dynamic 修饰）
 //        self.swiftKVOModel = SwiftBenTestModel.init()
@@ -498,6 +498,7 @@ extension Dictionary {
     
     func testSwiftBlock() {
         typealias Fn = (Int) -> Int
+//        var num = 0
         func getFn() -> Fn {
             var num = 0
             func plus(_ i: Int) -> Int {

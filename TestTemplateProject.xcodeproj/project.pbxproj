@@ -295,6 +295,8 @@
 		337790AF2A8F7A0700B722F4 /* WeakArray.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakArray.m; sourceTree = "<group>"; };
 		337EEC271EDC3F2C00EDC166 /* NSObject+DLIntrospection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+DLIntrospection.h"; sourceTree = "<group>"; };
 		337EEC281EDC3F2C00EDC166 /* NSObject+DLIntrospection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+DLIntrospection.m"; sourceTree = "<group>"; };
+		338346822B07C938007A9E0A /* test5.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test5.cpp; sourceTree = "<group>"; };
+		338346832B07C938007A9E0A /* test5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test5.m; sourceTree = "<group>"; };
 		338BC0631F530A8400E8DD3E /* JSONToModelVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONToModelVC.h; sourceTree = "<group>"; };
 		338BC0641F530A8400E8DD3E /* JSONToModelVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONToModelVC.m; sourceTree = "<group>"; };
 		338BC0651F530A8400E8DD3E /* JSONToModelVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JSONToModelVC.xib; sourceTree = "<group>"; };
@@ -1092,6 +1094,8 @@
 				33CACD61288030340000B1E9 /* test3.cpp */,
 				3354F6E02A25AB9D0030A011 /* test4.m */,
 				3354F6F62A25B81B0030A011 /* test4.cpp */,
+				338346832B07C938007A9E0A /* test5.m */,
+				338346822B07C938007A9E0A /* test5.cpp */,
 			);
 			path = BlockTest;
 			sourceTree = "<group>";
