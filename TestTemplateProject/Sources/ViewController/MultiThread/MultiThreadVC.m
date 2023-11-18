@@ -48,7 +48,7 @@
     
 //    [self testAtomicPropertyV2];
     
-//    [self testAtomicPropertyV3];
+    [self testAtomicPropertyV3];
 
 //    __weak typeof(self) weakSelf = self;
 //    dispatch_async(dispatch_get_global_queue(0, 0), ^{
