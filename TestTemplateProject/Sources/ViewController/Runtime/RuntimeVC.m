@@ -52,15 +52,15 @@
     // Do any additional setup after loading the view from its nib.
     
     // 交换方法中的注意事项
-//    Bird *bird = [[Bird alloc] init];
-//    [bird speak];
+    Bird *bird = [[Bird alloc] init];
+    [bird speak];
 //    //-[Bird run]: unrecognized selector sent to instance 0x600000011f40'
 //    [bird run];
-//    
-//    // -[Animal custom_speak]: unrecognized selector sent to instance 0x60000002a610
-//    Animal *ani = [[Animal alloc] init];
-//    [ani speak];
     
+    // -[Animal custom_speak]: unrecognized selector sent to instance 0x60000002a610
+//    FlyAnimal *ani = [[FlyAnimal alloc] init];
+//    [ani speak];
+//    
 //    编译运行正常，输出ViewController中的self对象。 编译运行正常，调用了-speak方法，由于
 //    id cls = [Sark class];
 //    void *obj = &cls;
@@ -77,50 +77,50 @@
 //    father = (void *)&fatherCls;
 //    [(__bridge id)father speak];    // 会崩溃。。。
     
-    id cls = [Sark class];
-    void *obj = &cls;
-    NSLog(@"obj pointer = %p", obj);
-    [(__bridge id)obj speak];
-
-    NSArray *iVars = [Sark instanceVariables];
-    NSLog (@"iVars : %@", iVars);
-    
-    // 添加 property 配合关联属性（）
-    Person* p = [[President alloc] init];   // 换成子类 President 再看看（子类只打印自己的属性，不打印父类的）
-    p.cjmAge = 20;
-    p.cjmName = @"Jiaming Chen";
-    
-    
-    //class: 任何一个类调用class方法：目的是获取方法调用者的类型
-    //superclass: 任何一个类调用superclass方法：目的是获取方法调用者的父类
-    //super: 不是指针，编译器指示符，表示去调用父类的方法，本质还是当前对象去调用父类方法
-    //⚠️注意⚠️：super不是父类对象，仅仅是一个指向父类方法标志
-    [p test];   // self、super、superclass、class的区别
-
-    unsigned int propertyCount = 0;
-    objc_property_t *propertyList = class_copyPropertyList([p class], &propertyCount);
-    for (int i = 0; i < propertyCount; i++) {
-        const char* name = property_getName(propertyList[i]);
-        const char* attributes = property_getAttributes(propertyList[i]);
-        NSLog(@"%s %s", name, attributes);
-    }
-    objc_property_attribute_t attributes = {
-        "T@\"NSString\",C,N,V_studentIdentifier",
-        "",
-    };
-    class_addProperty([p class], "studentIdentifier", &attributes, 1);
-    objc_property_t property = class_getProperty([p class], "studentIdentifier");
-    NSLog(@"%s %s", property_getName(property), property_getAttributes(property));
-
-    propertyList = class_copyPropertyList([p class], &propertyCount);
-    for (int i = 0; i < propertyCount; i++) {
-        const char* name = property_getName(propertyList[i]);
-        const char* attributes = property_getAttributes(propertyList[i]);
-        NSLog(@"%s %s", name, attributes);
-    }
-    
-    NSLog (@"p.age: %ld", p.cjmAge);
-    //NSLog (@"p.studentIdentifier: %@", [p valueForKey:@"studentIdentifier"]);
+//    id cls = [Sark class];
+//    void *obj = &cls;
+//    NSLog(@"obj pointer = %p", obj);
+//    [(__bridge id)obj speak];
+//
+//    NSArray *iVars = [Sark instanceVariables];
+//    NSLog (@"iVars : %@", iVars);
+//    
+//    // 添加 property 配合关联属性（）
+//    Person* p = [[President alloc] init];   // 换成子类 President 再看看（子类只打印自己的属性，不打印父类的）
+//    p.cjmAge = 20;
+//    p.cjmName = @"Jiaming Chen";
+//    
+//    
+//    //class: 任何一个类调用class方法：目的是获取方法调用者的类型
+//    //superclass: 任何一个类调用superclass方法：目的是获取方法调用者的父类
+//    //super: 不是指针，编译器指示符，表示去调用父类的方法，本质还是当前对象去调用父类方法
+//    //⚠️注意⚠️：super不是父类对象，仅仅是一个指向父类方法标志
+//    [p test];   // self、super、superclass、class的区别
+//
+//    unsigned int propertyCount = 0;
+//    objc_property_t *propertyList = class_copyPropertyList([p class], &propertyCount);
+//    for (int i = 0; i < propertyCount; i++) {
+//        const char* name = property_getName(propertyList[i]);
+//        const char* attributes = property_getAttributes(propertyList[i]);
+//        NSLog(@"%s %s", name, attributes);
+//    }
+//    objc_property_attribute_t attributes = {
+//        "T@\"NSString\",C,N,V_studentIdentifier",
+//        "",
+//    };
+//    class_addProperty([p class], "studentIdentifier", &attributes, 1);
+//    objc_property_t property = class_getProperty([p class], "studentIdentifier");
+//    NSLog(@"%s %s", property_getName(property), property_getAttributes(property));
+//
+//    propertyList = class_copyPropertyList([p class], &propertyCount);
+//    for (int i = 0; i < propertyCount; i++) {
+//        const char* name = property_getName(propertyList[i]);
+//        const char* attributes = property_getAttributes(propertyList[i]);
+//        NSLog(@"%s %s", name, attributes);
+//    }
+//    
+//    NSLog (@"p.age: %ld", p.cjmAge);
+//    //NSLog (@"p.studentIdentifier: %@", [p valueForKey:@"studentIdentifier"]);
 }
 
 - (void)didReceiveMemoryWarning {

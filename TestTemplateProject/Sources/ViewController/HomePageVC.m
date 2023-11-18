@@ -129,6 +129,7 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                           vcClass:[LoadInitializeVC class]
                                                      navigationVC:self.navigationController];
     
+    // 知识点：换实现时候需要考虑，originSelector 继承链上没有，或者当前子类没有只有父类有的情况，exchange(impl1,impl2) 有空实现能交换成功，replace(method, impl) 时 impl 为空会无法 replace
     HomePageCellModel *model6 = [HomePageCellModel modelWithTitle:@"runtime"
                                                          subTitle:@"运行时浅析"
                                                           vcClass:[RuntimeVC class]
