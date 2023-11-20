@@ -31,6 +31,7 @@
 		331A8C5A1F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 331A8C551F5EF09A00198ED9 /* JSONModelSubClassTwoTest.json */; };
 		331B4D2C22ED819E00BE1A47 /* RACMLKVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331B4D2922ED819D00BE1A47 /* RACMLKVC.xib */; };
 		331B4D2D22ED819E00BE1A47 /* RACMLKVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 331B4D2A22ED819D00BE1A47 /* RACMLKVC.m */; };
+		333193E82B0B5C58008D549B /* NSObject+Sark.m in Sources */ = {isa = PBXBuildFile; fileRef = 333193E72B0B5C58008D549B /* NSObject+Sark.m */; };
 		33345C9322EA169D008EB89F /* TextViewTestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33345C9222EA169D008EB89F /* TextViewTestVC.swift */; };
 		33345C9622EA17A5008EB89F /* TextViewTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33345C9522EA17A5008EB89F /* TextViewTestVC.xib */; };
 		333953A72AB09E92003EF368 /* SwiftBenTestModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 333953A62AB09E92003EF368 /* SwiftBenTestModel2.swift */; };
@@ -251,6 +252,9 @@
 		331B4D2922ED819D00BE1A47 /* RACMLKVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RACMLKVC.xib; sourceTree = "<group>"; };
 		331B4D2A22ED819D00BE1A47 /* RACMLKVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RACMLKVC.m; sourceTree = "<group>"; };
 		331B4D2B22ED819D00BE1A47 /* RACMLKVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RACMLKVC.h; sourceTree = "<group>"; };
+		333193E42B0B5AF0008D549B /* 类图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "类图.png"; sourceTree = "<group>"; };
+		333193E62B0B5C58008D549B /* NSObject+Sark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Sark.h"; sourceTree = "<group>"; };
+		333193E72B0B5C58008D549B /* NSObject+Sark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Sark.m"; sourceTree = "<group>"; };
 		33345C9222EA169D008EB89F /* TextViewTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTestVC.swift; sourceTree = "<group>"; };
 		33345C9422EA16DC008EB89F /* TestTemplateProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestTemplateProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		33345C9522EA17A5008EB89F /* TextViewTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewTestVC.xib; sourceTree = "<group>"; };
@@ -679,30 +683,30 @@
 				B50394C11EEE5FC30016FA97 /* HomePageVC.m */,
 				B50394C21EEE5FC30016FA97 /* HomePageVC.xib */,
 				B50394CF1EEE61E60016FA97 /* Playground */,
-				33E3D9BC28A2471D00BD0E8D /* CrashTest */,
-				B50394BE1EEE5F9D0016FA97 /* KVONotificationTimeSequence */,
 				B50711CD1F163187008EC4AE /* ClassProperty */,
-				33102E401F496997008CCD64 /* Singleton */,
+				33454B151F76149800DC3F14 /* Category */,
 				B51C08CC2566943B00C54CE3 /* LoadInitialize */,
+				3399DEF921B96E78006C6B85 /* NSProxy */,
+				B541E7F02028284600D23093 /* SafePush */,
 				33102E371F49605D008CCD64 /* Runtime */,
 				33431ECA2B064EBE00FF4D49 /* AspectsTest */,
-				33102E671F49FF66008CCD64 /* NoXibVC */,
+				B50394BE1EEE5F9D0016FA97 /* KVONotificationTimeSequence */,
 				338BC0621F5307EF00E8DD3E /* JSONToModel */,
-				33F7561F1F5C496F00C7321F /* BOOL */,
-				333D511F1F6E3F5F00FA084F /* RunLoop */,
-				33454B151F76149800DC3F14 /* Category */,
-				334B7A561F9E48DD00F40D7F /* Memory */,
-				3395C6C0282E8618001F3C7A /* TaggedPointer */,
-				338CD75121A1B20100EC520C /* MRCARC */,
-				331B4D2822ED819D00BE1A47 /* RACMLK */,
-				3399DEF921B96E78006C6B85 /* NSProxy */,
-				33E14FC31F7971E40042F729 /* MultiThread */,
-				B541E7F02028284600D23093 /* SafePush */,
-				B53C63AF22E83E7E0066F492 /* TextImage */,
-				B5190A002320D66B00A648D5 /* SwiftTest */,
 				B5190A032320D66B00A648D5 /* BlockTest */,
-				B54CC638257E53B600594DA9 /* CustomContainerVC */,
+				33102E401F496997008CCD64 /* Singleton */,
+				33E14FC31F7971E40042F729 /* MultiThread */,
 				B5C7253B25E8E15C0030F5D9 /* CoreDataTestVC */,
+				333D511F1F6E3F5F00FA084F /* RunLoop */,
+				B5190A002320D66B00A648D5 /* SwiftTest */,
+				334B7A561F9E48DD00F40D7F /* Memory */,
+				338CD75121A1B20100EC520C /* MRCARC */,
+				3395C6C0282E8618001F3C7A /* TaggedPointer */,
+				331B4D2822ED819D00BE1A47 /* RACMLK */,
+				33E3D9BC28A2471D00BD0E8D /* CrashTest */,
+				33102E671F49FF66008CCD64 /* NoXibVC */,
+				33F7561F1F5C496F00C7321F /* BOOL */,
+				B53C63AF22E83E7E0066F492 /* TextImage */,
+				B54CC638257E53B600594DA9 /* CustomContainerVC */,
 				B56895AC263955F900802E37 /* IBAdvance */,
 			);
 			path = ViewController;
@@ -721,14 +725,11 @@
 		33102E371F49605D008CCD64 /* Runtime */ = {
 			isa = PBXGroup;
 			children = (
-				33102E4D1F49D322008CCD64 /* main.m_ */,
 				33102E381F496083008CCD64 /* RuntimeVC.h */,
 				33102E391F496083008CCD64 /* RuntimeVC.m */,
 				33102E3A1F496083008CCD64 /* RuntimeVC.xib */,
-				33102E3D1F4965E8008CCD64 /* Person.h */,
-				33102E3E1F4965E8008CCD64 /* Person.m */,
-				B543377D1F56BC5C0055AECE /* President.h */,
-				B543377E1F56BC5C0055AECE /* President.m */,
+				333193E42B0B5AF0008D549B /* 类图.png */,
+				33102E4D1F49D322008CCD64 /* main.m_ */,
 				33102E4E1F49D3F6008CCD64 /* main.cpp_ */,
 				33AB5CF72AF508D0008644B0 /* Animal.h */,
 				33AB5CF82AF508D0008644B0 /* Animal.m */,
@@ -736,6 +737,12 @@
 				33AB5CFE2AF50FDF008644B0 /* FlyAnimal.m */,
 				33AB5CFA2AF508F3008644B0 /* Bird.h */,
 				33AB5CFB2AF508F3008644B0 /* Bird.m */,
+				33102E3D1F4965E8008CCD64 /* Person.h */,
+				33102E3E1F4965E8008CCD64 /* Person.m */,
+				B543377D1F56BC5C0055AECE /* President.h */,
+				B543377E1F56BC5C0055AECE /* President.m */,
+				333193E62B0B5C58008D549B /* NSObject+Sark.h */,
+				333193E72B0B5C58008D549B /* NSObject+Sark.m */,
 			);
 			path = Runtime;
 			sourceTree = "<group>";
@@ -1801,6 +1808,7 @@
 				3396832822EB5ED400EB32D8 /* SwiftUtility.m in Sources */,
 				338BC0661F530A8400E8DD3E /* JSONToModelVC.m in Sources */,
 				338CD75621A1B20100EC520C /* ARCVC.m in Sources */,
+				333193E82B0B5C58008D549B /* NSObject+Sark.m in Sources */,
 				330E810C257221290037E2DE /* CustomOperation.m in Sources */,
 				3399DF0721B97259006C6B85 /* CustomTarget.m in Sources */,
 				B50711701F0E4C8D008EC4AE /* BNPopoverBottomLayout.m in Sources */,
