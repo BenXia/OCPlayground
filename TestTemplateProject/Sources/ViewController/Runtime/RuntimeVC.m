@@ -15,6 +15,13 @@
 #import "President.h"
 #import "NSObject+Sark.h"
 
+struct TestStackAndHeapStorageNode {
+    int one;
+    int two;
+    int three;
+    int four;
+};
+
 @interface Sark : NSObject
 
 @property (nonatomic, copy) NSString *name;
@@ -67,32 +74,70 @@
 
 
 
-    // 知识点：struct object + obj_msgSend + struct super + 函数调用压栈出栈过程
-//    编译运行正常，输出ViewController中的self对象。 编译运行正常，调用了-speak方法，由于
-//    id cls = [Sark class];
-//    void *obj = &cls;
-//    obj已经满足了构成一个objc对象的全部要求（首地址指向ClassObject），遂能够正常走消息机制；
-//    由于这个人造的对象在栈上，而取self.name的操作本质上是self指针在内存向高位地址偏移
-//    （32位下一个指针是4字节，64位下一个指针是8字节），
-//     按viewDidLoad执行时各个变量入栈顺序从高到底为（self, _cmd, self.class, self, obj）
-//    （前两个是方法隐含入参，随后两个为super调用的两个压栈参数(注意压栈的顺序)，
-//     因为调用了 [super viewDidLoad] 其中第一个参数是结构体指针，需要在栈中先构造一个局部变量结构体
-//     遂栈低地址的obj+4（64位上obj+8)取到了self。
+    // 知识点：struct object + obj_msgSend + struct super + 函数调用压栈出栈过程 + 大小端
+    //
+    //    obj 已经满足了构成一个 objc 对象的全部要求（首地址指向 Class），遂能够正常走消息机制；
+    //    由于这个人造的对象在栈上，而取 self.name 的操作本质上是 self 指针在内存向高位地址偏移
+    //   （32位下一个指针是4字节，64位下一个指针是8字节），
+    //    按 viewDidLoad 执行时各个变量入栈顺序 从高到底 为（self, _cmd, self.class, self, cls, obj）
+    //    前两个是方法隐含入栈形参，随后两个为 super 调用的结构体实参压栈(里面有两个指针，注意 iOS 时小端顺序)，
+    //    因为调用了 [super viewDidLoad] 其中第一个参数是结构体指针，
+    //    实参占用调用者的栈空间，形参(如果是指针可能编译器优化成不占用)占用被调用者的栈空间
+    //    所以栈低地址的 obj+4（64位上obj+8) 取到了 self。
     
-    // 栈调试技巧
-    // po $esi   打印寄存器中的值
-    // po ((Sark *)0x16f5b7d20).name  地址中值强转
+    // 实参占用调用者的栈空间，形参(如果是指针可能编译器优化成不占用)占用被调用者的栈空间
+    // (https://zhuanlan.zhihu.com/p/372748418)
+    // ((oldOldEbp), 形参, 局部变量, 实参n, ...实参1, 下一条指令地址, (oldEbp), 形参1, ...形参n, 局部变量...)
+    //               oldEbp                                               ebp                      esp
+    // ((oldOldEbp), 形参, 局部变量, 实参n, ...实参1, 下一条指令地址)
+    //               ebp                                      esp
+    //
+    // 函数返回时会恢复到调用者栈帧（函数返回值一般通过 eax（有时候 eax 加上 ebx) 寄存器保存）
+    // movl %ebp, %esp
+    // popl %ebp
+    //
+    // 低-低-小端（x86和一般的OS（如windows，FreeBSD，Linux）使用的是小端模式，iOS（模拟器也是） 基于 ARM 的 CPU 是小端模式）
+    // 低-高-大端（Mac OS是大端模式 和 TCP/IP规定网络传输中采用大端模式）
+
     
     // 打开下面一段代码，会崩溃（Father class 的 super 继承链中没有 speak 方法的实现）
 //    id fatherCls = [Father class];
 //    void *father = (void *)&fatherCls;
 //    [(__bridge id)father speak];    // 会崩溃。。。
     
-//    id cls = [Sark class];
-//    void *obj = &cls;
-//    NSLog(@"obj pointer = %p", obj);
-//    [(__bridge id)obj speak];
+    NSLog(@"ViewController = %@, 地址 = %p", self, &self);
+    
+    //NSString *myName = @"JustForTest";
+    //NSLog(@"myName = %@, 地址 = %p", myName, &myName);
 
+    id cls = [Sark class];
+    NSLog(@"cls = %@, 地址 = %p", cls, &cls);
+    void *obj = &cls;
+    NSLog(@"obj = %@ 地址 = %p", obj, &obj);
+    NSLog(@"obj address value = %p", obj);
+    [(__bridge id)obj speak];
+//
+//    //栈调试技巧
+//    //po $esi   打印寄存器中的值
+//    //po ((Sark *)0x16f5b7d20).name  地址中值强转
+//    //po *((id *)0x7ff7b0e356a8)
+//    //po *((char **)0x7ff7b0e356a0)
+//
+//    struct TestStackAndHeapStorageNode *heapInfo = (struct TestStackAndHeapStorageNode *)malloc(sizeof(struct TestStackAndHeapStorageNode));
+//    NSLog(@"heapInfo->one address: %p\nheapInfo->two address: %p\nheapInfo->three address: %p\nheapInfo->four address: %p", &(heapInfo->one), &(heapInfo->two), &(heapInfo->three), &(heapInfo->four));
+//    
+//    struct TestStackAndHeapStorageNode stackInfo = {1,2,3,4};
+//    NSLog(@"stackInfo.one address: %p\nstackInfo.two address: %p\nstackInfo.three address: %p\nstackInfo.four address: %p", &(stackInfo.one), &(stackInfo.two), &(stackInfo.three), &(stackInfo.four));
+//    
+//    
+//    int value = 0x01030507;
+//    char *ch = (char *)&value;
+//    if (ch[0] == 7) {
+//        NSLog(@"小端");
+//    } else {
+//        NSLog(@"大端");
+//    }
+//    NSLog(@"%d %d %d %d", ch[0], ch[1], ch[2], ch[3]);
 
 
     // 知识点：class_copyPropertyList 只打印该 class 上自己的属性，不打印父类的
@@ -235,24 +280,24 @@
     //- (BOOL)isMemberOfClass:(Class)cls {
     //    return [self class] == cls;
     //}
-    BOOL res1 = [(id)[NSObject class] isKindOfClass:[NSObject class]];
-    BOOL res2 = [(id)[NSObject class] isMemberOfClass:[NSObject class]];
-    BOOL res3 = [(id)[Sark class] isKindOfClass:[Sark class]];
-    BOOL res4 = [(id)[Sark class] isMemberOfClass:[Sark class]];
-
-    NSLog(@"%d %d %d %d", res1, res2, res3, res4);
-    
-    BOOL res5 = [(id)[NSObject class] isMemberOfClass:objc_getMetaClass("NSObject")];
-    BOOL res6 = [[NSObject new] isMemberOfClass:[NSObject class]];
-    
-    NSLog(@"%d %d", res5, res6);
+//    BOOL res1 = [(id)[NSObject class] isKindOfClass:[NSObject class]];
+//    BOOL res2 = [(id)[NSObject class] isMemberOfClass:[NSObject class]];
+//    BOOL res3 = [(id)[Sark class] isKindOfClass:[Sark class]];
+//    BOOL res4 = [(id)[Sark class] isMemberOfClass:[Sark class]];
+//
+//    NSLog(@"%d %d %d %d", res1, res2, res3, res4);
+//    
+//    BOOL res5 = [(id)[NSObject class] isMemberOfClass:objc_getMetaClass("NSObject")];
+//    BOOL res6 = [[NSObject new] isMemberOfClass:[NSObject class]];
+//    
+//    NSLog(@"%d %d", res5, res6);
     
     
     // 知识点： +(xxx)xxx 与 -(xxx)xxx 方法只是分别被放在原类和类的对象的 method_list 中
     //        消息转发机制根据调用类方法和实例方法
     //        从 self->isa (类方法调用时候 self 为类对象，实例方法调用时候 self 为实例对象) 的对象及向上的 super 类对象链中递归查找 method_list 中有没有 selector 实现
-    [NSObject foo];
-    [[NSObject new] foo];
+//    [NSObject foo];
+//    [[NSObject new] foo];
     
 
     

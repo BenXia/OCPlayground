@@ -255,6 +255,8 @@
 		333193E42B0B5AF0008D549B /* 类图.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "类图.png"; sourceTree = "<group>"; };
 		333193E62B0B5C58008D549B /* NSObject+Sark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Sark.h"; sourceTree = "<group>"; };
 		333193E72B0B5C58008D549B /* NSObject+Sark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Sark.m"; sourceTree = "<group>"; };
+		333193E92B0BA07E008D549B /* testFuncCall.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testFuncCall.m; sourceTree = "<group>"; };
+		333193EA2B0BA07E008D549B /* testFuncCall.s */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.asm; path = testFuncCall.s; sourceTree = "<group>"; };
 		33345C9222EA169D008EB89F /* TextViewTestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTestVC.swift; sourceTree = "<group>"; };
 		33345C9422EA16DC008EB89F /* TestTemplateProject-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestTemplateProject-Bridging-Header.h"; sourceTree = "<group>"; };
 		33345C9522EA17A5008EB89F /* TextViewTestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextViewTestVC.xib; sourceTree = "<group>"; };
@@ -729,6 +731,8 @@
 				33102E391F496083008CCD64 /* RuntimeVC.m */,
 				33102E3A1F496083008CCD64 /* RuntimeVC.xib */,
 				333193E42B0B5AF0008D549B /* 类图.png */,
+				333193E92B0BA07E008D549B /* testFuncCall.m */,
+				333193EA2B0BA07E008D549B /* testFuncCall.s */,
 				33102E4D1F49D322008CCD64 /* main.m_ */,
 				33102E4E1F49D3F6008CCD64 /* main.cpp_ */,
 				33AB5CF72AF508D0008644B0 /* Animal.h */,

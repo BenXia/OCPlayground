@@ -132,7 +132,21 @@ static const CGFloat kTableViewCellHeight = 60.0f;
     //        或者当前子类没有只有父类有的情况，exchange(impl1,impl2) 有空实现能交换成功，
     //        replace(method, impl) 时 impl 为空会无法 replace
     //
-    // 知识点：struct object + obj_msgSend + struct super + 函数调用压栈出栈过程
+    // 知识点：struct object + obj_msgSend + struct super + 函数调用压栈出栈过程 + 大小端
+    //
+    //        实参占用调用者的栈空间，形参(如果是指针可能编译器优化成不占用)占用被调用者的栈空间
+    //        (https://zhuanlan.zhihu.com/p/372748418)
+    //        ((oldOldEbp), 形参, 局部变量, 实参n, ...实参1, 下一条指令地址, (oldEbp), 形参1, ...形参n, 局部变量...)
+    //                      oldEbp                                               ebp                      esp
+    //        ((oldOldEbp), 形参, 局部变量, 实参n, ...实参1, 下一条指令地址)
+    //                      ebp                                      esp
+    //
+    //        函数返回时会恢复到调用者栈帧（函数返回值一般通过 eax（有时候 eax 加上 ebx) 寄存器保存）
+    //        movl %ebp, %esp
+    //        popl %ebp
+    //
+    //        低-低-小端（x86和一般的OS（如windows，FreeBSD，Linux）使用的是小端模式，iOS 基于 ARM 的 CPU 是小端模式）
+    //        低-高-大端（Mac OS是大端模式 和 网络传输中采用大端模式）
     //
     // 知识点：class_copyPropertyList 只打印该 class 上自己的属性，不打印父类的
     //
