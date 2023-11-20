@@ -76,7 +76,28 @@ struct TestStackAndHeapStorageNode {
 
     // 知识点：struct object + obj_msgSend + struct super + 函数调用压栈出栈过程 + 大小端
     //
-    //    obj 已经满足了构成一个 objc 对象的全部要求（首地址指向 Class），遂能够正常走消息机制；
+    //    typedef struct objc_class *Class; //class类对象
+    //
+    //    struct objc_object {
+    //        Class _Nonnull isa  OBJC_ISA_AVAILABILITY;
+    //    };
+    //
+    //    typedef struct objc_object *id; //objc实例对象
+    //
+    //    struct objc_class {
+    //        Class isa  OBJC_ISA_AVAILABILITY;   //isa指针，指向metaclass（该类的元类）
+    //        Class super_class   //指向objc_class（该类）的super_class（父类）
+    //        const char *name    //objc_class（该类）的类名
+    //        long version        //objc_class（该类）的版本信息，初始化为0，可以通过runtime函数class_setVersion和class_getVersion进行修改和读取
+    //        long info           //一些标识信息，如CLS_CLASS表示objc_class（该类）为普通类。ClS_CLASS表示objc_class（该类）为metaclass（元类）
+    //        long instance_size  //objc_class（该类）的实例变量的大小
+    //        struct objc_ivar_list *ivars    //用于存储每个成员变量的地址
+    //        struct objc_method_list **methodLists   //方法列表，与info标识关联
+    //        struct objc_cache *cache        //指向最近使用的方法的指针，用于提升效率
+    //        struct objc_protocol_list *protocols    //存储objc_class（该类）的一些协议
+    //    }
+
+    //    obj 已经满足了构成一个 objc 对象的全部要求（首地址指向 Class 变量），遂能够正常走消息机制；
     //    由于这个人造的对象在栈上，而取 self.name 的操作本质上是 self 指针在内存向高位地址偏移
     //   （32位下一个指针是4字节，64位下一个指针是8字节），
     //    按 viewDidLoad 执行时各个变量入栈顺序 从高到底 为（self, _cmd, self.class, self, cls, obj）
@@ -116,30 +137,31 @@ struct TestStackAndHeapStorageNode {
     NSLog(@"obj = %@ 地址 = %p", obj, &obj);
     NSLog(@"obj address value = %p", obj);
     [(__bridge id)obj speak];
-//
+
 //    //栈调试技巧
 //    //po $esi   打印寄存器中的值
 //    //po ((Sark *)0x16f5b7d20).name  地址中值强转
 //    //po *((id *)0x7ff7b0e356a8)
 //    //po *((char **)0x7ff7b0e356a0)
-//
-//    struct TestStackAndHeapStorageNode *heapInfo = (struct TestStackAndHeapStorageNode *)malloc(sizeof(struct TestStackAndHeapStorageNode));
-//    NSLog(@"heapInfo->one address: %p\nheapInfo->two address: %p\nheapInfo->three address: %p\nheapInfo->four address: %p", &(heapInfo->one), &(heapInfo->two), &(heapInfo->three), &(heapInfo->four));
-//    
-//    struct TestStackAndHeapStorageNode stackInfo = {1,2,3,4};
-//    NSLog(@"stackInfo.one address: %p\nstackInfo.two address: %p\nstackInfo.three address: %p\nstackInfo.four address: %p", &(stackInfo.one), &(stackInfo.two), &(stackInfo.three), &(stackInfo.four));
-//    
-//    
-//    int value = 0x01030507;
-//    char *ch = (char *)&value;
-//    if (ch[0] == 7) {
-//        NSLog(@"小端");
-//    } else {
-//        NSLog(@"大端");
-//    }
-//    NSLog(@"%d %d %d %d", ch[0], ch[1], ch[2], ch[3]);
+
+    struct TestStackAndHeapStorageNode *heapInfo = (struct TestStackAndHeapStorageNode *)malloc(sizeof(struct TestStackAndHeapStorageNode));
+    NSLog(@"heapInfo->one address: %p\nheapInfo->two address: %p\nheapInfo->three address: %p\nheapInfo->four address: %p", &(heapInfo->one), &(heapInfo->two), &(heapInfo->three), &(heapInfo->four));
+    
+    struct TestStackAndHeapStorageNode stackInfo = {1,2,3,4};
+    NSLog(@"stackInfo.one address: %p\nstackInfo.two address: %p\nstackInfo.three address: %p\nstackInfo.four address: %p", &(stackInfo.one), &(stackInfo.two), &(stackInfo.three), &(stackInfo.four));
+    
+    
+    int value = 0x01030507;
+    char *ch = (char *)&value;
+    if (ch[0] == 7) {
+        NSLog(@"小端");
+    } else {
+        NSLog(@"大端");
+    }
+    NSLog(@"%d %d %d %d", ch[0], ch[1], ch[2], ch[3]);
 
 
+    
     // 知识点：class_copyPropertyList 只打印该 class 上自己的属性，不打印父类的
 //    NSArray *iVars = [President instanceVariables];
 //    NSLog (@"iVars : %@", iVars);
