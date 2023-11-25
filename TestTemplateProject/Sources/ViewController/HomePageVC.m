@@ -9,6 +9,7 @@
 #import "HomePageVC.h"
 #import "PlaygroundVC.h"
 #import "ClassPropertyVC.h"
+#import "NSStringEmojiVC.h"
 #import "CategoryVC.h"
 #import "LoadInitializeVC.h"
 #import "ProxyTestVC.h"
@@ -106,6 +107,11 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                          subTitle:@"类属性的详细实现"
                                                           vcClass:[ClassPropertyVC class]
                                                      navigationVC:self.navigationController];
+    
+    HomePageCellModel *model2_1 = [HomePageCellModel modelWithTitle:@"NSString编码"
+                                                           subTitle:@"含有 emoji 表情的 NSString 字符串操作"
+                                                            vcClass:[NSStringEmojiVC class]
+                                                       navigationVC:self.navigationController];
     
     // 知识点：self.xxx = nil 在 MRC 中就会对 self.xxx 执行 release 操作
     HomePageCellModel *model3 = [HomePageCellModel modelWithTitle:@"Category"
@@ -345,7 +351,7 @@ static const CGFloat kTableViewCellHeight = 60.0f;
                                                            vcClass:[Test2021QQingUIVC class]
                                                       navigationVC:self.navigationController];
     
-    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, model20, model21, model22, model23, model24, model25, model26, nil];
+    self.dataSourceArray = [NSArray arrayWithObjects:model1, model2, model2_1, model3, model4, model5, model6, model7, model8, model9, model10, model11, model12, model13, model14, model15, model16, model17, model18, model19, model20, model21, model22, model23, model24, model25, model26, nil];
     
 //    NSLog (@"self.view.frame: %@", NSStringFromCGRect(self.view.frame));
 }

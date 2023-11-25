@@ -51,6 +51,8 @@
 		33454B2D1F76199E00DC3F14 /* BaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 33454B2C1F76199E00DC3F14 /* BaseObject.m */; };
 		334B7A5D1F9E492400F40D7F /* MemoryManageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 334B7A5B1F9E492400F40D7F /* MemoryManageVC.m */; };
 		334B7A5E1F9E492400F40D7F /* MemoryManageVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 334B7A5C1F9E492400F40D7F /* MemoryManageVC.xib */; };
+		334EF6692B11DBE3007409EE /* NSStringEmojiVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 334EF6662B11DBE3007409EE /* NSStringEmojiVC.m */; };
+		334EF66A2B11DBE3007409EE /* NSStringEmojiVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 334EF6672B11DBE3007409EE /* NSStringEmojiVC.xib */; };
 		337790AA2A8F793A00B722F4 /* WeakDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 337790A92A8F793A00B722F4 /* WeakDictionary.m */; };
 		337790AD2A8F79BB00B722F4 /* WeakSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 337790AC2A8F79BB00B722F4 /* WeakSet.m */; };
 		337790B02A8F7A0700B722F4 /* WeakArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 337790AF2A8F7A0700B722F4 /* WeakArray.m */; };
@@ -291,6 +293,9 @@
 		334B7A5A1F9E492400F40D7F /* MemoryManageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MemoryManageVC.h; sourceTree = "<group>"; };
 		334B7A5B1F9E492400F40D7F /* MemoryManageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoryManageVC.m; sourceTree = "<group>"; };
 		334B7A5C1F9E492400F40D7F /* MemoryManageVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemoryManageVC.xib; sourceTree = "<group>"; };
+		334EF6662B11DBE3007409EE /* NSStringEmojiVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringEmojiVC.m; sourceTree = "<group>"; };
+		334EF6672B11DBE3007409EE /* NSStringEmojiVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NSStringEmojiVC.xib; sourceTree = "<group>"; };
+		334EF6682B11DBE3007409EE /* NSStringEmojiVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringEmojiVC.h; sourceTree = "<group>"; };
 		3354F6E02A25AB9D0030A011 /* test4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = test4.m; sourceTree = "<group>"; };
 		3354F6F62A25B81B0030A011 /* test4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test4.cpp; sourceTree = "<group>"; };
 		337790A82A8F793A00B722F4 /* WeakDictionary.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakDictionary.h; sourceTree = "<group>"; };
@@ -686,6 +691,7 @@
 				B50394C21EEE5FC30016FA97 /* HomePageVC.xib */,
 				B50394CF1EEE61E60016FA97 /* Playground */,
 				B50711CD1F163187008EC4AE /* ClassProperty */,
+				334EF6652B11DBE3007409EE /* NSStringEmoji */,
 				33454B151F76149800DC3F14 /* Category */,
 				B51C08CC2566943B00C54CE3 /* LoadInitialize */,
 				3399DEF921B96E78006C6B85 /* NSProxy */,
@@ -860,6 +866,16 @@
 				337790AF2A8F7A0700B722F4 /* WeakArray.m */,
 			);
 			path = Memory;
+			sourceTree = "<group>";
+		};
+		334EF6652B11DBE3007409EE /* NSStringEmoji */ = {
+			isa = PBXGroup;
+			children = (
+				334EF6682B11DBE3007409EE /* NSStringEmojiVC.h */,
+				334EF6662B11DBE3007409EE /* NSStringEmojiVC.m */,
+				334EF6672B11DBE3007409EE /* NSStringEmojiVC.xib */,
+			);
+			path = NSStringEmoji;
 			sourceTree = "<group>";
 		};
 		337EEC261EDC3F2C00EDC166 /* DLIntrospection */ = {
@@ -1693,6 +1709,7 @@
 				339682AD22EB58F000EB32D8 /* CoreTextTestVC.xib in Resources */,
 				B54337BD1F5E46D70055AECE /* MJExtensionUsageVC.xib in Resources */,
 				B5633FD51F5FD1F500A72567 /* MJExtensionModelArrayTest.json in Resources */,
+				334EF66A2B11DBE3007409EE /* NSStringEmojiVC.xib in Resources */,
 				B5190A092320D66B00A648D5 /* BlockTestVC.xib in Resources */,
 				33E3D9C328A24E3C00BD0E8D /* SwiftMethodDispatch.png in Resources */,
 				B50394D41EEE61F80016FA97 /* PlaygroundVC.xib in Resources */,
@@ -1842,6 +1859,7 @@
 				3396833222EB5FA900EB32D8 /* String+QExtension.swift in Sources */,
 				B5190A2D2320E64C00A648D5 /* NSArray+ObjectAtIndexWithBoundsCheck.m in Sources */,
 				330F7C0D1ED349AB0009280A /* UIView+Helper.m in Sources */,
+				334EF6692B11DBE3007409EE /* NSStringEmojiVC.m in Sources */,
 				33454B291F76153200DC3F14 /* ARCObject+TestDealloc.m in Sources */,
 				337790B02A8F7A0700B722F4 /* WeakArray.m in Sources */,
 				333D51231F6E3F5F00FA084F /* RunLoopVC.m in Sources */,
