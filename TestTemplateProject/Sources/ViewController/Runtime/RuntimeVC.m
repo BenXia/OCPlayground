@@ -117,8 +117,10 @@ struct TestStackAndHeapStorageNode {
     // movl %ebp, %esp
     // popl %ebp
     //
-    // 低-低-小端（x86和一般的OS（如windows，FreeBSD，Linux）使用的是小端模式，iOS（模拟器也是） 基于 ARM 的 CPU 是小端模式）
-    // 低-高-大端（Mac OS是大端模式 和 TCP/IP规定网络传输中采用大端模式）
+    // 低-低-小端（x86和一般的OS（如windows，FreeBSD，Linux）使用的是小端序、
+    //           iOS（模拟器也是） 基于 ARM 的 CPU 是小端序、
+    //           MacOS M1/M2芯片是小端序）
+    // 低-高-大端（MacOS Intel芯片是大端序、TCP/IP规定网络传输中采用大端序）
 
     
     // 打开下面一段代码，会崩溃（Father class 的 super 继承链中没有 speak 方法的实现）
