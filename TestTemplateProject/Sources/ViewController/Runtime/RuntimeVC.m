@@ -140,6 +140,7 @@ struct TestStackAndHeapStorageNode {
     NSLog(@"obj address value = %p", obj);
     [(__bridge id)obj speak];
 
+//    // 工具栏 Debug->Debug Workflow->Always Show Disassembly 可以查看断点处的汇编代码
 //    //栈调试技巧
 //    //po $esi   打印寄存器中的值
 //    //po ((Sark *)0x16f5b7d20).name  地址中值强转
