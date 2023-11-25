@@ -113,7 +113,7 @@ struct TestStackAndHeapStorageNode {
     // ((oldOldEbp), 形参, 局部变量, 实参n, ...实参1, 下一条指令地址)
     //               ebp                                      esp
     //
-    // 函数返回时会恢复到调用者栈帧（函数返回值一般通过 eax（有时候 eax 加上 ebx) 寄存器保存）
+    // 函数返回时会恢复到调用者栈帧（函数返回值一般通过 rax/eax（有时候 rax/eax 加上 rdx/ebx) 寄存器保存）
     // movl %ebp, %esp
     // popl %ebp
     //
@@ -141,11 +141,15 @@ struct TestStackAndHeapStorageNode {
     [(__bridge id)obj speak];
 
 //    // 工具栏 Debug->Debug Workflow->Always Show Disassembly 可以查看断点处的汇编代码
-//    //栈调试技巧
-//    //po $esi   打印寄存器中的值
+//    //栈调试技巧（lldb中汇编操作符，左边是目标地址，跟 https://zhuanlan.zhihu.com/p/372748418 这个文章中不一样）
 //    //po ((Sark *)0x16f5b7d20).name  地址中值强转
 //    //po *((id *)0x7ff7b0e356a8)
 //    //po *((char **)0x7ff7b0e356a0)
+//    //info registers  打印所有寄存器中的值(gdb)
+//    //register read   打印所有寄存器中的值(lldb)
+//    //po $esi   打印寄存器中的值(gdb)
+//    //x $eax    显示寄存器指向的值(gdb)
+//    //memory read 0x0000000109c16ca8 打印寄存器中的值(lldb)
 
     struct TestStackAndHeapStorageNode *heapInfo = (struct TestStackAndHeapStorageNode *)malloc(sizeof(struct TestStackAndHeapStorageNode));
     NSLog(@"heapInfo->one address: %p\nheapInfo->two address: %p\nheapInfo->three address: %p\nheapInfo->four address: %p", &(heapInfo->one), &(heapInfo->two), &(heapInfo->three), &(heapInfo->four));
