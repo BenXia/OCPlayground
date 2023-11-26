@@ -113,9 +113,22 @@ struct TestStackAndHeapStorageNode {
     // ((oldOldEbp), 形参, 局部变量, 实参n, ...实参1, 下一条指令地址)
     //               ebp                                      esp
     //
+    // call 指令可以分为两步，第一步将当前程序段的下一行代码的地址入栈，第二步才是跳转到子函数的代码段，相当于如下两行指令
+    // pushl [下一句代码的地址]
+    // jmp functionToCall
+    //
+    //
     // 函数返回时会恢复到调用者栈帧（函数返回值一般通过 rax/eax（有时候 rax/eax 加上 rdx/ebx) 寄存器保存）
     // movl %ebp, %esp
     // popl %ebp
+    //
+    // rax,eax,ax,ah,al 寄存器的关系
+    // |63..32|31..16|15-8|7-0|
+    //                |AH.|AL.|
+    //                |AX.....|
+    //        |EAX............|
+    // |RAX...................|
+    //
     //
     // 低-低-小端（x86和一般的OS（如windows，FreeBSD，Linux）使用的是小端序、
     //           iOS（模拟器也是） 基于 ARM 的 CPU 是小端序、
