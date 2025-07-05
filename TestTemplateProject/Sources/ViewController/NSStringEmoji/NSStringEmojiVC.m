@@ -34,7 +34,6 @@
     NSLog(@"emoji location:%lu len: %lu", range.location, range.length);
     NSLog(@"strRemoveEmoji len: %lu : %@", strRemoveEmoji.length, strRemoveEmoji);
     
-    
     // 下面是一个含有组合形式的 emoji 表情符号的例子
     // 查看表情编码地址：https://apps.timwhitlock.info/unicode/inspect
     //NSString *compoundEmojiStr = @"👩‍👩‍👦‍👦";

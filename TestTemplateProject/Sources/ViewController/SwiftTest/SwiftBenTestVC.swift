@@ -52,6 +52,12 @@ extension Dictionary {
     func initUI() {
         self.title = "Swift调试页面"
         
+        let string: String = "✅❎👩‍👩‍👦‍👦"
+        print("string count: \(string.count)")
+        print("string unicodeScalars.count: \(string.unicodeScalars.count)")
+        let nsstring: NSString = "✅❎👩‍👩‍👦‍👦"
+        print("nsstring length: \(nsstring.length)")
+        
 //        self.tempTestFunc()
         
 //        self.testOptionalType()
