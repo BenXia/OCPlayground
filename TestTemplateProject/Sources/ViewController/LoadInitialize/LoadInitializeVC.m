@@ -7,7 +7,7 @@
 //
 
 #import "LoadInitializeVC.h"
-#import "Case2SuperClass.h"
+#import "Case1SuperClass.h"
 
 // 类没有被引用进项目，就不会有load调用；但即使类文件被引用进来，但是没有使用，那么initialize也不会被调用。
 // 可通过控制 .m 文件是否加入 target 来控制是否引用进项目
@@ -38,7 +38,7 @@
     // Do any additional setup after loading the view from its nib.
     
     // Case2ChildClass 继承下了 +(void)load 而且可以被安全地当作普通类方法被使用。这也就是我之前所说的load和initialize被调用一次是相对 runtime 而言。
-//    [Case2ChildClass load];
+    //[Case2ChildClass load];
 }
 
 @end

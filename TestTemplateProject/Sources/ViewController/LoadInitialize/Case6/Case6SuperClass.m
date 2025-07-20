@@ -14,9 +14,9 @@
     NSLog(@"%@ %s", [self class], __FUNCTION__);
 }
 
-//+ (void)initialize {
-//    NSLog(@"%@ %s", [self class], __FUNCTION__);
-//}
++ (void)initialize {
+    NSLog(@"%@ %s", [self class], __FUNCTION__);
+}
 
 @end
 
@@ -26,12 +26,12 @@
     NSLog(@"%@ %s", @"Case6ChildClass", __FUNCTION__);
 }
 
-//+ (void)initialize {
-//    NSLog(@"%@ %s", [self class], __FUNCTION__);
-//    
-//    Case6AnotherClass *object = [Case6AnotherClass new];
-//    [object doSomeMethod];
-//}
++ (void)initialize {
+    NSLog(@"%@ %s", [self class], __FUNCTION__);
+    
+    Case6AnotherClass *object = [Case6AnotherClass new];
+    [object doSomeMethod];
+}
 
 @end
 
@@ -41,9 +41,9 @@
     NSLog(@"%s", __FUNCTION__);
 }
 
-//+ (void)initialize {
-//    NSLog(@"%@ %s", [self class], __FUNCTION__);
-//}
++ (void)initialize {
+    NSLog(@"%@ %s", [self class], __FUNCTION__);
+}
 
 - (void)doSomeMethod {
     NSLog(@"%@ %s", [self class], __FUNCTION__);

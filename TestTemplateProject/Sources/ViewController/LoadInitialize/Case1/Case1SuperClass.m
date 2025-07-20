@@ -11,6 +11,7 @@
 @implementation Case1SuperClass
 
 + (void)load {
+    //NSLog(@"%s", __FUNCTION__);
     NSLog(@"%@ %s", [self class], __FUNCTION__);
 }
 

@@ -67,7 +67,7 @@ struct TestStackAndHeapStorageNode {
 //    [bird speak];
 //    //-[Bird run]: unrecognized selector sent to instance 0x600000011f40'
 //    [bird run];
-    
+
     // -[Animal custom_speak]: unrecognized selector sent to instance 0x60000002a610
 //    FlyAnimal *ani = [[FlyAnimal alloc] init];
 //    [ani speak];
@@ -101,10 +101,10 @@ struct TestStackAndHeapStorageNode {
     //    由于这个人造的对象在栈上，而取 self.name 的操作本质上是 self 指针在内存向高位地址偏移
     //   （32位下一个指针是4字节，64位下一个指针是8字节），
     //    按 viewDidLoad 执行时各个变量入栈顺序 从高到底 为（self, _cmd, self.class, self, cls, obj）
-    //    前两个是方法隐含入栈形参，随后两个为 super 调用的结构体实参压栈(里面有两个指针，注意 iOS 时小端顺序)，
+    //    前两个是方法隐含入栈形参，随后两个为 super 调用的结构体实参压栈(里面有两个指针，注意 iOS 是小端顺序)，
     //    因为调用了 [super viewDidLoad] 其中第一个参数是结构体指针，
     //    实参占用调用者的栈空间，形参(如果是指针可能编译器优化成不占用)占用被调用者的栈空间
-    //    所以栈低地址的 obj+4（64位上obj+8) 取到了 self。
+    //    所以栈低地址的 obj+4（64位上obj+8）取到了 self。
     
     // 实参占用调用者的栈空间，形参(如果是指针可能编译器优化成不占用)占用被调用者的栈空间
     // (https://zhuanlan.zhihu.com/p/372748418)
@@ -135,23 +135,26 @@ struct TestStackAndHeapStorageNode {
     //           MacOS M1/M2芯片是小端序）
     // 低-高-大端（MacOS Intel芯片是大端序、TCP/IP规定网络传输中采用大端序）
 
-    
+
     // 打开下面一段代码，会崩溃（Father class 的 super 继承链中没有 speak 方法的实现）
 //    id fatherCls = [Father class];
 //    void *father = (void *)&fatherCls;
 //    [(__bridge id)father speak];    // 会崩溃。。。
-    
-    NSLog(@"ViewController = %@, 地址 = %p", self, &self);
-    
-    //NSString *myName = @"JustForTest";
-    //NSLog(@"myName = %@, 地址 = %p", myName, &myName);
 
-    id cls = [Sark class];
-    NSLog(@"cls = %@, 地址 = %p", cls, &cls);
-    void *obj = &cls;
-    NSLog(@"obj = %@ 地址 = %p", obj, &obj);
-    NSLog(@"obj address value = %p", obj);
-    [(__bridge id)obj speak];
+
+//    NSLog(@"ViewController = %@, 地址 = %p", self, &self);
+//
+//    //NSString *myName = @"JustForTest";
+//    //NSLog(@"myName = %@, 地址 = %p", myName, &myName);
+
+
+//    id cls = [Sark class];
+//    NSLog(@"cls = %@, 地址 = %p", cls, &cls);
+//    void *obj = &cls;
+//    NSLog(@"obj = %@ 地址 = %p", obj, &obj);
+//    NSLog(@"obj address value = %p", obj);
+//    [(__bridge id)obj speak];
+
 
 //    // 工具栏 Debug->Debug Workflow->Always Show Disassembly 可以查看断点处的汇编代码
 //    //栈调试技巧（lldb中汇编操作符，左边是目标地址，跟 https://zhuanlan.zhihu.com/p/372748418 这个文章中不一样）
@@ -164,24 +167,25 @@ struct TestStackAndHeapStorageNode {
 //    //x $eax    显示寄存器指向的值(gdb)
 //    //memory read 0x0000000109c16ca8 打印寄存器中的值(lldb)
 
-    struct TestStackAndHeapStorageNode *heapInfo = (struct TestStackAndHeapStorageNode *)malloc(sizeof(struct TestStackAndHeapStorageNode));
-    NSLog(@"heapInfo->one address: %p\nheapInfo->two address: %p\nheapInfo->three address: %p\nheapInfo->four address: %p", &(heapInfo->one), &(heapInfo->two), &(heapInfo->three), &(heapInfo->four));
-    
-    struct TestStackAndHeapStorageNode stackInfo = {1,2,3,4};
-    NSLog(@"stackInfo.one address: %p\nstackInfo.two address: %p\nstackInfo.three address: %p\nstackInfo.four address: %p", &(stackInfo.one), &(stackInfo.two), &(stackInfo.three), &(stackInfo.four));
-    
-    
-    int value = 0x01030507;
-    char *ch = (char *)&value;
-    if (ch[0] == 7) {
-        NSLog(@"小端");
-    } else {
-        NSLog(@"大端");
-    }
-    NSLog(@"%d %d %d %d", ch[0], ch[1], ch[2], ch[3]);
+
+    // 不管是在栈中的结构体，还是在堆中的结构体，小端序下都是低位在低地址，高位在高地址
+//    struct TestStackAndHeapStorageNode *heapInfo = (struct TestStackAndHeapStorageNode *)malloc(sizeof(struct TestStackAndHeapStorageNode));
+//    NSLog(@"heapInfo->one address: %p\nheapInfo->two address: %p\nheapInfo->three address: %p\nheapInfo->four address: %p", &(heapInfo->one), &(heapInfo->two), &(heapInfo->three), &(heapInfo->four));
+//
+//    struct TestStackAndHeapStorageNode stackInfo = {1,2,3,4};
+//    NSLog(@"stackInfo.one address: %p\nstackInfo.two address: %p\nstackInfo.three address: %p\nstackInfo.four address: %p", &(stackInfo.one), &(stackInfo.two), &(stackInfo.three), &(stackInfo.four));
 
 
-    
+//    int value = 0x01030507;
+//    char *ch = (char *)&value;
+//    if (ch[0] == 7) {
+//        NSLog(@"小端");
+//    } else {
+//        NSLog(@"大端");
+//    }
+//    NSLog(@"%d %d %d %d", ch[0], ch[1], ch[2], ch[3]);
+
+
     // 知识点：class_copyPropertyList 只打印该 class 上自己的属性，不打印父类的
 //    NSArray *iVars = [President instanceVariables];
 //    NSLog (@"iVars : %@", iVars);
@@ -190,39 +194,39 @@ struct TestStackAndHeapStorageNode {
 //    NSLog (@"iVars : %@", iVars);
 
 
-
     // 知识点：[obj class] 与 object_getClass(obj) 的区别
-    // [obj class] 实现源码：
-    //+ (Class)class {
-    //    return self;
-    //}
-    //
-    //- (Class)class {
-    //    return object_getClass(self);
-    //}
-    //
-    //+ (Class)superclass {
-    //    return self->superclass;
-    //}
-    //
-    //- (Class)superclass {
-    //    return [self class]->superclass;
-    //}
-    //
-    // object_getClass(obj) 实现源码：
-    //Class object_getClass(id obj)
-    //{
-    //    if (obj) return obj->getIsa();
-    //    else return Nil;
-    //}
-    
+//     [obj class] 实现源码：
+//    + (Class)class {
+//        return self;
+//    }
+//    
+//    - (Class)class {
+//        return object_getClass(self);
+//    }
+//    
+//    + (Class)superclass {
+//        return self->superclass;
+//    }
+//    
+//    - (Class)superclass {
+//        return [self class]->superclass;
+//    }
+//    
+//     object_getClass(obj) 实现源码：
+//    Class object_getClass(id obj)
+//    {
+//        if (obj) return obj->getIsa();
+//        else return Nil;
+//    }
+
+
 //    Person *p = [[Person alloc] init];
 //    p.name = @"张三";
 //    NSLog(@"[p class] == [Person class] => %d", [p class] == [Person class]);
 //    NSLog(@"[p class] == [[p class] class] => %d", [p class] == [[p class] class]);
 //    NSLog(@"[p class] == [[[p class] class] class] => %d", [p class] == [[[p class] class] class]);
 //    NSLog(@"[p class] == objc_getClass(p) => %d", [p class] == object_getClass(p));
-//
+//    
 //    NSLog(@"KVO之前%@ %@", [p class], object_getClass(p));
 //    // isa swizzling + 重写 set 方法 实现 KVO
 //    [p addObserver:self forKeyPath:@"name" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
@@ -232,23 +236,20 @@ struct TestStackAndHeapStorageNode {
 //    [self printMethodList:cls];
 //    NSLog(@"KVO之后%@ %@", [p class], object_getClass(p));
 //    p.name = @"李四";
-//
 //    [p removeObserver:self forKeyPath:@"name"];
-    
-    
-    
+
+
     // 知识点：objc_getClass("xxx") 获取指向类对象的 isa 指针
     //        objc_getMetaClass("xxx") 获取指向元类对象的 isa 指针
 //    Class pointerToClass = objc_getClass("Person");
 //    Class pointerToMetaClass = objc_getMetaClass("Person");
-//    
+//
 //    NSLog(@"pointerToClass:     %p %@", pointerToClass, NSStringFromClass(pointerToClass));
 //    NSLog(@"pointerToMetaClass: %p %@", pointerToMetaClass, NSStringFromClass(pointerToMetaClass));
 //    [self printMethodList:pointerToClass];
 //    [self printMethodList:pointerToMetaClass];
-    
-    
-    
+
+
     // 知识点：struct objc_super info = {
     //            .receiver = self,
     //            .super_class = class_getSuperclass(currentClass)
@@ -259,21 +260,20 @@ struct TestStackAndHeapStorageNode {
     //        并在找到后调用 obj_msgSend(superInfo->receiver, sel) 执行
     //        在找到的 super selector 方法执行时候的 self 依然为具体实例对象的指针（即上面的 superInfo->receiver）
     //        可以通过打符号断点 obj_msgSendSuper2 验证上述过程
-    //        至于super调用的方法中又有super调用时候，怎么拿到 currentClass，暂时没有弄太情况
+    //        至于super调用的方法中又有super调用时候，怎么拿到 currentClass，暂时没有弄太清楚
     //       （可能是通过线程寄存器或者隐藏在调用 obj_msgSend 之前压栈字段获取到）
     //
     // 知识点：class: 任何一个类调用class方法：目的是获取方法调用者的类型
     //        superclass: 任何一个类调用superclass方法：目的是获取方法调用者的父类
     //        super: 不是指针，编译器指示符，表示去调用父类的方法，本质还是当前对象去调用父类方法
     //        ⚠️注意⚠️：super不是父类对象，仅仅是一个指向父类方法标志
-    
+
 //    Person* p = [[President alloc] init];
 //    p.name = @"张三";
 //    p.age = 20;
 //    [p test];
-    
-    
-    
+
+
     // 知识点：runtime 的整个类、原类的图中的 isa、super_class 指向关系
     //+ (Class)class {
     //    return self;
@@ -322,28 +322,27 @@ struct TestStackAndHeapStorageNode {
     //- (BOOL)isMemberOfClass:(Class)cls {
     //    return [self class] == cls;
     //}
-//    BOOL res1 = [(id)[NSObject class] isKindOfClass:[NSObject class]];
-//    BOOL res2 = [(id)[NSObject class] isMemberOfClass:[NSObject class]];
-//    BOOL res3 = [(id)[Sark class] isKindOfClass:[Sark class]];
-//    BOOL res4 = [(id)[Sark class] isMemberOfClass:[Sark class]];
-//
-//    NSLog(@"%d %d %d %d", res1, res2, res3, res4);
-//    
-//    BOOL res5 = [(id)[NSObject class] isMemberOfClass:objc_getMetaClass("NSObject")];
-//    BOOL res6 = [[NSObject new] isMemberOfClass:[NSObject class]];
-//    
-//    NSLog(@"%d %d", res5, res6);
-    
-    
+    BOOL res1 = [(id)[NSObject class] isKindOfClass:[NSObject class]];
+    BOOL res2 = [(id)[NSObject class] isMemberOfClass:[NSObject class]];
+    BOOL res3 = [(id)[Sark class] isKindOfClass:[Sark class]];
+    BOOL res4 = [(id)[Sark class] isMemberOfClass:[Sark class]];
+
+    NSLog(@"%d %d %d %d", res1, res2, res3, res4);
+
+    BOOL res5 = [(id)[NSObject class] isMemberOfClass:objc_getMetaClass("NSObject")];
+    BOOL res6 = [[NSObject new] isMemberOfClass:[NSObject class]];
+
+    NSLog(@"%d %d", res5, res6);
+
+
     // 知识点： +(xxx)xxx 与 -(xxx)xxx 方法只是分别被放在原类和类的对象的 method_list 中
     //        消息转发机制根据调用类方法和实例方法
     //        从 self->isa (类方法调用时候 self 为类对象，实例方法调用时候 self 为实例对象) 的对象及向上的 super 类对象链中递归查找 method_list 中有没有 selector 实现
 //    [NSObject foo];
 //    [[NSObject new] foo];
-    
 
-    
-    // 知识点：给已经存在的类动态添加 property 和存储变量是不允许的，调用 valueForKey: 时候会崩溃
+
+    // 知识点：给已经存在的类动态添加 property 可以，但是不能添加存储变量，调用 valueForKey: 时候会崩溃
 //    Person* p = [[President alloc] init];
 //
 //    unsigned int propertyCount = 0;
@@ -358,7 +357,6 @@ struct TestStackAndHeapStorageNode {
 //        "",
 //    };
 //
-//
 //    class_addProperty([p class], "studentIdentifier", &attributes, 1);
 ////    objc_property_t property = class_getProperty([p class], "studentIdentifier");
 ////    NSLog(@"%s %s", property_getName(property), property_getAttributes(property));
@@ -369,7 +367,7 @@ struct TestStackAndHeapStorageNode {
 //        const char* attributes = property_getAttributes(propertyList[i]);
 //        NSLog(@"%s %s", name, attributes);
 //    }
-//    
+//
 //    NSLog (@"p.age: %ld", p.age);
 //    NSLog (@"p.studentIdentifier: %@", [p valueForKey:@"studentIdentifier"]);
 }

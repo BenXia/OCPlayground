@@ -51,7 +51,7 @@ extension Dictionary {
     
     func initUI() {
         self.title = "Swift调试页面"
-        
+
         let string: String = "✅❎👩‍👩‍👦‍👦"
         print("string count: \(string.count)")
         print("string unicodeScalars.count: \(string.unicodeScalars.count)")
@@ -64,7 +64,7 @@ extension Dictionary {
         
 //        self.testForceCastBasicDataType()
         
-//        self.testReactiveSwiftBasic()
+        self.testReactiveSwiftBasic()
         
 //        self.testSwiftCombine()
 
@@ -76,7 +76,7 @@ extension Dictionary {
         
 //        self.testSwiftArgDefaultValue(age: 15)
         
-        self.testSwiftMethodDispatch()
+//        self.testSwiftMethodDispatch()
     }
     
     func tempTestFunc() {
@@ -423,8 +423,8 @@ extension Dictionary {
                 self.swiftKVOModel3.adjusted = false
     
                 ///cancel() will be called automatically when an Cancellable is deinited
-//                self.cancellable1 = nil
-//                self.cancellable2 = nil
+                self.cancellable1 = nil
+                self.cancellable2 = nil
     
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
                     guard let `self` = self else { return }
