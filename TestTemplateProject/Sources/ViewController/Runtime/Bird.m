@@ -13,6 +13,9 @@
 void swizzlingInstanceMethod(Class class, SEL originalSelector, SEL swizzledSelector) {
     Method originalMethod = class_getInstanceMethod(class, originalSelector);
     Method swizzledMethod = class_getInstanceMethod(class, swizzledSelector);
+    
+    // ❌❌❌
+//    method_exchangeImplementations(originalMethod, swizzledMethod);
 
     // 假如交换的方法在继承链条上不存在，就会导致交换失败，那么就要在上面代码中单独处理下单独处理下：
     if (!originalMethod) {

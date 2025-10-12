@@ -63,16 +63,16 @@ struct TestStackAndHeapStorageNode {
     // 知识点：换实现时候需要考虑，originSelector 继承链上没有，
     //        或者当前子类没有只有父类有的情况，exchange(impl1,impl2) 有空实现能交换成功，
     //        replace(method, impl) 时 impl 为空会无法 replace
-//    Bird *bird = [[Bird alloc] init];
-//    [bird speak];
-//    //-[Bird run]: unrecognized selector sent to instance 0x600000011f40'
-//    [bird run];
+    Bird *bird = [[Bird alloc] init];
+    [bird speak];
+    //-[Bird run]: unrecognized selector sent to instance 0x600000011f40'
+    [bird run];  // ⚠️
 
-    // -[Animal custom_speak]: unrecognized selector sent to instance 0x60000002a610
-//    FlyAnimal *ani = [[FlyAnimal alloc] init];
-//    [ani speak];
-
-
+    FlyAnimal *ani = [[FlyAnimal alloc] init];
+    // -[FlyAnimal custom_speak]: unrecognized selector sent to instance 0x60000002a610
+    [ani speak];  // ⚠️
+    // -[FlyAnimal run]: unrecognized selector sent to instance 0x60000002a610
+    //[ani run];  // ❌
 
     // 知识点：struct object + obj_msgSend + struct super + 函数调用压栈出栈过程 + 大小端
     //
@@ -322,17 +322,17 @@ struct TestStackAndHeapStorageNode {
     //- (BOOL)isMemberOfClass:(Class)cls {
     //    return [self class] == cls;
     //}
-    BOOL res1 = [(id)[NSObject class] isKindOfClass:[NSObject class]];
-    BOOL res2 = [(id)[NSObject class] isMemberOfClass:[NSObject class]];
-    BOOL res3 = [(id)[Sark class] isKindOfClass:[Sark class]];
-    BOOL res4 = [(id)[Sark class] isMemberOfClass:[Sark class]];
-
-    NSLog(@"%d %d %d %d", res1, res2, res3, res4);
-
-    BOOL res5 = [(id)[NSObject class] isMemberOfClass:objc_getMetaClass("NSObject")];
-    BOOL res6 = [[NSObject new] isMemberOfClass:[NSObject class]];
-
-    NSLog(@"%d %d", res5, res6);
+//    BOOL res1 = [(id)[NSObject class] isKindOfClass:[NSObject class]];
+//    BOOL res2 = [(id)[NSObject class] isMemberOfClass:[NSObject class]];
+//    BOOL res3 = [(id)[Sark class] isKindOfClass:[Sark class]];
+//    BOOL res4 = [(id)[Sark class] isMemberOfClass:[Sark class]];
+//
+//    NSLog(@"%d %d %d %d", res1, res2, res3, res4);
+//
+//    BOOL res5 = [(id)[NSObject class] isMemberOfClass:objc_getMetaClass("NSObject")];
+//    BOOL res6 = [[NSObject new] isMemberOfClass:[NSObject class]];
+//
+//    NSLog(@"%d %d", res5, res6);
 
 
     // 知识点： +(xxx)xxx 与 -(xxx)xxx 方法只是分别被放在原类和类的对象的 method_list 中
